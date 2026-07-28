@@ -1,0 +1,1559 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pakpoom Luansiri — Portfolio</title>
+<meta name="description" content="Portfolio of Pakpoom Luansiri — Pre-sales Supervisor, IT Infrastructure Lead, Full-Stack Web Developer">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Kanit',sans-serif;
+  background:#f0f2f5;
+  color:#1e293b;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* Gradient backgrounds */
+.gradient-hero{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%)}
+.gradient-section{background:linear-gradient(135deg,#667eea 0%,#5a67d8 50%,#764ba2 100%)}
+
+/* Glass */
+.glass{
+  background:rgba(255,255,255,.18);
+  backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,.22);
+}
+.glass-dark{
+  background:rgba(0,0,0,.12);
+  backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.1);
+}
+
+/* Container */
+.container{max-width:1140px;margin:0 auto;padding:0 28px}
+
+/* ─── HERO TOP BAR (LANG SWITCHER) ─── */
+.hero-top-bar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 50;
+}
+.lang-switcher-group {
+    display: inline-flex;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 24px;
+    padding: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+.lang-btn {
+    cursor: pointer;
+    padding: 6px 16px;
+    border-radius: 20px;
+    color: #ffffff;
+    font-size: 14.5px;
+    font-weight: 600;
+    transition: all 0.25s ease;
+    user-select: none;
+    font-family: 'Kanit', sans-serif;
+}
+.lang-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+.lang-btn.active {
+    background: #ffffff;
+    color: #4f46e5;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+/* ─── HERO ─── */
+.hero{
+  padding:36px 0 64px;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;top:-120px;right:-80px;
+  width:380px;height:380px;border-radius:50%;
+  background:rgba(255,255,255,.06);
+}
+.hero::after{
+  content:'';position:absolute;bottom:-100px;left:-60px;
+  width:300px;height:300px;border-radius:50%;
+  background:rgba(255,255,255,.04);
+}
+.hero-grid{
+  display:grid;grid-template-columns:auto 1fr auto;
+  gap:36px;align-items:flex-start;
+  position:relative;z-index:2;
+}
+.hero-photo{
+  width:140px;height:175px;border-radius:20px;
+  overflow:hidden;border:4px solid rgba(255,255,255,.4);
+  box-shadow:0 12px 40px rgba(0,0,0,.25);
+}
+.hero-photo img{width:100%;height:100%;object-fit:cover}
+.hero h1{
+  font-size:44px;font-weight:700;color:#fff;
+  margin-bottom:6px;letter-spacing:0.5px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+.hero .subtitle{
+  font-size:17.5px;color:#ffffff;
+  font-weight:400;margin-bottom:14px;
+  opacity: 0.95;
+}
+.hero .bio{
+  font-size:15.5px;color:#f8fafc;
+  line-height:1.75;max-width:640px;font-weight:300;
+}
+.hero .contact-row{
+  margin-top:16px;font-size:15px;
+  color:#e2e8f0;font-weight:400;
+}
+.hero .contact-row a{color:#fff;text-decoration:none;font-weight:500}
+
+.hero-stats{
+  display:flex;flex-direction:column;gap:16px;
+}
+.stat-pill{
+  padding:16px 24px;border-radius:16px;text-align:center;
+  min-width:130px;
+}
+.stat-pill .num{font-size:34px;font-weight:700;color:#fff;line-height:1;text-shadow: 0 2px 4px rgba(0,0,0,0.15);}
+.stat-pill .lbl{font-size:14px;color:rgba(255,255,255,.9);font-weight:400;margin-top:4px}
+
+/* ─── PERSONAL INFO BOX ─── */
+.personal-info-box {
+  margin-top: 18px;
+  padding: 16px 22px;
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  max-width: 640px;
+}
+.personal-info-box .pi-title {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+.personal-info-box .pi-grid {
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(180px, 1fr) );
+  gap: 8px 16px;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.personal-info-box .pi-lbl {
+  color: #cbd5e1;
+  font-weight: 400;
+}
+.personal-info-box .pi-val {
+  color: #ffffff;
+  font-weight: 500;
+}
+.personal-info-box .pi-full {
+  grid-column: 1 / -1;
+}
+
+.hero-links{
+  margin-top:24px;display:flex;gap:12px;
+}
+.hero-links a{
+  display:inline-block;padding:10px 26px;border-radius:12px;
+  font-size:15px;font-weight:600;text-decoration:none;
+  transition:all .3s ease;
+}
+.hero-links .btn-w{
+  background:rgba(255,255,255,.2);color:#fff;
+  border:1px solid rgba(255,255,255,.3);
+}
+.hero-links .btn-w:hover{background:rgba(255,255,255,.35); transform: translateY(-2px);}
+.hero-links .btn-solid{
+  background:#fff;color:#4f46e5;border:1px solid transparent;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.hero-links .btn-solid:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,0,0,.2)}
+
+/* ─── SECTION ─── */
+.section{padding:70px 0}
+.section-head{text-align:center;margin-bottom:50px}
+.section-head .tag{
+  display:inline-block;padding:6px 20px;border-radius:24px;
+  background:linear-gradient(135deg,#667eea,#764ba2);
+  color:#fff;font-size:14px;font-weight:500;
+  letter-spacing:.5px;margin-bottom:12px;
+}
+.section-head h2{
+  font-size:34px;font-weight:700;color:#1e293b;
+  margin-bottom:10px;
+}
+.section-head p{font-size:17px;color:#64748b;font-weight:400}
+
+/* ─── FILTER ─── */
+.filter-bar{
+  display:flex;justify-content:center;gap:10px;
+  margin-bottom:44px;flex-wrap:wrap;
+}
+.f-btn{
+  padding:10px 26px;border-radius:12px;cursor:pointer;
+  font-size:15px;font-weight:500;
+  border:1px solid #cbd5e1;background:#fff;color:#475569;
+  transition:all .25s ease;font-family:'Kanit',sans-serif;
+}
+.f-btn:hover{border-color:#667eea;color:#667eea}
+.f-btn.active{
+  background:linear-gradient(135deg,#667eea,#764ba2);
+  color:#fff;border-color:transparent;
+  box-shadow:0 6px 18px rgba(102,126,234,.4);
+}
+
+/* ─── CARD GRID ─── */
+.card-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));
+  gap:28px;
+}
+.card{
+  background:#fff;border-radius:18px;overflow:hidden;
+  border:1px solid #e2e8f0;
+  transition:all .3s cubic-bezier(.4,0,.2,1);
+  display:flex;flex-direction:column;
+  box-shadow:0 4px 16px rgba(0,0,0,.05);
+}
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 20px 45px rgba(102,126,234,.18);
+  border-color:#c7d2fe;
+}
+.card-img{
+  height:210px;background:#e8ecf1;overflow:hidden;
+  position:relative;
+}
+.card-img img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .5s ease;
+}
+.card:hover .card-img img{transform:scale(1.06)}
+.card-img .badge{
+  position:absolute;top:14px;left:14px;
+  padding:6px 14px;border-radius:10px;
+  font-size:12px;font-weight:600;color:#fff;
+  backdrop-filter:blur(6px);
+}
+.badge-ent{background:rgba(102,126,234,.9)}
+.badge-ai{background:rgba(139,92,246,.9)}
+.badge-int{background:rgba(16,185,129,.9)}
+.badge-web{background:rgba(245,158,11,.9)}
+.badge-infra{background:rgba(59,130,246,.9)}
+.card-img .img-ct{
+  position:absolute;bottom:12px;right:12px;
+  background:rgba(0,0,0,.65);color:#fff;
+  padding:4px 10px;border-radius:8px;font-size:12px;
+  font-weight:500;
+}
+.card-body{padding:26px;display:flex;flex-direction:column;flex-grow:1}
+.card-cat{
+  font-size:13px;color:#667eea;font-weight:600;
+  letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;
+}
+.card-title{
+  font-size:21px;font-weight:700;color:#0f172a;
+  margin-bottom:6px;line-height:1.4;
+}
+.card-client{font-size:14px;color:#64748b;margin-bottom:14px;font-weight:400}
+.card-desc{
+  font-size:15px;color:#475569;line-height:1.75;font-weight:400;
+  margin-bottom:20px;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
+}
+.tag-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:22px;margin-top:auto}
+.tag-row span{
+  padding:4px 12px;border-radius:8px;font-size:13px;font-weight:400;
+  background:#f1f5f9;color:#475569;border:1px solid #cbd5e1;
+}
+.btn-detail{
+  width:100%;padding:12px;border-radius:12px;
+  background:linear-gradient(135deg,#667eea,#764ba2);
+  color:#fff;font-size:15px;font-weight:600;
+  border:none;cursor:pointer;transition:all .3s ease;
+  font-family:'Kanit',sans-serif;letter-spacing:0.5px;
+}
+.btn-detail:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 25px rgba(102,126,234,.45);
+}
+
+/* No-img card */
+.card.no-img .card-img{
+  height:90px;
+  background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
+  display:flex;align-items:center;justify-content:center;
+}
+.card.no-img .card-img::after{
+  content:attr(data-label);
+  color:rgba(255,255,255,.75);font-size:15px;font-weight:500;
+  letter-spacing:1px;
+}
+
+/* ─── CLIENTS ─── */
+.clients-section{padding:70px 0}
+.client-grid{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:14px;
+}
+.client-chip{
+  padding:10px 22px;border-radius:12px;
+  font-size:15px;font-weight:500;
+  color:rgba(255,255,255,.95);
+  background:rgba(255,255,255,.15);
+  border:1px solid rgba(255,255,255,.25);
+  transition: all 0.2s;
+}
+.client-chip:hover {
+  background:rgba(255,255,255,.25);
+  transform: scale(1.05);
+}
+
+/* ─── MODAL ─── */
+.modal-bg{
+  position:fixed;top:0;left:0;width:100%;height:100%;
+  background:rgba(15,23,42,.75);backdrop-filter:blur(8px);
+  z-index:9999;display:none;align-items:center;justify-content:center;
+  padding:20px;
+}
+.modal-bg.open{display:flex}
+.modal-box{
+  background:#fff;border-radius:24px;
+  width:100%;max-width:960px;max-height:88vh;
+  overflow-y:auto;position:relative;
+  box-shadow:0 30px 80px rgba(0,0,0,.4);
+  animation:modalIn .35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes modalIn{
+  from{opacity:0;transform:translateY(30px) scale(.95)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+.modal-close{
+  position:absolute;top:16px;right:20px;
+  width:40px;height:40px;border-radius:50%;
+  background:rgba(0,0,0,.08);border:none;
+  font-size:22px;cursor:pointer;z-index:10;
+  color:#475569;display:flex;align-items:center;justify-content:center;
+  transition:all .2s;font-family:'Kanit';
+}
+.modal-close:hover{background:rgba(239,68,68,.15);color:#dc2626;transform:rotate(90deg)}
+.modal-gallery{background:#0f172a;border-radius:24px 24px 0 0;overflow:hidden}
+.modal-main-img{
+  width:100%;height:460px;display:flex;
+  align-items:center;justify-content:center;
+  padding: 10px;
+}
+.modal-main-img img{max-width:100%;max-height:100%;object-fit:contain; border-radius: 8px;}
+.modal-thumbs{
+  display:flex;gap:8px;padding:14px 18px;
+  overflow-x:auto;background:#1e293b;
+}
+.modal-thumbs img{
+  width:88px;height:60px;object-fit:cover;
+  border-radius:10px;cursor:pointer;opacity:.4;
+  transition:all .2s;border:2px solid transparent;
+}
+.modal-thumbs img:hover,.modal-thumbs img.active{
+  opacity:1;border-color:#818cf8;
+}
+.modal-detail{padding:40px}
+.modal-detail .md-cat{
+  display:inline-block;padding:5px 16px;border-radius:10px;
+  background:linear-gradient(135deg,#667eea,#764ba2);
+  color:#fff;font-size:13px;font-weight:600;margin-bottom:14px;
+}
+.modal-detail h3{font-size:28px;font-weight:700;color:#0f172a;margin-bottom:24px;line-height:1.3;}
+.d-block{margin-bottom:26px}
+.d-block h4{
+  font-size:15px;font-weight:700;color:#667eea;
+  margin-bottom:10px;padding-bottom:8px;
+  border-bottom:1px solid #e2e8f0;
+  letter-spacing:.5px;
+}
+.d-block p{font-size:15.5px;color:#334155;line-height:1.8;font-weight:400}
+.d-block ul{padding-left:22px;font-size:15.5px;color:#334155;font-weight:400}
+.d-block li{margin-bottom:8px;line-height:1.7}
+
+/* ─── FOOTER ─── */
+footer{
+  text-align:center;padding:40px 0;
+  border-top:1px solid #cbd5e1;
+  font-size:14px;color:#64748b;font-weight:400;
+}
+footer a{color:#667eea;text-decoration:none;font-weight:600;transition:color 0.2s}
+footer a:hover{color:#764ba2}
+
+/* Responsive */
+@media(max-width:768px){
+  .hero-top-bar{justify-content:center;margin-bottom:20px}
+  .hero-grid{grid-template-columns:1fr;text-align:center}
+  .hero-photo{margin:0 auto}
+  .hero-stats{flex-direction:row;justify-content:center}
+  .hero-links{justify-content:center}
+  .card-grid{grid-template-columns:1fr}
+  .modal-main-img{height:280px}
+  .modal-detail{padding:28px}
+}
+</style>
+</head>
+<body>
+
+<!-- ════ HERO ════ -->
+<section class="hero gradient-hero">
+  <div class="container">
+    
+    <!-- Top Bar with 5 Languages Switcher -->
+    <div class="hero-top-bar">
+      <div class="lang-switcher-group" id="lang-switcher">
+        <span class="lang-btn active" data-lang="th">TH</span>
+        <span class="lang-btn" data-lang="en">EN</span>
+        <span class="lang-btn" data-lang="cn">CN</span>
+        <span class="lang-btn" data-lang="jp">JP</span>
+        <span class="lang-btn" data-lang="in">IN</span>
+      </div>
+    </div>
+
+    <div class="hero-grid">
+      <div class="hero-photo">
+        <img src="http://www.eolotechnology.com/css/pic.png" alt="Pakpoom Luansiri">
+      </div>
+      <div>
+        <h1 data-i18n="hero_name">ภาคภูมิ ล้วนศิริ</h1>
+        <div class="subtitle" data-i18n="hero_subtitle">Pre-sales Supervisor &middot; IT Infrastructure Lead &middot; Full-Stack Developer</div>
+        <p class="bio" data-i18n="hero_bio">ผู้เชี่ยวชาญด้าน IT Infrastructure, System Administration และ Pre-sales ที่มีประสบการณ์มากกว่า 10 ปี ออกแบบโซลูชันเครือข่ายองค์กร จัดทำ SOW, BOM, Cost Sheet และพัฒนา Web Application ระดับองค์กร ตั้งแต่ระบบ CRM ระบบ AI Tele-sales จนถึงระบบ Intranet</p>
+        
+        <!-- Personal Details Box -->
+        <div class="personal-info-box">
+          <div class="pi-title" data-i18n="pi_title">ข้อมูลส่วนบุคคล</div>
+          <div class="pi-grid">
+            <div class="pi-item"><span class="pi-lbl" data-i18n="pi_nat_lbl">สัญชาติ:</span> <span class="pi-val" data-i18n="pi_nat">ไทย</span></div>
+            <div class="pi-item"><span class="pi-lbl" data-i18n="pi_rel_lbl">ศาสนา:</span> <span class="pi-val" data-i18n="pi_rel">พุทธ</span></div>
+            <div class="pi-item"><span class="pi-lbl" data-i18n="pi_gender_lbl">เพศ:</span> <span class="pi-val" data-i18n="pi_gender">ชาย</span></div>
+            <div class="pi-item"><span class="pi-lbl" data-i18n="pi_status_lbl">สถานภาพ:</span> <span class="pi-val" data-i18n="pi_status">โสด</span></div>
+            <div class="pi-item"><span class="pi-lbl" data-i18n="pi_dob_lbl">วันเกิด:</span> <span class="pi-val" data-i18n="pi_dob">3 มีนาคม 2534</span></div>
+            <div class="pi-item"><span class="pi-lbl" data-i18n="pi_hw_lbl">ส่วนสูง/น้ำหนัก:</span> <span class="pi-val" data-i18n="pi_hw">165 ซม. / 80 กก.</span></div>
+            <div class="pi-item pi-full"><span class="pi-lbl" data-i18n="pi_veh_lbl">พาหนะส่วนตัว:</span> <span class="pi-val" data-i18n="pi_veh">รถยนต์, รถจักรยานยนต์</span></div>
+            <div class="pi-item pi-full"><span class="pi-lbl" data-i18n="pi_mil_lbl">สถานภาพทหาร:</span> <span class="pi-val" data-i18n="pi_mil">ได้รับการยกเว้น / จบหลักสูตรรักษาดินแดน (รด.)</span></div>
+          </div>
+        </div>
+
+        <p class="contact-row">
+          Tel: 080-789-7987 &nbsp;&middot;&nbsp;
+          <a href="mailto:ammwendy7344@gmail.com">ammwendy7344@gmail.com</a> &nbsp;&middot;&nbsp;
+          <span data-i18n="hero_loc">ชลบุรี, ประเทศไทย</span>
+        </p>
+        <div class="hero-links">
+          <a href="resume_pakpoom_luansiri_TH.html" class="btn-w" target="_blank">Resume TH</a>
+          <a href="resume_pakpoom_luansiri_EN.html" class="btn-w" target="_blank">Resume EN</a>
+          <a href="mailto:ammwendy7344@gmail.com" class="btn-solid" data-i18n="btn_contact">ติดต่อ</a>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-pill glass">
+          <div class="num">10+</div>
+          <div class="lbl" data-i18n="stat_years">ปีประสบการณ์</div>
+        </div>
+        <div class="stat-pill glass">
+          <div class="num">27+</div>
+          <div class="lbl" data-i18n="stat_clients">ลูกค้าองค์กร</div>
+        </div>
+        <div class="stat-pill glass">
+          <div class="num">10+</div>
+          <div class="lbl" data-i18n="stat_systems">ระบบที่พัฒนา</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ WEB SYSTEMS ════ -->
+<section class="section" id="web">
+  <div class="container">
+    <div class="section-head">
+      <span class="tag" data-i18n="sec_web_tag">Web &amp; Software Development</span>
+      <h2 data-i18n="sec_web_title">ระบบซอฟต์แวร์ที่พัฒนาขึ้นจริง</h2>
+      <p data-i18n="sec_web_desc">ผลงานการออกแบบและพัฒนาระบบเว็บแอปพลิเคชันสำหรับองค์กร</p>
+    </div>
+
+    <div class="filter-bar">
+      <button class="f-btn active" data-f="all" data-i18n="filter_all">ทั้งหมด</button>
+      <button class="f-btn" data-f="enterprise">Enterprise System</button>
+      <button class="f-btn" data-f="ai">AI &amp; Automation</button>
+      <button class="f-btn" data-f="intranet">Intranet &amp; LMS</button>
+      <button class="f-btn" data-f="website">Corporate Website</button>
+    </div>
+
+    <div class="card-grid" id="webGrid"></div>
+  </div>
+</section>
+
+<!-- ════ INFRA ════ -->
+<section class="section" style="background:#f8fafc" id="infra">
+  <div class="container">
+    <div class="section-head">
+      <span class="tag" data-i18n="sec_infra_tag">IT Infrastructure &amp; Proposals</span>
+      <h2 data-i18n="sec_infra_title">โครงการและเอกสารเสนอโครงการ</h2>
+      <p data-i18n="sec_infra_desc">ผลงานออกแบบ ติดตั้ง และจัดทำข้อเสนอโครงการด้าน IT Infrastructure ให้ลูกค้าองค์กร</p>
+    </div>
+    <div class="card-grid" id="infraGrid"></div>
+  </div>
+</section>
+
+<!-- ════ CLIENTS ════ -->
+<section class="clients-section gradient-section">
+  <div class="container">
+    <div class="section-head" style="margin-bottom:40px">
+      <span class="tag" style="background:rgba(255,255,255,.25)" data-i18n="sec_client_tag">Enterprise Clients</span>
+      <h2 style="color:#fff" data-i18n="sec_client_title">ลูกค้าองค์กรที่เคยให้บริการ</h2>
+    </div>
+    <div class="client-grid">
+      <span class="client-chip">Oriental Copper</span>
+      <span class="client-chip">TPI POLENE</span>
+      <span class="client-chip">OMODA &amp; JAECOO</span>
+      <span class="client-chip">Saha Pathanapibul</span>
+      <span class="client-chip">Namyong Terminal</span>
+      <span class="client-chip">Leistritz Thailand</span>
+      <span class="client-chip">Gorilla Technology</span>
+      <span class="client-chip">Thai President Foods</span>
+      <span class="client-chip">SIAM KYOHWA</span>
+      <span class="client-chip">SIAM GOSHI MFG</span>
+      <span class="client-chip">Steel Alliance</span>
+      <span class="client-chip">T.S.K. FORGING</span>
+      <span class="client-chip">Stars Technologies</span>
+      <span class="client-chip">OIZURU Thailand</span>
+      <span class="client-chip">IT FORGING</span>
+      <span class="client-chip">KIRIU Thailand</span>
+      <span class="client-chip">Mic Industries</span>
+      <span class="client-chip">FUKUI KASEI</span>
+      <span class="client-chip">Nagano Engineering</span>
+      <span class="client-chip">Narumi Thailand</span>
+      <span class="client-chip">Univance Thailand</span>
+      <span class="client-chip">Thai Fuji Plastic</span>
+      <span class="client-chip">Thai Parkerizing</span>
+      <span class="client-chip">Chaveevan Int'l Foods</span>
+      <span class="client-chip">โรงเรียนชุมพลทหารเรือ</span>
+      <span class="client-chip">Laemchabang RO-RO</span>
+      <span class="client-chip">SIAM Commercial Seaport</span>
+    </div>
+  </div>
+</section>
+
+<!-- ════ FOOTER ════ -->
+<footer>
+  <div class="container">
+    <p>&copy; 2025 Pakpoom Luansiri &nbsp;&middot;&nbsp; <a href="resume_pakpoom_luansiri_TH.html" target="_blank">Resume TH</a> &nbsp;&middot;&nbsp; <a href="resume_pakpoom_luansiri_EN.html" target="_blank">Resume EN</a></p>
+  </div>
+</footer>
+
+<!-- ════ MODAL ════ -->
+<div class="modal-bg" id="modal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">&#10005;</button>
+    <div id="modalInner"></div>
+  </div>
+</div>
+
+<script>
+// ═══ DATA (BASE) ═══
+const W=[
+  {id:'crm',cat:'enterprise',catLabel:'Enterprise System',
+   title:'EoloSystem — ระบบบริหารงาน Pre-sales & Quotation',
+   client:'EOLO Technology Co., Ltd.',
+   desc:'ระบบบริหารจัดการงานขายครบวงจรสำหรับทีม Pre-sales ตั้งแต่รับ Requirement คำนวณ Cost Sheet ต้นทุนและอัตรากำไร มอบหมายงานให้วิศวกร ออกใบเสนอราคา (Quotation) และติดตามสถานะการอนุมัติ รองรับ Role-based Access สำหรับฝ่ายขาย ฝ่ายจัดซื้อ และผู้บริหาร',
+   tags:['PHP','MySQL','REST API','JavaScript','Bootstrap','PDF Generation'],
+   thumb:'งานพัฒนาเว็บระบบ,เว็บไซต์ ที่ทำ/ระบบ CRM ของ บริษัท Eolotechnology/img/index.png',
+   images:['งานพัฒนาเว็บระบบ,เว็บไซต์ ที่ทำ/ระบบ CRM ของ บริษัท Eolotechnology/img/login.png','งานพัฒนาเว็บระบบ,เว็บไซต์ ที่ทำ/ระบบ CRM ของ บริษัท Eolotechnology/img/index.png','งานพัฒนาเว็บระบบ,เว็บไซต์ ที่ทำ/ระบบ CRM ของ บริษัท Eolotechnology/img/sales.png','งานพัฒนาเว็บระบบ,เว็บไซต์ ที่ทำ/ระบบ CRM ของ บริษัท Eolotechnology/img/admin.png','งานพัฒนาเว็บระบบ,เว็บไซต์ ที่ทำ/ระบบ CRM ของ บริษัท Eolotechnology/img/Purchase.png','งานพัฒนาเว็บระบบ,เว็บไซต์ ที่ทำ/ระบบ CRM ของ บริษัท Eolotechnology/img/setting.png','งานพัฒนาเว็บระบบ,เว็บไซต์ ที่ทำ/ระบบ CRM ของ บริษัท Eolotechnology/img/backup.png','งานพัฒนาเว็บระบบ,เว็บไซต์ ที่ทำ/ระบบ CRM ของ บริษัท Eolotechnology/Quotation Simple.png'],
+   obj:'ขจัดปัญหาการจัดทำใบเสนอราคาที่ล่าช้า เพื่อให้ทีม Presale สามารถออกแบบโซลูชัน คิดราคา และส่งใบเสนอราคาได้รวดเร็วและถูกต้อง',
+   feat:['Dashboard แสดงสถิติงาน Requirement, Job Assignment และ Quotation ที่รอดำเนินการ','Cost Sheet Calculator คำนวณต้นทุนสินค้า ค่าติดตั้ง ค่าบริการ และ Margin อัตโนมัติ','Quotation Generator สร้างเอกสารใบเสนอราคาแบบ PDF พร้อมลายเซ็นดิจิทัล','ระบบอนุมัติตามลำดับขั้น (Multi-level Approval Workflow)','Role-based Access: Sales, Presale Engineer, Purchase, Admin, Supervisor']},
+  {id:'telesale',cat:'ai',catLabel:'AI & Automation',
+   title:'AI Tele-Sales — ระบบโทรเสนอขายอัจฉริยะ',
+   client:'EOLO Technology Co., Ltd.',
+   desc:'แพลตฟอร์มคอลเซ็นเตอร์ AI สำหรับโทรเสนอขายสินค้าอัตโนมัติ เชื่อมต่อ LLM API (Grok) เพื่อให้ AI Agent สนทนากับลูกค้าแบบธรรมชาติ พร้อมระบบ Knowledge Base รายชื่อลูกค้า (Lead Management) และบันทึกถอดความ (Call Transcript)',
+   tags:['PHP','Grok LLM API','Voximplant','JSON Database','JavaScript'],
+   thumb:'งานพัฒนาเว็บระบบ,เว็บไซต์ ที่ทำ/ระบบ telesale ai ของ บริษัท Eolotechnology/1.png',
+   images:['งานพัฒนาเว็บระบบ,เว็บไซต์ ที่ทำ/ระบบ telesale ai ของ บริษัท Eolotechnology/1.png','งานพัฒนาเว็บระบบ,เว็บไซต์ ที่ทำ/ระบบ telesale ai ของ บริษัท Eolotechnology/2.png','งานพัฒนาเว็บระบบ,เว็บไซต์ ที่ทำ/ระบบ telesale ai ของ บริษัท Eolotechnology/3.png','งานพัฒนาเว็บระบบ,เว็บไซต์ ที่ทำ/ระบบ telesale ai ของ บริษัท Eolotechnology/4.png','งานพัฒนาเว็บระบบ,เว็บไซต์ ที่ทำ/ระบบ telesale ai ของ บริษัท Eolotechnology/5.png','งานพัฒนาเว็บระบบ,เว็บไซต์ ที่ทำ/ระบบ telesale ai ของ บริษัท Eolotechnology/6.png'],
+   obj:'สร้างระบบโทรเสนอขายแบบอัตโนมัติด้วย AI ลดต้นทุนพนักงาน เพิ่มปริมาณการติดต่อลูกค้าใหม่ได้มากกว่า 5 เท่าต่อวัน',
+   feat:['AI Agent ตอบสนทนา Real-time ผ่านเสียง ใช้ Grok LLM API','Lead Management นำเข้ารายชื่อลูกค้าพร้อมสถานะติดตาม','Knowledge Base จัดการข้อมูลสินค้า FAQ และสคริปต์การขาย','Call Log & Transcript บันทึกประวัติการโทรและถอดความอัตโนมัติ','Adapter Pattern รองรับเปลี่ยน Telephony Provider ได้']},
+  {id:'tms',cat:'enterprise',catLabel:'Enterprise System',
+   title:'TMS — ระบบบริหารการขนส่งและ Defects Dashboard',
+   client:'TPI POLENE PUBLIC COMPANY LIMITED',
+   desc:'ระบบวางแผนการจัดส่งสินค้า (Delivery Planning) และ Dashboard รายงานความเสียหาย (Defects Report) สำหรับ TPI POLENE ครอบคลุม CSV/Excel Import จัดสรรคิวรถ และสรุปสถิติ',
+   tags:['PHP','MySQL','CSV/Excel Import','JavaScript','Charts'],
+   thumb:'โครงการที่ทำ,เอกสารเสนอโครงการต่างๆ/TPI POLENE PUBLIC COMPANY LIMITED/โปรเจค TMS/รูป/ภาพตัวอย่าง1.png',
+   images:['โครงการที่ทำ,เอกสารเสนอโครงการต่างๆ/TPI POLENE PUBLIC COMPANY LIMITED/โปรเจค TMS/รูป/ภาพตัวอย่าง1.png','โครงการที่ทำ,เอกสารเสนอโครงการต่างๆ/TPI POLENE PUBLIC COMPANY LIMITED/โปรเจค TMS/รูป/1.png','โครงการที่ทำ,เอกสารเสนอโครงการต่างๆ/TPI POLENE PUBLIC COMPANY LIMITED/โปรเจค TMS/รูป/2.png','โครงการที่ทำ,เอกสารเสนอโครงการต่างๆ/TPI POLENE PUBLIC COMPANY LIMITED/โปรเจค TMS/รูป/3.png','โครงการที่ทำ,เอกสารเสนอโครงการต่างๆ/TPI POLENE PUBLIC COMPANY LIMITED/โปรเจค TMS/รูป/4.png'],
+   obj:'วางแผนเส้นทางจัดส่งสินค้าให้ตรงเวลา ลดความเสียหาย และให้ผู้บริหารมีข้อมูลสถิติประกอบการตัดสินใจ',
+   feat:['Import Delivery Plan จาก CSV/Excel ประจำวัน','จัดสรรคิวรถขนส่งพร้อมบันทึกจุดรับ-ส่ง','Defects Entry บันทึกรายงานสินค้าเสียหายพร้อมแนบรูปถ่าย','Dashboard สรุปสถิติแบบกราฟสำหรับผู้บริหาร']},
+  {id:'vehicle',cat:'enterprise',catLabel:'Enterprise System',
+   title:'Vehicle Booking — ระบบจองรถยนต์ส่วนกลาง',
+   client:'Techno-Metal / EOLO Technology',
+   desc:'เว็บแอปพลิเคชันจองรถยนต์ส่วนกลางองค์กร จัดตารางการเดินทาง จัดสรรพนักงานขับรถ และระบบอนุมัติออนไลน์ ยกเลิกการใช้แบบฟอร์มกระดาษ',
+   tags:['PHP 7.4+','MySQL','Composer','RESTful API','JavaScript'],
+   thumb:null,images:[],
+   obj:'แทนที่กระบวนการจองรถด้วยกระดาษ ลดขั้นตอนธุรการ ป้องกันการจองซ้ำซ้อน',
+   feat:['แบบฟอร์มจองรถออนไลน์ กำหนดวัน เวลา สถานที่','Approval Flow สำหรับหัวหน้างานอนุมัติ','Driver Dispatch จัดสรรพนักงานขับรถตามคิว','บันทึกเลขไมล์และค่าน้ำมัน','Web-based Installer ติดตั้งระบบอัตโนมัติ']},
+  {id:'defects',cat:'enterprise',catLabel:'Enterprise System',
+   title:'KDM Defects Report — ระบบแปลงข้อมูลรายงานความเสียหาย',
+   client:'Techno-Metal Co., Ltd.',
+   desc:'ระบบนำเข้าและแปลงข้อมูล Defects จาก Excel เพื่อสร้างรายงานสรุปแบบตารางและกราฟ รองรับ Login แยกสิทธิ์ผู้ใช้งาน',
+   tags:['PHP','PhpSpreadsheet','MySQL','Excel Import'],
+   thumb:null,images:[],
+   obj:'แปลงกระบวนการจัดทำรายงาน Defects จาก Excel Manual ให้เป็นระบบ Web-based อัตโนมัติ',
+   feat:['Import ข้อมูลจาก Excel (PhpSpreadsheet) อัตโนมัติ','CRUD รายการ Defects: เพิ่ม แก้ไข ลบ','Login & Role-based Access','Dashboard รายงานสรุปพร้อมกรอง/ค้นหา']},
+  {id:'intranet-tm',cat:'intranet',catLabel:'Intranet & LMS',
+   title:'Intranet Portal — ระบบสื่อสารภายใน Techno-Metal',
+   client:'Techno-Metal Co., Ltd.',
+   desc:'ระบบอินทราเน็ตสำหรับการสื่อสารภายในองค์กร ประกาศข่าวสาร เอกสาร MSD ระบบ QA และจองรถ/ห้องประชุม รองรับ 2 ภาษา (ไทย/ญี่ปุ่น)',
+   tags:['PHP','MySQL','Multi-language','Admin Console'],
+   thumb:null,images:[],
+   obj:'รวมศูนย์การสื่อสารภายในองค์กร ลดการใชีเมลสำหรับเรื่องประจำวัน',
+   feat:['ระบบประกาศข่าวสาร (Announcement)','คลังเอกสาร MSD','Admin Console จัดการเนื้อหาและผู้ใช้งาน','รองรับ 2 ภาษา: ไทย/ญี่ปุ่น']},
+  {id:'intranet-ls',cat:'intranet',catLabel:'Intranet & LMS',
+   title:'Intranet Portal — ระบบข้อมูลภายใน Leistritz',
+   client:'Leistritz (Thailand) Ltd.',
+   desc:'ระบบอินทราเน็ตจัดการข้อมูลภายในองค์กร Leistritz ใช้ JSON Data Store ไม่ต้อง MySQL จัดเก็บข้อมูลพนักงานและเอกสารองค์กร',
+   tags:['PHP','JSON Data Store','JavaScript','CSS3'],
+   thumb:null,images:[],
+   obj:'จัดเก็บและเผยแพร่ข้อมูลภายในองค์กรแบบ Self-hosted',
+   feat:['หน้าหลักแสดงข้อมูลสำคัญขององค์กร','Admin Panel จัดการข้อมูล','JSON-based Data Store ติดตั้งง่าย','Multi-user Access']},
+  {id:'training',cat:'intranet',catLabel:'Intranet & LMS',
+   title:'Training & Exam — ระบบอบรมและสอบออนไลน์',
+   client:'EOLO Technology Co., Ltd.',
+   desc:'ระบบ LMS สำหรับจัดหลักสูตรอบรมพนักงาน เนื้อหาฝึกอบรม และการสอบวัดผลออนไลน์',
+   tags:['HTML5','JavaScript','CSS3','Responsive'],
+   thumb:null,images:[],
+   obj:'สร้างแพลตฟอร์มอบรมออนไลน์สำหรับพนักงานใหม่และหลักสูตรพัฒนาทักษะ',
+   feat:['หลักสูตรอบรมจัดกลุ่มตามหัวข้อ','ระบบสอบออนไลน์','เนื้อหาฝึกอบรมแบบ Interactive','Responsive Design ทุกอุปกรณ์']},
+  {id:'eolo-web',cat:'website',catLabel:'Corporate Website',
+   title:'EOLO Technology — เว็บไซต์บริษัท',
+   client:'EOLO Technology Co., Ltd.',
+   desc:'เว็บไซต์องค์กร EOLO Technology ประกอบด้วยหน้าแนะนำบริษัท สินค้า พาร์ทเนอร์ ข่าวสาร และ Admin CMS',
+   tags:['HTML5','CSS3','JavaScript','PHP','News CMS','Responsive'],
+   thumb:null,images:[],
+   obj:'สร้างภาพลักษณ์ดิจิทัลให้บริษัท',
+   feat:['หน้าแนะนำบริษัท สินค้า และบริการ','ระบบข่าวสาร (News JSON CMS)','หน้า Our Partners','Admin Panel','Responsive Design']},
+  {id:'univance-web',cat:'website',catLabel:'Corporate Website',
+   title:'Univance Thailand — เว็บไซต์บริษัท',
+   client:'Univance Thailand Co., Ltd.',
+   desc:'เว็บไซต์บริษัท Univance พร้อม Proposal เปรียบเทียบแพ็คเกจ MA และ Video Demo สาธิตการใช้งาน',
+   tags:['HTML5','CSS3','JavaScript','Video Production'],
+   thumb:null,images:[],
+   obj:'สร้างเว็บไซต์องค์กรที่ทันสมัย พร้อมข้อเสนอ MA',
+   feat:['เว็บไซต์ Responsive','Proposal MA 3 รูปแบบ','Video Demo (Mobile) สาธิตการใช้งาน']}
+];
+
+const I=[
+  {id:'ai-cctv',catLabel:'AI Surveillance',
+   title:'AI CCTV Surveillance Solution',
+   client:'Oriental Copper Co., Ltd.',
+   desc:'โซลูชันกล้องวงจรปิดอัจฉริยะ ตรวจจับใบหน้า ความร้อน และพฤติกรรมเสี่ยง พร้อม Proposal & Presentation',
+   tags:['AI Video Analytics','NVR/XVR','Thermal Camera','IP Camera','Alert System'],
+   thumb:'โครงการที่ทำ,เอกสารเสนอโครงการต่างๆ/Oriental Copper Co., Ltd/โปรเจคก AI CCTV/AI-CCTV.png',
+   images:['โครงการที่ทำ,เอกสารเสนอโครงการต่างๆ/Oriental Copper Co., Ltd/โปรเจคก AI CCTV/AI-CCTV.png','โครงการที่ทำ,เอกสารเสนอโครงการต่างๆ/Oriental Copper Co., Ltd/โปรเจคก AI CCTV/1.png','โครงการที่ทำ,เอกสารเสนอโครงการต่างๆ/Oriental Copper Co., Ltd/โปรเจคก AI CCTV/2.png','โครงการที่ทำ,เอกสารเสนอโครงการต่างๆ/Oriental Copper Co., Ltd/โปรเจคก AI CCTV/3.png','โครงการที่ทำ,เอกสารเสนอโครงการต่างๆ/Oriental Copper Co., Ltd/โปรเจคก AI CCTV/4.png','โครงการที่ทำ,เอกสารเสนอโครงการต่างๆ/Oriental Copper Co., Ltd/โปรเจคก AI CCTV/5.png','โครงการที่ทำ,เอกสารเสนอโครงการต่างๆ/Oriental Copper Co., Ltd/โปรเจคก AI CCTV/6.png','โครงการที่ทำ,เอกสารเสนอโครงการต่างๆ/Oriental Copper Co., Ltd/โปรเจคก AI CCTV/7.png','โครงการที่ทำ,เอกสารเสนอโครงการต่างๆ/Oriental Copper Co., Ltd/โปรเจคก AI CCTV/8.png'],
+   obj:'ยกระดับความปลอดภัยในโรงงาน ด้วยระบบตรวจจับบุคคลและแจ้งเตือนภัยคุกคาม Real-time',
+   feat:['ติดตั้งกล้อง IP & Thermal Camera เชื่อม NVR Server','อัลกอริทึม AI ตรวจสอบบุคคลตามสิทธิ์เข้า-ออก','ตรวจจับอุณหภูมิร่างกายและพฤติกรรมผิดปกติ','Real-time Alert ไปยัง Security Center']},
+  {id:'spd-sap',catLabel:'ERP Integration',
+   title:'SPD-FRI Web Application & SAP Integration',
+   client:'Oriental Copper Co., Ltd.',
+   desc:'ออกแบบ Workflow & Functional Spec สำหรับระบบ SPD-FRI เชื่อมต่อ SAP ERP พร้อม Cost Sheet & Proposal',
+   tags:['SAP API','Web Application','Functional Spec','Cost Sheet'],
+   thumb:null,images:[],
+   obj:'เชื่อมต่อกระบวนการทำงานของเว็บแอปพลิเคชันเข้ากับระบบ SAP ERP ขององค์กรอย่างไร้รอยต่อ',
+   feat:['ออกแบบ SAP API Integration Architecture','จัดทำ Functional Spec & Workflow Diagram','สร้าง Cost Sheet และข้อเสนอโครงการฉบับสมบูรณ์']},
+  {id:'spc-net',catLabel:'Enterprise Network',
+   title:'Enterprise Network & Cybersecurity',
+   client:'SAHA PATHANAPIBUL PUBLIC COMPANY LIMITED',
+   desc:'ออกแบบระบบเครือข่ายและความปลอดภัยสารสนเทศใหม่ทั้งระบบ Network Diagram BOM และข้อเสนอโครงการ',
+   tags:['FortiGate','Layer 3 Switch','Network Design','BOM','Cybersecurity'],
+   thumb:'โครงการที่ทำ,เอกสารเสนอโครงการต่างๆ/SAHA PATHANAPIBUL PUBLIC COMPANY LIMITED/โปรเจครจัดทำระบบเครือข่ายและความปลอดภัยสารสนเทศใหม่/โปรเจครจัดทำระบบเครือข่ายและความปลอดภัยสารสนเทศใหม่.png',
+   images:['โครงการที่ทำ,เอกสารเสนอโครงการต่างๆ/SAHA PATHANAPIBUL PUBLIC COMPANY LIMITED/โปรเจครจัดทำระบบเครือข่ายและความปลอดภัยสารสนเทศใหม่/โปรเจครจัดทำระบบเครือข่ายและความปลอดภัยสารสนเทศใหม่.png'],
+   obj:'วางโครงสร้างเครือข่ายและ Cybersecurity ใหม่ทั้งระบบ เพื่อรองรับการขยายธุรกิจ',
+   feat:['Network Diagram ออกแบบ VLAN/Subnet ทั้งระบบ','FortiGate Firewall Failover','Layer 3 Switch Core/Distribution','BOM รายการอุปกรณ์ฉบับสมบูรณ์']},
+  {id:'namyong',catLabel:'Backup & Storage',
+   title:'Enterprise Data Storage & Backup Solution',
+   client:'NAMYONG TERMINAL PUBLIC COMPANY LIMITED',
+   desc:'ออกแบบระบบจัดเก็บและสำรองข้อมูลองค์กร (Enterprise Backup & Storage) พร้อมข้อเสนอโครงการฉบับสมบูรณ์',
+   tags:['VEEAM','NAS','Backup Strategy','Storage','BCP/DRP'],
+   thumb:'โครงการที่ทำ,เอกสารเสนอโครงการต่างๆ/NAMYONG TERMINAL PUBLIC COMPANY LIMITED/โปรเจค_ระบบจัดเก็บและสำรองข้อมูลองค์กร_นามยงเทอร์มินัล/2569 10_49_53.png',
+   images:['โครงการที่ทำ,เอกสารเสนอโครงการต่างๆ/NAMYONG TERMINAL PUBLIC COMPANY LIMITED/โปรเจค_ระบบจัดเก็บและสำรองข้อมูลองค์กร_นามยงเทอร์มินัล/2569 10_49_53.png'],
+   obj:'ออกแบบระบบสำรองข้อมูลที่เชื่อถือได้ รองรับ BCP/DRP ขององค์กร',
+   feat:['VEEAM Backup & Replication','NAS Storage Architecture','Recovery Point/Time Objective Planning','Proposal เอกสารครบถ้วน']},
+  {id:'navy',catLabel:'Government Project',
+   title:'Datacenter & Student Database System',
+   client:'โรงเรียนชุมพลทหารเรือ กรมยุทธศึกษาทหารเรือ',
+   desc:'ออกแบบและพัฒนาระบบ Datacenter สำหรับจัดเก็บข้อมูลนักเรียนทหารเรือ ครอบคลุม Server ฐานข้อมูล และโครงสร้างพื้นฐาน',
+   tags:['Server Deployment','Database Design','Datacenter','Government'],
+   thumb:'โครงการที่ทำ,เอกสารเสนอโครงการต่างๆ/โรงเรียนชุมพลทหารเรือ ยศ.ทร/โปรเจคพัฒนาระบบDatacenter ข้อมูลนักเรียนทหารเรือ/211382.jpg',
+   images:['โครงการที่ทำ,เอกสารเสนอโครงการต่างๆ/โรงเรียนชุมพลทหารเรือ ยศ.ทร/โปรเจคพัฒนาระบบDatacenter ข้อมูลนักเรียนทหารเรือ/211382.jpg','โครงการที่ทำ,เอกสารเสนอโครงการต่างๆ/โรงเรียนชุมพลทหารเรือ ยศ.ทร/โปรเจคพัฒนาระบบDatacenter ข้อมูลนักเรียนทหารเรือ/119487_0.jpg'],
+   obj:'สร้างศูนย์ข้อมูลนักเรียนทหารเรือแบบรวมศูนย์ เพื่อบริหารจัดการข้อมูลได้อย่างเป็นระบบ',
+   feat:['Server Deployment & OS Configuration','Database Design สำหรับข้อมูลนักเรียน','Datacenter Infrastructure','โครงการภาครัฐ']},
+  {id:'omoda',catLabel:'CCTV',
+   title:'CCTV System Upgrade — โรงงานใหม่',
+   client:'OMODA & JAECOO (THAILAND) CO., LTD.',
+   desc:'จัดทำ Cost Sheet และใบเสนอราคาสำหรับปรับปรุงระบบ CCTV โรงงานใหม่ ออกแบบตำแหน่งกล้อง NVR และระบบเชื่อมต่อ',
+   tags:['CCTV Design','NVR','Cost Sheet','Quotation'],
+   thumb:null,images:[],
+   obj:'ยกระดับระบบรักษาความปลอดภัยกล้องวงจรปิดครอบคลุมพื้นที่โรงงานใหม่',
+   feat:['ออกแบบผังติดตั้งกล้อง CCTV และ Server NVR','จัดทำ Cost Sheet คำนวณต้นทุนอุปกรณ์และค่าแรง','ออกเอกสารใบเสนอราคา (Quotation) ฉบับทางการ']},
+  {id:'gorilla',catLabel:'Fiber Optic',
+   title:'Network & Fiber Optic Rack Installation',
+   client:'Gorilla Technology Group Inc.',
+   desc:'ติดตั้งอุปกรณ์เครือข่าย Fiber Optic Rack สำหรับโครงการ One Bangkok ออกแบบ ติดตั้ง และทดสอบสายใยแก้วนำแสง',
+   tags:['Fiber Optic','Network Rack','One Bangkok'],
+   thumb:null,images:[],
+   obj:'ติดตั้งโครงสร้างพื้นฐานสายไฟเบอร์ออพติกสำหรับโครงการระดับเมกะโปรเจค',
+   feat:['เดินสายและสปลิสสาย Fiber Optic High-speed','ติดตั้งตู้ Rack และอุปกรณ์เครือข่าย','ทดสอบสัญญาณด้วย OTDR']},
+  {id:'scs',catLabel:'Fiber Optic',
+   title:'Fiber Optic Handover — งานส่งมอบสายไฟเบอร์',
+   client:'SIAM COMMERCIAL SEAPORT CO., LTD.',
+   desc:'เดินสาย Fiber Optic เชื่อมต่อระหว่างอาคาร พร้อม Handover Report และผลทดสอบความเร็ว',
+   tags:['Fiber Optic Splicing','Handover Report','Speed Test'],
+   thumb:null,images:[],
+   obj:'เชื่อมต่อเครือข่ายความเร็วสูงระหว่างอาคารภายในท่าเรือ',
+   feat:['เดินสายไฟเบอร์ออพติกข้ามอาคาร','สปลิสท์สายและทดสอบความเร็วการส่งข้อมูล','จัดทำรายงาน Handover Report สรุปส่งมอบงาน']},
+  {id:'lrt',catLabel:'Outdoor Wi-Fi',
+   title:'Outdoor Wi-Fi AP Installation — เสาถัก',
+   client:'LAEMCHABANG INTERNATIONAL RO-RO TERMINAL LIMITED',
+   desc:'ออกแบบและเดินสายติดตั้ง AP Outdoor บนเสาถักสูง ขยายสัญญาณ Wi-Fi ให้ครอบคลุมพื้นที่ท่าเรือ พร้อม HLD',
+   tags:['Altai Super WiFi','Outdoor AP','HLD Design','Cost Sheet'],
+   thumb:null,images:[],
+   obj:'ขยายสัญญาณ Wi-Fi ความเร็วสูงครอบคลุมพื้นที่ลานจอดเรือและลานตู้สินค้า',
+   feat:['ติดตั้ง Access Point ทนสภาพอากาศบนเสาถักสูง','ออกแบบ High-Level Design (HLD)','คำนวณ Cost Sheet และงบประมาณโครงการ']},
+  {id:'tpf',catLabel:'Multi-Infrastructure',
+   title:'AP, CCTV 51+8 ตัว & Fiber Optic',
+   client:'THAI PRESIDENT FOODS PUBLIC COMPANY LIMITED',
+   desc:'ติดตั้ง Access Point, กล้อง CCTV 51 ตัว ย้ายอีก 8 ตัว พร้อมเดินสาย Fiber Optic สำหรับโรงงานผลิตอาหาร',
+   tags:['CCTV','Fiber Optic','AP Installation','Factory'],
+   thumb:null,images:[],
+   obj:'ปรับปรุงและขยายระบบรักษาความปลอดภัยพร้อมเครือข่ายไร้สายในโรงงาน',
+   feat:['ติดตั้งและย้ายจุดกล้อง CCTV รวม 59 จุด','เดินสายสัญญาณและสายไฟเบอร์ออพติก','ติดตั้ง Access Point ในพื้นที่การผลิต']}
+];
+
+// ═══ PROJECT TRANSLATIONS FOR 5 LANGUAGES ═══
+const projectTrans = {
+  en: {
+    crm: {
+      title: "EoloSystem — Pre-sales & Quotation Management",
+      desc: "Comprehensive sales management system for Pre-sales team, covering requirement intake, Cost Sheet calculation (costs & margin), engineering job assignment, Quotation generation, and approval workflow. Features role-based access for Sales, Purchasing, and Management.",
+      obj: "Eliminate quotation delays, allowing the presale team to design solutions, calculate pricing, and send accurate quotations rapidly.",
+      feat: ["Dashboard showing pending requirements, job assignments, and quotations", "Cost Sheet Calculator for automatic product costs, installation, service fees, and margin calculation", "PDF Quotation Generator with digital signature support", "Multi-level approval workflow", "Role-based Access: Sales, Presale Engineer, Purchasing, Admin, Supervisor"]
+    },
+    telesale: {
+      title: "AI Tele-Sales — Smart Automated Calling System",
+      desc: "AI call center platform for automated outbound sales calling. Integrates LLM API (Grok) for natural conversation AI Agents, featuring Lead Management, Knowledge Base, and Call Transcript records.",
+      obj: "Automate outbound sales calls with AI, reducing labor costs and increasing new customer outreach by over 5x daily.",
+      feat: ["Real-time voice conversation AI Agent using Grok LLM API", "Lead Management with status tracking", "Knowledge Base for products, FAQs, and sales scripts", "Call Log & Transcript auto-recording and transcription", "Adapter Pattern supporting multiple telephony providers"]
+    },
+    tms: {
+      title: "TMS — Transport Management & Defects Dashboard",
+      desc: "Delivery planning system and defect report dashboard for TPI POLENE. Features CSV/Excel data import, vehicle queue allocation, and executive analytics.",
+      obj: "Optimize delivery route planning for punctuality, minimize cargo damage, and provide analytics data for executive decision-making.",
+      feat: ["Daily CSV/Excel delivery plan import", "Vehicle dispatch queue allocation with pickup/dropoff logs", "Defect entry recording with photo attachments", "Graphical executive dashboard summary"]
+    },
+    vehicle: {
+      title: "Vehicle Booking — Corporate Fleet Reservation",
+      desc: "Enterprise vehicle booking web application for trip scheduling, driver dispatching, and online approval workflow, eliminating paper forms.",
+      obj: "Replace paper-based vehicle booking, reduce administrative steps, and prevent scheduling conflicts.",
+      feat: ["Online vehicle booking form with date, time, and destination", "Supervisor approval workflow", "Driver dispatch queue management", "Odometer mileage and fuel cost recording", "Web-based automated installer"]
+    },
+    defects: {
+      title: "KDM Defects Report — Damage Report Converter",
+      desc: "Excel defect data import and conversion web system creating tabular and graphical summary reports with role-based login.",
+      obj: "Automate manual Excel defect reporting into a web-based automated system.",
+      feat: ["Automated Excel data import via PhpSpreadsheet", "CRUD defect entry management", "Login & Role-based Access Control", "Summary dashboard with filtering and search"]
+    },
+    'intranet-tm': {
+      title: "Intranet Portal — Techno-Metal Internal Communications",
+      desc: "Corporate intranet for internal news announcements, MSD document repository, QA system, and vehicle/meeting room booking in 2 languages (TH/JP).",
+      obj: "Centralize internal communications and reduce routine email overhead.",
+      feat: ["News announcement system", "MSD document library", "Admin console for content and user management", "Bilingual support (Thai / Japanese)"]
+    },
+    'intranet-ls': {
+      title: "Intranet Portal — Leistritz Internal Information",
+      desc: "Self-hosted corporate intranet using JSON Data Store (no MySQL required) for employee info and document management.",
+      obj: "Provide a lightweight, self-hosted internal document and info portal.",
+      feat: ["Main dashboard displaying core corporate info", "Admin management panel", "Lightweight JSON-based Data Store", "Multi-user access support"]
+    },
+    training: {
+      title: "Training & Exam — Online LMS & Evaluation System",
+      desc: "Online Learning Management System (LMS) for employee training courses, learning materials, and online examination assessments.",
+      obj: "Build an interactive online training platform for onboarding and skill development.",
+      feat: ["Categorized training course catalog", "Online examination & testing system", "Interactive learning materials", "Responsive design for all devices"]
+    },
+    'eolo-web': {
+      title: "EOLO Technology — Corporate Website",
+      desc: "Official corporate website featuring company profile, products/services, partners, news CMS, and admin portal.",
+      obj: "Establish a modern digital presence for the company.",
+      feat: ["Company, product, and service showcase", "News CMS system (JSON-based)", "Our Partners section", "Admin Management Panel", "Responsive design"]
+    },
+    'univance-web': {
+      title: "Univance Thailand — Corporate Website",
+      desc: "Corporate website for Univance Thailand with MA package comparison proposal and mobile video demonstration.",
+      obj: "Create a modern corporate web presence with maintenance proposals.",
+      feat: ["Responsive corporate site", "3 MA package comparison proposals", "Mobile video demo showcase"]
+    },
+    'ai-cctv': {
+      title: "AI CCTV Surveillance Solution",
+      desc: "Smart CCTV solution with facial recognition, thermal sensing, and risk detection, complete with technical proposal and presentation.",
+      obj: "Enhance factory safety with real-time person detection and threat alert systems.",
+      feat: ["IP & Thermal Camera deployment with NVR server integration", "AI facial recognition for access control", "Body temperature & abnormal behavior detection", "Real-time alert dispatch to Security Center"]
+    },
+    'spd-sap': {
+      title: "SPD-FRI Web App & SAP Integration",
+      desc: "Workflow design and Functional Specification for SPD-FRI system integrated with SAP ERP, including cost sheets and proposals.",
+      obj: "Integrate custom web workflows seamlessly with SAP enterprise ERP.",
+      feat: ["SAP API integration design", "Functional Spec & Workflow modeling", "Cost Sheet & Technical proposal"]
+    },
+    'spc-net': {
+      title: "Enterprise Network & Cybersecurity",
+      desc: "Complete network redesign and cybersecurity architecture, featuring network diagrams, BOM, and technical proposals.",
+      obj: "Overhaul network topology and security infrastructure to support business expansion.",
+      feat: ["VLAN/Subnet network topology design", "FortiGate Firewall failover configuration", "Layer 3 Switch Core/Distribution deployment", "Complete Bill of Materials (BOM)"]
+    },
+    namyong: {
+      title: "Enterprise Data Storage & Backup Solution",
+      desc: "Enterprise backup and storage architecture design with complete technical proposal for business continuity.",
+      obj: "Design reliable backup architecture adhering to enterprise DRP/BCP standards.",
+      feat: ["VEEAM Backup & Replication", "NAS storage architecture design", "RPO / RTO disaster recovery planning", "Full proposal documentation"]
+    },
+    navy: {
+      title: "Datacenter & Student Database System",
+      client: "Naval Rating School, Naval Education Dept.",
+      desc: "Datacenter infrastructure design and student database management system for naval cadets.",
+      obj: "Centralize naval cadet information management with secure datacenter infrastructure.",
+      feat: ["Server deployment & OS hardening", "Cadet database architecture", "Datacenter infrastructure deployment", "Government compliance"]
+    },
+    omoda: {
+      title: "CCTV System Upgrade — New Factory",
+      desc: "Cost sheet and quotation preparation for new factory CCTV system upgrade, including NVR placement and network design.",
+      obj: "Upgrade factory surveillance infrastructure for high-definition monitoring.",
+      feat: ["CCTV camera placement design", "NVR server setup", "Cost sheet & quotation drafting"]
+    },
+    gorilla: {
+      title: "Network & Fiber Optic Rack Installation",
+      desc: "Fiber optic rack and network equipment installation for One Bangkok project, including cabling testing.",
+      obj: "Deliver high-speed optical fiber infrastructure for mega commercial project.",
+      feat: ["Fiber optic cabling & splicing", "Network rack installation", "OTDR speed testing"]
+    },
+    scs: {
+      title: "Fiber Optic Handover Project",
+      desc: "Inter-building fiber optic deployment with handover reports and OTDR speed test documentation.",
+      obj: "Connect seaport terminal buildings with high-speed fiber backbone.",
+      feat: ["Fiber optic splicing & termination", "Handover report documentation", "Signal & speed testing"]
+    },
+    lrt: {
+      title: "Outdoor Wi-Fi AP Installation",
+      desc: "High-mast tower outdoor Access Point installation and cabling for seaport terminal coverage.",
+      obj: "Expand Wi-Fi coverage across seaport container terminal.",
+      feat: ["Altai Super WiFi outdoor AP deployment", "High-mast tower cabling", "HLD design & cost estimation"]
+    },
+    tpf: {
+      title: "AP, CCTV (51+8 Units) & Fiber Optic",
+      desc: "Installation of 51 new CCTV cameras, 8 relocated cameras, outdoor Access Points, and fiber optic cabling for food processing factory.",
+      obj: "Upgrade factory security monitoring and network infrastructure.",
+      feat: ["51+8 CCTV camera installation & migration", "Fiber optic backbone cabling", "Factory Access Point deployment"]
+    }
+  },
+  cn: {
+    crm: {
+      title: "EoloSystem — 售前与报价管理系统",
+      desc: "面向售前团队的全流程销售管理系统，涵盖需求接收、成本表计算（成本与利润率）、工程师任务分配、报价单生成及审批流程。支持销售、采购和管理人员的角色权限控制。",
+      obj: "解决报价延迟问题，使售前团队能够快速精准地设计方案、计算价格并出具报价单。",
+      feat: ["仪表板展示待处理需求、任务分配和报价单", "成本表计算器自动计算产品、安装、服务费及利润率", "带数字签名的PDF报价单生成器", "多级审批工作流", "基于角色的权限控制：销售、售前工程师、采购、管理员、主管"]
+    },
+    telesale: {
+      title: "AI Tele-Sales — 智能电话销售系统",
+      desc: "用于自动外呼销售的AI呼叫中心平台。集成Grok LLM API实现自然语音对话AI Agent，具备客户线索管理、知识库及通话记录转写功能。",
+      obj: "通过AI实现外呼电话自动化，降低人工成本，每日新客户触达量提高5倍以上。",
+      feat: ["基于Grok LLM API的实时语音对话AI Agent", "带状态跟踪的线索管理", "产品 FAQ 及销售话术知识库", "通话记录与自动转写文本", "支持更换电信运营商的适配器模式"]
+    },
+    tms: {
+      title: "TMS — 运输管理与缺陷数据看板",
+      desc: "TPI POLENE 的配送计划与货物损坏报告看板，支持CSV/Excel数据导入、车辆排队调度及高管数据统计。",
+      obj: "优化配送路线规划，降低货物损坏率，为高管决策提供数据支持。",
+      feat: ["每日CSV/Excel配送计划导入", "车辆调度排队与接送日志记录", "带照片附件的缺陷录入", "图表化高管数据看板汇总"]
+    },
+    vehicle: {
+      title: "Vehicle Booking — 企业公车预约系统",
+      desc: "企业公车预约Web应用，用于行程调度、司机派单及在线审批流程，取代纸质申请表。",
+      obj: "取代纸质公车预约，简化行政流程，防止行程冲突。",
+      feat: ["带日期、时间和目的地的在线预约表单", "主管在线审批工作流", "司机派单队列管理", "里程数及燃料费用记录", "基于Web的自动安装程序"]
+    },
+    defects: {
+      title: "KDM Defects Report — 缺陷报告转换系统",
+      desc: "Excel缺陷数据导入与转换Web系统，生成表格和图表汇总报告，支持分权登录。",
+      obj: "将手动Excel缺陷报告转换为Web自动化系统。",
+      feat: ["通过PhpSpreadsheet自动导入Excel数据", "缺陷条目的CRUD管理", "登录及基于角色的权限控制", "带筛选和搜索的汇总看板"]
+    },
+    'intranet-tm': {
+      title: "Intranet Portal — Techno-Metal 内部通信系统",
+      desc: "企业内部网，用于新闻公告、MSD文档库、QA系统及车辆/会议室预约，支持中/日/泰双语。",
+      obj: "集中企业内部通信，减少日常电子邮件开销。",
+      feat: ["新闻公告发布系统", "MSD文档资料库", "内容及用户管理后台", "双语支持（泰语/日语）"]
+    },
+    'intranet-ls': {
+      title: "Intranet Portal — Leistritz 内部信息系统",
+      desc: "使用JSON数据存储（无需MySQL）的企业内部网，用于员工信息与文档管理。",
+      obj: "提供轻量级自托管内部文档与信息门户。",
+      feat: ["展示核心企业信息的主看板", "管理员管理后台", "轻量级基于JSON的数据存储", "多用户访问支持"]
+    },
+    training: {
+      title: "Training & Exam — 在线培训与考试系统",
+      desc: "用于员工培训课程、学习材料及在线考试评估的LMS在线学习管理系统。",
+      obj: "构建互动式在线培训平台，用于新员工入职与技能提升。",
+      feat: ["分类培训课程目录", "在线考试与测评系统", "互动式学习材料", "适配所有设备的响应式设计"]
+    },
+    'eolo-web': {
+      title: "EOLO Technology — 公司官网",
+      desc: "EOLO Technology 官方企业网站，包含公司介绍、产品与服务、合作伙伴、新闻CMS及管理后台。",
+      obj: "为公司建立现代化的数字化形象。",
+      feat: ["公司、产品及服务展示", "基于JSON的新闻CMS系统", "合作伙伴展示区", "管理后台", "响应式设计"]
+    },
+    'univance-web': {
+      title: "Univance Thailand — 公司官网",
+      desc: "Univance Thailand 企业网站，附带MA服务包对比提案及移动端演示视频。",
+      obj: "创建附带维护提案的现代化企业网站。",
+      feat: ["响应式企业网站", "3种MA服务包对比提案", "移动端视频演示 showcase"]
+    },
+    'ai-cctv': {
+      title: "AI CCTV 智能监控解决方案",
+      desc: "具备人脸识别、热成像与风险检测的智能CCTV方案，附带技术提案与演示文稿。",
+      obj: "通过实时人员检测与威胁报警系统提升工厂安全性。",
+      feat: ["IP与热成像摄像机部署及NVR服务器集成", "用于出入控制的AI人脸识别", "体温与异常行为检测", "实时报警推送至安防中心"]
+    },
+    'spd-sap': {
+      title: "SPD-FRI Web 应用与 SAP 集成",
+      desc: "与 SAP ERP 集成的 SPD-FRI 系统工作流设计与功能规格书，包含成本表与提案。",
+      obj: "将自定义Web工作流与SAP企业ERP无缝集成。",
+      feat: ["SAP API 集成架构设计", "功能规格书与工作流建模", "成本表与技术提案"]
+    },
+    'spc-net': {
+      title: "企业网络与网络安全重构",
+      desc: "完整的网络重构与网络安全架构设计，包含网络拓扑图、BOM清单及技术提案。",
+      obj: "重构网络拓扑与安全基础设施以支持业务扩展。",
+      feat: ["VLAN/子网网络拓扑设计", "FortiGate防火墙双机热备", "Layer 3 核心/汇聚交换机部署", "完整物料清单 (BOM)"]
+    },
+    namyong: {
+      title: "企业数据存储与备份解决方案",
+      desc: "企业级备份与存储架构设计，附带完整的业务连续性技术提案。",
+      obj: "设计符合企业DRP/BCP标准的可靠备份架构。",
+      feat: ["VEEAM Backup & Replication", "NAS存储架构设计", "RPO / RTO 灾难恢复规划", "完整提案文档"]
+    },
+    navy: {
+      title: "数据中心与学员数据库系统",
+      client: "海军士官学校, 海军教育局",
+      desc: "海军学员数据中心基础设施设计与学员数据库管理系统。",
+      obj: "通过安全的数据中心基础设施集中管理海军学员信息。",
+      feat: ["服务器部署与系统加固", "学员数据库架构设计", "数据中心基础设施部署", "符合政府标准"]
+    },
+    omoda: {
+      title: "CCTV 监控系统升级 — 新工厂",
+      desc: "新工厂CCTV系统升级的成本表与报价单编制，包含NVR位置规划与网络设计。",
+      obj: "升级工厂监控基础设施以实现高清监控。",
+      feat: ["CCTV摄像机布点设计", "NVR服务器安装配置", "成本表与报价单编制"]
+    },
+    gorilla: {
+      title: "网络与光纤机架安装工程",
+      desc: "One Bangkok 项目的光纤机架与网络设备安装，包含光缆熔接与测试。",
+      obj: "为大型商业项目交付高速光纤基础设施。",
+      feat: ["光纤铺设与熔接", "网络机架安装", "OTDR测试"]
+    },
+    scs: {
+      title: "光纤工程交付项目",
+      desc: "楼宇间光纤铺设，附带交付报告及OTDR测速文档。",
+      obj: "用高速光纤主干连接港口码头各楼宇。",
+      feat: ["光纤熔接与端接", "交付报告文档", "信号与测速测试"]
+    },
+    lrt: {
+      title: "室外 Wi-Fi AP 铁塔安装工程",
+      desc: "港口码头高杆塔室外AP安装与布线，扩展无线网络覆盖。",
+      obj: "扩大集装箱码头的 Wi-Fi 覆盖范围。",
+      feat: ["Altai Super WiFi 室外AP部署", "高杆塔布线工程", "HLD设计与成本估算"]
+    },
+    tpf: {
+      title: "AP、CCTV (51+8台) 及光纤工程",
+      desc: "食品工厂51台新摄像机安装、8台迁移、室外AP及光纤布线。",
+      obj: "升级工厂安防监控与无线网络基础架构。",
+      feat: ["51+8台CCTV摄像机安装与迁移", "光纤主干布线", "生产区Access Point部署"]
+    }
+  },
+  jp: {
+    crm: {
+      title: "EoloSystem — プリセールス＆見積管理システム",
+      desc: "要件ヒアリング、コストシート計算（コスト・利益率）、エンジニアへのタスク割り当て、見積書発行、承認ワークフローをカバーするプリセールスチーム向け統合営業管理システム。営業、購買、管理者向けアクセス権限管理に対応。",
+      obj: "見積作成の遅延を解消し、プリセールスチームがソリューション設計、価格計算、正確な見積発行を迅速に行えるようにする。",
+      feat: ["保留中の要件、タスク割り当て、見積を表示するダッシュボード", "製品コスト、設置費、サービス料、利益率を自動計算するコストシート計算機", "デジタル署名対応PDF見積書ジェネレーター", "多段階承認ワークフロー", "役割ベースのアクセス制御：営業、プリセールス、購買、管理者、スーパーバイザー"]
+    },
+    telesale: {
+      title: "AI Tele-Sales — スマート自動発信システム",
+      desc: "自動アウトバウンド営業電話のためのAIコールセンタープラットフォーム。Grok LLM APIを統合し自然な会話を行うAIエージェント、リード管理、ナレッジベース、通話録音テキスト化機能を搭載。",
+      obj: "AIによるアウトバウンドコール自動化で人件費を削減し、新規顧客アプローチ数を日あたり5倍以上に増加。",
+      feat: ["Grok LLM APIを使用したリアルタイム音声会話AIエージェント", "ステータス追跡機能付きリード管理", "製品FAQ・営業スクリプトナレッジベース", "通話ログ・自動録音およびテキスト化", "複数電話回線プロバイダー対応アダプターパターン"]
+    },
+    tms: {
+      title: "TMS — 配送管理＆欠陥ダッシュボード",
+      desc: "TPI POLENE向けの配送計画システムおよび損傷レポートダッシュボード。CSV/Excelデータインポート、配車キュー割り当て、役員向け統計サマリーを網羅。",
+      obj: "配送ルート計画を最適化して時間厳守を実現し、貨物損傷を最小限に抑え、経営判断のための統計データを提供。",
+      feat: ["日次CSV/Excel配送計画インポート", "積卸ログ付き配車キュー割り当て", "写真添付付き損傷エントリー記録", "グラフ化された役員向けダッシュボードサマリー"]
+    },
+    vehicle: {
+      title: "Vehicle Booking — 社用車予約システム",
+      desc: "運行スケジュール、ドライバー手配、オンライン承認ワークフローを管理し、紙の申請書を廃止する社用車予約Webアプリケーション。",
+      obj: "紙ベースの車両予約を置き換え、事務手続きを削減し、スケジュールの重複を防止。",
+      feat: ["日時・目的地指定オンライン車両予約フォーム", "上司向け承認ワークフロー", "ドライバー手配キュー管理", "走行距離および燃料費記録", "Webベースの自動インストーラー"]
+    },
+    defects: {
+      title: "KDM Defects Report — 欠陥レポート変換システム",
+      desc: "Excelの欠陥データをインポート・変換し、表およびグラフのサマリーレポートを作成するWebシステム。権限別ログイン対応。",
+      obj: "手動のExcel欠陥レポート作成をWeb自動化システムに変換。",
+      feat: ["PhpSpreadsheetによるExcelデータの自動インポート", "欠陥項目のCRUD管理", "ログインおよび役割ベースのアクセス制御", "フィルタリング・検索機能付きサマリーダッシュボード"]
+    },
+    'intranet-tm': {
+      title: "Intranet Portal — Techno-Metal 内部コミュニケーション",
+      desc: "社内ニュース告知、MSD文書ライブラリ、QAシステム、車両・会議室予約をカバーする社内イントラネット（タイ語/日本語対応）。",
+      obj: "社内コミュニケーションを一本化し、日常的なメールのやり取りを削減。",
+      feat: ["ニュース告知システム", "MSD文書ライブラリ", "コンテンツ・ユーザー管理用管理者コンソール", "バイリンガル対応（タイ語/日本語）"]
+    },
+    'intranet-ls': {
+      title: "Intranet Portal — Leistritz 社内情報ポータル",
+      desc: "JSONデータストア（MySQL不要）を使用し、従業員情報や社内文書を管理するセルフホスト型イントラネット。",
+      obj: "軽量でセルフホスト可能な社内情報ポータルを提供。",
+      feat: ["主要な企業情報を表示するメインダッシュボード", "管理者管理パネル", "軽量なJSONベースのデータストア", "マルチユーザーアクセス対応"]
+    },
+    training: {
+      title: "Training & Exam — オンライン研修＆試験システム",
+      desc: "従業員向け研修コース、学習教材、オンライン試験評価を実施するためのLMSオンライン学習管理システム。",
+      obj: "新入社員のオンボーディングとスキル向上のためのインタラクティブなオンライン研修プラットフォームを構築。",
+      feat: ["カテゴリ別研修コースカタログ", "オンライン試験・テストシステム", "インタラクティブ学習教材", "全デバイス対応レスポンシブデザイン"]
+    },
+    'eolo-web': {
+      title: "EOLO Technology — 企業ウェブサイト",
+      desc: "会社概要、製品・サービス、パートナー、ニュースCMS、管理ポータルを備えた公式企業ウェブサイト。",
+      obj: "企業の現代的なデジタルプレゼンスを確立。",
+      feat: ["会社・製品・サービス紹介", "ニュースCMSシステム（JSONベース）", "パートナー企業紹介", "管理パネル", "レスポンシブデザイン"]
+    },
+    'univance-web': {
+      title: "Univance Thailand — 企業ウェブサイト",
+      desc: "MAパッケージ比較提案およびモバイル動画デモを備えたUnivance Thailandの企業ウェブサイト。",
+      obj: "保守提案を備えた現代的な企業Webサイトを作成。",
+      feat: ["レスポンシブ企業サイト", "3種類のMAパッケージ比較提案", "モバイル動画デモ showcase"]
+    },
+    'ai-cctv': {
+      title: "AI CCTV 監視ソリューション",
+      desc: "顔認証、熱感知、リスク検知機能を備えたスマートCCTVソリューション。提案書およびプレゼンテーション資料付き。",
+      obj: "リアルタイム人物検知と脅威アラートシステムにより工場の安全性を向上。",
+      feat: ["IP・サーマルカメラ設置とNVRサーバー統合", "入退室管理用AI顔認証", "体温＆異常行動検知", "警備センターへのリアルタイムアラート送信"]
+    },
+    'spd-sap': {
+      title: "SPD-FRI Webアプリ＆SAP連携",
+      desc: "SAP ERPと連携するSPD-FRIシステムのワークフロー設計および機能仕様書。コストシートおよび提案書付き。",
+      obj: "カスタムWebワークフローをSAP企業ERPとシームレスに統合。",
+      feat: ["SAP API連携アーキテクチャ設計", "機能仕様書＆ワークフローモデリング", "コストシート＆技術提案書"]
+    },
+    'spc-net': {
+      title: "エンタープライズネットワーク＆セキュリティ構築",
+      desc: "ネットワーク構成図、BOM、技術提案書を含む、ネットワークおよび情報セキュリティシステムの全面的再構築。",
+      obj: "事業拡大に対応するため、ネットワーク構成とセキュリティ基盤を刷新。",
+      feat: ["VLAN/サブネット構成設計", "FortiGateファイアウォール冗長化", "L3コア/ディストリビューションスイッチ導入", "完全な部材リスト (BOM)"]
+    },
+    namyong: {
+      title: "企業向けデータストレージ＆バックアップソリューション",
+      desc: "事業継続計画（BCP）に対応した企業向けバックアップ＆ストレージ構成設計および提案書。",
+      obj: "企業のDRP/BCP基準に準拠した信頼性の高いバックアップ構成を設計。",
+      feat: ["VEEAM Backup & Replication", "NASストレージ構成設計", "RPO / RTO 災害復旧計画", "完全な提案ドキュメント"]
+    },
+    navy: {
+      title: "データセンター＆学生データベースシステム",
+      client: "海軍下士官学校, 海軍教育局",
+      desc: "海軍学生データを管理するためのデータセンター基盤設計およびデータベース管理システム。",
+      obj: "安全なデータセンターインフラで海軍学生情報を一元管理。",
+      feat: ["サーバー構築＆OSセキュリティ強化", "学生データベース設計", "データセンターインフラ構築", "政府基準準拠"]
+    },
+    omoda: {
+      title: "CCTV 監視システムアップグレード — 新工場",
+      desc: "新工場のCCTVシステム改善に向けたコストシート・見積書作成、NVR配置およびネットワーク設計。",
+      obj: "高画質監視のため工場の監視インフラをアップグレード。",
+      feat: ["CCTVカメラ配置設計", "NVRサーバー構築", "コストシート＆見積書作成"]
+    },
+    gorilla: {
+      title: "ネットワーク＆光ファイバーラック施工工程",
+      desc: "One Bangkokプロジェクト向け光ファイバーラックおよびネットワーク機器の施工・光接続テスト。",
+      obj: "大型商業プロジェクト向けに高速光ファイバーインフラを提供。",
+      feat: ["光ファイバー敷設＆融着接続", "ネットワークラック設置", "OTDR測定テスト"]
+    },
+    scs: {
+      title: "光ファイバー引渡工程",
+      desc: "建屋間光ファイバー敷設、引渡レポートおよびOTDR速度テストドキュメント作成。",
+      obj: "港湾ターミナル内の建屋間を高速光バックボーンで接続。",
+      feat: ["光ファイバー融着＆端末処理", "引渡レポート作成", "信号＆速度測定テスト"]
+    },
+    lrt: {
+      title: "屋外 Wi-Fi AP 鉄塔設置工程",
+      desc: "港湾ターミナルエリアをカバーするため、高所鉄塔への屋外AP設置および配線工事。",
+      obj: "コンテナターミナル全体のWi-Fiエリアを拡大。",
+      feat: ["Altai Super WiFi 屋外AP設置", "高所鉄塔配線工事", "HLD設計＆コスト見積もり"]
+    },
+    tpf: {
+      title: "AP、CCTV (51+8台) ＆光ファイバー工程",
+      desc: "食品工場向けにCCTVカメラ51台新設、8台移设、屋外APおよび光ファイバー配線工事。",
+      obj: "工場内の防犯監視および無線ネットワーク基盤を強化。",
+      feat: ["51+8台のCCTVカメラ設置・移设", "光ファイバー幹線配線", "製造エリアへのAccess Point設置"]
+    }
+  },
+  in: {
+    crm: {
+      title: "EoloSystem — प्री-सेल्स और कोटेशन प्रबंधन",
+      desc: "प्री-सेल्स टीम के लिए व्यापक बिक्री प्रबंधन प्रणाली, जिसमें आवश्यकताएं प्राप्त करना, लागत पत्रक (लागत और मार्जिन) की गणना, इंजीनियरों को कार्य सौंपना, कोटेशन बनाना और अनुमोदन वर्कफ़्लो शामिल हैं।",
+      obj: "कोटेशन में देरी को समाप्त करना, जिससे प्री-सेल टीम त्वरित समाधान डिज़ाइन और सटीक कोटेशन भेज सके।",
+      feat: ["लंबित आवश्यकताओं और कोटेशन को दर्शाने वाला डैशबोर्ड", "उत्पाद लागत और मार्जिन गणना के लिए स्वचालित कैलकुलेटर", "डिजिटल हस्ताक्षर के साथ पीडीएफ कोटेशन जनरेटर", "बहु-स्तरीय अनुमोदन कार्यप्रवाह", "भूमिका-आधारित पहुंच नियंत्रण"]
+    },
+    telesale: {
+      title: "AI Tele-Sales — स्मार्ट स्वचालित कॉलिंग सिस्टम",
+      desc: "स्वचालित आउटबाउंड बिक्री कॉल के लिए एआई कॉल सेंटर प्लेटफॉर्म। प्राकृतिक आवाज बातचीत के लिए Grok LLM API को एकीकृत करता है।",
+      obj: "एआई के साथ आउटबाउंड बिक्री कॉल को स्वचालित करना, श्रम लागत को कम करना।",
+      feat: ["Grok LLM API का उपयोग करके रीयल-टाइम वॉयस एआई एजेंट", "स्थिति ट्रैकिंग के साथ लीड प्रबंधन", "उत्पाद अक्सर पूछे जाने वाले प्रश्न ज्ञान आधार", "कॉल लॉग और स्वचालित प्रतिलेखन", "एडेप्टर पैटर्न बहु-प्रदाता समर्थन"]
+    },
+    tms: {
+      title: "TMS — परिवहन प्रबंधन और दोष डैशबोर्ड",
+      desc: "TPI POLENE के लिए डिलीवरी योजना प्रणाली और दोष रिपोर्ट डैशबोर्ड। CSV/Excel डेटा आयात और वाहन कतार आवंटन शामिल है।",
+      obj: "समय की पाबंदी के लिए डिलीवरी मार्ग योजना को अनुकूलित करना और निर्णय लेने के लिए डेटा प्रदान करना।",
+      feat: ["दैनिक CSV/Excel वितरण योजना आयात", "वाहन प्रेषण कतार आवंटन", "फोटो संलग्नक के साथ दोष प्रविष्टि", "ग्राफिकल कार्यकारी डैशबोर्ड सारांश"]
+    },
+    vehicle: {
+      title: "Vehicle Booking — कॉर्पोरेट वाहन आरक्षण",
+      desc: "यात्रा शेड्यूलिंग, ड्राइवर प्रेषण और ऑनलाइन अनुमोदन वर्कफ़्लो के लिए एंटरप्राइज़ वाहन बुकिंग वेब एप्लिकेशन।",
+      obj: "कागज आधारित वाहन बुकिंग को बदलना और शेड्यूलिंग संघर्षों को रोकना।",
+      feat: ["दिनांक और गंतव्य के साथ ऑनलाइन वाहन बुकिंग फॉर्म", "पर्यवेक्षक अनुमोदन कार्यप्रवाह", "ड्राइवर प्रेषण कतार प्रबंधन", "ओडोमीटर माइलेज और ईंधन लागत रिकॉर्डिंग", "वेब-आधारित स्वचालित इंस्टॉलर"]
+    },
+    defects: {
+      title: "KDM Defects Report — क्षति रिपोर्ट कनवर्टर",
+      desc: "एक्सेल दोष डेटा आयात और रूपांतरण वेब प्रणाली जो भूमिका-आधारित लॉगिन के साथ रिपोर्ट बनाती है।",
+      obj: "मैनुअल एक्सेल दोष रिपोर्टिंग को वेब-आधारित स्वचालित प्रणाली में बदलना।",
+      feat: ["PhpSpreadsheet के माध्यम से स्वचालित एक्सेल डेटा आयात", "CRUD दोष प्रविष्टि प्रबंधन", "लॉगिन और भूमिका-आधारित पहुंच नियंत्रण", "फ़िल्टरिंग के साथ सारांश डैशबोर्ड"]
+    },
+    'intranet-tm': {
+      title: "Intranet Portal — टेक्नो-मेटल आंतरिक संचार",
+      desc: "आंतरिक समाचार घोषणाओं, दस्तावेज रिपोजिटरी और वाहन/बैठक कक्ष बुकिंग के लिए कॉर्पोरेट इंट्रानेट।",
+      obj: "आंतरिक संचार को केंद्रित करना और ईमेल ओवरहेड को कम करना।",
+      feat: ["समाचार घोषणा प्रणाली", "दस्तावेज़ पुस्तकालय", "सामग्री और उपयोगकर्ता प्रबंधन व्यवस्थापक कंसोल", "द्विभाषी समर्थन"]
+    },
+    'intranet-ls': {
+      title: "Intranet Portal — लीस्ट्रिट्ज़ आंतरिक जानकारी",
+      desc: "कर्मचारी जानकारी और दस्तावेज़ प्रबंधन के लिए JSON डेटा स्टोर का उपयोग करने वाला इंट्रानेट।",
+      obj: "एक हल्का, स्व-होस्टेड आंतरिक दस्तावेज़ और सूचना पोर्टल प्रदान करना।",
+      feat: ["मुख्य कॉर्पोरेट जानकारी प्रदर्शित करने वाला मुख्य डैशबोर्ड", "व्यवस्थापक प्रबंधन पैनल", "हल्का JSON-आधारित डेटा स्टोर", "बहु-उपयोगकर्ता पहुंच समर्थन"]
+    },
+    training: {
+      title: "Training & Exam — ऑनलाइन परीक्षा प्रणाली",
+      desc: "कर्मचारी प्रशिक्षण पाठ्यक्रमों और ऑनलाइन परीक्षा मूल्यांकन के लिए एलएमएस ऑनलाइन लर्निंग मैनेजमेंट सिस्टम।",
+      obj: "कौशल विकास के लिए एक इंटरेक्टिव ऑनलाइन प्रशिक्षण मंच का निर्माण।",
+      feat: ["वर्गीकृत प्रशिक्षण पाठ्यक्रम सूची", "ऑनलाइन परीक्षा और परीक्षण प्रणाली", "इंटरेक्टिव शिक्षण सामग्री", "सभी उपकरणों के लिए उत्तरदायी डिजाइन"]
+    },
+    'eolo-web': {
+      title: "EOLO Technology — कॉर्पोरेट वेबसाइट",
+      desc: "कंपनी प्रोफाइल, उत्पाद/सेवाएं, भागीदार और समाचार सीएमएस वाली आधिकारिक कॉर्पोरेट वेबसाइट।",
+      obj: "कंपनी के लिए एक आधुनिक डिजिटल उपस्थिति स्थापित करना।",
+      feat: ["कंपनी, उत्पाद और सेवा प्रदर्शन", "समाचार सीएमएस प्रणाली", "हमारे भागीदार अनुभाग", "व्यवस्थापक प्रबंधन पैनल", "उत्तरदायी डिजाइन"]
+    },
+    'univance-web': {
+      title: "Univance Thailand — कॉर्पोरेट वेबसाइट",
+      desc: "एमए पैकेज तुलना प्रस्ताव और मोबाइल वीडियो प्रदर्शन के साथ यूनिवेंस थाईलैंड के लिए कॉर्पोरेट वेबसाइट।",
+      obj: "रखरखाव प्रस्तावों के साथ एक आधुनिक वेब उपस्थिति बनाएं।",
+      feat: ["उत्तरदायी कॉर्पोरेट साइट", "3 एमए पैकेज तुलना प्रस्ताव", "मोबाइल वीडियो डेमो प्रदर्शन"]
+    },
+    'ai-cctv': {
+      title: "AI CCTV निगरानी समाधान",
+      desc: "चेहरे की पहचान, थर्मल सेंसिंग और जोखिम का पता लगाने के साथ स्मार्ट सीसीटीवी समाधान।",
+      obj: "वास्तविक समय में व्यक्ति का पता लगाने के साथ कारखाने की सुरक्षा बढ़ाएं।",
+      feat: ["एनवीआर सर्वर एकीकरण के साथ आईपी और थर्मल कैमरा परिनियोजन", "पहुंच नियंत्रण के लिए एआई चेहरे की पहचान", "शरीर का तापमान और असामान्य व्यवहार का पता लगाना", "सुरक्षा केंद्र को अलर्ट डिस्पैच"]
+    },
+    'spd-sap': {
+      title: "SPD-FRI वेब ऐप और SAP एकीकरण",
+      desc: "SAP ERP के साथ एकीकृत SPD-FRI प्रणाली के लिए कार्यप्रवाह डिजाइन और कार्यात्मक विशिष्टता।",
+      obj: "SAP एंटरप्राइज ERP के साथ कस्टम वेब वर्कफ़्लो को एकीकृत करें।",
+      feat: ["SAP API एकीकरण डिजाइन", "कार्यात्मक विशिष्टता और कार्यप्रवाह मॉडलिंग", "लागत पत्रक और तकनीकी प्रस्ताव"]
+    },
+    'spc-net': {
+      title: "एंटरप्राइज नेटवर्क और साइबर सुरक्षा",
+      desc: "नेटवर्क आरेख, बीओएम और तकनीकी प्रस्तावों की विशेषता वाला संपूर्ण नेटवर्क रीडिजाइन।",
+      obj: "व्यापार विस्तार का समर्थन करने के लिए सुरक्षा बुनियादी ढांचे में सुधार।",
+      feat: ["VLAN/सबनेट नेटवर्क टोपोलॉजी डिज़ाइन", "FortiGate फ़ायरवॉल फ़ेलओवर कॉन्फ़िगरेशन", "लेयर 3 स्विच कोर/डिस्ट्रीब्यूशन परिनियोजन", "सामग्री का पूरा बिल (BOM)"]
+    },
+    namyong: {
+      title: "एंटरप्राइज़ डेटा स्टोरेज और बैकअप समाधान",
+      desc: "व्यवसाय निरंतरता के लिए पूर्ण तकनीकी प्रस्ताव के साथ एंटरप्राइज़ बैकअप और स्टोरेज डिज़ाइन।",
+      obj: "एंटरप्राइज़ मानकों का पालन करते हुए विश्वसनीय बैकअप डिज़ाइन करें।",
+      feat: ["VEEAM बैकअप और प्रतिकृति", "NAS भंडारण वास्तुकला डिजाइन", "आपदा वसूली योजना", "पूर्ण प्रस्ताव दस्तावेज"]
+    },
+    navy: {
+      title: "डेटासेंटर और छात्र डेटाबेस प्रणाली",
+      client: "नेवल रेटिंग स्कूल, नौसेना शिक्षा विभाग",
+      desc: "नौसेना कैडेटों के लिए डेटासेंटर इन्फ्रास्ट्रक्चर डिजाइन और छात्र डेटाबेस प्रबंधन प्रणाली।",
+      obj: "सुरक्षित डेटासेंटर के साथ नौसेना कैडेट जानकारी को केंद्रित करें।",
+      feat: ["सर्वर परिनियोजन और ओएस सख्त करना", "कैडेट डेटाबेस वास्तुकला", "डेटासेंटर इन्फ्रास्ट्रक्चर परिनियोजन", "सरकारी अनुपालन"]
+    },
+    omoda: {
+      title: "CCTV सिस्टम अपग्रेड — नया कारखाना",
+      desc: "नए कारखाने के सीसीटीवी अपग्रेड के लिए लागत पत्रक और कोटेशन तैयार करना।",
+      obj: "उच्च परिभाषा निगरानी के लिए कारखाने की निगरानी अपग्रेड करें।",
+      feat: ["सीसीटीवी कैमरा प्लेसमेंट डिज़ाइन", "एनवीआर सर्वर सेटअप", "लागत पत्रक और कोटेशन प्रारूपण"]
+    },
+    gorilla: {
+      title: "नेटवर्क और फाइबर ऑप्टिक रैक स्थापना",
+      desc: "वन बैंकॉक परियोजना के लिए फाइबर ऑप्टिक रैक और नेटवर्क उपकरण स्थापना।",
+      obj: "वाणिज्यिक परियोजना के लिए उच्च गति ऑप्टिकल फाइबर प्रदान करें।",
+      feat: ["फाइबर ऑप्टिक केबल बिछाने", "नेटवर्क रैक स्थापना", "OTDR परीक्षण"]
+    },
+    scs: {
+      title: "फाइबर ऑप्टिक हैंडओवर प्रोजेक्ट",
+      desc: "हैंडओवर रिपोर्ट और OTDR गति परीक्षण के साथ बिल्डिंग फाइबर ऑप्टिक परिनियोजन।",
+      obj: "हाई-स्पीड फाइबर बैकबोन के साथ सीपोर्ट इमारतों को जोड़ें।",
+      feat: ["फाइबर ऑप्टिक स्प्लिसिंग", "हैंडओवर रिपोर्ट दस्तावेज", "सिग्नल और गति परीक्षण"]
+    },
+    lrt: {
+      title: "आउटडोर वाई-फाई एपी स्थापना",
+      desc: "सीपोर्ट टर्मिनल कवरेज के लिए हाई-मास्ट टॉवर आउटडोर एक्सेस प्वाइंट स्थापना।",
+      obj: "सीपोर्ट कंटेनर टर्मिनल पर वाई-फाई कवरेज का विस्तार करें।",
+      feat: ["Altai Super WiFi आउटडोर एपी परिनियोजन", "हाई-मास्ट टॉवर केबल बिछाने", "HLD डिजाइन और लागत अनुमान"]
+    },
+    tpf: {
+      title: "एपी, सीसीटीवी (51+8 यूनिट) और फाइबर ऑप्टिक",
+      desc: "खाद्य प्रसंस्करण कारखाने के लिए नए सीसीटीवी कैमरे और फाइबर ऑप्टिक केबल बिछाना।",
+      obj: "कारखाने की सुरक्षा निगरानी और नेटवर्क में सुधार करें।",
+      feat: ["51+8 सीसीटीवी कैमरा स्थापना", "फाइबर ऑप्टिक बैकबोन केबल बिछाने", "कारखाना एक्सेस प्वाइंट परिनियोजन"]
+    }
+  }
+};
+
+// ═══ MULTI-LANGUAGE SYSTEM (5 LANGUAGES) ═══
+const langData = {
+  th: {
+    hero_name: "ภาคภูมิ ล้วนศิริ",
+    hero_subtitle: "Pre-sales Supervisor &middot; IT Infrastructure Lead &middot; Full-Stack Developer",
+    hero_bio: "ผู้เชี่ยวชาญด้าน IT Infrastructure, System Administration และ Pre-sales ที่มีประสบการณ์มากกว่า 10 ปี ออกแบบโซลูชันเครือข่ายองค์กร จัดทำ SOW, BOM, Cost Sheet และพัฒนา Web Application ระดับองค์กร ตั้งแต่ระบบ CRM ระบบ AI Tele-sales จนถึงระบบ Intranet",
+    hero_loc: "ชลบุรี, ประเทศไทย",
+    btn_contact: "ติดต่อ",
+    stat_years: "ปีประสบการณ์",
+    stat_clients: "ลูกค้าองค์กร",
+    stat_systems: "ระบบที่พัฒนา",
+    sec_web_tag: "Web & Software Development",
+    sec_web_title: "ระบบซอฟต์แวร์ที่พัฒนาขึ้นจริง",
+    sec_web_desc: "ผลงานการออกแบบและพัฒนาระบบเว็บแอปพลิเคชันสำหรับองค์กร",
+    filter_all: "ทั้งหมด",
+    sec_infra_tag: "IT Infrastructure & Proposals",
+    sec_infra_title: "โครงการและเอกสารเสนอโครงการ",
+    sec_infra_desc: "ผลงานออกแบบ ติดตั้ง และจัดทำข้อเสนอโครงการด้าน IT Infrastructure ให้ลูกค้าองค์กร",
+    sec_client_tag: "Enterprise Clients",
+    sec_client_title: "ลูกค้าองค์กรที่เคยให้บริการ",
+    btn_detail: "ดูรายละเอียด",
+    modal_client: "ลูกค้า / Client",
+    modal_desc: "รายละเอียดโครงการ",
+    modal_obj: "วัตถุประสงค์",
+    modal_feat: "คุณสมบัติหลัก",
+    modal_tech: "เทคโนโลยีที่ใช้",
+    pi_title: "ข้อมูลส่วนบุคคล",
+    pi_nat_lbl: "สัญชาติ:", pi_nat: "ไทย",
+    pi_rel_lbl: "ศาสนา:", pi_rel: "พุทธ",
+    pi_gender_lbl: "เพศ:", pi_gender: "ชาย",
+    pi_status_lbl: "สถานภาพ:", pi_status: "โสด",
+    pi_dob_lbl: "วันเกิด:", pi_dob: "3 มีนาคม 2534",
+    pi_hw_lbl: "ส่วนสูง/น้ำหนัก:", pi_hw: "165 ซม. / 80 กก.",
+    pi_veh_lbl: "พาหนะส่วนตัว:", pi_veh: "รถยนต์, รถจักรยานยนต์",
+    pi_mil_lbl: "สถานภาพทหาร:", pi_mil: "ได้รับการยกเว้น / จบหลักสูตรรักษาดินแดน (รด.)"
+  },
+  en: {
+    hero_name: "Pakpoom Luansiri",
+    hero_subtitle: "Pre-sales Supervisor &middot; IT Infrastructure Lead &middot; Full-Stack Developer",
+    hero_bio: "IT Infrastructure, System Administration, and Pre-sales expert with over 10 years of experience. Specializing in designing enterprise network solutions, preparing SOW, BOM, and Cost Sheets, and developing enterprise web applications ranging from CRM and AI Tele-sales systems to Intranet portals.",
+    hero_loc: "Chonburi, Thailand",
+    btn_contact: "Contact",
+    stat_years: "Years Exp.",
+    stat_clients: "Enterprise Clients",
+    stat_systems: "Systems Dev.",
+    sec_web_tag: "Web & Software Development",
+    sec_web_title: "Software Systems Developed",
+    sec_web_desc: "Design and development of enterprise web applications",
+    filter_all: "All",
+    sec_infra_tag: "IT Infrastructure & Proposals",
+    sec_infra_title: "Infrastructure Projects & Proposals",
+    sec_infra_desc: "Design, installation, and IT Infrastructure proposals for enterprise clients",
+    sec_client_tag: "Enterprise Clients",
+    sec_client_title: "Enterprise Clients Served",
+    btn_detail: "View Details",
+    modal_client: "Client",
+    modal_desc: "Project Description",
+    modal_obj: "Objective",
+    modal_feat: "Key Features",
+    modal_tech: "Technologies Used",
+    pi_title: "Personal Details",
+    pi_nat_lbl: "Nationality:", pi_nat: "Thai",
+    pi_rel_lbl: "Religion:", pi_rel: "Buddhism",
+    pi_gender_lbl: "Gender:", pi_gender: "Male",
+    pi_status_lbl: "Marital Status:", pi_status: "Single",
+    pi_dob_lbl: "Date of Birth:", pi_dob: "March 3, 1991",
+    pi_hw_lbl: "Height / Weight:", pi_hw: "165 cm / 80 kg",
+    pi_veh_lbl: "Personal Vehicles:", pi_veh: "Car, Motorcycle",
+    pi_mil_lbl: "Military Status:", pi_mil: "Exempted (Completed ROTC)"
+  },
+  cn: {
+    hero_name: "Pakpoom Luansiri",
+    hero_subtitle: "售前主管 &middot; IT 基础设施主管 &middot; 全栈开发工程师",
+    hero_bio: "拥有10年以上经验的IT基础设施、系统管理和售前专家。专注于设计企业网络解决方案，编写SOW、BOM和成本表，以及开发从CRM和AI电话销售系统到企业内部网的Web应用程序。",
+    hero_loc: "泰国 春武里",
+    btn_contact: "联系",
+    stat_years: "年经验",
+    stat_clients: "企业客户",
+    stat_systems: "开发系统",
+    sec_web_tag: "Web & 软件开发",
+    sec_web_title: "开发的软件系统",
+    sec_web_desc: "企业 Web 应用程序的设计与开发",
+    filter_all: "全部",
+    sec_infra_tag: "IT 基础设施与提案",
+    sec_infra_title: "基础设施项目与提案",
+    sec_infra_desc: "企业客户IT基础设施的设计、安装和提案",
+    sec_client_tag: "企业客户",
+    sec_client_title: "服务过的企业客户",
+    btn_detail: "查看详情",
+    modal_client: "客户",
+    modal_desc: "项目描述",
+    modal_obj: "目标",
+    modal_feat: "主要特点",
+    modal_tech: "使用的技术",
+    pi_title: "个人信息",
+    pi_nat_lbl: "国籍：", pi_nat: "泰国",
+    pi_rel_lbl: "宗教：", pi_rel: "佛教",
+    pi_gender_lbl: "性别：", pi_gender: "男",
+    pi_status_lbl: "婚姻状况：", pi_status: "未婚",
+    pi_dob_lbl: "出生日期：", pi_dob: "1991年3月3日",
+    pi_hw_lbl: "身高 / 体重：", pi_hw: "165厘米 / 80公斤",
+    pi_veh_lbl: "个人交通工具：", pi_veh: "汽车、摩托车",
+    pi_mil_lbl: "服役状态：", pi_mil: "免役（已完成预备役军官训练 ROTC）"
+  },
+  jp: {
+    hero_name: "パックプーム・ルワンシリ",
+    hero_subtitle: "プリセールススーパーバイザー &middot; ITインフラリード &middot; フルスタック開発者",
+    hero_bio: "10年以上の経験を持つITインフラ、システム管理、プリセールスの専門家。エンタープライズネットワークソリューションの設計、SOW、BOM、コストシートの作成、CRMやAIテレセールスシステムなどのエンタープライズWebアプリケーションの開発を専門としています。",
+    hero_loc: "タイ チョンブリー",
+    btn_contact: "連絡する",
+    stat_years: "年の経験",
+    stat_clients: "企業顧客",
+    stat_systems: "開発システム",
+    sec_web_tag: "Web＆ソフトウェア開発",
+    sec_web_title: "開発したソフトウェアシステム",
+    sec_web_desc: "エンタープライズWebアプリケーションの設計と開発",
+    filter_all: "すべて",
+    sec_infra_tag: "ITインフラ＆提案",
+    sec_infra_title: "インフラプロジェクトと提案",
+    sec_infra_desc: "企業顧客向けのITインフラの設計、設置、提案",
+    sec_client_tag: "企業顧客",
+    sec_client_title: "サービスを提供した企業顧客",
+    btn_detail: "詳細を見る",
+    modal_client: "クライアント",
+    modal_desc: "プロジェクトの説明",
+    modal_obj: "目的",
+    modal_feat: "主な特徴",
+    modal_tech: "使用技術",
+    pi_title: "個人情報",
+    pi_nat_lbl: "国籍:", pi_nat: "タイ",
+    pi_rel_lbl: "宗教:", pi_rel: "仏教",
+    pi_gender_lbl: "性別:", pi_gender: "男性",
+    pi_status_lbl: "配偶者:", pi_status: "独身",
+    pi_dob_lbl: "生年月日:", pi_dob: "1991年3月3日",
+    pi_hw_lbl: "身長 / 体重:", pi_hw: "165 cm / 80 kg",
+    pi_veh_lbl: "所有車両:", pi_veh: "自動車、オートバイ",
+    pi_mil_lbl: "兵役:", pi_mil: "免除（ROTC修了）"
+  },
+  in: {
+    hero_name: "पाकपूम लुआनसिरी",
+    hero_subtitle: "प्री-सेल्स सुपरवाइजर &middot; आईटी इंफ्रास्ट्रक्चर लीड &middot; फुल-स्टैक डेवलपर",
+    hero_bio: "10 से अधिक वर्षों के अनुभव के साथ आईटी इंफ्रास्ट्रक्चर, सिस्टम एडमिनिस्ट्रेशन और प्री-सेल्स विशेषज्ञ। एंटरप्राइज़ नेटवर्क समाधान डिजाइन करने, SOW, BOM, और लागत पत्रक तैयार करने और CRM और AI टेली-सेल्स सिस्टम से लेकर इंट्रानेट तक एंटरप्राइज़ वेब एप्लिकेशन विकसित करने में विशेषज्ञता।",
+    hero_loc: "चोनबुरी, थाईलैंड",
+    btn_contact: "संपर्क करें",
+    stat_years: "वर्ष का अनुभव",
+    stat_clients: "एंटरप्राइज क्लाइंट्स",
+    stat_systems: "विकसित सिस्टम",
+    sec_web_tag: "वेब और सॉफ्टवेयर विकास",
+    sec_web_title: "विकसित सॉफ्टवेयर सिस्टम",
+    sec_web_desc: "एंटरप्राइज़ वेब अनुप्रयोगों का डिज़ाइन और विकास",
+    filter_all: "सभी",
+    sec_infra_tag: "आईटी इंफ्रास्ट्रक्चर और प्रस्ताव",
+    sec_infra_title: "इंफ्रास्ट्रक्चर प्रोजेक्ट्स और प्रस्ताव",
+    sec_infra_desc: "एंटरप्राइज क्लाइंट्स के लिए आईटी इंफ्रास्ट्रक्चर का डिजाइन, इंस्टालेशन और प्रस्ताव",
+    sec_client_tag: "एंटरप्राइज क्लाइंट्स",
+    sec_client_title: "एंटरप्राइज क्लाइंट्स को दी गई सेवाएं",
+    btn_detail: "विवरण देखें",
+    modal_client: "ग्राहक",
+    modal_desc: "परियोजना विवरण",
+    modal_obj: "उद्देश्य",
+    modal_feat: "मुख्य विशेषताएं",
+    modal_tech: "उपयोग की गई तकनीकें",
+    pi_title: "व्यक्तिगत विवरण",
+    pi_nat_lbl: "राष्ट्रीयता:", pi_nat: "थाई",
+    pi_rel_lbl: "धर्म:", pi_rel: "बौद्ध",
+    pi_gender_lbl: "लिंग:", pi_gender: "पुरुष",
+    pi_status_lbl: "वैवाहिक स्थिति:", pi_status: "अविवाहित",
+    pi_dob_lbl: "जन्म तिथि:", pi_dob: "3 मार्च 1991",
+    pi_hw_lbl: "ऊंचाई / वजन:", pi_hw: "165 सेमी / 80 किग्रा",
+    pi_veh_lbl: "निजी वाहन:", pi_veh: "कार, मोटरसाइकिल",
+    pi_mil_lbl: "सैन्य स्थिति:", pi_mil: "छूट (आरओटीसी पूर्ण)"
+  }
+};
+
+let currentLang = 'th';
+let activeModalId = null;
+
+// Helper to get translated project properties
+function getProjInfo(p) {
+  if (currentLang === 'th') return p;
+  const tr = projectTrans[currentLang] && projectTrans[currentLang][p.id];
+  if (!tr) return p;
+  return {
+    ...p,
+    title: tr.title || p.title,
+    client: tr.client || p.client,
+    desc: tr.desc || p.desc,
+    obj: tr.obj || p.obj,
+    feat: tr.feat || p.feat,
+    catLabel: tr.catLabel || p.catLabel
+  };
+}
+
+// ═══ RENDER ═══
+function mkCard(rawP){
+  const p = getProjInfo(rawP);
+  const hasImg=p.thumb&&p.thumb.length>0;
+  const ic=p.images?p.images.length:0;
+  const bc=p.cat==='enterprise'?'badge-ent':p.cat==='ai'?'badge-ai':p.cat==='intranet'?'badge-int':p.cat==='website'?'badge-web':'badge-infra';
+  let imgHtml='';
+  if(hasImg){
+    imgHtml=`<div class="card-img">
+      <img src="${p.thumb}" alt="${p.title}" onerror="this.parentElement.style.background='linear-gradient(135deg,#667eea,#764ba2)';this.style.display='none'">
+      <span class="badge ${bc}">${p.catLabel||''}</span>
+      ${ic>1?`<span class="img-ct">${ic} images</span>`:''}
+    </div>`;
+  } else {
+    imgHtml=`<div class="card-img" data-label="${p.catLabel||''}" style="height:90px;background:linear-gradient(135deg,#667eea,#764ba2);display:flex;align-items:center;justify-content:center">
+      <span style="color:rgba(255,255,255,.75);font-size:15px;letter-spacing:1px;font-weight:500">${p.catLabel||''}</span>
+    </div>`;
+  }
+  return `<div class="card ${hasImg?'':'no-img'}" data-cat="${p.cat||''}" data-id="${p.id}">
+    ${imgHtml}
+    <div class="card-body">
+      <div class="card-cat">${p.catLabel||''}</div>
+      <h3 class="card-title">${p.title}</h3>
+      <div class="card-client">${p.client}</div>
+      <p class="card-desc">${p.desc}</p>
+      <div class="tag-row">${p.tags.map(t=>`<span>${t}</span>`).join('')}</div>
+      <button class="btn-detail" onclick="openModal('${p.id}')" data-i18n="btn_detail">${langData[currentLang].btn_detail}</button>
+    </div>
+  </div>`;
+}
+
+function applyLanguage(lang) {
+  currentLang = lang;
+  // Update UI texts based on data-i18n attributes
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (langData[lang] && langData[lang][key]) {
+      el.innerHTML = langData[lang][key];
+    }
+  });
+  
+  // Re-render project cards to apply language
+  document.getElementById('webGrid').innerHTML=W.map(mkCard).join('');
+  document.getElementById('infraGrid').innerHTML=I.map(mkCard).join('');
+
+  // Re-apply filter
+  const activeFBtn = document.querySelector('.f-btn.active');
+  if(activeFBtn) activeFBtn.click();
+
+  // If modal is open, refresh modal content in new language
+  if (activeModalId) {
+    openModal(activeModalId);
+  }
+}
+
+// Add event listeners to language switcher buttons
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+    const lang = this.getAttribute('data-lang');
+    applyLanguage(lang);
+  });
+});
+
+// Initialize on page load
+applyLanguage('th');
+
+// ═══ FILTER ═══
+document.querySelectorAll('.f-btn').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.f-btn').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    const f=b.dataset.f;
+    document.querySelectorAll('#webGrid .card').forEach(c=>{
+      c.style.display=(f==='all'||c.dataset.cat===f)?'':'none';
+    });
+  });
+});
+
+// ═══ MODAL ═══
+const ALL=[...W,...I];
+function openModal(id){
+  activeModalId = id;
+  const rawP=ALL.find(x=>x.id===id);if(!rawP)return;
+  const p = getProjInfo(rawP);
+  const imgs=p.images&&p.images.length?p.images:(p.thumb?[p.thumb]:[]);
+  let g='';
+  if(imgs.length){
+    g=`<div class="modal-gallery">
+      <div class="modal-main-img"><img id="mImg" src="${imgs[0]}" alt="${p.title}" onerror="this.src='http://www.eolotechnology.com/css/pic.png'"></div>
+      ${imgs.length>1?`<div class="modal-thumbs">${imgs.map((s,i)=>`<img src="${s}" class="${i===0?'active':''}" onclick="swImg(this,'${s.replace(/'/g,"\\'")}')" onerror="this.style.display='none'">`).join('')}</div>`:''}
+    </div>`;
+  }
+  let d=`<div class="modal-detail">
+    <span class="md-cat">${p.catLabel||''}</span>
+    <h3>${p.title}</h3>
+    <div class="d-block"><h4>${langData[currentLang].modal_client}</h4><p>${p.client}</p></div>
+    <div class="d-block"><h4>${langData[currentLang].modal_desc}</h4><p>${p.desc}</p></div>`;
+  if(p.obj)d+=`<div class="d-block"><h4>${langData[currentLang].modal_obj}</h4><p>${p.obj}</p></div>`;
+  if(p.feat&&p.feat.length)d+=`<div class="d-block"><h4>${langData[currentLang].modal_feat}</h4><ul>${p.feat.map(f=>`<li>${f}</li>`).join('')}</ul></div>`;
+  d+=`<div class="d-block"><h4>${langData[currentLang].modal_tech}</h4><div class="tag-row" style="margin-top:10px">${p.tags.map(t=>`<span>${t}</span>`).join('')}</div></div></div>`;
+  document.getElementById('modalInner').innerHTML=g+d;
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function swImg(el,src){
+  document.querySelectorAll('.modal-thumbs img').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('mImg').src=src;
+}
+function closeModal(){
+  activeModalId = null;
+  document.getElementById('modal').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.getElementById('modal').addEventListener('click',e=>{if(e.target.id==='modal')closeModal()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+</script>
+</body>
+</html>
