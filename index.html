@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pakpoom Luansiri — Portfolio</title>
-<meta name="description" content="Portfolio of Pakpoom Luansiri — Pre-sales Supervisor, IT Infrastructure Lead, Full-Stack Web Developer">
+<title>Pakpoom Luansiri — Interactive Portfolio & Executive Resume</title>
+<meta name="description" content="Portfolio & Resume of Pakpoom Luansiri — Pre-sales Supervisor, IT Infrastructure Lead, Acting IT Manager, Full-Stack Developer">
 <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -17,26 +17,33 @@ body{
   -webkit-font-smoothing:antialiased;
 }
 
-/* Gradient backgrounds */
+/* Gradients */
 .gradient-hero{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%)}
 .gradient-section{background:linear-gradient(135deg,#667eea 0%,#5a67d8 50%,#764ba2 100%)}
 
-/* Glass */
+/* Glass containers */
 .glass{
-  background:rgba(255,255,255,.18);
-  backdrop-filter:blur(12px);
-  border:1px solid rgba(255,255,255,.22);
+  background:rgba(255,255,255,.12);
+  backdrop-filter:blur(14px);
+  border:1px solid rgba(255,255,255,.2);
 }
-.glass-dark{
-  background:rgba(0,0,0,.12);
-  backdrop-filter:blur(8px);
-  border:1px solid rgba(255,255,255,.1);
+.glass-card{
+  background:#ffffff;
+  border-radius:20px;
+  border:1px solid #e2e8f0;
+  box-shadow:0 6px 20px rgba(0,0,0,.04);
+  padding:30px;
+  transition:all .3s ease;
+}
+.glass-card:hover{
+  box-shadow:0 12px 32px rgba(99,102,241,.12);
+  border-color:#c7d2fe;
 }
 
 /* Container */
-.container{max-width:1140px;margin:0 auto;padding:0 28px}
+.container{max-width:1160px;margin:0 auto;padding:0 28px}
 
-/* ─── HERO TOP BAR (LANG SWITCHER) ─── */
+/* Top bar (Lang Switcher) */
 .hero-top-bar {
   display: flex;
   justify-content: flex-end;
@@ -52,7 +59,7 @@ body{
     padding: 4px;
     border: 1px solid rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(10px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
 }
 .lang-btn {
     cursor: pointer;
@@ -70,163 +77,220 @@ body{
 }
 .lang-btn.active {
     background: #ffffff;
-    color: #4f46e5;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+    color: #312e81;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.9);
 }
 
-/* ─── HERO ─── */
+/* Hero */
 .hero{
-  padding:36px 0 64px;
+  padding:36px 0 54px;
   position:relative;
   overflow:hidden;
+  color:#fff;
 }
-.hero::before{
-  content:'';position:absolute;top:-120px;right:-80px;
-  width:380px;height:380px;border-radius:50%;
-  background:rgba(255,255,255,.06);
+.hero-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
 }
-.hero::after{
-  content:'';position:absolute;bottom:-100px;left:-60px;
-  width:300px;height:300px;border-radius:50%;
-  background:rgba(255,255,255,.04);
-}
-.hero-grid{
-  display:grid;grid-template-columns:auto 1fr auto;
-  gap:36px;align-items:flex-start;
-  position:relative;z-index:2;
+.hero-profile-group {
+  display: flex;
+  align-items: center;
+  gap: 22px;
 }
 .hero-photo{
   width:140px;height:175px;border-radius:20px;
   overflow:hidden;border:4px solid rgba(255,255,255,.4);
   box-shadow:0 12px 40px rgba(0,0,0,.25);
+  background:#ffffff;
+  flex-shrink: 0;
 }
-.hero-photo img{width:100%;height:100%;object-fit:cover}
+.hero-photo img{width:100%;height:100%;object-fit:cover;background:#ffffff}
 .hero h1{
-  font-size:44px;font-weight:700;color:#fff;
+  font-size:42px;font-weight:700;color:#fff;
   margin-bottom:6px;letter-spacing:0.5px;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  line-height:1.2;
+  text-shadow:0 2px 8px rgba(0,0,0,0.2);
 }
 .hero .subtitle{
-  font-size:17.5px;color:#ffffff;
-  font-weight:400;margin-bottom:14px;
-  opacity: 0.95;
+  font-size:18px;color:#e0e7ff;
+  font-weight:500;
+  letter-spacing:0.5px;
 }
-.hero .bio{
-  font-size:15.5px;color:#f8fafc;
-  line-height:1.75;max-width:640px;font-weight:300;
-}
-.hero .contact-row{
-  margin-top:16px;font-size:15px;
-  color:#e2e8f0;font-weight:400;
-}
-.hero .contact-row a{color:#fff;text-decoration:none;font-weight:500}
-
-.hero-stats{
-  display:flex;flex-direction:column;gap:16px;
+.hero-stats-row {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
 }
 .stat-pill{
-  padding:16px 24px;border-radius:16px;text-align:center;
-  min-width:130px;
+  padding:14px 20px;border-radius:16px;text-align:center;
+  min-width:125px;
+  background:rgba(255,255,255,.15);
+  backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,.25);
 }
-.stat-pill .num{font-size:34px;font-weight:700;color:#fff;line-height:1;text-shadow: 0 2px 4px rgba(0,0,0,0.15);}
-.stat-pill .lbl{font-size:14px;color:rgba(255,255,255,.9);font-weight:400;margin-top:4px}
+.stat-pill .num{font-size:30px;font-weight:700;color:#fff;line-height:1;}
+.stat-pill .lbl{font-size:13px;color:rgba(255,255,255,.9);font-weight:400;margin-top:4px}
 
-/* ─── PERSONAL INFO BOX ─── */
-.personal-info-box {
-  margin-top: 18px;
-  padding: 16px 22px;
-  background: rgba(255, 255, 255, 0.14);
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(10px);
-  color: #fff;
-  max-width: 640px;
+/* Wide Bio Glass Card spanning full width across empty space */
+.hero-bio-card {
+  width: 100%;
+  padding: 28px 34px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
 }
-.personal-info-box .pi-title {
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 0.5px;
+.hero-bio-card .bio {
+  font-size: 17.5px;
   color: #ffffff;
-  margin-bottom: 12px;
-  padding-bottom: 6px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-}
-.personal-info-box .pi-grid {
-  display: grid;
-  grid-template-columns: repeat( auto-fit, minmax(180px, 1fr) );
-  gap: 8px 16px;
-  font-size: 14px;
-  line-height: 1.55;
-}
-.personal-info-box .pi-lbl {
-  color: #cbd5e1;
+  line-height: 1.85;
   font-weight: 400;
+  letter-spacing: 0.3px;
+  margin-bottom: 22px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.25);
 }
-.personal-info-box .pi-val {
-  color: #ffffff;
+
+.hero-bottom-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+  flex-wrap: wrap;
+  gap: 18px;
+}
+.hero-bottom-bar .contact-row {
+  display: flex;
+  gap: 22px;
+  font-size: 15.5px;
+  color: #e0e7ff;
   font-weight: 500;
+  flex-wrap: wrap;
 }
-.personal-info-box .pi-full {
-  grid-column: 1 / -1;
+.hero-bottom-bar .contact-row a {
+  color: #ffffff;
+  text-decoration: underline;
 }
 
 .hero-links{
-  margin-top:24px;display:flex;gap:12px;
+  display:flex;gap:12px;
 }
 .hero-links a{
-  display:inline-block;padding:10px 26px;border-radius:12px;
-  font-size:15px;font-weight:600;text-decoration:none;
+  display:inline-block;padding:10px 24px;border-radius:12px;
+  font-size:14.5px;font-weight:600;text-decoration:none;
   transition:all .3s ease;
 }
 .hero-links .btn-w{
-  background:rgba(255,255,255,.2);color:#fff;
+  background:rgba(255,255,255,.18);color:#fff;
   border:1px solid rgba(255,255,255,.3);
 }
-.hero-links .btn-w:hover{background:rgba(255,255,255,.35); transform: translateY(-2px);}
+.hero-links .btn-w:hover{background:rgba(255,255,255,.32); transform: translateY(-2px);}
 .hero-links .btn-solid{
-  background:#fff;color:#4f46e5;border:1px solid transparent;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  background:#fff;color:#312e81;border:1px solid transparent;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 }
-.hero-links .btn-solid:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,0,0,.2)}
+.hero-links .btn-solid:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,0,0,.25)}
 
-/* ─── SECTION ─── */
-.section{padding:70px 0}
-.section-head{text-align:center;margin-bottom:50px}
+/* Section Headings */
+.section{padding:64px 0}
+.section-head{text-align:center;margin-bottom:44px}
 .section-head .tag{
   display:inline-block;padding:6px 20px;border-radius:24px;
-  background:linear-gradient(135deg,#667eea,#764ba2);
-  color:#fff;font-size:14px;font-weight:500;
+  background:linear-gradient(135deg,#4338ca,#6366f1);
+  color:#fff;font-size:13.5px;font-weight:600;
   letter-spacing:.5px;margin-bottom:12px;
 }
 .section-head h2{
-  font-size:34px;font-weight:700;color:#1e293b;
+  font-size:32px;font-weight:700;color:#0f172a;
+  margin-bottom:8px;
+}
+.section-head p{font-size:16px;color:#64748b;font-weight:400}
+
+/* Grid Layouts */
+.grid-2col{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.grid-3col{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.grid-1-2{display:grid;grid-template-columns:36% 64%;gap:28px}
+
+/* Resume Cards */
+.card-head{
+  font-size:18px;font-weight:700;color:#1e1b4b;
+  margin-bottom:18px;padding-bottom:10px;
+  border-bottom:2px solid #e0e7ff;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.resume-table{width:100%;border-collapse:collapse;font-size:14px}
+.resume-table td{padding:9px 4px;border-bottom:1px solid #f1f5f9;vertical-align:top}
+.resume-table td.lbl{font-weight:600;color:#312e81;width:38%}
+.resume-table td.val{color:#334155;font-weight:400}
+
+.mgmt-list{list-style:none;padding:0}
+.mgmt-list li{
+  position:relative;padding-left:24px;margin-bottom:12px;
+  font-size:14.5px;color:#334155;line-height:1.6;
+}
+.mgmt-list li::before{
+  content:'✓';position:absolute;left:0;top:0;
+  color:#4338ca;font-weight:700;font-size:15px;
+}
+
+/* Timeline */
+.timeline{position:relative;padding-left:24px;border-left:3px solid #e2e8f0;margin-top:10px}
+.timeline-item{position:relative;margin-bottom:32px}
+.timeline-item:last-child{margin-bottom:0}
+.timeline-dot{
+  position:absolute;left:-32px;top:4px;
+  width:14px;height:14px;border-radius:50%;
+  background:#4338ca;border:3px solid #fff;
+  box-shadow:0 0 0 3px #c7d2fe;
+}
+.timeline-date{font-size:13px;font-weight:600;color:#6366f1;margin-bottom:4px}
+.timeline-company{font-size:20px;font-weight:700;color:#0f172a}
+.timeline-role{font-size:15px;font-weight:600;color:#4338ca;margin-bottom:8px}
+.timeline-badge{
+  display:inline-block;padding:3px 12px;border-radius:12px;
+  background:#e0e7ff;color:#3730a3;font-size:12px;font-weight:600;
   margin-bottom:10px;
 }
-.section-head p{font-size:17px;color:#64748b;font-weight:400}
+.timeline-ul{padding-left:18px;font-size:14.5px;color:#334155}
+.timeline-ul li{margin-bottom:6px;line-height:1.65}
 
-/* ─── FILTER ─── */
+/* Skills Matrix */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px}
+.skill-box{
+  background:#fff;border-radius:16px;padding:22px;
+  border:1px solid #e2e8f0;box-shadow:0 4px 12px rgba(0,0,0,.03);
+}
+.skill-box h4{font-size:15px;font-weight:700;color:#312e81;margin-bottom:10px}
+.skill-box p{font-size:14px;color:#475569;line-height:1.6}
+
+/* Filter Bar */
 .filter-bar{
   display:flex;justify-content:center;gap:10px;
-  margin-bottom:44px;flex-wrap:wrap;
+  margin-bottom:40px;flex-wrap:wrap;
 }
 .f-btn{
-  padding:10px 26px;border-radius:12px;cursor:pointer;
-  font-size:15px;font-weight:500;
+  padding:9px 24px;border-radius:12px;cursor:pointer;
+  font-size:14.5px;font-weight:500;
   border:1px solid #cbd5e1;background:#fff;color:#475569;
   transition:all .25s ease;font-family:'Kanit',sans-serif;
 }
-.f-btn:hover{border-color:#667eea;color:#667eea}
+.f-btn:hover{border-color:#4338ca;color:#4338ca}
 .f-btn.active{
-  background:linear-gradient(135deg,#667eea,#764ba2);
+  background:linear-gradient(135deg,#312e81,#4338ca);
   color:#fff;border-color:transparent;
-  box-shadow:0 6px 18px rgba(102,126,234,.4);
+  box-shadow:0 6px 18px rgba(49,46,129,.35);
 }
 
-/* ─── CARD GRID ─── */
+/* Project Cards */
 .card-grid{
   display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));
-  gap:28px;
+  gap:26px;
 }
 .card{
   background:#fff;border-radius:18px;overflow:hidden;
@@ -236,8 +300,8 @@ body{
   box-shadow:0 4px 16px rgba(0,0,0,.05);
 }
 .card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 20px 45px rgba(102,126,234,.18);
+  transform:translateY(-7px);
+  box-shadow:0 20px 45px rgba(49,46,129,.16);
   border-color:#c7d2fe;
 }
 .card-img{
@@ -251,76 +315,63 @@ body{
 .card:hover .card-img img{transform:scale(1.06)}
 .card-img .badge{
   position:absolute;top:14px;left:14px;
-  padding:6px 14px;border-radius:10px;
+  padding:5px 14px;border-radius:10px;
   font-size:12px;font-weight:600;color:#fff;
   backdrop-filter:blur(6px);
 }
-.badge-ent{background:rgba(102,126,234,.9)}
-.badge-ai{background:rgba(139,92,246,.9)}
+.badge-ent{background:rgba(49,46,129,.9)}
+.badge-ai{background:rgba(124,58,237,.9)}
 .badge-int{background:rgba(16,185,129,.9)}
 .badge-web{background:rgba(245,158,11,.9)}
-.badge-infra{background:rgba(59,130,246,.9)}
+.badge-infra{background:rgba(37,99,235,.9)}
 .card-img .img-ct{
   position:absolute;bottom:12px;right:12px;
-  background:rgba(0,0,0,.65);color:#fff;
+  background:rgba(0,0,0,.7);color:#fff;
   padding:4px 10px;border-radius:8px;font-size:12px;
   font-weight:500;
 }
-.card-body{padding:26px;display:flex;flex-direction:column;flex-grow:1}
+.card-body{padding:24px;display:flex;flex-direction:column;flex-grow:1}
 .card-cat{
-  font-size:13px;color:#667eea;font-weight:600;
+  font-size:12.5px;color:#4338ca;font-weight:600;
   letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;
 }
 .card-title{
-  font-size:21px;font-weight:700;color:#0f172a;
+  font-size:20px;font-weight:700;color:#0f172a;
   margin-bottom:6px;line-height:1.4;
 }
-.card-client{font-size:14px;color:#64748b;margin-bottom:14px;font-weight:400}
+.card-client{font-size:13.5px;color:#64748b;margin-bottom:14px;font-weight:400}
 .card-desc{
-  font-size:15px;color:#475569;line-height:1.75;font-weight:400;
-  margin-bottom:20px;
+  font-size:14.5px;color:#475569;line-height:1.7;font-weight:400;
+  margin-bottom:18px;
   display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
 }
-.tag-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:22px;margin-top:auto}
+.tag-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px;margin-top:auto}
 .tag-row span{
-  padding:4px 12px;border-radius:8px;font-size:13px;font-weight:400;
+  padding:3px 11px;border-radius:8px;font-size:12.5px;font-weight:400;
   background:#f1f5f9;color:#475569;border:1px solid #cbd5e1;
 }
 .btn-detail{
-  width:100%;padding:12px;border-radius:12px;
-  background:linear-gradient(135deg,#667eea,#764ba2);
-  color:#fff;font-size:15px;font-weight:600;
+  width:100%;padding:11px;border-radius:12px;
+  background:linear-gradient(135deg,#312e81,#4338ca);
+  color:#fff;font-size:14.5px;font-weight:600;
   border:none;cursor:pointer;transition:all .3s ease;
   font-family:'Kanit',sans-serif;letter-spacing:0.5px;
 }
 .btn-detail:hover{
   transform:translateY(-2px);
-  box-shadow:0 8px 25px rgba(102,126,234,.45);
+  box-shadow:0 8px 25px rgba(49,46,129,.4);
 }
 
-/* No-img card */
-.card.no-img .card-img{
-  height:90px;
-  background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
-  display:flex;align-items:center;justify-content:center;
-}
-.card.no-img .card-img::after{
-  content:attr(data-label);
-  color:rgba(255,255,255,.75);font-size:15px;font-weight:500;
-  letter-spacing:1px;
-}
-
-/* ─── CLIENTS ─── */
-.clients-section{padding:70px 0}
+/* Clients Wall */
 .client-grid{
-  display:flex;flex-wrap:wrap;justify-content:center;gap:14px;
+  display:flex;flex-wrap:wrap;justify-content:center;gap:12px;
 }
 .client-chip{
-  padding:10px 22px;border-radius:12px;
-  font-size:15px;font-weight:500;
+  padding:9px 20px;border-radius:12px;
+  font-size:14.5px;font-weight:500;
   color:rgba(255,255,255,.95);
-  background:rgba(255,255,255,.15);
-  border:1px solid rgba(255,255,255,.25);
+  background:rgba(255,255,255,.14);
+  border:1px solid rgba(255,255,255,.22);
   transition: all 0.2s;
 }
 .client-chip:hover {
@@ -328,20 +379,20 @@ body{
   transform: scale(1.05);
 }
 
-/* ─── MODAL ─── */
+/* Modal */
 .modal-bg{
   position:fixed;top:0;left:0;width:100%;height:100%;
-  background:rgba(15,23,42,.75);backdrop-filter:blur(8px);
+  background:rgba(15,23,42,.78);backdrop-filter:blur(8px);
   z-index:9999;display:none;align-items:center;justify-content:center;
   padding:20px;
 }
 .modal-bg.open{display:flex}
 .modal-box{
   background:#fff;border-radius:24px;
-  width:100%;max-width:960px;max-height:88vh;
+  width:100%;max-width:940px;max-height:88vh;
   overflow-y:auto;position:relative;
   box-shadow:0 30px 80px rgba(0,0,0,.4);
-  animation:modalIn .35s cubic-bezier(0.16, 1, 0.3, 1);
+  animation:modalIn .3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 @keyframes modalIn{
   from{opacity:0;transform:translateY(30px) scale(.95)}
@@ -349,69 +400,67 @@ body{
 }
 .modal-close{
   position:absolute;top:16px;right:20px;
-  width:40px;height:40px;border-radius:50%;
+  width:38px;height:38px;border-radius:50%;
   background:rgba(0,0,0,.08);border:none;
-  font-size:22px;cursor:pointer;z-index:10;
+  font-size:20px;cursor:pointer;z-index:10;
   color:#475569;display:flex;align-items:center;justify-content:center;
   transition:all .2s;font-family:'Kanit';
 }
 .modal-close:hover{background:rgba(239,68,68,.15);color:#dc2626;transform:rotate(90deg)}
 .modal-gallery{background:#0f172a;border-radius:24px 24px 0 0;overflow:hidden}
 .modal-main-img{
-  width:100%;height:460px;display:flex;
+  width:100%;height:440px;display:flex;
   align-items:center;justify-content:center;
   padding: 10px;
 }
 .modal-main-img img{max-width:100%;max-height:100%;object-fit:contain; border-radius: 8px;}
 .modal-thumbs{
-  display:flex;gap:8px;padding:14px 18px;
+  display:flex;gap:8px;padding:12px 16px;
   overflow-x:auto;background:#1e293b;
 }
 .modal-thumbs img{
-  width:88px;height:60px;object-fit:cover;
-  border-radius:10px;cursor:pointer;opacity:.4;
+  width:84px;height:56px;object-fit:cover;
+  border-radius:8px;cursor:pointer;opacity:.4;
   transition:all .2s;border:2px solid transparent;
 }
 .modal-thumbs img:hover,.modal-thumbs img.active{
   opacity:1;border-color:#818cf8;
 }
-.modal-detail{padding:40px}
+.modal-detail{padding:36px}
 .modal-detail .md-cat{
-  display:inline-block;padding:5px 16px;border-radius:10px;
-  background:linear-gradient(135deg,#667eea,#764ba2);
-  color:#fff;font-size:13px;font-weight:600;margin-bottom:14px;
+  display:inline-block;padding:4px 14px;border-radius:8px;
+  background:linear-gradient(135deg,#312e81,#4338ca);
+  color:#fff;font-size:12.5px;font-weight:600;margin-bottom:12px;
 }
-.modal-detail h3{font-size:28px;font-weight:700;color:#0f172a;margin-bottom:24px;line-height:1.3;}
-.d-block{margin-bottom:26px}
+.modal-detail h3{font-size:26px;font-weight:700;color:#0f172a;margin-bottom:20px;line-height:1.3;}
+.d-block{margin-bottom:22px}
 .d-block h4{
-  font-size:15px;font-weight:700;color:#667eea;
-  margin-bottom:10px;padding-bottom:8px;
+  font-size:14.5px;font-weight:700;color:#312e81;
+  margin-bottom:8px;padding-bottom:6px;
   border-bottom:1px solid #e2e8f0;
   letter-spacing:.5px;
 }
-.d-block p{font-size:15.5px;color:#334155;line-height:1.8;font-weight:400}
-.d-block ul{padding-left:22px;font-size:15.5px;color:#334155;font-weight:400}
-.d-block li{margin-bottom:8px;line-height:1.7}
+.d-block p{font-size:15px;color:#334155;line-height:1.75;font-weight:400}
+.d-block ul{padding-left:20px;font-size:15px;color:#334155;font-weight:400}
+.d-block li{margin-bottom:6px;line-height:1.65}
 
-/* ─── FOOTER ─── */
+/* Footer */
 footer{
-  text-align:center;padding:40px 0;
+  text-align:center;padding:36px 0;
   border-top:1px solid #cbd5e1;
   font-size:14px;color:#64748b;font-weight:400;
 }
-footer a{color:#667eea;text-decoration:none;font-weight:600;transition:color 0.2s}
-footer a:hover{color:#764ba2}
+footer a{color:#4338ca;text-decoration:none;font-weight:600;}
+footer a:hover{color:#312e81}
 
 /* Responsive */
-@media(max-width:768px){
-  .hero-top-bar{justify-content:center;margin-bottom:20px}
-  .hero-grid{grid-template-columns:1fr;text-align:center}
-  .hero-photo{margin:0 auto}
-  .hero-stats{flex-direction:row;justify-content:center}
-  .hero-links{justify-content:center}
-  .card-grid{grid-template-columns:1fr}
-  .modal-main-img{height:280px}
-  .modal-detail{padding:28px}
+@media(max-width:992px){
+  .grid-1-2,.grid-2col,.grid-3col{grid-template-columns:1fr}
+  .hero-header-row{flex-direction:column;align-items:flex-start;gap:20px}
+  .hero-profile-group{flex-direction:column;align-items:flex-start}
+  .hero-stats-row{width:100%;justify-content:flex-start}
+  .hero-bio-card{padding:22px 24px}
+  .hero-bottom-bar{flex-direction:column;align-items:flex-start}
 }
 </style>
 </head>
@@ -432,42 +481,19 @@ footer a:hover{color:#764ba2}
       </div>
     </div>
 
-    <div class="hero-grid">
-      <div class="hero-photo">
-        <img src="img/profile.png" alt="Pakpoom Luansiri" onerror="this.src='http://www.eolotechnology.com/css/pic.png'">
-      </div>
-      <div>
-        <h1 data-i18n="hero_name">ภาคภูมิ ล้วนศิริ</h1>
-        <div class="subtitle" data-i18n="hero_subtitle">Pre-sales Supervisor &middot; IT Infrastructure Lead &middot; Full-Stack Developer</div>
-        <p class="bio" data-i18n="hero_bio">ผู้เชี่ยวชาญด้าน IT Infrastructure, System Administration และ Pre-sales ที่มีประสบการณ์มากกว่า 10 ปี ออกแบบโซลูชันเครือข่ายองค์กร จัดทำ SOW, BOM, Cost Sheet และพัฒนา Web Application ระดับองค์กร ตั้งแต่ระบบ CRM ระบบ AI Tele-sales จนถึงระบบ Intranet</p>
-        
-        <!-- Personal Details Box -->
-        <div class="personal-info-box">
-          <div class="pi-title" data-i18n="pi_title">ข้อมูลส่วนบุคคล</div>
-          <div class="pi-grid">
-            <div class="pi-item"><span class="pi-lbl" data-i18n="pi_nat_lbl">สัญชาติ:</span> <span class="pi-val" data-i18n="pi_nat">ไทย</span></div>
-            <div class="pi-item"><span class="pi-lbl" data-i18n="pi_rel_lbl">ศาสนา:</span> <span class="pi-val" data-i18n="pi_rel">พุทธ</span></div>
-            <div class="pi-item"><span class="pi-lbl" data-i18n="pi_gender_lbl">เพศ:</span> <span class="pi-val" data-i18n="pi_gender">ชาย</span></div>
-            <div class="pi-item"><span class="pi-lbl" data-i18n="pi_status_lbl">สถานภาพ:</span> <span class="pi-val" data-i18n="pi_status">โสด</span></div>
-            <div class="pi-item"><span class="pi-lbl" data-i18n="pi_dob_lbl">วันเกิด:</span> <span class="pi-val" data-i18n="pi_dob">3 มีนาคม 2534</span></div>
-            <div class="pi-item"><span class="pi-lbl" data-i18n="pi_hw_lbl">ส่วนสูง/น้ำหนัก:</span> <span class="pi-val" data-i18n="pi_hw">165 ซม. / 80 กก.</span></div>
-            <div class="pi-item pi-full"><span class="pi-lbl" data-i18n="pi_veh_lbl">พาหนะส่วนตัว:</span> <span class="pi-val" data-i18n="pi_veh">รถยนต์, รถจักรยานยนต์</span></div>
-            <div class="pi-item pi-full"><span class="pi-lbl" data-i18n="pi_mil_lbl">สถานภาพทหาร:</span> <span class="pi-val" data-i18n="pi_mil">ได้รับการยกเว้น / จบหลักสูตรรักษาดินแดน (รด.)</span></div>
-          </div>
+    <!-- Hero Header Row: Photo + Name/Title (Left) & Stat Pills (Right) -->
+    <div class="hero-header-row">
+      <div class="hero-profile-group">
+        <div class="hero-photo">
+          <img src="img/profile.png" alt="Pakpoom Luansiri">
         </div>
+        <div>
+          <h1 data-i18n="hero_name">ภาคภูมิ ล้วนศิริ</h1>
+          <div class="subtitle" data-i18n="hero_subtitle">Pre-sales Supervisor &middot; IT Infrastructure Lead &middot; Acting IT Manager</div>
+        </div>
+      </div>
 
-        <p class="contact-row">
-          Tel: 080-789-7987 &nbsp;&middot;&nbsp;
-          <a href="mailto:ammwendy7344@gmail.com">ammwendy7344@gmail.com</a> &nbsp;&middot;&nbsp;
-          <span data-i18n="hero_loc">ชลบุรี, ประเทศไทย</span>
-        </p>
-        <div class="hero-links">
-          <a href="resume_pakpoom_luansiri_TH.html" class="btn-w" target="_blank">Resume TH</a>
-          <a href="resume_pakpoom_luansiri_EN.html" class="btn-w" target="_blank">Resume EN</a>
-          <a href="mailto:ammwendy7344@gmail.com" class="btn-solid" data-i18n="btn_contact">ติดต่อ</a>
-        </div>
-      </div>
-      <div class="hero-stats">
+      <div class="hero-stats-row">
         <div class="stat-pill glass">
           <div class="num">10+</div>
           <div class="lbl" data-i18n="stat_years">ปีประสบการณ์</div>
@@ -480,12 +506,183 @@ footer a:hover{color:#764ba2}
           <div class="num">10+</div>
           <div class="lbl" data-i18n="stat_systems">ระบบที่พัฒนา</div>
         </div>
+        <div class="stat-pill glass">
+          <div class="num">Acting</div>
+          <div class="lbl">IT Manager</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wide Executive Bio Glass Card Spanning Full Width Across the Hero -->
+    <div class="hero-bio-card glass">
+      <p class="bio" data-i18n="sec_summary_text">ผู้เชี่ยวชาญด้าน IT Infrastructure, System Administration และ Pre-sales ที่มีประสบการณ์มากกว่า 10 ปี มีประสบการณ์ทำหน้าที่บริหารจัดการแทน IT Manager ควบคู่กับการวางแผนงบประมาณประจำปี (OPEX / CAPEX) การบริหารจัดการ Vendor และการควบคุม SLA มีความเชี่ยวชาญสูงในการออกแบบโซลูชัน จัดทำ SOW, BOM, Cost Sheet รวมถึงการวางโครงสร้างพื้นฐาน Server, Virtualization, Network Failover (FortiGate, Layer 3 Switch), Cloud Services และการพัฒนาระบบเชื่อมต่อ SAP API</p>
+      
+      <div class="hero-bottom-bar">
+        <div class="contact-row">
+          <span>Tel: 080-789-7987</span>
+          <span><a href="mailto:ammwendy7344@gmail.com">ammwendy7344@gmail.com</a></span>
+          <span data-i18n="hero_loc">ชลบุรี, ประเทศไทย</span>
+        </div>
+        <div class="hero-links">
+          <a href="resume_pakpoom_luansiri_TH.html" class="btn-w" target="_blank">Resume TH</a>
+          <a href="resume_pakpoom_luansiri_EN.html" class="btn-w" target="_blank">Resume EN</a>
+          <a href="mailto:ammwendy7344@gmail.com" class="btn-solid" data-i18n="btn_contact">ติดต่อ</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ════ WEB SYSTEMS ════ -->
+<!-- ════ EXECUTIVE OVERVIEW & MANAGEMENT ════ -->
+<section class="section">
+  <div class="container">
+    <div class="grid-3col">
+      
+      <!-- Management Expertise -->
+      <div class="glass-card">
+        <div class="card-head" data-i18n="sec_mgmt_title">การบริหารจัดการ</div>
+        <ul class="mgmt-list">
+          <li data-i18n="mgmt_1"><strong>IT Budget Planning:</strong> วางแผนและจัดทำงบประมาณประจำปี (OPEX &amp; CAPEX)</li>
+          <li data-i18n="mgmt_2"><strong>Vendor &amp; SLA Management:</strong> เจรจาต่อรอง จัดซื้อจัดจ้าง และควบคุมสัญญากับซัพพลายเออร์</li>
+          <li data-i18n="mgmt_3"><strong>IT Strategy &amp; Policy:</strong> ควบคุมนโยบายความปลอดภัยและมาตรฐาน ISO 9001 / ISO 27001</li>
+          <li data-i18n="mgmt_4"><strong>DRP &amp; BCP:</strong> จัดทำและทดสอบแผนกู้คืนระบบฉุกเฉินเพื่อความต่อเนื่องทางธุรกิจ</li>
+          <li data-i18n="mgmt_5"><strong>Team Leadership:</strong> บริหารจัดการทีมเทคนิค จัดสรรงาน และประเมินผลงาน</li>
+        </ul>
+      </div>
+
+      <!-- Education & Credentials -->
+      <div class="glass-card">
+        <div class="card-head" data-i18n="sec_edu_title">ประวัติการศึกษา</div>
+        <div style="margin-bottom:20px;">
+          <h4 style="font-size:16px;color:#0f172a;font-weight:700" data-i18n="edu_school">มหาวิทยาลัยคริสเตียน</h4>
+          <p style="font-size:14.5px;color:#4338ca;font-weight:600;margin-top:2px" data-i18n="edu_degree">ปริญญาตรี เทคโนโลยีสารสนเทศทางธุรกิจ</p>
+          <p style="font-size:14px;color:#64748b;margin-top:4px">GPA 2.70 (2017)</p>
+        </div>
+        <div style="border-top:1px solid #e2e8f0;padding-top:14px;margin-top:14px">
+          <span style="display:inline-block;padding:4px 12px;border-radius:12px;background:#e0e7ff;color:#3730a3;font-size:12.5px;font-weight:600">Ruijie / Reyee Gateway Certified</span>
+        </div>
+      </div>
+
+      <!-- Personal Details -->
+      <div class="glass-card">
+        <div class="card-head" data-i18n="pi_title">ข้อมูลส่วนบุคคล</div>
+        <table class="resume-table">
+          <tr><td class="lbl" data-i18n="pi_nat_lbl">สัญชาติ</td><td class="val" data-i18n="pi_nat">ไทย</td></tr>
+          <tr><td class="lbl" data-i18n="pi_rel_lbl">ศาสนา</td><td class="val" data-i18n="pi_rel">พุทธ</td></tr>
+          <tr><td class="lbl" data-i18n="pi_gender_lbl">เพศ</td><td class="val" data-i18n="pi_gender">ชาย</td></tr>
+          <tr><td class="lbl" data-i18n="pi_dob_lbl">วันเกิด</td><td class="val" data-i18n="pi_dob">3 มีนาคม 2534</td></tr>
+          <tr><td class="lbl" data-i18n="pi_hw_lbl">ส่วนสูง / น้ำหนัก</td><td class="val" data-i18n="pi_hw">165 ซม. / 80 กก.</td></tr>
+          <tr><td class="lbl" data-i18n="pi_status_lbl">สถานภาพ</td><td class="val" data-i18n="pi_status">โสด</td></tr>
+          <tr><td class="lbl" data-i18n="pi_veh_lbl">พาหนะส่วนตัว</td><td class="val" data-i18n="pi_veh">รถยนต์, รถจักรยานยนต์</td></tr>
+          <tr><td class="lbl" data-i18n="pi_mil_lbl">สถานภาพทหาร</td><td class="val" data-i18n="pi_mil">ได้รับการยกเว้น / จบหลักสูตรรักษาดินแดน (รด.)</td></tr>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════ TECHNICAL SKILLS MATRIX ════ -->
+<section class="section" style="background:#f8fafc">
+  <div class="container">
+    <div class="section-head">
+      <span class="tag" data-i18n="sec_skills_title">ทักษะด้านเทคนิค</span>
+      <h2>Technical Skills &amp; Infrastructure Matrix</h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-box">
+        <h4>Cloud &amp; Suite</h4>
+        <p>Microsoft 365, Google Workspace, Cloud Administration</p>
+      </div>
+      <div class="skill-box">
+        <h4>Network &amp; Security</h4>
+        <p>FortiGate (200F/60F), Layer 3 Switches, Ruijie/Reyee Gateway (Certified), VLAN, VPN, Routing</p>
+      </div>
+      <div class="skill-box">
+        <h4>Cybersecurity</h4>
+        <p>Bitdefender Enterprise Security, IT Governance, ISO 9001 / ISO 27001 Compliance</p>
+      </div>
+      <div class="skill-box">
+        <h4>Server &amp; VM</h4>
+        <p>Windows Server, Active Directory, VMware vSphere, Hyper-V Virtualization</p>
+      </div>
+      <div class="skill-box">
+        <h4>Surveillance</h4>
+        <p>NVR, DVR, XVR Systems, AI CCTV, Thermal &amp; Facial Recognition</p>
+      </div>
+      <div class="skill-box">
+        <h4>Backup &amp; Storage</h4>
+        <p>VEEAM Backup &amp; Replication, Backup Exec, NetBackup, NAS Architecture</p>
+      </div>
+      <div class="skill-box" style="grid-column:1/-1">
+        <h4>Development &amp; ERP Integration</h4>
+        <p>PHP (Laravel/Native), JavaScript (ES6+), HTML5/CSS3, MySQL, SAP API Integration, RESTful API</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ WORK EXPERIENCE TIMELINE ════ -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="tag" data-i18n="sec_exp_title">ประสบการณ์การทำงาน</span>
+      <h2>Professional Work Experience</h2>
+    </div>
+
+    <div class="glass-card" style="max-width:960px;margin:0 auto">
+      <div class="timeline">
+        
+        <!-- Job 1 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date" data-i18n="exp_job1_date">2025 - ปัจจุบัน</div>
+          <div class="timeline-company" data-i18n="exp_job1_company">EOLO Technology Co., Ltd.</div>
+          <div class="timeline-role" data-i18n="exp_job1_role">Pre-sales Supervisor</div>
+          <ul class="timeline-ul">
+            <li data-i18n="exp_job1_task1">เข้าสำรวจหน้างาน (Site Survey) และวิเคราะห์ความต้องการเชิงลึกของลูกค้าเพื่อออกแบบโซลูชันระบบไอที</li>
+            <li data-i18n="exp_job1_task2">จัดทำข้อเสนอทางเทคนิค (Technical Proposal) เอกสาร TOR, SOW, BOM และ Cost Sheet</li>
+            <li data-i18n="exp_job1_task3">ออกแบบและติดตั้งระบบ Enterprise Network, FortiGate 200F / Failover, Layer 3 Switches และ Ruijie/Reyee Solutions</li>
+            <li data-i18n="exp_job1_task4">วางแผนการย้ายระบบขึ้น Cloud (Microsoft 365 / Google Workspace) และระบบ Bitdefender Enterprise Security</li>
+            <li data-i18n="exp_job1_task5">ควบคุมการติดตั้งระบบ Dell PowerEdge Server และออกแบบโครงสร้างการเชื่อมต่อระบบ SPD เข้ากับ SAP API</li>
+          </ul>
+        </div>
+
+        <!-- Job 2 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date" data-i18n="exp_job2_date">2024 - 2025</div>
+          <div class="timeline-company" data-i18n="exp_job2_company">Techno-Metal Co., Ltd.</div>
+          <div class="timeline-role" data-i18n="exp_job2_role">IT Leader / Acting IT Manager</div>
+          <div class="timeline-badge" data-i18n="exp_job2_badge">Executive &amp; Management Responsibilities</div>
+          <ul class="timeline-ul">
+            <li data-i18n="exp_job2_task1">วางแผน จัดทำ และบริหารงบประมาณประจำปีของแผนกไอที (Annual OPEX &amp; CAPEX Budgeting)</li>
+            <li data-i18n="exp_job2_task2">คัดเลือก เจรจาต่อรองสัญญากับ Vendor และคุมมาตรฐานการให้บริการตาม SLA</li>
+            <li data-i18n="exp_job2_task3">บริหารจัดการโครงสร้างพื้นฐานระบบ Network, VMware, Active Directory, VPN และระบบสำรองข้อมูล</li>
+            <li data-i18n="exp_job2_task4">กำกับดูแลนโยบายความปลอดภัยด้านสารสนเทศให้สอดคล้องกับมาตรฐาน ISO 9001 และ ISO 27001</li>
+            <li data-i18n="exp_job2_task5">จัดทำและทดสอบแผนรองรับสภาวะฉุกเฉิน (Disaster Recovery Plan) เพื่อให้ระบบทำงานได้ต่อเนื่อง</li>
+          </ul>
+        </div>
+
+        <!-- Job 3 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date" data-i18n="exp_job3_date">2016 - 2024</div>
+          <div class="timeline-company" data-i18n="exp_job3_company">OKAYAMA (THAILAND) CO., LTD.</div>
+          <div class="timeline-role" data-i18n="exp_job3_role">IT Support &amp; System Administrator</div>
+          <ul class="timeline-ul">
+            <li data-i18n="exp_job3_task1">ดูแลรักษาเครื่อง Server, Mail Server, ระบบเครือข่าย LAN/Wi-Fi และระบบ Surveillance (NVR, DVR, XVR)</li>
+            <li data-i18n="exp_job3_task2">พัฒนา Web Application สำหรับใช้งานภายในองค์กร เพื่อการบริหารจัดการคลังสินค้าและการผลิต</li>
+            <li data-i18n="exp_job3_task3">ให้บริการ Helpdesk Support แก้ไขปัญหาเทคนิค และบริหารจัดการสิทธิ์ผู้ใช้งาน</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ WEB SYSTEMS SHOWCASE ════ -->
 <section class="section" id="web">
   <div class="container">
     <div class="section-head">
@@ -506,7 +703,7 @@ footer a:hover{color:#764ba2}
   </div>
 </section>
 
-<!-- ════ INFRA ════ -->
+<!-- ════ INFRASTRUCTURE PROJECTS & PROPOSALS ════ -->
 <section class="section" style="background:#f8fafc" id="infra">
   <div class="container">
     <div class="section-head">
@@ -518,10 +715,10 @@ footer a:hover{color:#764ba2}
   </div>
 </section>
 
-<!-- ════ CLIENTS ════ -->
-<section class="clients-section gradient-section">
+<!-- ════ CLIENTS SHOWCASE ════ -->
+<section class="clients-section gradient-section" style="padding:64px 0">
   <div class="container">
-    <div class="section-head" style="margin-bottom:40px">
+    <div class="section-head" style="margin-bottom:36px">
       <span class="tag" style="background:rgba(255,255,255,.25)" data-i18n="sec_client_tag">Enterprise Clients</span>
       <h2 style="color:#fff" data-i18n="sec_client_title">ลูกค้าองค์กรที่เคยให้บริการ</h2>
     </div>
@@ -564,7 +761,7 @@ footer a:hover{color:#764ba2}
   </div>
 </footer>
 
-<!-- ════ MODAL ════ -->
+<!-- ════ MODAL VIEWER ════ -->
 <div class="modal-bg" id="modal">
   <div class="modal-box">
     <button class="modal-close" onclick="closeModal()">&#10005;</button>
@@ -607,7 +804,7 @@ const W=[
    client:'Techno-Metal / EOLO Technology',
    desc:'เว็บแอปพลิเคชันจองรถยนต์ส่วนกลางองค์กร จัดตารางการเดินทาง จัดสรรพนักงานขับรถ และระบบอนุมัติออนไลน์ ยกเลิกการใช้แบบฟอร์มกระดาษ',
    tags:['PHP 7.4+','MySQL','Composer','RESTful API','JavaScript'],
-   thumb:null,images:[],
+   thumb:'img/vehicle_1.png',images:['img/vehicle_1.png', 'img/vehicle_2.png', 'img/vehicle_3.png', 'img/vehicle_4.png', 'img/vehicle_5.png', 'img/vehicle_6.png', 'img/vehicle_7.png', 'img/vehicle_8.png'],
    obj:'แทนที่กระบวนการจองรถด้วยกระดาษ ลดขั้นตอนธุรการ ป้องกันการจองซ้ำซ้อน',
    feat:['แบบฟอร์มจองรถออนไลน์ กำหนดวัน เวลา สถานที่','Approval Flow สำหรับหัวหน้างานอนุมัติ','Driver Dispatch จัดสรรพนักงานขับรถตามคิว','บันทึกเลขไมล์และค่าน้ำมัน','Web-based Installer ติดตั้งระบบอัตโนมัติ']},
   {id:'defects',cat:'enterprise',catLabel:'Enterprise System',
@@ -615,7 +812,7 @@ const W=[
    client:'Techno-Metal Co., Ltd.',
    desc:'ระบบนำเข้าและแปลงข้อมูล Defects จาก Excel เพื่อสร้างรายงานสรุปแบบตารางและกราฟ รองรับ Login แยกสิทธิ์ผู้ใช้งาน',
    tags:['PHP','PhpSpreadsheet','MySQL','Excel Import'],
-   thumb:null,images:[],
+   thumb:'img/defects_1.png',images:['img/defects_1.png', 'img/defects_2.png', 'img/defects_3.png'],
    obj:'แปลงกระบวนการจัดทำรายงาน Defects จาก Excel Manual ให้เป็นระบบ Web-based อัตโนมัติ',
    feat:['Import ข้อมูลจาก Excel (PhpSpreadsheet) อัตโนมัติ','CRUD รายการ Defects: เพิ่ม แก้ไข ลบ','Login & Role-based Access','Dashboard รายงานสรุปพร้อมกรอง/ค้นหา']},
   {id:'intranet-tm',cat:'intranet',catLabel:'Intranet & LMS',
@@ -623,7 +820,7 @@ const W=[
    client:'Techno-Metal Co., Ltd.',
    desc:'ระบบอินทราเน็ตสำหรับการสื่อสารภายในองค์กร ประกาศข่าวสาร เอกสาร MSD ระบบ QA และจองรถ/ห้องประชุม รองรับ 2 ภาษา (ไทย/ญี่ปุ่น)',
    tags:['PHP','MySQL','Multi-language','Admin Console'],
-   thumb:null,images:[],
+   thumb:'img/intranet_tm_1.png',images:['img/intranet_tm_1.png', 'img/intranet_tm_2.png', 'img/intranet_tm_3.png', 'img/intranet_tm_4.png'],
    obj:'รวมศูนย์การสื่อสารภายในองค์กร ลดการใชีเมลสำหรับเรื่องประจำวัน',
    feat:['ระบบประกาศข่าวสาร (Announcement)','คลังเอกสาร MSD','Admin Console จัดการเนื้อหาและผู้ใช้งาน','รองรับ 2 ภาษา: ไทย/ญี่ปุ่น']},
   {id:'intranet-ls',cat:'intranet',catLabel:'Intranet & LMS',
@@ -631,7 +828,7 @@ const W=[
    client:'Leistritz (Thailand) Ltd.',
    desc:'ระบบอินทราเน็ตจัดการข้อมูลภายในองค์กร Leistritz ใช้ JSON Data Store ไม่ต้อง MySQL จัดเก็บข้อมูลพนักงานและเอกสารองค์กร',
    tags:['PHP','JSON Data Store','JavaScript','CSS3'],
-   thumb:null,images:[],
+   thumb:'img/intranet_ls_1.png',images:['img/intranet_ls_1.png', 'img/intranet_ls_2.png', 'img/intranet_ls_3.png', 'img/intranet_ls_4.png', 'img/intranet_ls_5.png', 'img/intranet_ls_6.png', 'img/intranet_ls_7.png'],
    obj:'จัดเก็บและเผยแพร่ข้อมูลภายในองค์กรแบบ Self-hosted',
    feat:['หน้าหลักแสดงข้อมูลสำคัญขององค์กร','Admin Panel จัดการข้อมูล','JSON-based Data Store ติดตั้งง่าย','Multi-user Access']},
   {id:'training',cat:'intranet',catLabel:'Intranet & LMS',
@@ -639,7 +836,7 @@ const W=[
    client:'EOLO Technology Co., Ltd.',
    desc:'ระบบ LMS สำหรับจัดหลักสูตรอบรมพนักงาน เนื้อหาฝึกอบรม และการสอบวัดผลออนไลน์',
    tags:['HTML5','JavaScript','CSS3','Responsive'],
-   thumb:null,images:[],
+   thumb:'img/training_1.png',images:['img/training_1.png', 'img/training_2.png', 'img/training_3.png', 'img/training_4.png', 'img/training_5.png', 'img/training_6.png'],
    obj:'สร้างแพลตฟอร์มอบรมออนไลน์สำหรับพนักงานใหม่และหลักสูตรพัฒนาทักษะ',
    feat:['หลักสูตรอบรมจัดกลุ่มตามหัวข้อ','ระบบสอบออนไลน์','เนื้อหาฝึกอบรมแบบ Interactive','Responsive Design ทุกอุปกรณ์']},
   {id:'eolo-web',cat:'website',catLabel:'Corporate Website',
@@ -647,7 +844,7 @@ const W=[
    client:'EOLO Technology Co., Ltd.',
    desc:'เว็บไซต์องค์กร EOLO Technology ประกอบด้วยหน้าแนะนำบริษัท สินค้า พาร์ทเนอร์ ข่าวสาร และ Admin CMS',
    tags:['HTML5','CSS3','JavaScript','PHP','News CMS','Responsive'],
-   thumb:null,images:[],
+   thumb:'img/eolo_web_1.png',images:['img/eolo_web_1.png', 'img/eolo_web_2.png', 'img/eolo_web_3.png', 'img/eolo_web_4.png', 'img/eolo_web_5.png', 'img/eolo_web_6.png', 'img/eolo_web_7.png', 'img/eolo_web_8.png', 'img/eolo_web_9.png', 'img/eolo_web_10.png', 'img/eolo_web_11.png'],
    obj:'สร้างภาพลักษณ์ดิจิทัลให้บริษัท',
    feat:['หน้าแนะนำบริษัท สินค้า และบริการ','ระบบข่าวสาร (News JSON CMS)','หน้า Our Partners','Admin Panel','Responsive Design']},
   {id:'univance-web',cat:'website',catLabel:'Corporate Website',
@@ -655,7 +852,7 @@ const W=[
    client:'Univance Thailand Co., Ltd.',
    desc:'เว็บไซต์บริษัท Univance พร้อม Proposal เปรียบเทียบแพ็คเกจ MA และ Video Demo สาธิตการใช้งาน',
    tags:['HTML5','CSS3','JavaScript','Video Production'],
-   thumb:null,images:[],
+   thumb:'img/univance_web_1.png',images:['img/univance_web_1.png', 'img/univance_web_2.png', 'img/univance_web_3.png', 'img/univance_web_4.png', 'img/univance_web_5.png', 'img/univance_web_6.png', 'img/univance_web_7.png'],
    obj:'สร้างเว็บไซต์องค์กรที่ทันสมัย พร้อมข้อเสนอ MA',
    feat:['เว็บไซต์ Responsive','Proposal MA 3 รูปแบบ','Video Demo (Mobile) สาธิตการใช้งาน']}
 ];
@@ -747,513 +944,144 @@ const I=[
    feat:['ติดตั้งและย้ายจุดกล้อง CCTV รวม 59 จุด','เดินสายสัญญาณและสายไฟเบอร์ออพติก','ติดตั้ง Access Point ในพื้นที่การผลิต']}
 ];
 
-// ═══ PROJECT TRANSLATIONS FOR 5 LANGUAGES ═══
+// ═══ PROJECT TRANSLATIONS ═══
 const projectTrans = {
   en: {
-    crm: {
-      title: "EoloSystem — Pre-sales & Quotation Management",
-      desc: "Comprehensive sales management system for Pre-sales team, covering requirement intake, Cost Sheet calculation (costs & margin), engineering job assignment, Quotation generation, and approval workflow. Features role-based access for Sales, Purchasing, and Management.",
-      obj: "Eliminate quotation delays, allowing the presale team to design solutions, calculate pricing, and send accurate quotations rapidly.",
-      feat: ["Dashboard showing pending requirements, job assignments, and quotations", "Cost Sheet Calculator for automatic product costs, installation, service fees, and margin calculation", "PDF Quotation Generator with digital signature support", "Multi-level approval workflow", "Role-based Access: Sales, Presale Engineer, Purchasing, Admin, Supervisor"]
-    },
-    telesale: {
-      title: "AI Tele-Sales — Smart Automated Calling System",
-      desc: "AI call center platform for automated outbound sales calling. Integrates LLM API (Grok) for natural conversation AI Agents, featuring Lead Management, Knowledge Base, and Call Transcript records.",
-      obj: "Automate outbound sales calls with AI, reducing labor costs and increasing new customer outreach by over 5x daily.",
-      feat: ["Real-time voice conversation AI Agent using Grok LLM API", "Lead Management with status tracking", "Knowledge Base for products, FAQs, and sales scripts", "Call Log & Transcript auto-recording and transcription", "Adapter Pattern supporting multiple telephony providers"]
-    },
-    tms: {
-      title: "TMS — Transport Management & Defects Dashboard",
-      desc: "Delivery planning system and defect report dashboard for TPI POLENE. Features CSV/Excel data import, vehicle queue allocation, and executive analytics.",
-      obj: "Optimize delivery route planning for punctuality, minimize cargo damage, and provide analytics data for executive decision-making.",
-      feat: ["Daily CSV/Excel delivery plan import", "Vehicle dispatch queue allocation with pickup/dropoff logs", "Defect entry recording with photo attachments", "Graphical executive dashboard summary"]
-    },
-    vehicle: {
-      title: "Vehicle Booking — Corporate Fleet Reservation",
-      desc: "Enterprise vehicle booking web application for trip scheduling, driver dispatching, and online approval workflow, eliminating paper forms.",
-      obj: "Replace paper-based vehicle booking, reduce administrative steps, and prevent scheduling conflicts.",
-      feat: ["Online vehicle booking form with date, time, and destination", "Supervisor approval workflow", "Driver dispatch queue management", "Odometer mileage and fuel cost recording", "Web-based automated installer"]
-    },
-    defects: {
-      title: "KDM Defects Report — Damage Report Converter",
-      desc: "Excel defect data import and conversion web system creating tabular and graphical summary reports with role-based login.",
-      obj: "Automate manual Excel defect reporting into a web-based automated system.",
-      feat: ["Automated Excel data import via PhpSpreadsheet", "CRUD defect entry management", "Login & Role-based Access Control", "Summary dashboard with filtering and search"]
-    },
-    'intranet-tm': {
-      title: "Intranet Portal — Techno-Metal Internal Communications",
-      desc: "Corporate intranet for internal news announcements, MSD document repository, QA system, and vehicle/meeting room booking in 2 languages (TH/JP).",
-      obj: "Centralize internal communications and reduce routine email overhead.",
-      feat: ["News announcement system", "MSD document library", "Admin console for content and user management", "Bilingual support (Thai / Japanese)"]
-    },
-    'intranet-ls': {
-      title: "Intranet Portal — Leistritz Internal Information",
-      desc: "Self-hosted corporate intranet using JSON Data Store (no MySQL required) for employee info and document management.",
-      obj: "Provide a lightweight, self-hosted internal document and info portal.",
-      feat: ["Main dashboard displaying core corporate info", "Admin management panel", "Lightweight JSON-based Data Store", "Multi-user access support"]
-    },
-    training: {
-      title: "Training & Exam — Online LMS & Evaluation System",
-      desc: "Online Learning Management System (LMS) for employee training courses, learning materials, and online examination assessments.",
-      obj: "Build an interactive online training platform for onboarding and skill development.",
-      feat: ["Categorized training course catalog", "Online examination & testing system", "Interactive learning materials", "Responsive design for all devices"]
-    },
-    'eolo-web': {
-      title: "EOLO Technology — Corporate Website",
-      desc: "Official corporate website featuring company profile, products/services, partners, news CMS, and admin portal.",
-      obj: "Establish a modern digital presence for the company.",
-      feat: ["Company, product, and service showcase", "News CMS system (JSON-based)", "Our Partners section", "Admin Management Panel", "Responsive design"]
-    },
-    'univance-web': {
-      title: "Univance Thailand — Corporate Website",
-      desc: "Corporate website for Univance Thailand with MA package comparison proposal and mobile video demonstration.",
-      obj: "Create a modern corporate web presence with maintenance proposals.",
-      feat: ["Responsive corporate site", "3 MA package comparison proposals", "Mobile video demo showcase"]
-    },
-    'ai-cctv': {
-      title: "AI CCTV Surveillance Solution",
-      desc: "Smart CCTV solution with facial recognition, thermal sensing, and risk detection, complete with technical proposal and presentation.",
-      obj: "Enhance factory safety with real-time person detection and threat alert systems.",
-      feat: ["IP & Thermal Camera deployment with NVR server integration", "AI facial recognition for access control", "Body temperature & abnormal behavior detection", "Real-time alert dispatch to Security Center"]
-    },
-    'spd-sap': {
-      title: "SPD-FRI Web App & SAP Integration",
-      desc: "Workflow design and Functional Specification for SPD-FRI system integrated with SAP ERP, including cost sheets and proposals.",
-      obj: "Integrate custom web workflows seamlessly with SAP enterprise ERP.",
-      feat: ["SAP API integration design", "Functional Spec & Workflow modeling", "Cost Sheet & Technical proposal"]
-    },
-    'spc-net': {
-      title: "Enterprise Network & Cybersecurity",
-      desc: "Complete network redesign and cybersecurity architecture, featuring network diagrams, BOM, and technical proposals.",
-      obj: "Overhaul network topology and security infrastructure to support business expansion.",
-      feat: ["VLAN/Subnet network topology design", "FortiGate Firewall failover configuration", "Layer 3 Switch Core/Distribution deployment", "Complete Bill of Materials (BOM)"]
-    },
-    namyong: {
-      title: "Enterprise Data Storage & Backup Solution",
-      desc: "Enterprise backup and storage architecture design with complete technical proposal for business continuity.",
-      obj: "Design reliable backup architecture adhering to enterprise DRP/BCP standards.",
-      feat: ["VEEAM Backup & Replication", "NAS storage architecture design", "RPO / RTO disaster recovery planning", "Full proposal documentation"]
-    },
-    navy: {
-      title: "Datacenter & Student Database System",
-      client: "Naval Rating School, Naval Education Dept.",
-      desc: "Datacenter infrastructure design and student database management system for naval cadets.",
-      obj: "Centralize naval cadet information management with secure datacenter infrastructure.",
-      feat: ["Server deployment & OS hardening", "Cadet database architecture", "Datacenter infrastructure deployment", "Government compliance"]
-    },
-    omoda: {
-      title: "CCTV System Upgrade — New Factory",
-      desc: "Cost sheet and quotation preparation for new factory CCTV system upgrade, including NVR placement and network design.",
-      obj: "Upgrade factory surveillance infrastructure for high-definition monitoring.",
-      feat: ["CCTV camera placement design", "NVR server setup", "Cost sheet & quotation drafting"]
-    },
-    gorilla: {
-      title: "Network & Fiber Optic Rack Installation",
-      desc: "Fiber optic rack and network equipment installation for One Bangkok project, including cabling testing.",
-      obj: "Deliver high-speed optical fiber infrastructure for mega commercial project.",
-      feat: ["Fiber optic cabling & splicing", "Network rack installation", "OTDR speed testing"]
-    },
-    scs: {
-      title: "Fiber Optic Handover Project",
-      desc: "Inter-building fiber optic deployment with handover reports and OTDR speed test documentation.",
-      obj: "Connect seaport terminal buildings with high-speed fiber backbone.",
-      feat: ["Fiber optic splicing & termination", "Handover report documentation", "Signal & speed testing"]
-    },
-    lrt: {
-      title: "Outdoor Wi-Fi AP Installation",
-      desc: "High-mast tower outdoor Access Point installation and cabling for seaport terminal coverage.",
-      obj: "Expand Wi-Fi coverage across seaport container terminal.",
-      feat: ["Altai Super WiFi outdoor AP deployment", "High-mast tower cabling", "HLD design & cost estimation"]
-    },
-    tpf: {
-      title: "AP, CCTV (51+8 Units) & Fiber Optic",
-      desc: "Installation of 51 new CCTV cameras, 8 relocated cameras, outdoor Access Points, and fiber optic cabling for food processing factory.",
-      obj: "Upgrade factory security monitoring and network infrastructure.",
-      feat: ["51+8 CCTV camera installation & migration", "Fiber optic backbone cabling", "Factory Access Point deployment"]
-    }
+    crm: { title: "EoloSystem — Pre-sales & Quotation Management", desc: "Comprehensive sales management system for Pre-sales team, covering requirement intake, Cost Sheet calculation, job assignment, Quotation generation, and approval workflow.", obj: "Eliminate quotation delays and send accurate proposals rapidly.", feat: ["Dashboard showing pending requirements and jobs", "Cost Sheet Calculator", "PDF Quotation Generator", "Multi-level approval workflow"] },
+    telesale: { title: "AI Tele-Sales — Smart Automated Calling Platform", desc: "AI call center platform integrating Grok LLM API for natural conversation AI Agents with lead tracking and transcripts.", obj: "Automate outbound sales calls with AI, increasing outreach 5x daily.", feat: ["Real-time voice AI Agent", "Lead Management", "Sales Knowledge Base", "Call Transcript recording"] },
+    tms: { title: "TMS — Transport Management & Defects Dashboard", desc: "Delivery planning system and defect report dashboard for TPI POLENE with CSV/Excel import and executive analytics.", obj: "Optimize delivery routes and reduce cargo damage.", feat: ["Daily CSV/Excel import", "Vehicle dispatch queue", "Defect entry recording", "Executive analytics dashboard"] },
+    vehicle: { title: "Vehicle Booking — Corporate Fleet Reservation", desc: "Enterprise vehicle booking web application for trip scheduling, driver dispatching, and online approval.", obj: "Replace paper forms and prevent scheduling conflicts.", feat: ["Online booking form", "Supervisor approval flow", "Driver dispatch queue", "Odometer & fuel logs"] },
+    defects: { title: "KDM Defects Report — Damage Report Converter", desc: "Excel defect data import and conversion web system creating tabular and graphical summary reports.", obj: "Automate manual Excel defect reporting.", feat: ["Automated Excel import via PhpSpreadsheet", "CRUD defect management", "Role-based access", "Summary dashboard"] },
+    'intranet-tm': { title: "Intranet Portal — Techno-Metal Communications", desc: "Corporate intranet for news, MSD documents, QA system, and bookings in 2 languages (TH/JP).", obj: "Centralize internal communications.", feat: ["News announcement system", "MSD library", "Admin console", "Bilingual TH/JP"] },
+    'intranet-ls': { title: "Intranet Portal — Leistritz Info System", desc: "Self-hosted corporate intranet using JSON Data Store for employee info and document management.", obj: "Provide a lightweight self-hosted portal.", feat: ["Core info dashboard", "Admin panel", "JSON data store", "Multi-user access"] },
+    training: { title: "Training & Exam — Online LMS & Evaluation", desc: "Online LMS for employee training courses, learning materials, and examination assessments.", obj: "Interactive online training platform.", feat: ["Categorized course catalog", "Online testing system", "Interactive materials", "Responsive design"] },
+    'eolo-web': { title: "EOLO Technology — Corporate Website", desc: "Official corporate website featuring company profile, products, partners, news CMS, and admin portal.", obj: "Establish a modern digital presence.", feat: ["Company & product showcase", "News JSON CMS", "Partners section", "Admin panel"] },
+    'univance-web': { title: "Univance Thailand — Corporate Website", desc: "Corporate website for Univance Thailand with MA package comparison proposal and video demo.", obj: "Create corporate web presence with MA proposals.", feat: ["Responsive site", "3 MA package proposals", "Mobile video demo"] },
+    'ai-cctv': { title: "AI CCTV Surveillance Solution", desc: "Smart CCTV solution with facial recognition, thermal sensing, and risk detection for factory safety.", obj: "Enhance factory safety with real-time AI alert.", feat: ["IP & Thermal camera deployment", "AI facial recognition", "Body temp detection", "Real-time alert dispatch"] },
+    'spd-sap': { title: "SPD-FRI Web App & SAP Integration", desc: "Workflow design and Functional Specification for SPD-FRI system integrated with SAP ERP.", obj: "Seamless SAP enterprise ERP integration.", feat: ["SAP API integration design", "Functional Spec & Workflow", "Cost Sheet & Technical proposal"] },
+    'spc-net': { title: "Enterprise Network & Cybersecurity", desc: "Complete network redesign and cybersecurity architecture featuring FortiGate and L3 switches.", obj: "Overhaul network topology for business expansion.", feat: ["VLAN/Subnet topology", "FortiGate HA failover", "L3 Switch deployment", "Complete BOM"] },
+    namyong: { title: "Enterprise Data Storage & Backup Solution", desc: "Enterprise backup and storage architecture design with technical proposal for business continuity.", obj: "Design reliable backup architecture for DRP/BCP.", feat: ["VEEAM Backup & Replication", "NAS storage design", "RPO/RTO planning", "Full proposal"] },
+    navy: { title: "Datacenter & Student Database System", desc: "Datacenter infrastructure design and student database management system for naval cadets.", obj: "Centralize cadet info management securely.", feat: ["Server deployment & hardening", "Cadet database architecture", "Datacenter infrastructure", "Government compliance"] },
+    omoda: { title: "CCTV System Upgrade — New Factory", desc: "Cost sheet and quotation preparation for new factory CCTV system upgrade.", obj: "Upgrade factory surveillance infrastructure.", feat: ["CCTV placement design", "NVR server setup", "Cost sheet & quotation"] },
+    gorilla: { title: "Network & Fiber Optic Rack Installation", desc: "Fiber optic rack and network equipment installation for One Bangkok project.", obj: "Deliver high-speed optical fiber infrastructure.", feat: ["Fiber optic cabling", "Network rack setup", "OTDR testing"] },
+    scs: { title: "Fiber Optic Handover Project", desc: "Inter-building fiber optic deployment with handover reports and OTDR speed test.", obj: "Connect seaport terminal with fiber backbone.", feat: ["Fiber optic splicing", "Handover report", "Speed testing"] },
+    lrt: { title: "Outdoor Wi-Fi AP Installation", desc: "High-mast tower outdoor Access Point installation for seaport terminal coverage.", obj: "Expand Wi-Fi coverage across container terminal.", feat: ["Altai Super WiFi outdoor AP", "High-mast cabling", "HLD design & cost sheet"] },
+    tpf: { title: "AP, CCTV (51+8 Units) & Fiber Optic", desc: "Installation of 51 new CCTV cameras, 8 relocated cameras, outdoor APs, and fiber cabling.", obj: "Upgrade factory security monitoring.", feat: ["51+8 CCTV installation", "Fiber optic cabling", "Factory Access Point deployment"] }
   },
   cn: {
-    crm: {
-      title: "EoloSystem — 售前与报价管理系统",
-      desc: "面向售前团队的全流程销售管理系统，涵盖需求接收、成本表计算（成本与利润率）、工程师任务分配、报价单生成及审批流程。支持销售、采购和管理人员的角色权限控制。",
-      obj: "解决报价延迟问题，使售前团队能够快速精准地设计方案、计算价格并出具报价单。",
-      feat: ["仪表板展示待处理需求、任务分配和报价单", "成本表计算器自动计算产品、安装、服务费及利润率", "带数字签名的PDF报价单生成器", "多级审批工作流", "基于角色的权限控制：销售、售前工程师、采购、管理员、主管"]
-    },
-    telesale: {
-      title: "AI Tele-Sales — 智能电话销售系统",
-      desc: "用于自动外呼销售的AI呼叫中心平台。集成Grok LLM API实现自然语音对话AI Agent，具备客户线索管理、知识库及通话记录转写功能。",
-      obj: "通过AI实现外呼电话自动化，降低人工成本，每日新客户触达量提高5倍以上。",
-      feat: ["基于Grok LLM API的实时语音对话AI Agent", "带状态跟踪的线索管理", "产品 FAQ 及销售话术知识库", "通话记录与自动转写文本", "支持更换电信运营商的适配器模式"]
-    },
-    tms: {
-      title: "TMS — 运输管理与缺陷数据看板",
-      desc: "TPI POLENE 的配送计划与货物损坏报告看板，支持CSV/Excel数据导入、车辆排队调度及高管数据统计。",
-      obj: "优化配送路线规划，降低货物损坏率，为高管决策提供数据支持。",
-      feat: ["每日CSV/Excel配送计划导入", "车辆调度排队与接送日志记录", "带照片附件的缺陷录入", "图表化高管数据看板汇总"]
-    },
-    vehicle: {
-      title: "Vehicle Booking — 企业公车预约系统",
-      desc: "企业公车预约Web应用，用于行程调度、司机派单及在线审批流程，取代纸质申请表。",
-      obj: "取代纸质公车预约，简化行政流程，防止行程冲突。",
-      feat: ["带日期、时间和目的地的在线预约表单", "主管在线审批工作流", "司机派单队列管理", "里程数及燃料费用记录", "基于Web的自动安装程序"]
-    },
-    defects: {
-      title: "KDM Defects Report — 缺陷报告转换系统",
-      desc: "Excel缺陷数据导入与转换Web系统，生成表格和图表汇总报告，支持分权登录。",
-      obj: "将手动Excel缺陷报告转换为Web自动化系统。",
-      feat: ["通过PhpSpreadsheet自动导入Excel数据", "缺陷条目的CRUD管理", "登录及基于角色的权限控制", "带筛选和搜索的汇总看板"]
-    },
-    'intranet-tm': {
-      title: "Intranet Portal — Techno-Metal 内部通信系统",
-      desc: "企业内部网，用于新闻公告、MSD文档库、QA系统及车辆/会议室预约，支持中/日/泰双语。",
-      obj: "集中企业内部通信，减少日常电子邮件开销。",
-      feat: ["新闻公告发布系统", "MSD文档资料库", "内容及用户管理后台", "双语支持（泰语/日语）"]
-    },
-    'intranet-ls': {
-      title: "Intranet Portal — Leistritz 内部信息系统",
-      desc: "使用JSON数据存储（无需MySQL）的企业内部网，用于员工信息与文档管理。",
-      obj: "提供轻量级自托管内部文档与信息门户。",
-      feat: ["展示核心企业信息的主看板", "管理员管理后台", "轻量级基于JSON的数据存储", "多用户访问支持"]
-    },
-    training: {
-      title: "Training & Exam — 在线培训与考试系统",
-      desc: "用于员工培训课程、学习材料及在线考试评估的LMS在线学习管理系统。",
-      obj: "构建互动式在线培训平台，用于新员工入职与技能提升。",
-      feat: ["分类培训课程目录", "在线考试与测评系统", "互动式学习材料", "适配所有设备的响应式设计"]
-    },
-    'eolo-web': {
-      title: "EOLO Technology — 公司官网",
-      desc: "EOLO Technology 官方企业网站，包含公司介绍、产品与服务、合作伙伴、新闻CMS及管理后台。",
-      obj: "为公司建立现代化的数字化形象。",
-      feat: ["公司、产品及服务展示", "基于JSON的新闻CMS系统", "合作伙伴展示区", "管理后台", "响应式设计"]
-    },
-    'univance-web': {
-      title: "Univance Thailand — 公司官网",
-      desc: "Univance Thailand 企业网站，附带MA服务包对比提案及移动端演示视频。",
-      obj: "创建附带维护提案的现代化企业网站。",
-      feat: ["响应式企业网站", "3种MA服务包对比提案", "移动端视频演示 showcase"]
-    },
-    'ai-cctv': {
-      title: "AI CCTV 智能监控解决方案",
-      desc: "具备人脸识别、热成像与风险检测的智能CCTV方案，附带技术提案与演示文稿。",
-      obj: "通过实时人员检测与威胁报警系统提升工厂安全性。",
-      feat: ["IP与热成像摄像机部署及NVR服务器集成", "用于出入控制的AI人脸识别", "体温与异常行为检测", "实时报警推送至安防中心"]
-    },
-    'spd-sap': {
-      title: "SPD-FRI Web 应用与 SAP 集成",
-      desc: "与 SAP ERP 集成的 SPD-FRI 系统工作流设计与功能规格书，包含成本表与提案。",
-      obj: "将自定义Web工作流与SAP企业ERP无缝集成。",
-      feat: ["SAP API 集成架构设计", "功能规格书与工作流建模", "成本表与技术提案"]
-    },
-    'spc-net': {
-      title: "企业网络与网络安全重构",
-      desc: "完整的网络重构与网络安全架构设计，包含网络拓扑图、BOM清单及技术提案。",
-      obj: "重构网络拓扑与安全基础设施以支持业务扩展。",
-      feat: ["VLAN/子网网络拓扑设计", "FortiGate防火墙双机热备", "Layer 3 核心/汇聚交换机部署", "完整物料清单 (BOM)"]
-    },
-    namyong: {
-      title: "企业数据存储与备份解决方案",
-      desc: "企业级备份与存储架构设计，附带完整的业务连续性技术提案。",
-      obj: "设计符合企业DRP/BCP标准的可靠备份架构。",
-      feat: ["VEEAM Backup & Replication", "NAS存储架构设计", "RPO / RTO 灾难恢复规划", "完整提案文档"]
-    },
-    navy: {
-      title: "数据中心与学员数据库系统",
-      client: "海军士官学校, 海军教育局",
-      desc: "海军学员数据中心基础设施设计与学员数据库管理系统。",
-      obj: "通过安全的数据中心基础设施集中管理海军学员信息。",
-      feat: ["服务器部署与系统加固", "学员数据库架构设计", "数据中心基础设施部署", "符合政府标准"]
-    },
-    omoda: {
-      title: "CCTV 监控系统升级 — 新工厂",
-      desc: "新工厂CCTV系统升级的成本表与报价单编制，包含NVR位置规划与网络设计。",
-      obj: "升级工厂监控基础设施以实现高清监控。",
-      feat: ["CCTV摄像机布点设计", "NVR服务器安装配置", "成本表与报价单编制"]
-    },
-    gorilla: {
-      title: "网络与光纤机架安装工程",
-      desc: "One Bangkok 项目的光纤机架与网络设备安装，包含光缆熔接与测试。",
-      obj: "为大型商业项目交付高速光纤基础设施。",
-      feat: ["光纤铺设与熔接", "网络机架安装", "OTDR测试"]
-    },
-    scs: {
-      title: "光纤工程交付项目",
-      desc: "楼宇间光纤铺设，附带交付报告及OTDR测速文档。",
-      obj: "用高速光纤主干连接港口码头各楼宇。",
-      feat: ["光纤熔接与端接", "交付报告文档", "信号与测速测试"]
-    },
-    lrt: {
-      title: "室外 Wi-Fi AP 铁塔安装工程",
-      desc: "港口码头高杆塔室外AP安装与布线，扩展无线网络覆盖。",
-      obj: "扩大集装箱码头的 Wi-Fi 覆盖范围。",
-      feat: ["Altai Super WiFi 室外AP部署", "高杆塔布线工程", "HLD设计与成本估算"]
-    },
-    tpf: {
-      title: "AP、CCTV (51+8台) 及光纤工程",
-      desc: "食品工厂51台新摄像机安装、8台迁移、室外AP及光纤布线。",
-      obj: "升级工厂安防监控与无线网络基础架构。",
-      feat: ["51+8台CCTV摄像机安装与迁移", "光纤主干布线", "生产区Access Point部署"]
-    }
+    crm: { title: "EoloSystem — 售前与报价管理系统", desc: "面向售前团队的全流程销售管理系统，涵盖需求接收、成本表计算、工程师任务分配、报价单生成及审批流程。", obj: "解决报价延迟，快速精准出具报价单。", feat: ["待处理需求看板", "成本表计算器", "PDF报价单生成器", "多级审批流"] },
+    telesale: { title: "AI Tele-Sales — 智能电话销售系统", desc: "集成Grok LLM API实现自然语音对话的AI呼叫中心平台，具备线索管理及通话记录功能。", obj: "通过AI实现外呼自动化，新客户触达量提高5倍以上。", feat: ["实时语音AI Agent", "线索管理", "销售知识库", "通话记录转写"] },
+    tms: { title: "TMS — 运输管理与缺陷数据看板", desc: "TPI POLENE 配送计划与货物损坏报告看板，支持CSV/Excel导入及高管数据统计。", obj: "优化配送路线，降低货物损坏率。", feat: ["每日配送计划导入", "车辆调度排队", "缺陷录入", "高管数据看板"] },
+    vehicle: { title: "Vehicle Booking — 企业公车预约系统", desc: "企业公车预约Web应用，用于行程调度、司机派单及在线审批。", obj: "取代纸质公车预约，防止行程冲突。", feat: ["在线预约表单", "主管审批流", "司机派单队列", "里程及油耗记录"] },
+    defects: { title: "KDM Defects Report — 缺陷报告转换系统", desc: "Excel缺陷数据导入与转换Web系统，生成表格和图表汇总报告。", obj: "将手动Excel报告转换为Web自动化系统。", feat: ["PhpSpreadsheet自动导入", "缺陷CRUD管理", "分权登录", "汇总看板"] },
+    'intranet-tm': { title: "Intranet Portal — Techno-Metal 内部通信", desc: "企业内部网，用于新闻公告、MSD文档库、QA系统及预约，支持中/日/泰语。", obj: "集中企业内部通信。", feat: ["新闻公告系统", "MSD文档库", "管理后台", "中日泰多语"] },
+    'intranet-ls': { title: "Intranet Portal — Leistritz 内部信息系统", desc: "使用JSON数据存储的企业内部网，用于员工信息与文档管理。", obj: "提供轻量级自托管内部门户。", feat: ["企业信息主看板", "管理后台", "JSON数据存储", "多用户支持"] },
+    training: { title: "Training & Exam — 在线培训与考试系统", desc: "用于员工培训课程、学习材料及在线考试评估的LMS系统。", obj: "构建互动式在线培训平台。", feat: ["分类课程目录", "在线考试系统", "互动学习材料", "响应式设计"] },
+    'eolo-web': { title: "EOLO Technology — 公司官网", desc: "EOLO Technology 官方企业网站，包含公司介绍、产品、合作伙伴及新闻CMS。", obj: "建立现代化的数字化形象。", feat: ["产品与服务展示", "新闻JSON CMS", "合作伙伴展示", "管理后台"] },
+    'univance-web': { title: "Univance Thailand — 公司官网", desc: "Univance Thailand 企业网站，附带MA服务包对比提案及视频演示。", obj: "创建附带维护提案的企业网站。", feat: ["响应式企业网站", "3种MA对比提案", "移动端视频演示"] },
+    'ai-cctv': { title: "AI CCTV 智能监控解决方案", desc: "具备人脸识别、热成像与风险检测的智能CCTV方案，提升工厂安全性。", obj: "通过实时检测与报警提升工厂安全。", feat: ["IP与热成像部署", "AI人脸识别", "体温与异常检测", "实时报警推送"] },
+    'spd-sap': { title: "SPD-FRI Web 应用与 SAP 集成", desc: "与 SAP ERP 集成的 SPD-FRI 系统工作流设计与功能规格书。", obj: "自定义Web工作流与SAP无缝集成。", feat: ["SAP API集成设计", "功能规格书与工作流", "成本表与提案"] },
+    'spc-net': { title: "企业网络与网络安全重构", desc: "完整的网络重构与网络安全架构设计，包含拓扑图、BOM及提案。", obj: "重构网络拓扑支持业务扩展。", feat: ["VLAN/子网设计", "FortiGate双机热备", "L3交换机部署", "完整BOM清单"] },
+    namyong: { title: "企业数据存储与备份解决方案", desc: "企业级备份与存储架构设计，附带完整的业务连续性提案。", obj: "设计符合DRP/BCP标准的可靠备份。", feat: ["VEEAM Backup & Replication", "NAS存储设计", "RPO/RTO规划", "完整提案"] },
+    navy: { title: "数据中心与学员数据库系统", desc: "海军学员数据中心基础设施设计与学员数据库管理系统。", obj: "集中管理海军学员信息。", feat: ["服务器部署与加固", "学员数据库架构", "数据中心基础设施", "符合政府标准"] },
+    omoda: { title: "CCTV 监控系统升级 — 新工厂", desc: "新工厂CCTV系统升级的成本表与报价单编制。", obj: "升级工厂监控基础设施。", feat: ["CCTV布点设计", "NVR服务器安装", "成本表与报价单"] },
+    gorilla: { title: "网络与光纤机架安装工程", desc: "One Bangkok 项目的光纤机架与网络设备安装及测试。", obj: "交付高速光纤基础设施。", feat: ["光纤铺设与熔接", "网络机架安装", "OTDR测试"] },
+    scs: { title: "光纤工程交付项目", desc: "楼宇间光纤铺设，附带交付报告及OTDR测速文档。", obj: "用高速光纤主干连接港口楼宇。", feat: ["光纤熔接", "交付报告", "测速测试"] },
+    lrt: { title: "室外 Wi-Fi AP 铁塔安装工程", desc: "港口码头高杆塔室外AP安装与布线，扩展无线覆盖。", obj: "扩大码头 Wi-Fi 覆盖范围。", feat: ["Altai Super WiFi AP", "高杆塔布线", "HLD设计与成本"] },
+    tpf: { title: "AP、CCTV (51+8台) 及光纤工程", desc: "食品工厂51台新摄像机安装、8台迁移、室外AP及光纤布线。", obj: "升级工厂安防监控与无线网络。", feat: ["51+8台CCTV安装", "光纤主干布线", "生产区AP部署"] }
   },
   jp: {
-    crm: {
-      title: "EoloSystem — プリセールス＆見積管理システム",
-      desc: "要件ヒアリング、コストシート計算（コスト・利益率）、エンジニアへのタスク割り当て、見積書発行、承認ワークフローをカバーするプリセールスチーム向け統合営業管理システム。営業、購買、管理者向けアクセス権限管理に対応。",
-      obj: "見積作成の遅延を解消し、プリセールスチームがソリューション設計、価格計算、正確な見積発行を迅速に行えるようにする。",
-      feat: ["保留中の要件、タスク割り当て、見積を表示するダッシュボード", "製品コスト、設置費、サービス料、利益率を自動計算するコストシート計算機", "デジタル署名対応PDF見積書ジェネレーター", "多段階承認ワークフロー", "役割ベースのアクセス制御：営業、プリセールス、購買、管理者、スーパーバイザー"]
-    },
-    telesale: {
-      title: "AI Tele-Sales — スマート自動発信システム",
-      desc: "自動アウトバウンド営業電話のためのAIコールセンタープラットフォーム。Grok LLM APIを統合し自然な会話を行うAIエージェント、リード管理、ナレッジベース、通話録音テキスト化機能を搭載。",
-      obj: "AIによるアウトバウンドコール自動化で人件費を削減し、新規顧客アプローチ数を日あたり5倍以上に増加。",
-      feat: ["Grok LLM APIを使用したリアルタイム音声会話AIエージェント", "ステータス追跡機能付きリード管理", "製品FAQ・営業スクリプトナレッジベース", "通話ログ・自動録音およびテキスト化", "複数電話回線プロバイダー対応アダプターパターン"]
-    },
-    tms: {
-      title: "TMS — 配送管理＆欠陥ダッシュボード",
-      desc: "TPI POLENE向けの配送計画システムおよび損傷レポートダッシュボード。CSV/Excelデータインポート、配車キュー割り当て、役員向け統計サマリーを網羅。",
-      obj: "配送ルート計画を最適化して時間厳守を実現し、貨物損傷を最小限に抑え、経営判断のための統計データを提供。",
-      feat: ["日次CSV/Excel配送計画インポート", "積卸ログ付き配車キュー割り当て", "写真添付付き損傷エントリー記録", "グラフ化された役員向けダッシュボードサマリー"]
-    },
-    vehicle: {
-      title: "Vehicle Booking — 社用車予約システム",
-      desc: "運行スケジュール、ドライバー手配、オンライン承認ワークフローを管理し、紙の申請書を廃止する社用車予約Webアプリケーション。",
-      obj: "紙ベースの車両予約を置き換え、事務手続きを削減し、スケジュールの重複を防止。",
-      feat: ["日時・目的地指定オンライン車両予約フォーム", "上司向け承認ワークフロー", "ドライバー手配キュー管理", "走行距離および燃料費記録", "Webベースの自動インストーラー"]
-    },
-    defects: {
-      title: "KDM Defects Report — 欠陥レポート変換システム",
-      desc: "Excelの欠陥データをインポート・変換し、表およびグラフのサマリーレポートを作成するWebシステム。権限別ログイン対応。",
-      obj: "手動のExcel欠陥レポート作成をWeb自動化システムに変換。",
-      feat: ["PhpSpreadsheetによるExcelデータの自動インポート", "欠陥項目のCRUD管理", "ログインおよび役割ベースのアクセス制御", "フィルタリング・検索機能付きサマリーダッシュボード"]
-    },
-    'intranet-tm': {
-      title: "Intranet Portal — Techno-Metal 内部コミュニケーション",
-      desc: "社内ニュース告知、MSD文書ライブラリ、QAシステム、車両・会議室予約をカバーする社内イントラネット（タイ語/日本語対応）。",
-      obj: "社内コミュニケーションを一本化し、日常的なメールのやり取りを削減。",
-      feat: ["ニュース告知システム", "MSD文書ライブラリ", "コンテンツ・ユーザー管理用管理者コンソール", "バイリンガル対応（タイ語/日本語）"]
-    },
-    'intranet-ls': {
-      title: "Intranet Portal — Leistritz 社内情報ポータル",
-      desc: "JSONデータストア（MySQL不要）を使用し、従業員情報や社内文書を管理するセルフホスト型イントラネット。",
-      obj: "軽量でセルフホスト可能な社内情報ポータルを提供。",
-      feat: ["主要な企業情報を表示するメインダッシュボード", "管理者管理パネル", "軽量なJSONベースのデータストア", "マルチユーザーアクセス対応"]
-    },
-    training: {
-      title: "Training & Exam — オンライン研修＆試験システム",
-      desc: "従業員向け研修コース、学習教材、オンライン試験評価を実施するためのLMSオンライン学習管理システム。",
-      obj: "新入社員のオンボーディングとスキル向上のためのインタラクティブなオンライン研修プラットフォームを構築。",
-      feat: ["カテゴリ別研修コースカタログ", "オンライン試験・テストシステム", "インタラクティブ学習教材", "全デバイス対応レスポンシブデザイン"]
-    },
-    'eolo-web': {
-      title: "EOLO Technology — 企業ウェブサイト",
-      desc: "会社概要、製品・サービス、パートナー、ニュースCMS、管理ポータルを備えた公式企業ウェブサイト。",
-      obj: "企業の現代的なデジタルプレゼンスを確立。",
-      feat: ["会社・製品・サービス紹介", "ニュースCMSシステム（JSONベース）", "パートナー企業紹介", "管理パネル", "レスポンシブデザイン"]
-    },
-    'univance-web': {
-      title: "Univance Thailand — 企業ウェブサイト",
-      desc: "MAパッケージ比較提案およびモバイル動画デモを備えたUnivance Thailandの企業ウェブサイト。",
-      obj: "保守提案を備えた現代的な企業Webサイトを作成。",
-      feat: ["レスポンシブ企業サイト", "3種類のMAパッケージ比較提案", "モバイル動画デモ showcase"]
-    },
-    'ai-cctv': {
-      title: "AI CCTV 監視ソリューション",
-      desc: "顔認証、熱感知、リスク検知機能を備えたスマートCCTVソリューション。提案書およびプレゼンテーション資料付き。",
-      obj: "リアルタイム人物検知と脅威アラートシステムにより工場の安全性を向上。",
-      feat: ["IP・サーマルカメラ設置とNVRサーバー統合", "入退室管理用AI顔認証", "体温＆異常行動検知", "警備センターへのリアルタイムアラート送信"]
-    },
-    'spd-sap': {
-      title: "SPD-FRI Webアプリ＆SAP連携",
-      desc: "SAP ERPと連携するSPD-FRIシステムのワークフロー設計および機能仕様書。コストシートおよび提案書付き。",
-      obj: "カスタムWebワークフローをSAP企業ERPとシームレスに統合。",
-      feat: ["SAP API連携アーキテクチャ設計", "機能仕様書＆ワークフローモデリング", "コストシート＆技術提案書"]
-    },
-    'spc-net': {
-      title: "エンタープライズネットワーク＆セキュリティ構築",
-      desc: "ネットワーク構成図、BOM、技術提案書を含む、ネットワークおよび情報セキュリティシステムの全面的再構築。",
-      obj: "事業拡大に対応するため、ネットワーク構成とセキュリティ基盤を刷新。",
-      feat: ["VLAN/サブネット構成設計", "FortiGateファイアウォール冗長化", "L3コア/ディストリビューションスイッチ導入", "完全な部材リスト (BOM)"]
-    },
-    namyong: {
-      title: "企業向けデータストレージ＆バックアップソリューション",
-      desc: "事業継続計画（BCP）に対応した企業向けバックアップ＆ストレージ構成設計および提案書。",
-      obj: "企業のDRP/BCP基準に準拠した信頼性の高いバックアップ構成を設計。",
-      feat: ["VEEAM Backup & Replication", "NASストレージ構成設計", "RPO / RTO 災害復旧計画", "完全な提案ドキュメント"]
-    },
-    navy: {
-      title: "データセンター＆学生データベースシステム",
-      client: "海軍下士官学校, 海軍教育局",
-      desc: "海軍学生データを管理するためのデータセンター基盤設計およびデータベース管理システム。",
-      obj: "安全なデータセンターインフラで海軍学生情報を一元管理。",
-      feat: ["サーバー構築＆OSセキュリティ強化", "学生データベース設計", "データセンターインフラ構築", "政府基準準拠"]
-    },
-    omoda: {
-      title: "CCTV 監視システムアップグレード — 新工場",
-      desc: "新工場のCCTVシステム改善に向けたコストシート・見積書作成、NVR配置およびネットワーク設計。",
-      obj: "高画質監視のため工場の監視インフラをアップグレード。",
-      feat: ["CCTVカメラ配置設計", "NVRサーバー構築", "コストシート＆見積書作成"]
-    },
-    gorilla: {
-      title: "ネットワーク＆光ファイバーラック施工工程",
-      desc: "One Bangkokプロジェクト向け光ファイバーラックおよびネットワーク機器の施工・光接続テスト。",
-      obj: "大型商業プロジェクト向けに高速光ファイバーインフラを提供。",
-      feat: ["光ファイバー敷設＆融着接続", "ネットワークラック設置", "OTDR測定テスト"]
-    },
-    scs: {
-      title: "光ファイバー引渡工程",
-      desc: "建屋間光ファイバー敷設、引渡レポートおよびOTDR速度テストドキュメント作成。",
-      obj: "港湾ターミナル内の建屋間を高速光バックボーンで接続。",
-      feat: ["光ファイバー融着＆端末処理", "引渡レポート作成", "信号＆速度測定テスト"]
-    },
-    lrt: {
-      title: "屋外 Wi-Fi AP 鉄塔設置工程",
-      desc: "港湾ターミナルエリアをカバーするため、高所鉄塔への屋外AP設置および配線工事。",
-      obj: "コンテナターミナル全体のWi-Fiエリアを拡大。",
-      feat: ["Altai Super WiFi 屋外AP設置", "高所鉄塔配線工事", "HLD設計＆コスト見積もり"]
-    },
-    tpf: {
-      title: "AP、CCTV (51+8台) ＆光ファイバー工程",
-      desc: "食品工場向けにCCTVカメラ51台新設、8台移设、屋外APおよび光ファイバー配線工事。",
-      obj: "工場内の防犯監視および無線ネットワーク基盤を強化。",
-      feat: ["51+8台のCCTVカメラ設置・移设", "光ファイバー幹線配線", "製造エリアへのAccess Point設置"]
-    }
+    crm: { title: "EoloSystem — プリセールス＆見積管理", desc: "要件ヒアリング、コストシート計算、エンジニアへのタスク割り当て、見積書発行、承認ワークフローをカバーする統合営業管理システム。", obj: "見積作成の遅延を解消し、正確な見積を発行。", feat: ["要件・タスクダッシュボード", "コストシート計算機", "PDF見積書ジェネレーター", "多段階承認ワークフロー"] },
+    telesale: { title: "AI Tele-Sales — スマート自動発信プラットフォーム", desc: "Grok LLM APIを統合し自然な会話を行うAIエージェント、リード管理、通話録音テキスト化機能を搭載。", obj: "AIによるコール自動化でアプローチ数を5倍以上に増加。", feat: ["リアルタイム音声AI Agent", "リード管理", "営業ナレッジベース", "通話録音テキスト化"] },
+    tms: { title: "TMS — 配送管理＆欠陥ダッシュボード", desc: "TPI POLENE向けの配送計画システムおよび損傷レポートダッシュボード。", obj: "配送ルート計画を最適化し貨物損傷を最小化。", feat: ["日次データインポート", "配車 queue 割り当て", "損傷エントリー記録", "役員向けダッシュボード"] },
+    vehicle: { title: "Vehicle Booking — 社用車予約システム", desc: "運行スケジュール、ドライバー手配、オンライン承認を管理し紙の申請書を廃止。", obj: "紙ベースの予約を置き換え重複を防止。", feat: ["オンライン予約フォーム", "承認ワークフロー", "ドライバー手配", "走行距離＆燃料費記録"] },
+    defects: { title: "KDM Defects Report — 欠陥レポート変換", desc: "Excelの欠陥データをインポート・変換し、表およびグラフのサマリーレポートを作成。", obj: "手動ExcelレポートをWeb自動化システムに変換。", feat: ["PhpSpreadsheet自動インポート", "欠陥CRUD管理", "権限別ログイン", "サマリーダッシュボード"] },
+    'intranet-tm': { title: "Intranet Portal — Techno-Metal 内部コミュニケーション", desc: "社内ニュース、MSD文書ライブラリ、QAシステム、予約をカバーする社内イントラネット（タイ語/日本語対応）。", obj: "社内 communication を一本化。", feat: ["ニュース告知システム", "MSDライブラリ", "管理者コンソール", "タイ・日本バイリンガル"] },
+    'intranet-ls': { title: "Intranet Portal — Leistritz 社内情報", desc: "JSONデータストアを使用し、従業員情報や社内文書を管理するセルフホスト型イントラネット。", obj: "軽量な社内情報ポータルを提供。", feat: ["情報ダッシュボード", "管理パネル", "JSONデータストア", "マルチユーザー対応"] },
+    training: { title: "Training & Exam — オンライン研修＆試験", desc: "従業員向け研修コース、学習教材、オンライン試験評価を実施するためのLMSシステム。", obj: "インタラクティブなオンライン研修プラットフォーム。", feat: ["カテゴリ別コース", "オンライン試験システム", "インタラクティブ教材", "レスポンシブデザイン"] },
+    'eolo-web': { title: "EOLO Technology — 企業ウェブサイト", desc: "会社概要、製品・サービス、パートナー、ニュースCMSを備えた公式企業ウェブサイト。", obj: "企業の現代的なデジタルプレゼンスを確立。", feat: ["会社・製品紹介", "ニュースJSON CMS", "パートナー紹介", "管理パネル"] },
+    'univance-web': { title: "Univance Thailand — 企業ウェブサイト", desc: "MAパッケージ比較提案およびモバイル動画デモを備えたUnivance Thailandの企業ウェブサイト。", obj: "保守提案を備えた現代的な企業Webサイトを作成。", feat: ["レスポンシブサイト", "3種類のMA比較提案", "モバイル動画デモ"] },
+    'ai-cctv': { title: "AI CCTV 監視ソリューション", desc: "顔認証、熱感知、リスク検知機能を備えたスマートCCTVソリューション。", obj: "リアルタイム検知とアラートで工場の安全性を向上。", feat: ["IP・サーマルカメラ設置", "AI顔認証", "体温＆異常行動検知", "リアルタイムアラート"] },
+    'spd-sap': { title: "SPD-FRI Webアプリ＆SAP連携", desc: "SAP ERPと連携するSPD-FRIシステムのワークフロー設計および機能仕様書。", obj: "カスタムWebワークフローをSAP ERPと統合。", feat: ["SAP API連携設計", "機能仕様書＆ワークフロー", "コストシート＆提案書"] },
+    'spc-net': { title: "エンタープライズネットワーク＆セキュリティ構築", desc: "構成図、BOM、提案書を含む、ネットワークおよびセキュリティの全面的再構築。", obj: "事業拡大に対応するため基盤を刷新。", feat: ["VLAN/サブネット設計", "FortiGate冗長化", "L3スイッチ導入", "完全なBOM"] },
+    namyong: { title: "企業向けデータストレージ＆バックアップ", desc: "事業継続計画（BCP）に対応した企業向けバックアップ＆ストレージ構成設計。", obj: "DRP/BCP基準に準拠した信頼性の高い構成を設計。", feat: ["VEEAM Backup & Replication", "NAS構成設計", "RPO/RTO計画", "完全な提案書"] },
+    navy: { title: "データセンター＆学生データベース", desc: "海軍学生データを管理するためのデータセンター基盤設計およびデータベース管理システム。", obj: "海軍学生情報を一元管理。", feat: ["サーバー構築＆強化", "学生データベース設計", "データセンターインフラ", "政府基準準拠"] },
+    omoda: { title: "CCTV 監視システムアップグレード — 新工場", desc: "新工場のCCTVシステム改善に向けたコストシート・見積書作成。", obj: "工場の監視インフラをアップグレード。", feat: ["カメラ配置設計", "NVRサーバー構築", "コストシート＆見積書"] },
+    gorilla: { title: "ネットワーク＆光ファイバーラック施工", desc: "One Bangkokプロジェクト向け光ファイバーラックおよびネットワーク機器の施工・テスト。", obj: "高速光ファイバーインフラを提供。", feat: ["光ファイバー敷設＆融着", "ラック設置", "OTDR測定"] },
+    scs: { title: "光ファイバー引渡工程", desc: "建屋間光ファイバー敷設、引渡レポートおよびOTDR速度テストドキュメント作成。", obj: "建屋間を高速光バックボーンで接続。", feat: ["光ファイバー融着", "引渡レポート", "速度測定テスト"] },
+    lrt: { title: "屋外 Wi-Fi AP 鉄塔設置", desc: "港湾ターミナルエリアをカバーするため、高所鉄塔への屋外AP設置および配線工事。", obj: "ターミナル全体のWi-Fiエリアを拡大。", feat: ["Altai Super WiFi AP", "高所鉄塔配线", "HLD設計＆コスト見積もり"] },
+    tpf: { title: "AP、CCTV (51+8台) ＆光ファイバー工程", desc: "食品工場向けにCCTVカメラ51台新設、8台移设、屋外APおよび光ファイバー配線工事。", obj: "防犯監視および無線ネットワークを強化。", feat: ["51+8台CCTV設置", "光ファイバー幹線配線", "Access Point設置"] }
   },
   in: {
-    crm: {
-      title: "EoloSystem — प्री-सेल्स और कोटेशन प्रबंधन",
-      desc: "प्री-सेल्स टीम के लिए व्यापक बिक्री प्रबंधन प्रणाली, जिसमें आवश्यकताएं प्राप्त करना, लागत पत्रक (लागत और मार्जिन) की गणना, इंजीनियरों को कार्य सौंपना, कोटेशन बनाना और अनुमोदन वर्कफ़्लो शामिल हैं।",
-      obj: "कोटेशन में देरी को समाप्त करना, जिससे प्री-सेल टीम त्वरित समाधान डिज़ाइन और सटीक कोटेशन भेज सके।",
-      feat: ["लंबित आवश्यकताओं और कोटेशन को दर्शाने वाला डैशबोर्ड", "उत्पाद लागत और मार्जिन गणना के लिए स्वचालित कैलकुलेटर", "डिजिटल हस्ताक्षर के साथ पीडीएफ कोटेशन जनरेटर", "बहु-स्तरीय अनुमोदन कार्यप्रवाह", "भूमिका-आधारित पहुंच नियंत्रण"]
-    },
-    telesale: {
-      title: "AI Tele-Sales — स्मार्ट स्वचालित कॉलिंग सिस्टम",
-      desc: "स्वचालित आउटबाउंड बिक्री कॉल के लिए एआई कॉल सेंटर प्लेटफॉर्म। प्राकृतिक आवाज बातचीत के लिए Grok LLM API को एकीकृत करता है।",
-      obj: "एआई के साथ आउटबाउंड बिक्री कॉल को स्वचालित करना, श्रम लागत को कम करना।",
-      feat: ["Grok LLM API का उपयोग करके रीयल-टाइम वॉयस एआई एजेंट", "स्थिति ट्रैकिंग के साथ लीड प्रबंधन", "उत्पाद अक्सर पूछे जाने वाले प्रश्न ज्ञान आधार", "कॉल लॉग और स्वचालित प्रतिलेखन", "एडेप्टर पैटर्न बहु-प्रदाता समर्थन"]
-    },
-    tms: {
-      title: "TMS — परिवहन प्रबंधन और दोष डैशबोर्ड",
-      desc: "TPI POLENE के लिए डिलीवरी योजना प्रणाली और दोष रिपोर्ट डैशबोर्ड। CSV/Excel डेटा आयात और वाहन कतार आवंटन शामिल है।",
-      obj: "समय की पाबंदी के लिए डिलीवरी मार्ग योजना को अनुकूलित करना और निर्णय लेने के लिए डेटा प्रदान करना।",
-      feat: ["दैनिक CSV/Excel वितरण योजना आयात", "वाहन प्रेषण कतार आवंटन", "फोटो संलग्नक के साथ दोष प्रविष्टि", "ग्राफिकल कार्यकारी डैशबोर्ड सारांश"]
-    },
-    vehicle: {
-      title: "Vehicle Booking — कॉर्पोरेट वाहन आरक्षण",
-      desc: "यात्रा शेड्यूलिंग, ड्राइवर प्रेषण और ऑनलाइन अनुमोदन वर्कफ़्लो के लिए एंटरप्राइज़ वाहन बुकिंग वेब एप्लिकेशन।",
-      obj: "कागज आधारित वाहन बुकिंग को बदलना और शेड्यूलिंग संघर्षों को रोकना।",
-      feat: ["दिनांक और गंतव्य के साथ ऑनलाइन वाहन बुकिंग फॉर्म", "पर्यवेक्षक अनुमोदन कार्यप्रवाह", "ड्राइवर प्रेषण कतार प्रबंधन", "ओडोमीटर माइलेज और ईंधन लागत रिकॉर्डिंग", "वेब-आधारित स्वचालित इंस्टॉलर"]
-    },
-    defects: {
-      title: "KDM Defects Report — क्षति रिपोर्ट कनवर्टर",
-      desc: "एक्सेल दोष डेटा आयात और रूपांतरण वेब प्रणाली जो भूमिका-आधारित लॉगिन के साथ रिपोर्ट बनाती है।",
-      obj: "मैनुअल एक्सेल दोष रिपोर्टिंग को वेब-आधारित स्वचालित प्रणाली में बदलना।",
-      feat: ["PhpSpreadsheet के माध्यम से स्वचालित एक्सेल डेटा आयात", "CRUD दोष प्रविष्टि प्रबंधन", "लॉगिन और भूमिका-आधारित पहुंच नियंत्रण", "फ़िल्टरिंग के साथ सारांश डैशबोर्ड"]
-    },
-    'intranet-tm': {
-      title: "Intranet Portal — टेक्नो-मेटल आंतरिक संचार",
-      desc: "आंतरिक समाचार घोषणाओं, दस्तावेज रिपोजिटरी और वाहन/बैठक कक्ष बुकिंग के लिए कॉर्पोरेट इंट्रानेट।",
-      obj: "आंतरिक संचार को केंद्रित करना और ईमेल ओवरहेड को कम करना।",
-      feat: ["समाचार घोषणा प्रणाली", "दस्तावेज़ पुस्तकालय", "सामग्री और उपयोगकर्ता प्रबंधन व्यवस्थापक कंसोल", "द्विभाषी समर्थन"]
-    },
-    'intranet-ls': {
-      title: "Intranet Portal — लीस्ट्रिट्ज़ आंतरिक जानकारी",
-      desc: "कर्मचारी जानकारी और दस्तावेज़ प्रबंधन के लिए JSON डेटा स्टोर का उपयोग करने वाला इंट्रानेट।",
-      obj: "एक हल्का, स्व-होस्टेड आंतरिक दस्तावेज़ और सूचना पोर्टल प्रदान करना।",
-      feat: ["मुख्य कॉर्पोरेट जानकारी प्रदर्शित करने वाला मुख्य डैशबोर्ड", "व्यवस्थापक प्रबंधन पैनल", "हल्का JSON-आधारित डेटा स्टोर", "बहु-उपयोगकर्ता पहुंच समर्थन"]
-    },
-    training: {
-      title: "Training & Exam — ऑनलाइन परीक्षा प्रणाली",
-      desc: "कर्मचारी प्रशिक्षण पाठ्यक्रमों और ऑनलाइन परीक्षा मूल्यांकन के लिए एलएमएस ऑनलाइन लर्निंग मैनेजमेंट सिस्टम।",
-      obj: "कौशल विकास के लिए एक इंटरेक्टिव ऑनलाइन प्रशिक्षण मंच का निर्माण।",
-      feat: ["वर्गीकृत प्रशिक्षण पाठ्यक्रम सूची", "ऑनलाइन परीक्षा और परीक्षण प्रणाली", "इंटरेक्टिव शिक्षण सामग्री", "सभी उपकरणों के लिए उत्तरदायी डिजाइन"]
-    },
-    'eolo-web': {
-      title: "EOLO Technology — कॉर्पोरेट वेबसाइट",
-      desc: "कंपनी प्रोफाइल, उत्पाद/सेवाएं, भागीदार और समाचार सीएमएस वाली आधिकारिक कॉर्पोरेट वेबसाइट।",
-      obj: "कंपनी के लिए एक आधुनिक डिजिटल उपस्थिति स्थापित करना।",
-      feat: ["कंपनी, उत्पाद और सेवा प्रदर्शन", "समाचार सीएमएस प्रणाली", "हमारे भागीदार अनुभाग", "व्यवस्थापक प्रबंधन पैनल", "उत्तरदायी डिजाइन"]
-    },
-    'univance-web': {
-      title: "Univance Thailand — कॉर्पोरेट वेबसाइट",
-      desc: "एमए पैकेज तुलना प्रस्ताव और मोबाइल वीडियो प्रदर्शन के साथ यूनिवेंस थाईलैंड के लिए कॉर्पोरेट वेबसाइट।",
-      obj: "रखरखाव प्रस्तावों के साथ एक आधुनिक वेब उपस्थिति बनाएं।",
-      feat: ["उत्तरदायी कॉर्पोरेट साइट", "3 एमए पैकेज तुलना प्रस्ताव", "मोबाइल वीडियो डेमो प्रदर्शन"]
-    },
-    'ai-cctv': {
-      title: "AI CCTV निगरानी समाधान",
-      desc: "चेहरे की पहचान, थर्मल सेंसिंग और जोखिम का पता लगाने के साथ स्मार्ट सीसीटीवी समाधान।",
-      obj: "वास्तविक समय में व्यक्ति का पता लगाने के साथ कारखाने की सुरक्षा बढ़ाएं।",
-      feat: ["एनवीआर सर्वर एकीकरण के साथ आईपी और थर्मल कैमरा परिनियोजन", "पहुंच नियंत्रण के लिए एआई चेहरे की पहचान", "शरीर का तापमान और असामान्य व्यवहार का पता लगाना", "सुरक्षा केंद्र को अलर्ट डिस्पैच"]
-    },
-    'spd-sap': {
-      title: "SPD-FRI वेब ऐप और SAP एकीकरण",
-      desc: "SAP ERP के साथ एकीकृत SPD-FRI प्रणाली के लिए कार्यप्रवाह डिजाइन और कार्यात्मक विशिष्टता।",
-      obj: "SAP एंटरप्राइज ERP के साथ कस्टम वेब वर्कफ़्लो को एकीकृत करें।",
-      feat: ["SAP API एकीकरण डिजाइन", "कार्यात्मक विशिष्टता और कार्यप्रवाह मॉडलिंग", "लागत पत्रक और तकनीकी प्रस्ताव"]
-    },
-    'spc-net': {
-      title: "एंटरप्राइज नेटवर्क और साइबर सुरक्षा",
-      desc: "नेटवर्क आरेख, बीओएम और तकनीकी प्रस्तावों की विशेषता वाला संपूर्ण नेटवर्क रीडिजाइन।",
-      obj: "व्यापार विस्तार का समर्थन करने के लिए सुरक्षा बुनियादी ढांचे में सुधार।",
-      feat: ["VLAN/सबनेट नेटवर्क टोपोलॉजी डिज़ाइन", "FortiGate फ़ायरवॉल फ़ेलओवर कॉन्फ़िगरेशन", "लेयर 3 स्विच कोर/डिस्ट्रीब्यूशन परिनियोजन", "सामग्री का पूरा बिल (BOM)"]
-    },
-    namyong: {
-      title: "एंटरप्राइज़ डेटा स्टोरेज और बैकअप समाधान",
-      desc: "व्यवसाय निरंतरता के लिए पूर्ण तकनीकी प्रस्ताव के साथ एंटरप्राइज़ बैकअप और स्टोरेज डिज़ाइन।",
-      obj: "एंटरप्राइज़ मानकों का पालन करते हुए विश्वसनीय बैकअप डिज़ाइन करें।",
-      feat: ["VEEAM बैकअप और प्रतिकृति", "NAS भंडारण वास्तुकला डिजाइन", "आपदा वसूली योजना", "पूर्ण प्रस्ताव दस्तावेज"]
-    },
-    navy: {
-      title: "डेटासेंटर और छात्र डेटाबेस प्रणाली",
-      client: "नेवल रेटिंग स्कूल, नौसेना शिक्षा विभाग",
-      desc: "नौसेना कैडेटों के लिए डेटासेंटर इन्फ्रास्ट्रक्चर डिजाइन और छात्र डेटाबेस प्रबंधन प्रणाली।",
-      obj: "सुरक्षित डेटासेंटर के साथ नौसेना कैडेट जानकारी को केंद्रित करें।",
-      feat: ["सर्वर परिनियोजन और ओएस सख्त करना", "कैडेट डेटाबेस वास्तुकला", "डेटासेंटर इन्फ्रास्ट्रक्चर परिनियोजन", "सरकारी अनुपालन"]
-    },
-    omoda: {
-      title: "CCTV सिस्टम अपग्रेड — नया कारखाना",
-      desc: "नए कारखाने के सीसीटीवी अपग्रेड के लिए लागत पत्रक और कोटेशन तैयार करना।",
-      obj: "उच्च परिभाषा निगरानी के लिए कारखाने की निगरानी अपग्रेड करें।",
-      feat: ["सीसीटीवी कैमरा प्लेसमेंट डिज़ाइन", "एनवीआर सर्वर सेटअप", "लागत पत्रक और कोटेशन प्रारूपण"]
-    },
-    gorilla: {
-      title: "नेटवर्क और फाइबर ऑप्टिक रैक स्थापना",
-      desc: "वन बैंकॉक परियोजना के लिए फाइबर ऑप्टिक रैक और नेटवर्क उपकरण स्थापना।",
-      obj: "वाणिज्यिक परियोजना के लिए उच्च गति ऑप्टिकल फाइबर प्रदान करें।",
-      feat: ["फाइबर ऑप्टिक केबल बिछाने", "नेटवर्क रैक स्थापना", "OTDR परीक्षण"]
-    },
-    scs: {
-      title: "फाइबर ऑप्टिक हैंडओवर प्रोजेक्ट",
-      desc: "हैंडओवर रिपोर्ट और OTDR गति परीक्षण के साथ बिल्डिंग फाइबर ऑप्टिक परिनियोजन।",
-      obj: "हाई-स्पीड फाइबर बैकबोन के साथ सीपोर्ट इमारतों को जोड़ें।",
-      feat: ["फाइबर ऑप्टिक स्प्लिसिंग", "हैंडओवर रिपोर्ट दस्तावेज", "सिग्नल और गति परीक्षण"]
-    },
-    lrt: {
-      title: "आउटडोर वाई-फाई एपी स्थापना",
-      desc: "सीपोर्ट टर्मिनल कवरेज के लिए हाई-मास्ट टॉवर आउटडोर एक्सेस प्वाइंट स्थापना।",
-      obj: "सीपोर्ट कंटेनर टर्मिनल पर वाई-फाई कवरेज का विस्तार करें।",
-      feat: ["Altai Super WiFi आउटडोर एपी परिनियोजन", "हाई-मास्ट टॉवर केबल बिछाने", "HLD डिजाइन और लागत अनुमान"]
-    },
-    tpf: {
-      title: "एपी, सीसीटीवी (51+8 यूनिट) और फाइबर ऑप्टिक",
-      desc: "खाद्य प्रसंस्करण कारखाने के लिए नए सीसीटीवी कैमरे और फाइबर ऑप्टिक केबल बिछाना।",
-      obj: "कारखाने की सुरक्षा निगरानी और नेटवर्क में सुधार करें।",
-      feat: ["51+8 सीसीटीवी कैमरा स्थापना", "फाइबर ऑप्टिक बैकबोन केबल बिछाने", "कारखाना एक्सेस प्वाइंट परिनियोजन"]
-    }
+    crm: { title: "EoloSystem — प्री-सेल्स और कोटेशन प्रबंधन", desc: "प्री-सेल्स टीम के लिए व्यापक बिक्री प्रबंधन प्रणाली, जिसमें आवश्यकताएं प्राप्त करना, लागत पत्रक की गणना, कार्य सौंपना और कोटेशन अनुमोदन शामिल हैं।", obj: "कोटेशन में देरी को समाप्त करना और सटीक प्रस्ताव जल्दी भेजना।", feat: ["लंबित आवश्यकताओं का डैशबोर्ड", "लागत पत्रक कैलकुलेटर", "पीडीएफ कोटेशन जनरेटर", "बहु-स्तरीय अनुमोदन कार्यप्रवाह"] },
+    telesale: { title: "AI Tele-Sales — स्मार्ट स्वचालित कॉलिंग प्लेटफॉर्म", desc: "प्राकृतिक आवाज बातचीत के लिए Grok LLM API को एकीकृत करने वाला AI कॉल सेंटर प्लेटफॉर्म।", obj: "एआई के साथ आउटबाउंड बिक्री कॉल को स्वचालित करना।", feat: ["रीयल-टाइम वॉयस एआई एजेंट", "लीड प्रबंधन", "बिक्री ज्ञान आधार", "कॉल ट्रांसक्रिप्ट रिकॉर्डिंग"] },
+    tms: { title: "TMS — परिवहन प्रबंधन और दोष डैशबोर्ड", desc: "TPI POLENE के लिए डिलीवरी योजना प्रणाली और दोष रिपोर्ट डैशबोर्ड।", obj: "डिलीवरी मार्गों को अनुकूलित करना और क्षति को कम करना।", feat: ["दैनिक डेटा आयात", "वाहन प्रेषण कतार", "दोष प्रविष्टि रिकॉर्डिंग", "कार्यकारी विश्लेषण डैशबोर्ड"] },
+    vehicle: { title: "Vehicle Booking — कॉर्पोरेट वाहन आरक्षण", desc: "यात्रा शेड्यूलिंग, ड्राइवर प्रेषण और ऑनलाइन अनुमोदन के लिए वेब एप्लिकेशन।", obj: "कागज के फॉर्म बदलना और शेड्यूलिंग संघर्षों को रोकना।", feat: ["ऑनलाइन बुकिंग फॉर्म", "पर्यवेक्षक अनुमोदन प्रवाह", "ड्राइवर प्रेषण कतार", "ओडोमीटर और ईंधन लॉग"] },
+    defects: { title: "KDM Defects Report — क्षति रिपोर्ट कनवर्टर", desc: "एक्सेल दोष डेटा आयात और रूपांतरण वेब प्रणाली।", obj: "मैनुअल एक्सेल रिपोर्टिंग को स्वचालित वेब सिस्टम में बदलना।", feat: ["स्वचालित एक्सेल आयात", "CRUD दोष प्रबंधन", "भूमिका-आधारित पहुंच", "सारांश डैशबोर्ड"] },
+    'intranet-tm': { title: "Intranet Portal — टेक्नो-मेटल आंतरिक संचार", desc: "आंतरिक समाचारों, दस्तावेजों और बुकिंग के लिए कॉर्पोरेट इंट्रानेट।", obj: "आंतरिक संचार को केंद्रित करना।", feat: ["समाचार घोषणा प्रणाली", "दस्तावेज़ पुस्तकालय", "व्यवस्थापक कंसोल", "द्विभाषी"] },
+    'intranet-ls': { title: "Intranet Portal — लीस्ट्रिट्ज़ आंतरिक जानकारी", desc: "कर्मचारी जानकारी और दस्तावेज़ प्रबंधन के लिए स्व-होस्टेड इंट्रानेट।", obj: "एक हल्का स्व-होस्टेड पोर्टल प्रदान करना।", feat: ["मुख्य जानकारी डैशबोर्ड", "व्यवस्थापक पैनल", "JSON डेटा स्टोर", "बहु-उपयोगकर्ता पहुंच"] },
+    training: { title: "Training & Exam — ऑनलाइन एलएमएस प्रणाली", desc: "कर्मचारी प्रशिक्षण पाठ्यक्रमों और ऑनलाइन परीक्षा मूल्यांकन के लिए एलएमएस प्रणाली।", obj: "इंटरेक्टिव ऑनलाइन प्रशिक्षण मंच।", feat: ["वर्गीकृत पाठ्यक्रम सूची", "ऑनलाइन परीक्षण प्रणाली", "इंटरेक्टिव सामग्री", "उत्तरदायी डिजाइन"] },
+    'eolo-web': { title: "EOLO Technology — कॉर्पोरेट वेबसाइट", desc: "कंपनी प्रोफाइल, उत्पाद, भागीदार और समाचार सीएमएस वाली आधिकारिक वेबसाइट।", obj: "एक आधुनिक डिजिटल उपस्थिति स्थापित करना।", feat: ["उत्पाद प्रदर्शन", "समाचार सीएमएस", "भागीदार अनुभाग", "व्यवस्थापक पैनल"] },
+    'univance-web': { title: "Univance Thailand — कॉर्पोरेट वेबसाइट", desc: "एमए पैकेज तुलना प्रस्ताव और वीडियो प्रदर्शन के साथ कॉर्पोरेट वेबसाइट।", obj: "रखरखाव प्रस्तावों के साथ वेब उपस्थिति बनाएं।", feat: ["उत्तरदायी साइट", "3 एमए पैकेज प्रस्ताव", "मोबाइल वीडियो डेमो"] },
+    'ai-cctv': { title: "AI CCTV निगरानी समाधान", desc: "चेहरे की पहचान, थर्मल सेंसिंग और जोखिम का पता लगाने के साथ स्मार्ट सीसीटीवी समाधान।", obj: "कारखाने की सुरक्षा बढ़ाएं।", feat: ["आईपी और थर्मल कैमरा परिनियोजन", "एआई चेहरे की पहचान", "शरीर का तापमान का पता लगाना", "रीयल-टाइम अलर्ट"] },
+    'spd-sap': { title: "SPD-FRI वेब ऐप और SAP एकीकरण", desc: "SAP ERP के साथ एकीकृत SPD-FRI प्रणाली के लिए कार्यप्रवाह डिजाइन।", obj: "SAP ERP के साथ निर्बाध एकीकरण।", feat: ["SAP API एकीकरण डिजाइन", "कार्यात्मक विशिष्टता", "लागत पत्रक और प्रस्ताव"] },
+    'spc-net': { title: "एंटरप्राइज नेटवर्क और साइबर सुरक्षा", desc: "नेटवर्क आरेख, बीओएम और तकनीकी प्रस्तावों के साथ संपूर्ण नेटवर्क रीडिजाइन।", obj: "सुरक्षा बुनियादी ढांचे में सुधार।", feat: ["VLAN/सबनेट टोपोलॉजी", "FortiGate फेलओवर", "लेयर 3 स्विच परिनियोजन", "सामग्री का पूरा बिल"] },
+    namyong: { title: "एंटरप्राइज़ डेटा स्टोरेज और बैकअप समाधान", desc: "व्यवसाय निरंतरता के लिए पूर्ण तकनीकी प्रस्ताव के साथ बैकअप और स्टोरेज डिज़ाइन।", obj: "विश्वसनीय बैकअप डिज़ाइन करें।", feat: ["VEEAM बैकअप और प्रतिकृति", "NAS भंडारण डिजाइन", "आपदा वसूली योजना", "पूर्ण प्रस्ताव"] },
+    navy: { title: "डेटासेंटर और छात्र डेटाबेस प्रणाली", desc: "नौसेना कैडेटों के लिए डेटासेंटर इन्फ्रास्ट्रक्चर और छात्र डेटाबेस प्रबंधन प्रणाली।", obj: "नौसेना कैडेट जानकारी को केंद्रित करें।", feat: ["सर्वर परिनियोजन और सख्त करना", "कैडेट डेटाबेस वास्तुकला", "डेटासेंटर इन्फ्रास्ट्रक्चर", "सरकारी अनुपालन"] },
+    omoda: { title: "CCTV सिस्टम अपग्रेड — नया कारखाना", desc: "नए कारखाने के सीसीटीवी अपग्रेड के लिए लागत पत्रक और कोटेशन तैयार करना।", obj: "कारखाने की निगरानी अपग्रेड करें।", feat: ["सीसीटीवी प्लेसमेंट डिज़ाइन", "एनवीआर सर्वर सेटअप", "लागत पत्रक और कोटेशन"] },
+    gorilla: { title: "नेटवर्क और फाइबर ऑप्टिक रैक स्थापना", desc: "वन बैंकॉक परियोजना के लिए फाइबर ऑप्टिक रैक और नेटवर्क उपकरण स्थापना।", obj: "उच्च गति ऑप्टिकल फाइबर प्रदान करें।", feat: ["फाइबर ऑप्टिक केबल बिछाने", "नेटवर्क रैक स्थापना", "OTDR परीक्षण"] },
+    scs: { title: "फाइबर ऑप्टिक हैंडओवर प्रोजेक्ट", desc: "हैंडओवर रिपोर्ट और OTDR गति परीक्षण के साथ बिल्डिंग फाइबर ऑप्टिक परिनियोजन।", obj: "सीपोर्ट इमारतों को जोड़ें।", feat: ["फाइबर ऑप्टिक स्प्लिसिंग", "हैंडओवर रिपोर्ट", "गति परीक्षण"] },
+    lrt: { title: "आउटडोर वाई-फाई एपी स्थापना", desc: "सीपोर्ट टर्मिनल कवरेज के लिए हाई-मास्ट टॉवर आउटडोर एक्सेस प्वाइंट स्थापना।", obj: "वाई-फाई कवरेज का विस्तार करें।", feat: ["Altai Super WiFi आउटडोर एपी", "हाई-मास्ट केबल बिछाने", "HLD डिजाइन और लागत"] },
+    tpf: { title: "एपी, सीसीटीवी (51+8 यूनिट) और फाइबर ऑप्टिक", desc: "खाद्य प्रसंस्करण कारखाने के लिए नए सीसीटीवी कैमरे और फाइबर ऑप्टिक केबल बिछाना।", obj: "कारखाने की सुरक्षा में सुधार करें।", feat: ["51+8 सीसीटीवी कैमरा स्थापना", "फाइबर ऑप्टिक केबल बिछाने", "एक्सेस प्वाइंट परिनियोजन"] }
   }
 };
 
-// ═══ MULTI-LANGUAGE SYSTEM (5 LANGUAGES) ═══
+// ═══ MULTI-LANGUAGE SYSTEM ═══
 const langData = {
   th: {
     hero_name: "ภาคภูมิ ล้วนศิริ",
-    hero_subtitle: "Pre-sales Supervisor &middot; IT Infrastructure Lead &middot; Full-Stack Developer",
-    hero_bio: "ผู้เชี่ยวชาญด้าน IT Infrastructure, System Administration และ Pre-sales ที่มีประสบการณ์มากกว่า 10 ปี ออกแบบโซลูชันเครือข่ายองค์กร จัดทำ SOW, BOM, Cost Sheet และพัฒนา Web Application ระดับองค์กร ตั้งแต่ระบบ CRM ระบบ AI Tele-sales จนถึงระบบ Intranet",
+    hero_subtitle: "Pre-sales Supervisor &middot; IT Infrastructure Lead &middot; Acting IT Manager",
     hero_loc: "ชลบุรี, ประเทศไทย",
     btn_contact: "ติดต่อ",
     stat_years: "ปีประสบการณ์",
     stat_clients: "ลูกค้าองค์กร",
     stat_systems: "ระบบที่พัฒนา",
+    sec_summary_title: "สรุปประวัติ",
+    sec_summary_text: "ผู้เชี่ยวชาญด้าน IT Infrastructure, System Administration และ Pre-sales ที่มีประสบการณ์มากกว่า 10 ปี มีประสบการณ์ทำหน้าที่บริหารจัดการแทน IT Manager ควบคู่กับการวางแผนงบประมาณประจำปี (OPEX / CAPEX) การบริหารจัดการ Vendor และการควบคุม SLA มีความเชี่ยวชาญสูงในการออกแบบโซลูชัน จัดทำ SOW, BOM, Cost Sheet รวมถึงการวางโครงสร้างพื้นฐาน Server, Virtualization, Network Failover (FortiGate, Layer 3 Switch), Cloud Services และการพัฒนาระบบเชื่อมต่อ SAP API",
+    sec_mgmt_title: "การบริหารจัดการ",
+    mgmt_1: "<strong>IT Budget Planning:</strong> วางแผนและจัดทำงบประมาณประจำปี (OPEX & CAPEX)",
+    mgmt_2: "<strong>Vendor & SLA Management:</strong> เจรจาต่อรอง จัดซื้อจัดจ้าง และควบคุมสัญญากับซัพพลายเออร์",
+    mgmt_3: "<strong>IT Strategy & Policy:</strong> ควบคุมนโยบายความปลอดภัยและมาตรฐาน ISO 9001 / ISO 27001",
+    mgmt_4: "<strong>DRP & BCP:</strong> จัดทำและทดสอบแผนกู้คืนระบบฉุกเฉินเพื่อความต่อเนื่องทางธุรกิจ",
+    mgmt_5: "<strong>Team Leadership:</strong> บริหารจัดการทีมเทคนิค จัดสรรงาน และประเมินผลงาน",
+    sec_skills_title: "ทักษะด้านเทคนิค",
+    sec_edu_title: "ประวัติการศึกษา",
+    edu_school: "มหาวิทยาลัยคริสเตียน",
+    edu_degree: "ปริญญาตรี เทคโนโลยีสารสนเทศทางธุรกิจ (GPA 2.70, 2017)",
+    sec_exp_title: "ประสบการณ์การทำงาน",
+    exp_job1_company: "EOLO Technology Co., Ltd.",
+    exp_job1_role: "Pre-sales Supervisor",
+    exp_job1_date: "2025 - ปัจจุบัน",
+    exp_job1_task1: "เข้าสำรวจหน้างาน (Site Survey) และวิเคราะห์ความต้องการเชิงลึกของลูกค้าเพื่อออกแบบโซลูชันระบบไอที",
+    exp_job1_task2: "จัดทำข้อเสนอทางเทคนิค (Technical Proposal) เอกสาร TOR, SOW, BOM และ Cost Sheet",
+    exp_job1_task3: "ออกแบบและติดตั้งระบบ Enterprise Network, FortiGate 200F / Failover, Layer 3 Switches และ Ruijie/Reyee Solutions",
+    exp_job1_task4: "วางแผนการย้ายระบบขึ้น Cloud (Microsoft 365 / Google Workspace) และระบบ Bitdefender Enterprise Security",
+    exp_job1_task5: "ควบคุมการติดตั้งระบบ Dell PowerEdge Server และออกแบบโครงสร้างการเชื่อมต่อระบบ SPD เข้ากับ SAP API",
+    exp_job2_company: "Techno-Metal Co., Ltd.",
+    exp_job2_role: "IT Leader / Acting IT Manager",
+    exp_job2_date: "2024 - 2025",
+    exp_job2_badge: "Executive & Management Responsibilities",
+    exp_job2_task1: "วางแผน จัดทำ และบริหารงบประมาณประจำปีของแผนกไอที (Annual OPEX & CAPEX Budgeting)",
+    exp_job2_task2: "คัดเลือก เจรจาต่อรองสัญญากับ Vendor และคุมมาตรฐานการให้บริการตาม SLA",
+    exp_job2_task3: "บริหารจัดการโครงสร้างพื้นฐานระบบ Network, VMware, Active Directory, VPN และระบบสำรองข้อมูล",
+    exp_job2_task4: "กำกับดูแลนโยบายความปลอดภัยด้านสารสนเทศให้สอดคล้องกับมาตรฐาน ISO 9001 และ ISO 27001",
+    exp_job2_task5: "จัดทำและทดสอบแผนรองรับสภาวะฉุกเฉิน (Disaster Recovery Plan) เพื่อให้ระบบทำงานได้ต่อเนื่อง",
+    exp_job3_company: "OKAYAMA (THAILAND) CO., LTD.",
+    exp_job3_role: "IT Support & System Administrator",
+    exp_job3_date: "2016 - 2024",
+    exp_job3_task1: "ดูแลรักษาเครื่อง Server, Mail Server, ระบบเครือข่าย LAN/Wi-Fi และระบบ Surveillance (NVR, DVR, XVR)",
+    exp_job3_task2: "พัฒนา Web Application สำหรับใช้งานภายในองค์กร เพื่อการบริหารจัดการคลังสินค้าและการผลิต",
+    exp_job3_task3: "ให้บริการ Helpdesk Support แก้ไขปัญหาเทคนิค และบริหารจัดการสิทธิ์ผู้ใช้งาน",
     sec_web_tag: "Web & Software Development",
     sec_web_title: "ระบบซอฟต์แวร์ที่พัฒนาขึ้นจริง",
     sec_web_desc: "ผลงานการออกแบบและพัฒนาระบบเว็บแอปพลิเคชันสำหรับองค์กร",
@@ -1281,13 +1109,48 @@ const langData = {
   },
   en: {
     hero_name: "Pakpoom Luansiri",
-    hero_subtitle: "Pre-sales Supervisor &middot; IT Infrastructure Lead &middot; Full-Stack Developer",
-    hero_bio: "IT Infrastructure, System Administration, and Pre-sales expert with over 10 years of experience. Specializing in designing enterprise network solutions, preparing SOW, BOM, and Cost Sheets, and developing enterprise web applications ranging from CRM and AI Tele-sales systems to Intranet portals.",
+    hero_subtitle: "Pre-sales Supervisor &middot; IT Infrastructure Lead &middot; Acting IT Manager",
     hero_loc: "Chonburi, Thailand",
     btn_contact: "Contact",
     stat_years: "Years Exp.",
     stat_clients: "Enterprise Clients",
     stat_systems: "Systems Dev.",
+    sec_summary_title: "Professional Summary",
+    sec_summary_text: "Results-driven IT Infrastructure Specialist and Pre-sales Supervisor with over 10 years of experience in enterprise networking, server virtualization, system governance, and technical proposal development. Proven experience acting as IT Manager, leading annual OPEX and CAPEX budget planning, managing vendor SLAs, and ensuring business continuity (DRP/BCP). Skilled in architecting solution designs (FortiGate 200F, L3 Switches, Ruijie/Reyee), cloud deployment, drafting SOW/BOM documents, and developing SAP API integrations.",
+    sec_mgmt_title: "Management Expertise",
+    mgmt_1: "<strong>IT Budget Planning:</strong> Annual OPEX and CAPEX forecasting and cost control.",
+    mgmt_2: "<strong>Vendor & SLA Management:</strong> Contract negotiation, supplier selection, and SLA enforcement.",
+    mgmt_3: "<strong>IT Governance:</strong> Policy enforcement aligned with ISO 9001 and ISO 27001 standards.",
+    mgmt_4: "<strong>Business Continuity:</strong> Disaster Recovery Plan (DRP) design and testing.",
+    mgmt_5: "<strong>Team Leadership:</strong> Technical team leadership, task delegation, and performance reviews.",
+    sec_skills_title: "Technical Skills",
+    sec_edu_title: "Education",
+    edu_school: "Christian University of Thailand",
+    edu_degree: "Bachelor of Science in Business Information Systems (GPA 2.70, 2017)",
+    sec_exp_title: "Professional Work Experience",
+    exp_job1_company: "EOLO Technology Co., Ltd.",
+    exp_job1_role: "Pre-sales Supervisor",
+    exp_job1_date: "2025 - Present",
+    exp_job1_task1: "Conducted technical site surveys and requirement gathering to architect client-tailored infrastructure solutions.",
+    exp_job1_task2: "Prepared comprehensive technical proposals, TOR, SOW, BOM, and Cost Sheets.",
+    exp_job1_task3: "Designed enterprise network structures, FortiGate 200F failovers, Layer 3 Switch configurations, and Ruijie/Reyee solutions.",
+    exp_job1_task4: "Managed Microsoft 365 / Google Workspace cloud migrations and Bitdefender Enterprise security deployments.",
+    exp_job1_task5: "Oversaw Dell PowerEdge server deployments and defined functional specs for SAP API workflows.",
+    exp_job2_company: "Techno-Metal Co., Ltd.",
+    exp_job2_role: "IT Leader / Acting IT Manager",
+    exp_job2_date: "2024 - 2025",
+    exp_job2_badge: "Executive & Management Responsibilities",
+    exp_job2_task1: "Managed annual departmental IT budget planning (OPEX / CAPEX) and resource allocation.",
+    exp_job2_task2: "Negotiated contracts with vendors, managed procurement, and enforced Service Level Agreements (SLAs).",
+    exp_job2_task3: "Administered core IT infrastructure including Windows Servers, Active Directory, VMware, and FortiGate networks.",
+    exp_job2_task4: "Enforced information security compliance in accordance with ISO 9001 and ISO 27001 standards.",
+    exp_job2_task5: "Structured and executed Disaster Recovery Plans (DRP) to guarantee continuous business operation.",
+    exp_job3_company: "OKAYAMA (THAILAND) CO., LTD.",
+    exp_job3_role: "IT Support & System Administrator",
+    exp_job3_date: "2016 - 2024",
+    exp_job3_task1: "Maintained domain servers, email systems, LAN/WAN infrastructure, and surveillance platforms (NVR, DVR, XVR).",
+    exp_job3_task2: "Developed internal PHP web applications for warehouse inventory and production management.",
+    exp_job3_task3: "Delivered level 1-3 helpdesk support and user access permission management.",
     sec_web_tag: "Web & Software Development",
     sec_web_title: "Software Systems Developed",
     sec_web_desc: "Design and development of enterprise web applications",
@@ -1315,13 +1178,48 @@ const langData = {
   },
   cn: {
     hero_name: "Pakpoom Luansiri",
-    hero_subtitle: "售前主管 &middot; IT 基础设施主管 &middot; 全栈开发工程师",
-    hero_bio: "拥有10年以上经验的IT基础设施、系统管理和售前专家。专注于设计企业网络解决方案，编写SOW、BOM和成本表，以及开发从CRM和AI电话销售系统到企业内部网的Web应用程序。",
+    hero_subtitle: "售前主管 &middot; IT 基础设施主管 &middot; 代理 IT 经理",
     hero_loc: "泰国 春武里",
     btn_contact: "联系",
     stat_years: "年经验",
     stat_clients: "企业客户",
     stat_systems: "开发系统",
+    sec_summary_title: "个人总结",
+    sec_summary_text: "拥有10年以上经验的IT基础设施专家和售前主管，擅长企业网络、服务器虚拟化、系统管理和技术提案编写。具备代理IT经理的实际经验，主导年度OPEX及CAPEX预算规划、供应商SLA管理及业务连续性（DRP/BCP）。精通方案设计（FortiGate 200F、L3交换机、Ruijie/Reyee）、云端部署、SOW/BOM文档编制及SAP API集成开发。",
+    sec_mgmt_title: "管理能力",
+    mgmt_1: "<strong>IT 预算规划：</strong> 年度 OPEX 及 CAPEX 预算预测与成本控制。",
+    mgmt_2: "<strong>供应商与 SLA 管理：</strong> 合同谈判、供应商选择及 SLA 执行监督。",
+    mgmt_3: "<strong>IT 合规与政策：</strong> 执行符合 ISO 9001 和 ISO 27001 标准的信息安全政策。",
+    mgmt_4: "<strong>业务连续性：</strong> 灾难恢复计划 (DRP) 的设计与测试。",
+    mgmt_5: "<strong>团队领导力：</strong> 技术团队管理、任务分配及绩效评估。",
+    sec_skills_title: "技术技能",
+    sec_edu_title: "教育背景",
+    edu_school: "泰国克里斯汀大学 (Christian University of Thailand)",
+    edu_degree: "商业信息系统理学学士 (GPA 2.70, 2017年)",
+    sec_exp_title: "工作经历",
+    exp_job1_company: "EOLO Technology Co., Ltd.",
+    exp_job1_role: "售前主管 (Pre-sales Supervisor)",
+    exp_job1_date: "2025 - 至今",
+    exp_job1_task1: "进行现场勘测 (Site Survey) 并收集深度需求，为客户量身定制 IT 基础设施解决方案。",
+    exp_job1_task2: "编制完整的技术提案 (Technical Proposal)、TOR、SOW、BOM 及成本表 (Cost Sheet)。",
+    exp_job1_task3: "设计企业网络架构、FortiGate 200F 双机热备、Layer 3 交换机及 Ruijie/Reyee 解决方案。",
+    exp_job1_task4: "管理 Microsoft 365 / Google Workspace 云端迁移及 Bitdefender 企业安全部署。",
+    exp_job1_task5: "监督 Dell PowerEdge 服务器部署并制定 SAP API 工作流的功能规格。",
+    exp_job2_company: "Techno-Metal Co., Ltd.",
+    exp_job2_role: "IT 组长 / 代理 IT 经理 (IT Leader / Acting IT Manager)",
+    exp_job2_date: "2024 - 2025",
+    exp_job2_badge: "高管与管理职责 (Executive & Management Responsibilities)",
+    exp_job2_task1: "管理部门年度 IT 预算规划 (OPEX / CAPEX) 及资源分配。",
+    exp_job2_task2: "与供应商进行合同谈判、采购管理及服务级别协议 (SLA) 执行。",
+    exp_job2_task3: "管理核心 IT 基础设施，包括 Windows 服务器、Active Directory、VMware 及 FortiGate 网络。",
+    exp_job2_task4: "监督信息安全合规性，确保符合 ISO 9001 及 ISO 27001 标准。",
+    exp_job2_task5: "制定并执行灾难恢复计划 (DRP)，保障业务连续运营。",
+    exp_job3_company: "OKAYAMA (THAILAND) CO., LTD.",
+    exp_job3_role: "IT 支持与系统管理员 (IT Support & System Administrator)",
+    exp_job3_date: "2016 - 2024",
+    exp_job3_task1: "维护域服务器、邮件系统、局域网/广域网及监控平台 (NVR, DVR, XVR)。",
+    exp_job3_task2: "开发用于仓库库存及生产管理的内部 PHP Web 应用程序。",
+    exp_job3_task3: "提供 1-3 级 Helpdesk 技术支持及用户权限管理。",
     sec_web_tag: "Web & 软件开发",
     sec_web_title: "开发的软件系统",
     sec_web_desc: "企业 Web 应用程序的设计与开发",
@@ -1349,13 +1247,48 @@ const langData = {
   },
   jp: {
     hero_name: "パックプーム・ルワンシリ",
-    hero_subtitle: "プリセールススーパーバイザー &middot; ITインフラリード &middot; フルスタック開発者",
-    hero_bio: "10年以上の経験を持つITインフラ、システム管理、プリセールスの専門家。エンタープライズネットワークソリューションの設計、SOW、BOM、コストシートの作成、CRMやAIテレセールスシステムなどのエンタープライズWebアプリケーションの開発を専門としています。",
+    hero_subtitle: "プリセールススーパーバイザー &middot; ITインフラリード &middot; ITマネージャー代行",
     hero_loc: "タイ チョンブリー",
     btn_contact: "連絡する",
     stat_years: "年の経験",
     stat_clients: "企業顧客",
     stat_systems: "開発システム",
+    sec_summary_title: "職務要約",
+    sec_summary_text: "エンタープライズネットワーク、サーバー仮想化、システム統制、技術提案書作成において10年以上の実績を持つITインフラ専門家兼プリセールススーパーバイザー。ITマネージャー代行としての実務経験を持ち、年間OPEX/CAPEX予算編成、ベンダーSLA管理、事業継続計画（DRP/BCP）を主導。ソリューション設計（FortiGate 200F、L3スイッチ、Ruijie/Reyee）、クラウド移行、SOW/BOM作成、SAP API連携開発に強みを持つ。",
+    sec_mgmt_title: "マネジメントスキル",
+    mgmt_1: "<strong>IT予算計画:</strong> 年間OPEXおよびCAPEXの予算予測とコスト管理。",
+    mgmt_2: "<strong>ベンダー＆SLA管理:</strong> 契約交渉、サプライヤー選定、SLA履行の徹底。",
+    mgmt_3: "<strong>ITガバナンス:</strong> ISO 9001およびISO 27001規格に準拠したセキュリティポリシーの運用。",
+    mgmt_4: "<strong>事業継続性 (BCP):</strong> 災害復旧計画 (DRP) の策定と検証テスト。",
+    mgmt_5: "<strong>チームリーダーシップ:</strong> 技術チームのマネジメント、業務配分、人事評価。",
+    sec_skills_title: "技術スキル",
+    sec_edu_title: "学歴",
+    edu_school: "タイ・クリスチャン大学 (Christian University of Thailand)",
+    edu_degree: "経営情報システム学士 (GPA 2.70, 2017年)",
+    sec_exp_title: "職歴",
+    exp_job1_company: "EOLO Technology Co., Ltd.",
+    exp_job1_role: "プリセールススーパーバイザー",
+    exp_job1_date: "2025年 - 現在",
+    exp_job1_task1: "現地調査 (Site Survey) および詳細な要件ヒアリングを実施し、顧客に最適なインフラソリューションを設計。",
+    exp_job1_task2: "技術提案書 (Technical Proposal)、TOR、SOW、BOM、コストシートを作成。",
+    exp_job1_task3: "エンタープライズネットワーク、FortiGate 200F 冗長化構成、L3スイッチ、Ruijie/Reyeeソリューションを設計・構築。",
+    exp_job1_task4: "Microsoft 365 / Google Workspace のクラウド移行および Bitdefender Enterprise セキュリティの導入を統括。",
+    exp_job1_task5: "Dell PowerEdge サーバーの構築監督および SAP API 連携ワークフローの機能仕様を定義。",
+    exp_job2_company: "Techno-Metal Co., Ltd.",
+    exp_job2_role: "ITリーダー / ITマネージャー代行",
+    exp_job2_date: "2024年 - 2025年",
+    exp_job2_badge: "経営＆マネジメント責任",
+    exp_job2_task1: "IT部門の年間予算計画 (OPEX / CAPEX) の策定およびリソース配分を統括。",
+    exp_job2_task2: "ベンダーとの契約交渉、調達管理、サービスレベル合意 (SLA) の遵守を維持。",
+    exp_job2_task3: "Windows Server、Active Directory、VMware、FortiGate ネットワーク等の基幹インフラを運用管理。",
+    exp_job2_task4: "ISO 9001 および ISO 27001 規格に準拠した情報セキュリティコンプライアンスを徹底。",
+    exp_job2_task5: "事業継続を保証するための災害復旧計画 (DRP) の策定と運用テストを実施。",
+    exp_job3_company: "OKAYAMA (THAILAND) CO., LTD.",
+    exp_job3_role: "ITサポート ＆ システム管理者",
+    exp_job3_date: "2016年 - 2024年",
+    exp_job3_task1: "ドメインサーバー、メールサーバー、LAN/WANインフラ、監視システム (NVR, DVR, XVR) の保守管理。",
+    exp_job3_task2: "在庫管理และ製造管理のための社内用 PHP Web アプリケーションを開発。",
+    exp_job3_task3: "Helpdesk サポート (Level 1-3) およびユーザーアクセス権限管理を提供。",
     sec_web_tag: "Web＆ソフトウェア開発",
     sec_web_title: "開発したソフトウェアシステム",
     sec_web_desc: "エンタープライズWebアプリケーションの設計と開発",
@@ -1383,13 +1316,48 @@ const langData = {
   },
   in: {
     hero_name: "पाकपूम लुआनसिरी",
-    hero_subtitle: "प्री-सेल्स सुपरवाइजर &middot; आईटी इंफ्रास्ट्रक्चर लीड &middot; फुल-स्टैक डेवलपर",
-    hero_bio: "10 से अधिक वर्षों के अनुभव के साथ आईटी इंफ्रास्ट्रक्चर, सिस्टम एडमिनिस्ट्रेशन और प्री-सेल्स विशेषज्ञ। एंटरप्राइज़ नेटवर्क समाधान डिजाइन करने, SOW, BOM, और लागत पत्रक तैयार करने और CRM और AI टेली-सेल्स सिस्टम से लेकर इंट्रानेट तक एंटरप्राइज़ वेब एप्लिकेशन विकसित करने में विशेषज्ञता।",
+    hero_subtitle: "प्री-सेल्स सुपरवाइजर &middot; आईटी इंफ्रास्ट्रक्चर लीड &middot; कार्यवाहक आईटी मैनेजर",
     hero_loc: "चोनबुरी, थाईलैंड",
     btn_contact: "संपर्क करें",
     stat_years: "वर्ष का अनुभव",
     stat_clients: "एंटरप्राइज क्लाइंट्स",
     stat_systems: "विकसित सिस्टम",
+    sec_summary_title: "पेशेवर सारांश",
+    sec_summary_text: "एंटरप्राइज़ नेटवर्किंग, सर्वर वर्चुअलाइजेशन, सिस्टम गवर्नेंस और तकनीकी प्रस्ताव विकास में 10 से अधिक वर्षों के अनुभव के साथ आईटी इंफ्रास्ट्रक्चर विशेषज्ञ और प्री-सेल्स सुपरवाइजर। आईटी मैनेजर के रूप में कार्य करने, वार्षिक OPEX और CAPEX बजट योजना का नेतृत्व करने, विक्रेता SLA प्रबंधन और व्यवसाय निरंतरता (DRP/BCP) का प्रमाणित अनुभव। समाधान डिज़ाइन (FortiGate 200F, L3 Switches, Ruijie/Reyee), क्लाउड परिनियोजन, SOW/BOM दस्तावेज़ तैयार करने और SAP API एकीकरण विकसित करने में कुशल।",
+    sec_mgmt_title: "प्रबंधन विशेषज्ञता",
+    mgmt_1: "<strong>आईटी बजट योजना:</strong> वार्षिक OPEX और CAPEX पूर्वानुमान और लागत नियंत्रण।",
+    mgmt_2: "<strong>विक्रेता और SLA प्रबंधन:</strong> अनुबंध बातचीत, आपूर्तिकर्ता चयन और SLA प्रवर्तन।",
+    mgmt_3: "<strong>आईटी गवर्नेंस:</strong> ISO 9001 और ISO 27001 मानकों के अनुरूप नीति प्रवर्तन।",
+    mgmt_4: "<strong>व्यवसाय निरंतरता:</strong> आपदा वसूली योजना (DRP) डिजाइन और परीक्षण।",
+    mgmt_5: "<strong>टीम नेतृत्व:</strong> तकनीकी टीम का नेतृत्व, कार्य प्रतिनिधिमंडल और प्रदर्शन समीक्षा।",
+    sec_skills_title: "तकनीकी कौशल",
+    sec_edu_title: "शिक्षा",
+    edu_school: "क्रिश्चियन यूनिवर्सिटी ऑफ थाईलैंड (Christian University of Thailand)",
+    edu_degree: "व्यवसाय सूचना प्रणाली में विज्ञान स्नातक (GPA 2.70, 2017)",
+    sec_exp_title: "कार्य अनुभव",
+    exp_job1_company: "EOLO Technology Co., Ltd.",
+    exp_job1_role: "प्री-सेल्स सुपरवाइजर (Pre-sales Supervisor)",
+    exp_job1_date: "2025 - वर्तमान",
+    exp_job1_task1: "ग्राहक-अनुकूलित इंफ्रास्ट्रक्चर समाधानों को डिजाइन करने के लिए तकनीकी साइट सर्वेक्षण और आवश्यकताएं एकत्र करना।",
+    exp_job1_task2: "व्यापक तकनीकी प्रस्ताव, TOR, SOW, BOM, और लागत पत्रक तैयार किए।",
+    exp_job1_task3: "एंटरप्राइज नेटवर्क संरचनाएं, FortiGate 200F फेलओवर, लेयर 3 स्विच कॉन्फ़िगरेशन और Ruijie/Reyee समाधान डिज़ाइन किए।",
+    exp_job1_task4: "Microsoft 365 / Google Workspace क्लाउड माइग्रेशन और Bitdefender एंटरप्राइज सुरक्षा परिनियोजन का प्रबंधन किया।",
+    exp_job1_task5: "Dell PowerEdge सर्वर परिनियोजन की देखरेख की और SAP API वर्कफ़्लो के लिए कार्यात्मक विशिष्टताओं को परिभाषित किया।",
+    exp_job2_company: "Techno-Metal Co., Ltd.",
+    exp_job2_role: "आईटी लीडर / कार्यवाहक आईटी मैनेजर (IT Leader / Acting IT Manager)",
+    exp_job2_date: "2024 - 2025",
+    exp_job2_badge: "कार्यकारी और प्रबंधन जिम्मेदारियां",
+    exp_job2_task1: "वार्षिक विभागीय आईटी बजट योजना (OPEX / CAPEX) और संसाधन आवंटन का प्रबंधन किया।",
+    exp_job2_task2: "विक्रेताओं के साथ अनुबंधों पर बातचीत की, खरीद का प्रबंधन किया और सेवा स्तर समझौतों (SLA) को लागू किया।",
+    exp_job2_task3: "Windows सर्वर, Active Directory, VMware और FortiGate नेटवर्क सहित कोर आईटी इंफ्रास्ट्रक्चर का संचालन किया।",
+    exp_job2_task4: "ISO 9001 और ISO 27001 मानकों के अनुसार सूचना सुरक्षा अनुपालन लागू किया।",
+    exp_job2_task5: "निरंतर व्यावसायिक संचालन की गारंटी के लिए आपदा वसूली योजनाएं (DRP) बनाईं और निष्पादित कीं।",
+    exp_job3_company: "OKAYAMA (THAILAND) CO., LTD.",
+    exp_job3_role: "आईटी सपोर्ट और सिस्टम एडमिनिस्ट्रेटर (IT Support & System Administrator)",
+    exp_job3_date: "2016 - 2024",
+    exp_job3_task1: "डोमेन सर्वर, ईमेल सिस्टम, LAN/WAN इंफ्रास्ट्रक्चर और निगरानी प्लेटफॉर्म (NVR, DVR, XVR) का रखरखाव किया।",
+    exp_job3_task2: "गोदाम सूची और उत्पादन प्रबंधन के लिए आंतरिक PHP वेब एप्लिकेशन विकसित किए।",
+    exp_job3_task3: "स्तर 1-3 हेल्पडेस्क सहायता और उपयोगकर्ता पहुंच अनुमति प्रबंधन प्रदान किया।",
     sec_web_tag: "वेब और सॉफ्टवेयर विकास",
     sec_web_title: "विकसित सॉफ्टवेयर सिस्टम",
     sec_web_desc: "एंटरप्राइज़ वेब अनुप्रयोगों का डिज़ाइन और विकास",
@@ -1420,7 +1388,6 @@ const langData = {
 let currentLang = 'th';
 let activeModalId = null;
 
-// Helper to get translated project properties
 function getProjInfo(p) {
   if (currentLang === 'th') return p;
   const tr = projectTrans[currentLang] && projectTrans[currentLang][p.id];
@@ -1436,7 +1403,6 @@ function getProjInfo(p) {
   };
 }
 
-// ═══ RENDER ═══
 function mkCard(rawP){
   const p = getProjInfo(rawP);
   const hasImg=p.thumb&&p.thumb.length>0;
@@ -1445,13 +1411,13 @@ function mkCard(rawP){
   let imgHtml='';
   if(hasImg){
     imgHtml=`<div class="card-img">
-      <img src="${p.thumb}" alt="${p.title}" onerror="this.parentElement.style.background='linear-gradient(135deg,#667eea,#764ba2)';this.style.display='none'">
+      <img src="${p.thumb}" alt="${p.title}" onerror="this.parentElement.style.background='linear-gradient(135deg,#312e81,#4338ca)';this.style.display='none'">
       <span class="badge ${bc}">${p.catLabel||''}</span>
       ${ic>1?`<span class="img-ct">${ic} images</span>`:''}
     </div>`;
   } else {
-    imgHtml=`<div class="card-img" data-label="${p.catLabel||''}" style="height:90px;background:linear-gradient(135deg,#667eea,#764ba2);display:flex;align-items:center;justify-content:center">
-      <span style="color:rgba(255,255,255,.75);font-size:15px;letter-spacing:1px;font-weight:500">${p.catLabel||''}</span>
+    imgHtml=`<div class="card-img" data-label="${p.catLabel||''}" style="height:90px;background:linear-gradient(135deg,#312e81,#4338ca);display:flex;align-items:center;justify-content:center">
+      <span style="color:rgba(255,255,255,.8);font-size:14px;letter-spacing:1px;font-weight:500">${p.catLabel||''}</span>
     </div>`;
   }
   return `<div class="card ${hasImg?'':'no-img'}" data-cat="${p.cat||''}" data-id="${p.id}">
@@ -1469,7 +1435,6 @@ function mkCard(rawP){
 
 function applyLanguage(lang) {
   currentLang = lang;
-  // Update UI texts based on data-i18n attributes
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     if (langData[lang] && langData[lang][key]) {
@@ -1477,21 +1442,17 @@ function applyLanguage(lang) {
     }
   });
   
-  // Re-render project cards to apply language
   document.getElementById('webGrid').innerHTML=W.map(mkCard).join('');
   document.getElementById('infraGrid').innerHTML=I.map(mkCard).join('');
 
-  // Re-apply filter
   const activeFBtn = document.querySelector('.f-btn.active');
   if(activeFBtn) activeFBtn.click();
 
-  // If modal is open, refresh modal content in new language
   if (activeModalId) {
     openModal(activeModalId);
   }
 }
 
-// Add event listeners to language switcher buttons
 document.querySelectorAll('.lang-btn').forEach(btn => {
   btn.addEventListener('click', function() {
     document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
@@ -1501,10 +1462,8 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
   });
 });
 
-// Initialize on page load
 applyLanguage('th');
 
-// ═══ FILTER ═══
 document.querySelectorAll('.f-btn').forEach(b=>{
   b.addEventListener('click',()=>{
     document.querySelectorAll('.f-btn').forEach(x=>x.classList.remove('active'));
@@ -1516,7 +1475,6 @@ document.querySelectorAll('.f-btn').forEach(b=>{
   });
 });
 
-// ═══ MODAL ═══
 const ALL=[...W,...I];
 function openModal(id){
   activeModalId = id;
@@ -1526,7 +1484,7 @@ function openModal(id){
   let g='';
   if(imgs.length){
     g=`<div class="modal-gallery">
-      <div class="modal-main-img"><img id="mImg" src="${imgs[0]}" alt="${p.title}" onerror="this.src='http://www.eolotechnology.com/css/pic.png'"></div>
+      <div class="modal-main-img"><img id="mImg" src="${imgs[0]}" alt="${p.title}" onerror="this.src='img/profile.png'"></div>
       ${imgs.length>1?`<div class="modal-thumbs">${imgs.map((s,i)=>`<img src="${s}" class="${i===0?'active':''}" onclick="swImg(this,'${s.replace(/'/g,"\\'")}')" onerror="this.style.display='none'">`).join('')}</div>`:''}
     </div>`;
   }
