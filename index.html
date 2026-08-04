@@ -542,11 +542,11 @@ footer a:hover{color:#312e81}
       <div class="glass-card">
         <div class="card-head" data-i18n="sec_mgmt_title">การบริหารจัดการ</div>
         <ul class="mgmt-list">
-          <li data-i18n="mgmt_1"><strong>IT Budget Planning:</strong> วางแผนและจัดทำงบประมาณประจำปี (OPEX &amp; CAPEX)</li>
-          <li data-i18n="mgmt_2"><strong>Vendor &amp; SLA Management:</strong> เจรจาต่อรอง จัดซื้อจัดจ้าง และควบคุมสัญญากับซัพพลายเออร์</li>
-          <li data-i18n="mgmt_3"><strong>IT Strategy &amp; Policy:</strong> ควบคุมนโยบายความปลอดภัยและมาตรฐาน ISO 9001 / ISO 27001</li>
-          <li data-i18n="mgmt_4"><strong>DRP &amp; BCP:</strong> จัดทำและทดสอบแผนกู้คืนระบบฉุกเฉินเพื่อความต่อเนื่องทางธุรกิจ</li>
-          <li data-i18n="mgmt_5"><strong>Team Leadership:</strong> บริหารจัดการทีมเทคนิค จัดสรรงาน และประเมินผลงาน</li>
+          <li data-i18n="mgmt_1"><strong>IT Strategy &amp; Policy:</strong> ควบคุมนโยบายความปลอดภัยและมาตรฐาน ISO 9001 / ISO 27001 / IATF 16949 / ISO 14001</li>
+          <li data-i18n="mgmt_2"><strong>Vendor &amp; Service Governance:</strong> ควบคุมและกำกับดูแล Supplier, Outsourcing, Cloud Service และสัญญาบริการ (SLA)</li>
+          <li data-i18n="mgmt_3"><strong>IT Operations &amp; ITIL:</strong> บริหารจัดการ Incident, Problem, Change Management, Audit Trail &amp; Log และการวัดผลระบบเสนอผู้บริหาร</li>
+          <li data-i18n="mgmt_4"><strong>Data &amp; Access Control:</strong> ควบคุมเอกสาร เวอร์ชันระบบ สิทธิ์การเข้าถึง (Access Rights) การสำรองข้อมูลและการกู้คืน (Backup &amp; Recovery / DRP)</li>
+          <li data-i18n="mgmt_5"><strong>IT Budget &amp; Leadership:</strong> วางแผนงบประมาณประจำปี (OPEX &amp; CAPEX) บริหารจัดการและพัฒนาทีมงานเทคนิค</li>
         </ul>
       </div>
 
@@ -600,7 +600,7 @@ footer a:hover{color:#312e81}
       </div>
       <div class="skill-box">
         <h4>Cybersecurity</h4>
-        <p>Bitdefender Enterprise Security, IT Governance, ISO 9001 / ISO 27001 Compliance</p>
+        <p>Bitdefender Enterprise Security, IT Governance, ISO 9001 / ISO 27001 / IATF 16949 / ISO 14001 Compliance</p>
       </div>
       <div class="skill-box">
         <h4>Server &amp; VM</h4>
@@ -657,10 +657,10 @@ footer a:hover{color:#312e81}
           <div class="timeline-badge" data-i18n="exp_job2_badge">Executive &amp; Management Responsibilities</div>
           <ul class="timeline-ul">
             <li data-i18n="exp_job2_task1">วางแผน จัดทำ และบริหารงบประมาณประจำปีของแผนกไอที (Annual OPEX &amp; CAPEX Budgeting)</li>
-            <li data-i18n="exp_job2_task2">คัดเลือก เจรจาต่อรองสัญญากับ Vendor และคุมมาตรฐานการให้บริการตาม SLA</li>
-            <li data-i18n="exp_job2_task3">บริหารจัดการโครงสร้างพื้นฐานระบบ Network, VMware, Active Directory, VPN และระบบสำรองข้อมูล</li>
-            <li data-i18n="exp_job2_task4">กำกับดูแลนโยบายความปลอดภัยด้านสารสนเทศให้สอดคล้องกับมาตรฐาน ISO 9001 และ ISO 27001</li>
-            <li data-i18n="exp_job2_task5">จัดทำและทดสอบแผนรองรับสภาวะฉุกเฉิน (Disaster Recovery Plan) เพื่อให้ระบบทำงานได้ต่อเนื่อง</li>
+            <li data-i18n="exp_job2_task2">คัดเลือก เจรจาต่อรองสัญญากับ Vendor, Supplier, Outsourcing และกำกับดูแล Cloud Service ตามมาตรฐาน SLA</li>
+            <li data-i18n="exp_job2_task3">กำกับดูแลนโยบายความปลอดภัยด้านสารสนเทศตามมาตรฐาน ISO 9001, ISO 27001, IATF 16949 และ ISO 14001</li>
+            <li data-i18n="exp_job2_task4">บริหารจัดการสิทธิ์เข้าถึง การควบคุมเอกสาร/เวอร์ชัน ระบบสำรองข้อมูลและการกู้คืน (Backup &amp; Recovery / DRP) Audit Trail และ Log</li>
+            <li data-i18n="exp_job2_task5">ควบคุม Incident, Problem และ Change Management พร้อมติดตามวัดผลประสิทธิภาพระบบและจัดทำรายงานเสนอผู้บริหาร</li>
           </ul>
         </div>
 
@@ -872,7 +872,7 @@ const I=[
    client:'Oriental Copper Co., Ltd.',
    desc:'ออกแบบ Workflow & Functional Spec สำหรับระบบ SPD-FRI เชื่อมต่อ SAP ERP พร้อม Cost Sheet & Proposal',
    tags:['SAP API','Web Application','Functional Spec','Cost Sheet'],
-   thumb:null,images:[],
+   thumb:'img/sap.png',images:['img/sap.png'],
    obj:'เชื่อมต่อกระบวนการทำงานของเว็บแอปพลิเคชันเข้ากับระบบ SAP ERP ขององค์กรอย่างไร้รอยต่อ',
    feat:['ออกแบบ SAP API Integration Architecture','จัดทำ Functional Spec & Workflow Diagram','สร้าง Cost Sheet และข้อเสนอโครงการฉบับสมบูรณ์']},
   {id:'spc-net',catLabel:'Enterprise Network',
@@ -907,7 +907,7 @@ const I=[
    client:'OMODA & JAECOO (THAILAND) CO., LTD.',
    desc:'จัดทำ Cost Sheet และใบเสนอราคาสำหรับปรับปรุงระบบ CCTV โรงงานใหม่ ออกแบบตำแหน่งกล้อง NVR และระบบเชื่อมต่อ',
    tags:['CCTV Design','NVR','Cost Sheet','Quotation'],
-   thumb:null,images:[],
+   thumb:'img/IMG_20251002_105951.jpg',images:['img/IMG_20251002_105951.jpg'],
    obj:'ยกระดับระบบรักษาความปลอดภัยกล้องวงจรปิดครอบคลุมพื้นที่โรงงานใหม่',
    feat:['ออกแบบผังติดตั้งกล้อง CCTV และ Server NVR','จัดทำ Cost Sheet คำนวณต้นทุนอุปกรณ์และค่าแรง','ออกเอกสารใบเสนอราคา (Quotation) ฉบับทางการ']},
   {id:'gorilla',catLabel:'Fiber Optic',
@@ -915,7 +915,7 @@ const I=[
    client:'Gorilla Technology Group Inc.',
    desc:'ติดตั้งอุปกรณ์เครือข่าย Fiber Optic Rack สำหรับโครงการ One Bangkok ออกแบบ ติดตั้ง และทดสอบสายใยแก้วนำแสง',
    tags:['Fiber Optic','Network Rack','One Bangkok'],
-   thumb:null,images:[],
+   thumb:'img/go.png',images:['img/go.png'],
    obj:'ติดตั้งโครงสร้างพื้นฐานสายไฟเบอร์ออพติกสำหรับโครงการระดับเมกะโปรเจค',
    feat:['เดินสายและสปลิสสาย Fiber Optic High-speed','ติดตั้งตู้ Rack และอุปกรณ์เครือข่าย','ทดสอบสัญญาณด้วย OTDR']},
   {id:'scs',catLabel:'Fiber Optic',
@@ -923,7 +923,7 @@ const I=[
    client:'SIAM COMMERCIAL SEAPORT CO., LTD.',
    desc:'เดินสาย Fiber Optic เชื่อมต่อระหว่างอาคาร พร้อม Handover Report และผลทดสอบความเร็ว',
    tags:['Fiber Optic Splicing','Handover Report','Speed Test'],
-   thumb:null,images:[],
+   thumb:'img/s1.jpg',images:['img/s1.jpg','img/s2.jpg','img/s3.jpg'],
    obj:'เชื่อมต่อเครือข่ายความเร็วสูงระหว่างอาคารภายในท่าเรือ',
    feat:['เดินสายไฟเบอร์ออพติกข้ามอาคาร','สปลิสท์สายและทดสอบความเร็วการส่งข้อมูล','จัดทำรายงาน Handover Report สรุปส่งมอบงาน']},
   {id:'lrt',catLabel:'Outdoor Wi-Fi',
@@ -931,7 +931,7 @@ const I=[
    client:'LAEMCHABANG INTERNATIONAL RO-RO TERMINAL LIMITED',
    desc:'ออกแบบและเดินสายติดตั้ง AP Outdoor บนเสาถักสูง ขยายสัญญาณ Wi-Fi ให้ครอบคลุมพื้นที่ท่าเรือ พร้อม HLD',
    tags:['Altai Super WiFi','Outdoor AP','HLD Design','Cost Sheet'],
-   thumb:null,images:[],
+   thumb:'img/l1.jpg',images:['img/l1.jpg','img/l2.jpg','img/l3.jpg','img/l4.jpg','img/l5.jpg'],
    obj:'ขยายสัญญาณ Wi-Fi ความเร็วสูงครอบคลุมพื้นที่ลานจอดเรือและลานตู้สินค้า',
    feat:['ติดตั้ง Access Point ทนสภาพอากาศบนเสาถักสูง','ออกแบบ High-Level Design (HLD)','คำนวณ Cost Sheet และงบประมาณโครงการ']},
   {id:'tpf',catLabel:'Multi-Infrastructure',
@@ -939,7 +939,7 @@ const I=[
    client:'THAI PRESIDENT FOODS PUBLIC COMPANY LIMITED',
    desc:'ติดตั้ง Access Point, กล้อง CCTV 51 ตัว ย้ายอีก 8 ตัว พร้อมเดินสาย Fiber Optic สำหรับโรงงานผลิตอาหาร',
    tags:['CCTV','Fiber Optic','AP Installation','Factory'],
-   thumb:null,images:[],
+   thumb:'img/tpf1.jpg',images:['img/tpf1.jpg','img/tpf2.jpg','img/tpf3.jpg'],
    obj:'ปรับปรุงและขยายระบบรักษาความปลอดภัยพร้อมเครือข่ายไร้สายในโรงงาน',
    feat:['ติดตั้งและย้ายจุดกล้อง CCTV รวม 59 จุด','เดินสายสัญญาณและสายไฟเบอร์ออพติก','ติดตั้ง Access Point ในพื้นที่การผลิต']}
 ];
@@ -1049,11 +1049,11 @@ const langData = {
     sec_summary_title: "สรุปประวัติ",
     sec_summary_text: "ผู้เชี่ยวชาญด้าน IT Infrastructure, System Administration และ Pre-sales ที่มีประสบการณ์มากกว่า 10 ปี มีประสบการณ์ทำหน้าที่บริหารจัดการแทน IT Manager ควบคู่กับการวางแผนงบประมาณประจำปี (OPEX / CAPEX) การบริหารจัดการ Vendor และการควบคุม SLA มีความเชี่ยวชาญสูงในการออกแบบโซลูชัน จัดทำ SOW, BOM, Cost Sheet รวมถึงการวางโครงสร้างพื้นฐาน Server, Virtualization, Network Failover (FortiGate, Layer 3 Switch), Cloud Services และการพัฒนาระบบเชื่อมต่อ SAP API",
     sec_mgmt_title: "การบริหารจัดการ",
-    mgmt_1: "<strong>IT Budget Planning:</strong> วางแผนและจัดทำงบประมาณประจำปี (OPEX & CAPEX)",
-    mgmt_2: "<strong>Vendor & SLA Management:</strong> เจรจาต่อรอง จัดซื้อจัดจ้าง และควบคุมสัญญากับซัพพลายเออร์",
-    mgmt_3: "<strong>IT Strategy & Policy:</strong> ควบคุมนโยบายความปลอดภัยและมาตรฐาน ISO 9001 / ISO 27001",
-    mgmt_4: "<strong>DRP & BCP:</strong> จัดทำและทดสอบแผนกู้คืนระบบฉุกเฉินเพื่อความต่อเนื่องทางธุรกิจ",
-    mgmt_5: "<strong>Team Leadership:</strong> บริหารจัดการทีมเทคนิค จัดสรรงาน และประเมินผลงาน",
+    mgmt_1: "<strong>IT Strategy & Policy:</strong> ควบคุมนโยบายความปลอดภัยและมาตรฐาน ISO 9001 / ISO 27001 / IATF 16949 / ISO 14001",
+    mgmt_2: "<strong>Vendor & Service Governance:</strong> ควบคุมและกำกับดูแล Supplier, Outsourcing, Cloud Service และสัญญาบริการ (SLA)",
+    mgmt_3: "<strong>IT Operations & ITIL:</strong> บริหารจัดการ Incident, Problem, Change Management, Audit Trail & Log และการวัดผลระบบเสนอผู้บริหาร",
+    mgmt_4: "<strong>Data & Access Control:</strong> ควบคุมเอกสาร เวอร์ชันระบบ สิทธิ์การเข้าถึง (Access Rights) การสำรองข้อมูลและการกู้คืน (Backup & Recovery / DRP)",
+    mgmt_5: "<strong>IT Budget & Leadership:</strong> วางแผนงบประมาณประจำปี (OPEX & CAPEX) บริหารจัดการทีมเทคนิคและประเมินผลงาน",
     sec_skills_title: "ทักษะด้านเทคนิค",
     sec_edu_title: "ประวัติการศึกษา",
     edu_school: "มหาวิทยาลัยคริสเตียน",
@@ -1072,10 +1072,10 @@ const langData = {
     exp_job2_date: "2024 - 2025",
     exp_job2_badge: "Executive & Management Responsibilities",
     exp_job2_task1: "วางแผน จัดทำ และบริหารงบประมาณประจำปีของแผนกไอที (Annual OPEX & CAPEX Budgeting)",
-    exp_job2_task2: "คัดเลือก เจรจาต่อรองสัญญากับ Vendor และคุมมาตรฐานการให้บริการตาม SLA",
-    exp_job2_task3: "บริหารจัดการโครงสร้างพื้นฐานระบบ Network, VMware, Active Directory, VPN และระบบสำรองข้อมูล",
-    exp_job2_task4: "กำกับดูแลนโยบายความปลอดภัยด้านสารสนเทศให้สอดคล้องกับมาตรฐาน ISO 9001 และ ISO 27001",
-    exp_job2_task5: "จัดทำและทดสอบแผนรองรับสภาวะฉุกเฉิน (Disaster Recovery Plan) เพื่อให้ระบบทำงานได้ต่อเนื่อง",
+    exp_job2_task2: "คัดเลือก เจรจาต่อรองสัญญากับ Vendor, Supplier, Outsourcing และกำกับดูแล Cloud Service ตามมาตรฐาน SLA",
+    exp_job2_task3: "กำกับดูแลนโยบายความปลอดภัยด้านสารสนเทศตามมาตรฐาน ISO 9001, ISO 27001, IATF 16949 และ ISO 14001",
+    exp_job2_task4: "บริหารจัดการสิทธิ์เข้าถึง การควบคุมเอกสาร/เวอร์ชัน ระบบสำรองข้อมูลและการกู้คืน (Backup & Recovery / DRP) Audit Trail และ Log",
+    exp_job2_task5: "ควบคุม Incident, Problem และ Change Management พร้อมติดตามวัดผลประสิทธิภาพระบบและจัดทำรายงานเสนอผู้บริหาร",
     exp_job3_company: "OKAYAMA (THAILAND) CO., LTD.",
     exp_job3_role: "IT Support & System Administrator",
     exp_job3_date: "2016 - 2024",
@@ -1118,11 +1118,11 @@ const langData = {
     sec_summary_title: "Professional Summary",
     sec_summary_text: "Results-driven IT Infrastructure Specialist and Pre-sales Supervisor with over 10 years of experience in enterprise networking, server virtualization, system governance, and technical proposal development. Proven experience acting as IT Manager, leading annual OPEX and CAPEX budget planning, managing vendor SLAs, and ensuring business continuity (DRP/BCP). Skilled in architecting solution designs (FortiGate 200F, L3 Switches, Ruijie/Reyee), cloud deployment, drafting SOW/BOM documents, and developing SAP API integrations.",
     sec_mgmt_title: "Management Expertise",
-    mgmt_1: "<strong>IT Budget Planning:</strong> Annual OPEX and CAPEX forecasting and cost control.",
-    mgmt_2: "<strong>Vendor & SLA Management:</strong> Contract negotiation, supplier selection, and SLA enforcement.",
-    mgmt_3: "<strong>IT Governance:</strong> Policy enforcement aligned with ISO 9001 and ISO 27001 standards.",
-    mgmt_4: "<strong>Business Continuity:</strong> Disaster Recovery Plan (DRP) design and testing.",
-    mgmt_5: "<strong>Team Leadership:</strong> Technical team leadership, task delegation, and performance reviews.",
+    mgmt_1: "<strong>IT Strategy & Policy:</strong> Security policy enforcement and compliance with ISO 9001, ISO 27001, IATF 16949, and ISO 14001.",
+    mgmt_2: "<strong>Vendor & Service Governance:</strong> Vendor, supplier, outsourcing, and cloud service governance with SLA enforcement.",
+    mgmt_3: "<strong>IT Operations & ITIL:</strong> Incident, problem, and change management, audit trail & log oversight, and performance metrics reporting.",
+    mgmt_4: "<strong>Data & Access Control:</strong> Document version control, access rights management, data backup, and recovery planning (BCP/DRP).",
+    mgmt_5: "<strong>IT Budget & Leadership:</strong> Annual OPEX/CAPEX budget planning, technical team leadership, and performance evaluation.",
     sec_skills_title: "Technical Skills",
     sec_edu_title: "Education",
     edu_school: "Christian University of Thailand",
@@ -1141,10 +1141,10 @@ const langData = {
     exp_job2_date: "2024 - 2025",
     exp_job2_badge: "Executive & Management Responsibilities",
     exp_job2_task1: "Managed annual departmental IT budget planning (OPEX / CAPEX) and resource allocation.",
-    exp_job2_task2: "Negotiated contracts with vendors, managed procurement, and enforced Service Level Agreements (SLAs).",
-    exp_job2_task3: "Administered core IT infrastructure including Windows Servers, Active Directory, VMware, and FortiGate networks.",
-    exp_job2_task4: "Enforced information security compliance in accordance with ISO 9001 and ISO 27001 standards.",
-    exp_job2_task5: "Structured and executed Disaster Recovery Plans (DRP) to guarantee continuous business operation.",
+    exp_job2_task2: "Governed vendor, supplier, outsourcing, and cloud service contracts while enforcing strict SLA compliance.",
+    exp_job2_task3: "Enforced IT security policies and compliance with ISO 9001, ISO 27001, IATF 16949, and ISO 14001 standards.",
+    exp_job2_task4: "Managed access control, document versioning, data backup & recovery (DRP/BCP), audit trails, and security logs.",
+    exp_job2_task5: "Directed incident, problem, and change management processes alongside system metrics tracking and executive reporting.",
     exp_job3_company: "OKAYAMA (THAILAND) CO., LTD.",
     exp_job3_role: "IT Support & System Administrator",
     exp_job3_date: "2016 - 2024",
@@ -1187,11 +1187,11 @@ const langData = {
     sec_summary_title: "个人总结",
     sec_summary_text: "拥有10年以上经验的IT基础设施专家和售前主管，擅长企业网络、服务器虚拟化、系统管理和技术提案编写。具备代理IT经理的实际经验，主导年度OPEX及CAPEX预算规划、供应商SLA管理及业务连续性（DRP/BCP）。精通方案设计（FortiGate 200F、L3交换机、Ruijie/Reyee）、云端部署、SOW/BOM文档编制及SAP API集成开发。",
     sec_mgmt_title: "管理能力",
-    mgmt_1: "<strong>IT 预算规划：</strong> 年度 OPEX 及 CAPEX 预算预测与成本控制。",
-    mgmt_2: "<strong>供应商与 SLA 管理：</strong> 合同谈判、供应商选择及 SLA 执行监督。",
-    mgmt_3: "<strong>IT 合规与政策：</strong> 执行符合 ISO 9001 和 ISO 27001 标准的信息安全政策。",
-    mgmt_4: "<strong>业务连续性：</strong> 灾难恢复计划 (DRP) 的设计与测试。",
-    mgmt_5: "<strong>团队领导力：</strong> 技术团队管理、任务分配及绩效评估。",
+    mgmt_1: "<strong>IT 战略与政策：</strong> 执行符合 ISO 9001、ISO 27001、IATF 16949 及 ISO 14001 标准的信息安全政策。",
+    mgmt_2: "<strong>供应商与服务管理：</strong> 供应商、外包伙伴及云服务管理，以及 SLA 执行监督。",
+    mgmt_3: "<strong>IT 运维与 ITIL：</strong> 事件 (Incident)、问题 (Problem) 与变更管理 (Change Management)、审计追踪与日志管理及系统评估报告。",
+    mgmt_4: "<strong>数据与权限控制：</strong> 文档与版本控制、权限分配 (RBAC)、数据备份与恢复测试 (BCP/DRP)。",
+    mgmt_5: "<strong>IT 预算与领导力：</strong> 年度 OPEX 及 CAPEX 预算预测、技术团队管理及绩效评估。",
     sec_skills_title: "技术技能",
     sec_edu_title: "教育背景",
     edu_school: "泰国克里斯汀大学 (Christian University of Thailand)",
@@ -1210,10 +1210,10 @@ const langData = {
     exp_job2_date: "2024 - 2025",
     exp_job2_badge: "高管与管理职责 (Executive & Management Responsibilities)",
     exp_job2_task1: "管理部门年度 IT 预算规划 (OPEX / CAPEX) 及资源分配。",
-    exp_job2_task2: "与供应商进行合同谈判、采购管理及服务级别协议 (SLA) 执行。",
-    exp_job2_task3: "管理核心 IT 基础设施，包括 Windows 服务器、Active Directory、VMware 及 FortiGate 网络。",
-    exp_job2_task4: "监督信息安全合规性，确保符合 ISO 9001 及 ISO 27001 标准。",
-    exp_job2_task5: "制定并执行灾难恢复计划 (DRP)，保障业务连续运营。",
+    exp_job2_task2: "与供应商、外包商及云服务商进行合同谈判、采购管理及 SLA 执行监督。",
+    exp_job2_task3: "管理权限控制、文档与版本控制、数据备份与恢复 (DRP/BCP)、审计追踪 (Audit Trail) 及安全日志。",
+    exp_job2_task4: "监督信息安全合规性，确保符合 ISO 9001、ISO 27001、IATF 16949 及 ISO 14001 标准。",
+    exp_job2_task5: "主导事件、问题及变更管理流程，跟踪系统性能指标并向高管提交报告。",
     exp_job3_company: "OKAYAMA (THAILAND) CO., LTD.",
     exp_job3_role: "IT 支持与系统管理员 (IT Support & System Administrator)",
     exp_job3_date: "2016 - 2024",
@@ -1256,11 +1256,11 @@ const langData = {
     sec_summary_title: "職務要約",
     sec_summary_text: "エンタープライズネットワーク、サーバー仮想化、システム統制、技術提案書作成において10年以上の実績を持つITインフラ専門家兼プリセールススーパーバイザー。ITマネージャー代行としての実務経験を持ち、年間OPEX/CAPEX予算編成、ベンダーSLA管理、事業継続計画（DRP/BCP）を主導。ソリューション設計（FortiGate 200F、L3スイッチ、Ruijie/Reyee）、クラウド移行、SOW/BOM作成、SAP API連携開発に強みを持つ。",
     sec_mgmt_title: "マネジメントスキル",
-    mgmt_1: "<strong>IT予算計画:</strong> 年間OPEXおよびCAPEXの予算予測とコスト管理。",
-    mgmt_2: "<strong>ベンダー＆SLA管理:</strong> 契約交渉、サプライヤー選定、SLA履行の徹底。",
-    mgmt_3: "<strong>ITガバナンス:</strong> ISO 9001およびISO 27001規格に準拠したセキュリティポリシーの運用。",
-    mgmt_4: "<strong>事業継続性 (BCP):</strong> 災害復旧計画 (DRP) の策定と検証テスト。",
-    mgmt_5: "<strong>チームリーダーシップ:</strong> 技術チームのマネジメント、業務配分、人事評価。",
+    mgmt_1: "<strong>IT戦略＆ポリシー:</strong> ISO 9001, ISO 27001, IATF 16949, ISO 14001 規格に準拠したセキュリティポリシー運用。",
+    mgmt_2: "<strong>ベンダー＆サービス統制:</strong> サプライヤー、アウトソーシング、クラウドサービスの管理とSLA履行の徹底。",
+    mgmt_3: "<strong>IT運用＆ITIL:</strong> インシデント、問題、変更管理（Incident/Problem/Change）、監査ログ（Audit Trail/Log）管理、システム評価報告。",
+    mgmt_4: "<strong>データ＆アクセス制御:</strong> 文書・バージョン管理、アクセス権限管理、データバックアップおよびリストア計画（BCP/DRP）。",
+    mgmt_5: "<strong>IT予算＆リーダーシップ:</strong> 年間OPEX/CAPEX予算計画、技術チームのマネジメント、評価測定。",
     sec_skills_title: "技術スキル",
     sec_edu_title: "学歴",
     edu_school: "タイ・クリスチャン大学 (Christian University of Thailand)",
@@ -1279,10 +1279,10 @@ const langData = {
     exp_job2_date: "2024年 - 2025年",
     exp_job2_badge: "経営＆マネジメント責任",
     exp_job2_task1: "IT部門の年間予算計画 (OPEX / CAPEX) の策定およびリソース配分を統括。",
-    exp_job2_task2: "ベンダーとの契約交渉、調達管理、サービスレベル合意 (SLA) の遵守を維持。",
-    exp_job2_task3: "Windows Server、Active Directory、VMware、FortiGate ネットワーク等の基幹インフラを運用管理。",
-    exp_job2_task4: "ISO 9001 および ISO 27001 規格に準拠した情報セキュリティコンプライアンスを徹底。",
-    exp_job2_task5: "事業継続を保証するための災害復旧計画 (DRP) の策定と運用テストを実施。",
+    exp_job2_task2: "ベンダー、サプライヤー、アウトソーシング、クラウドサービスとの契約交渉、SLA遵守を維持。",
+    exp_job2_task3: "アクセス権限管理、文書・バージョン管理、データバックアップ＆リストア (DRP/BCP)、監査ログ (Audit Trail/Log) を運用管理。",
+    exp_job2_task4: "ISO 9001, ISO 27001, IATF 16949, ISO 14001 規格に準拠した情報セキュリティコンプライアンスを徹底。",
+    exp_job2_task5: "インシデント、問題、変更管理を指揮し、システムパフォーマンス計測と役員報告を実施。",
     exp_job3_company: "OKAYAMA (THAILAND) CO., LTD.",
     exp_job3_role: "ITサポート ＆ システム管理者",
     exp_job3_date: "2016年 - 2024年",
@@ -1325,11 +1325,11 @@ const langData = {
     sec_summary_title: "पेशेवर सारांश",
     sec_summary_text: "एंटरप्राइज़ नेटवर्किंग, सर्वर वर्चुअलाइजेशन, सिस्टम गवर्नेंस और तकनीकी प्रस्ताव विकास में 10 से अधिक वर्षों के अनुभव के साथ आईटी इंफ्रास्ट्रक्चर विशेषज्ञ और प्री-सेल्स सुपरवाइजर। आईटी मैनेजर के रूप में कार्य करने, वार्षिक OPEX और CAPEX बजट योजना का नेतृत्व करने, विक्रेता SLA प्रबंधन और व्यवसाय निरंतरता (DRP/BCP) का प्रमाणित अनुभव। समाधान डिज़ाइन (FortiGate 200F, L3 Switches, Ruijie/Reyee), क्लाउड परिनियोजन, SOW/BOM दस्तावेज़ तैयार करने और SAP API एकीकरण विकसित करने में कुशल।",
     sec_mgmt_title: "प्रबंधन विशेषज्ञता",
-    mgmt_1: "<strong>आईटी बजट योजना:</strong> वार्षिक OPEX और CAPEX पूर्वानुमान और लागत नियंत्रण।",
-    mgmt_2: "<strong>विक्रेता और SLA प्रबंधन:</strong> अनुबंध बातचीत, आपूर्तिकर्ता चयन और SLA प्रवर्तन।",
-    mgmt_3: "<strong>आईटी गवर्नेंस:</strong> ISO 9001 और ISO 27001 मानकों के अनुरूप नीति प्रवर्तन।",
-    mgmt_4: "<strong>व्यवसाय निरंतरता:</strong> आपदा वसूली योजना (DRP) डिजाइन और परीक्षण।",
-    mgmt_5: "<strong>टीम नेतृत्व:</strong> तकनीकी टीम का नेतृत्व, कार्य प्रतिनिधिमंडल और प्रदर्शन समीक्षा।",
+    mgmt_1: "<strong>आईटी रणनीति और नीति:</strong> ISO 9001, ISO 27001, IATF 16949, और ISO 14001 मानकों के अनुरूप नीति प्रवर्तन।",
+    mgmt_2: "<strong>विक्रेता और सेवा गवर्नेंस:</strong> आपूर्तिकर्ता, आउटसोर्सिंग, क्लाउड सेवा प्रबंधन और SLA प्रवर्तन।",
+    mgmt_3: "<strong>आईटी संचालन और ITIL:</strong> घटना, समस्या, परिवर्तन प्रबंधन, ऑडिट ट्रेल और लॉग निगरानी, और सिस्टम प्रदर्शन रिपोर्टिंग।",
+    mgmt_4: "<strong>डेटा और पहुंच नियंत्रण:</strong> दस्तावेज संस्करण नियंत्रण, पहुंच अधिकार प्रबंधन, डेटा बैकअप और पुनर्प्राप्ति योजना (BCP/DRP)।",
+    mgmt_5: "<strong>आईटी बजट और नेतृत्व:</strong> वार्षिक OPEX/CAPEX बजट योजना, तकनीकी टीम का नेतृत्व और प्रदर्शन मूल्यांकन।",
     sec_skills_title: "तकनीकी कौशल",
     sec_edu_title: "शिक्षा",
     edu_school: "क्रिश्चियन यूनिवर्सिटी ऑफ थाईलैंड (Christian University of Thailand)",
@@ -1348,10 +1348,10 @@ const langData = {
     exp_job2_date: "2024 - 2025",
     exp_job2_badge: "कार्यकारी और प्रबंधन जिम्मेदारियां",
     exp_job2_task1: "वार्षिक विभागीय आईटी बजट योजना (OPEX / CAPEX) और संसाधन आवंटन का प्रबंधन किया।",
-    exp_job2_task2: "विक्रेताओं के साथ अनुबंधों पर बातचीत की, खरीद का प्रबंधन किया और सेवा स्तर समझौतों (SLA) को लागू किया।",
-    exp_job2_task3: "Windows सर्वर, Active Directory, VMware और FortiGate नेटवर्क सहित कोर आईटी इंफ्रास्ट्रक्चर का संचालन किया।",
-    exp_job2_task4: "ISO 9001 और ISO 27001 मानकों के अनुसार सूचना सुरक्षा अनुपालन लागू किया।",
-    exp_job2_task5: "निरंतर व्यावसायिक संचालन की गारंटी के लिए आपदा वसूली योजनाएं (DRP) बनाईं और निष्पादित कीं।",
+    exp_job2_task2: "विक्रेताओं, आपूर्तिकर्ताओं, आउटसोर्सिंग और क्लाउड सेवाओं के साथ अनुबंधों का प्रबंधन किया और SLA लागू किया।",
+    exp_job2_task3: "पहुंच नियंत्रण, दस्तावेज़ संस्करण, डेटा बैकअप और पुनर्प्राप्ति (DRP/BCP), ऑडिट ट्रेल और सुरक्षा लॉग का संचालन किया।",
+    exp_job2_task4: "ISO 9001, ISO 27001, IATF 16949, और ISO 14001 मानकों के अनुसार सूचना सुरक्षा अनुपालन लागू किया।",
+    exp_job2_task5: "घटना, समस्या और परिवर्तन प्रबंधन प्रक्रियाओं का संचालन किया और सिस्टम प्रदर्शन रिपोर्ट तैयार की।",
     exp_job3_company: "OKAYAMA (THAILAND) CO., LTD.",
     exp_job3_role: "आईटी सपोर्ट और सिस्टम एडमिनिस्ट्रेटर (IT Support & System Administrator)",
     exp_job3_date: "2016 - 2024",
