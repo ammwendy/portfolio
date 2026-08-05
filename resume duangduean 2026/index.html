@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Duangduean Promsri — Interactive Portfolio & Executive Resume</title>
+<meta name="description" content="Portfolio & Resume of Duangduean Promsri — Assistant Manager Business Operations & Procurement, IT & Operations Specialist">
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Prompt',sans-serif;
+  background:#f0f2f5;
+  color:#1e293b;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* Gradients — Warm Rose-Gold to Deep Plum */
+.gradient-hero{background:linear-gradient(135deg,#5c2386 0%,#8739b8 40%,#b55877 100%)}
+.gradient-section{background:linear-gradient(135deg,#5c2386 0%,#7a32a3 50%,#b55877 100%)}
+
+/* Glass containers */
+.glass{
+  background:rgba(255,255,255,.12);
+  backdrop-filter:blur(14px);
+  border:1px solid rgba(255,255,255,.2);
+}
+.glass-card{
+  background:#ffffff;
+  border-radius:20px;
+  border:1px solid #e2e8f0;
+  box-shadow:0 6px 20px rgba(0,0,0,.04);
+  padding:30px;
+  transition:all .3s ease;
+}
+.glass-card:hover{
+  box-shadow:0 12px 32px rgba(135,57,184,.12);
+  border-color:#d8b4fe;
+}
+
+/* Container */
+.container{max-width:1160px;margin:0 auto;padding:0 28px}
+
+/* Top bar (Lang Switcher) */
+.hero-top-bar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 50;
+}
+.lang-switcher-group {
+    display: inline-flex;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 24px;
+    padding: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
+}
+.lang-btn {
+    cursor: pointer;
+    padding: 6px 16px;
+    border-radius: 20px;
+    color: #ffffff;
+    font-size: 14.5px;
+    font-weight: 600;
+    transition: all 0.25s ease;
+    user-select: none;
+    font-family: 'Prompt', sans-serif;
+}
+.lang-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+.lang-btn.active {
+    background: #ffffff;
+    color: #5c2386;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+/* Hero */
+.hero{
+  padding:36px 0 58px;
+  position:relative;
+  overflow:hidden;
+  color:#fff;
+}
+.hero::before{
+  content:'';
+  position:absolute;
+  top:-50%;right:-30%;
+  width:600px;height:600px;
+  background:radial-gradient(circle,rgba(255,255,255,.08) 0%,transparent 70%);
+  border-radius:50%;
+  pointer-events:none;
+}
+.hero-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+.hero-profile-group {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+.hero-photo{
+  width:140px;height:175px;border-radius:20px;
+  overflow:hidden;border:4px solid rgba(255,255,255,.4);
+  box-shadow:0 12px 40px rgba(0,0,0,.25);
+  background:#ffffff;
+  flex-shrink: 0;
+}
+.hero-photo img{width:100%;height:100%;object-fit:cover;background:#ffffff}
+.hero h1{
+  font-size:42px;font-weight:700;color:#fff;
+  margin-bottom:6px;letter-spacing:0.5px;
+  line-height:1.2;
+  text-shadow:0 2px 8px rgba(0,0,0,0.2);
+  font-family:'Prompt',sans-serif;
+}
+.hero .subtitle{
+  font-size:17px;color:#f3e8ff;
+  font-weight:500;
+  letter-spacing:0.5px;
+}
+.hero-stats-row {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.stat-pill{
+  padding:14px 20px;border-radius:16px;text-align:center;
+  min-width:125px;
+  background:rgba(255,255,255,.15);
+  backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,.25);
+}
+.stat-pill .num{font-size:30px;font-weight:700;color:#fff;line-height:1;}
+.stat-pill .lbl{font-size:13px;color:rgba(255,255,255,.9);font-weight:400;margin-top:4px}
+
+/* Wide Bio Glass Card */
+.hero-bio-card {
+  width: 100%;
+  padding: 28px 34px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+}
+.hero-bio-card .bio {
+  font-size: 16.5px;
+  color: #ffffff;
+  line-height: 1.85;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  margin-bottom: 22px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.25);
+}
+
+.hero-bottom-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+  flex-wrap: wrap;
+  gap: 18px;
+}
+.hero-bottom-bar .contact-row {
+  display: flex;
+  gap: 22px;
+  font-size: 15.5px;
+  color: #f3e8ff;
+  font-weight: 500;
+  flex-wrap: wrap;
+}
+.hero-bottom-bar .contact-row a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.hero-links{
+  display:flex;gap:12px;
+}
+.hero-links a{
+  display:inline-block;padding:10px 24px;border-radius:12px;
+  font-size:14.5px;font-weight:600;text-decoration:none;
+  transition:all .3s ease;
+  font-family:'Prompt',sans-serif;
+}
+.hero-links .btn-w{
+  background:rgba(255,255,255,.18);color:#fff;
+  border:1px solid rgba(255,255,255,.3);
+}
+.hero-links .btn-w:hover{background:rgba(255,255,255,.32); transform: translateY(-2px);}
+.hero-links .btn-solid{
+  background:#fff;color:#5c2386;border:1px solid transparent;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+.hero-links .btn-solid:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(0,0,0,.25)}
+
+/* Section Headings */
+.section{padding:64px 0}
+.section-head{text-align:center;margin-bottom:44px}
+.section-head .tag{
+  display:inline-block;padding:6px 20px;border-radius:24px;
+  background:linear-gradient(135deg,#5c2386,#8739b8);
+  color:#fff;font-size:13.5px;font-weight:600;
+  letter-spacing:.5px;margin-bottom:12px;
+}
+.section-head h2{
+  font-size:32px;font-weight:700;color:#0f172a;
+  margin-bottom:8px;
+}
+.section-head p{font-size:16px;color:#64748b;font-weight:400}
+
+/* Grid Layouts */
+.grid-2col{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.grid-3col{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.grid-1-2{display:grid;grid-template-columns:36% 64%;gap:28px}
+
+/* Resume Cards */
+.card-head{
+  font-size:18px;font-weight:700;color:#4a1d75;
+  margin-bottom:18px;padding-bottom:10px;
+  border-bottom:2px solid #ede9fe;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.resume-table{width:100%;border-collapse:collapse;font-size:14px}
+.resume-table td{padding:9px 4px;border-bottom:1px solid #f1f5f9;vertical-align:top}
+.resume-table td.lbl{font-weight:600;color:#5c2386;width:38%}
+.resume-table td.val{color:#334155;font-weight:400}
+
+.mgmt-list{list-style:none;padding:0}
+.mgmt-list li{
+  position:relative;padding-left:20px;margin-bottom:12px;
+  font-size:14.5px;color:#334155;line-height:1.6;
+}
+.mgmt-list li::before{
+  content:'';position:absolute;left:2px;top:10px;
+  width:6px;height:6px;border-radius:50%;
+  background:#8739b8;
+}
+
+/* Timeline */
+.timeline{position:relative;padding-left:24px;border-left:3px solid #e2e8f0;margin-top:10px}
+.timeline-item{position:relative;margin-bottom:32px}
+.timeline-item:last-child{margin-bottom:0}
+.timeline-dot{
+  position:absolute;left:-32px;top:4px;
+  width:14px;height:14px;border-radius:50%;
+  background:#8739b8;border:3px solid #fff;
+  box-shadow:0 0 0 3px #d8b4fe;
+}
+.timeline-date{font-size:13px;font-weight:600;color:#8739b8;margin-bottom:4px}
+.timeline-company{font-size:20px;font-weight:700;color:#0f172a}
+.timeline-role{font-size:15px;font-weight:600;color:#5c2386;margin-bottom:8px}
+.timeline-badge{
+  display:inline-block;padding:3px 12px;border-radius:12px;
+  background:#ede9fe;color:#5c2386;font-size:12px;font-weight:600;
+  margin-bottom:10px;
+}
+.timeline-ul{padding-left:18px;font-size:14.5px;color:#334155}
+.timeline-ul li{margin-bottom:6px;line-height:1.65}
+
+/* Skills Matrix */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px}
+.skill-box{
+  background:#fff;border-radius:16px;padding:22px;
+  border:1px solid #e2e8f0;box-shadow:0 4px 12px rgba(0,0,0,.03);
+  transition:all .3s ease;
+}
+.skill-box:hover{
+  box-shadow:0 8px 24px rgba(135,57,184,.1);
+  border-color:#d8b4fe;
+}
+.skill-box h4{font-size:15px;font-weight:700;color:#5c2386;margin-bottom:10px}
+.skill-box p{font-size:14px;color:#475569;line-height:1.6}
+
+/* Responsibilities Cards */
+.resp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:22px}
+.resp-card{
+  background:#fff;border-radius:18px;padding:26px;
+  border:1px solid #e2e8f0;box-shadow:0 4px 16px rgba(0,0,0,.04);
+  transition:all .3s cubic-bezier(.4,0,.2,1);
+  position:relative;overflow:hidden;
+}
+.resp-card::before{
+  content:'';position:absolute;top:0;left:0;
+  width:4px;height:100%;
+  background:linear-gradient(180deg,#8739b8,#b55877);
+  border-radius:4px 0 0 4px;
+}
+.resp-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 16px 40px rgba(135,57,184,.14);
+  border-color:#d8b4fe;
+}
+.resp-card .resp-num{
+  font-size:13px;font-weight:700;color:#8739b8;
+  letter-spacing:1px;margin-bottom:8px;
+  text-transform:uppercase;
+  background:#ede9fe;padding:2px 10px;border-radius:6px;
+  display:inline-block;
+}
+.resp-card h4{
+  font-size:16.5px;font-weight:700;color:#3b1359;
+  margin-bottom:8px;
+}
+.resp-card p{
+  font-size:14px;color:#475569;line-height:1.65;
+}
+
+/* Key Projects */
+.project-item{
+  background:#fff;border-radius:16px;padding:24px;
+  border:1px solid #e2e8f0;box-shadow:0 4px 12px rgba(0,0,0,.03);
+  margin-bottom:18px;
+  transition:all .3s ease;
+}
+.project-item:hover{
+  box-shadow:0 8px 24px rgba(135,57,184,.1);
+  border-color:#d8b4fe;
+}
+.project-item h4{font-size:16px;font-weight:700;color:#3b1359;margin-bottom:6px}
+.project-item p{font-size:14px;color:#475569;line-height:1.65}
+
+/* Footer */
+footer{
+  text-align:center;padding:36px 0;
+  border-top:1px solid #cbd5e1;
+  font-size:14px;color:#64748b;font-weight:400;
+}
+footer a{color:#8739b8;text-decoration:none;font-weight:600;}
+footer a:hover{color:#5c2386}
+
+/* Scroll Animations */
+@keyframes fadeInUp{
+  from{opacity:0;transform:translateY(30px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.animate-on-scroll{
+  opacity:0;
+  transform:translateY(30px);
+  transition:all .6s cubic-bezier(.4,0,.2,1);
+}
+.animate-on-scroll.visible{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* Responsive */
+@media(max-width:992px){
+  .grid-1-2,.grid-2col,.grid-3col{grid-template-columns:1fr}
+  .hero-header-row{flex-direction:column;align-items:flex-start;gap:20px}
+  .hero-profile-group{flex-direction:column;align-items:flex-start}
+  .hero-stats-row{width:100%;justify-content:flex-start}
+  .hero-bio-card{padding:22px 24px}
+  .hero-bottom-bar{flex-direction:column;align-items:flex-start}
+  .resp-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .hero h1{font-size:28px}
+  .hero .subtitle{font-size:14px}
+  .stat-pill .num{font-size:22px}
+  .section-head h2{font-size:24px}
+}
+</style>
+</head>
+<body>
+
+<!-- ════ HERO ════ -->
+<section class="hero gradient-hero" id="hero">
+  <div class="container">
+
+    <!-- Top Bar with 5 Languages Switcher -->
+    <div class="hero-top-bar">
+      <div class="lang-switcher-group" id="lang-switcher">
+        <span class="lang-btn active" data-lang="th">TH</span>
+        <span class="lang-btn" data-lang="en">EN</span>
+        <span class="lang-btn" data-lang="cn">CN</span>
+        <span class="lang-btn" data-lang="jp">JP</span>
+        <span class="lang-btn" data-lang="in">IN</span>
+      </div>
+    </div>
+
+    <!-- Hero Header Row: Photo + Name/Title (Left) & Stat Pills (Right) -->
+    <div class="hero-header-row">
+      <div class="hero-profile-group">
+        <div class="hero-photo">
+          <img src="profile_clean.png" alt="ดวงเดือน พรหมศรี">
+        </div>
+        <div>
+          <h1 data-i18n="hero_name">ดวงเดือน พรหมศรี</h1>
+          <div class="subtitle" data-i18n="hero_subtitle">Assistant Manager Business Operations & Procurement &middot; IT & Operations Specialist</div>
+        </div>
+      </div>
+
+      <div class="hero-stats-row">
+        <div class="stat-pill glass">
+          <div class="num">7+</div>
+          <div class="lbl" data-i18n="stat_years">ปีประสบการณ์</div>
+        </div>
+        <div class="stat-pill glass">
+          <div class="num">4</div>
+          <div class="lbl" data-i18n="stat_companies">บริษัทที่ร่วมงาน</div>
+        </div>
+        <div class="stat-pill glass">
+          <div class="num">Multi</div>
+          <div class="lbl" data-i18n="stat_skills">ทักษะหลากหลาย</div>
+        </div>
+        <div class="stat-pill glass">
+          <div class="num">Asst.Mgr</div>
+          <div class="lbl" data-i18n="stat_role">ตำแหน่งปัจจุบัน</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wide Executive Bio Glass Card -->
+    <div class="hero-bio-card glass">
+      <p class="bio" data-i18n="sec_summary_text">ผู้เชี่ยวชาญด้านบริหารจัดการปฏิบัติการและจัดซื้อ (Business Operations & Procurement Specialist) ที่มีความเชี่ยวชาญรอบด้านทั้งการวางแผนกระแสเงินสด (Cash Flow), การจัดทำงบประมาณรายรับ-รายจ่าย, การจัดซื้อ (Sourcing & BOM Cost Saving Analysis), การจัดทำยอดขายและแผนงานประจำเดือน, งานเอกสารสัญญาโครงการ, งานบริหาร HR (Time Scan, สัมภาษณ์งาน, สัญญาจ้าง), งานบัญชีและภาษี (ภ.ง.ด.3, 53, ภ.พ.30) ตลอดจนการวางระบบ Process การทำงาน (SOP) และระบบไอทีสำหรับองค์กร</p>
+
+      <div class="hero-bottom-bar">
+        <div class="contact-row">
+          <span>Tel: 095-376-0356</span>
+          <span><a href="mailto:yu25.elle@gmail.com">yu25.elle@gmail.com</a></span>
+          <span data-i18n="hero_loc">อ.ศรีราชา, จ.ชลบุรี</span>
+        </div>
+        <div class="hero-links">
+          <a href="resume_duangduean_promsri_TH.html" class="btn-w" target="_blank" data-i18n="btn_resume_th">Resume TH</a>
+          <a href="resume_duangduean_promsri_EN.html" class="btn-w" target="_blank" data-i18n="btn_resume_en">Resume EN</a>
+          <a href="resume_duangduean_promsri_TH_print.pdf" class="btn-w" download target="_blank" data-i18n="btn_pdf_th">PDF TH</a>
+          <a href="resume_duangduean_promsri_EN_print.pdf" class="btn-w" download target="_blank" data-i18n="btn_pdf_en">PDF EN</a>
+          <a href="mailto:yu25.elle@gmail.com" class="btn-solid" data-i18n="btn_contact">ติดต่อ</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ EXECUTIVE OVERVIEW & MANAGEMENT ════ -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="tag" data-i18n="sec_exec_tag">ภาพรวมผู้บริหาร</span>
+      <h2 data-i18n="sec_exec_title">Executive Overview & Management</h2>
+    </div>
+    <div class="grid-3col">
+
+      <!-- Management Expertise -->
+      <div class="glass-card animate-on-scroll">
+        <div class="card-head" data-i18n="sec_mgmt_title">ความชำนาญการบริหาร</div>
+        <ul class="mgmt-list">
+          <li data-i18n="mgmt_1"><strong>Cash Flow & Budget Control:</strong> บริหารจัดการกระแสเงินสด วางแผนประมาณการรายรับ-รายจ่ายของบริษัท</li>
+          <li data-i18n="mgmt_2"><strong>Sourcing & Cost Optimization:</strong> หาแหล่ง Sourcing วิเคราะห์ BOM เพื่อต้นทุนที่ประหยัดที่สุด (Cost Saving %)</li>
+          <li data-i18n="mgmt_3"><strong>Process & SOP Development:</strong> จัดทำ Process การทำงานและคู่มือขั้นตอนการปฏิบัติงาน (SOP) ของแต่ละฝ่าย</li>
+          <li data-i18n="mgmt_4"><strong>HR & Employment Admin:</strong> ดูแลงาน HR บันทึก Time Scan นัดสัมภาษณ์พนักงานใหม่ และจัดทำเอกสารสัญญาจ้างงาน</li>
+          <li data-i18n="mgmt_5"><strong>Accounting & Tax:</strong> ลงบันทึกบัญชีรายวัน ตั้งเบิก/ตั้งจ่าย Vendor ดูแลภาษีซื้อ-ขาย (ภ.พ.30) และ ภ.ง.ด.3, 53</li>
+        </ul>
+      </div>
+
+      <!-- Education & Credentials -->
+      <div class="glass-card animate-on-scroll">
+        <div class="card-head" data-i18n="sec_edu_title">ประวัติการศึกษา</div>
+        <div style="margin-bottom:20px;">
+          <h4 style="font-size:16px;color:#0f172a;font-weight:700" data-i18n="edu_school">วิทยาลัยเทคโนโลยีดาราสมุทรบริหารธุรกิจ</h4>
+          <p style="font-size:14.5px;color:#8739b8;font-weight:600;margin-top:2px" data-i18n="edu_degree">ปวส. เทคโนโลยีสารสนเทศ (Information Technology)</p>
+          <p style="font-size:14px;color:#64748b;margin-top:4px">GPA 3.75 (2557)</p>
+        </div>
+        <div style="border-top:1px solid #e2e8f0;padding-top:14px;margin-top:14px">
+          <span style="display:inline-block;padding:4px 12px;border-radius:12px;background:#ede9fe;color:#5c2386;font-size:12.5px;font-weight:600" data-i18n="edu_cert">Forklift Operator Certified</span>
+        </div>
+        <div style="border-top:1px solid #e2e8f0;padding-top:14px;margin-top:14px">
+          <h4 style="font-size:15px;color:#0f172a;font-weight:700;margin-bottom:8px" data-i18n="lang_title">ภาษา</h4>
+          <p style="font-size:14px;color:#475569;margin:0" data-i18n="lang_val">ไทย (Native), ลาว (Fluent Speaking)</p>
+          <p style="font-size:14px;color:#475569;margin:4px 0 0 0" data-i18n="typing_val">ความเร็วพิมพ์ดีด: ไทย 50 คำ/นาที, อังกฤษ 40 คำ/นาที</p>
+        </div>
+      </div>
+
+      <!-- Personal Details -->
+      <div class="glass-card animate-on-scroll">
+        <div class="card-head" data-i18n="pi_title">ข้อมูลส่วนบุคคล</div>
+        <table class="resume-table">
+          <tr><td class="lbl" data-i18n="pi_nat_lbl">สัญชาติ</td><td class="val" data-i18n="pi_nat">ไทย</td></tr>
+          <tr><td class="lbl" data-i18n="pi_rel_lbl">ศาสนา</td><td class="val" data-i18n="pi_rel">พุทธ</td></tr>
+          <tr><td class="lbl" data-i18n="pi_gender_lbl">เพศ</td><td class="val" data-i18n="pi_gender">หญิง</td></tr>
+          <tr><td class="lbl" data-i18n="pi_dob_lbl">วันเกิด</td><td class="val" data-i18n="pi_dob">25 มีนาคม 2537</td></tr>
+          <tr><td class="lbl" data-i18n="pi_hw_lbl">ส่วนสูง / น้ำหนัก</td><td class="val" data-i18n="pi_hw">155 ซม. / 70 กก.</td></tr>
+          <tr><td class="lbl" data-i18n="pi_status_lbl">สถานภาพ</td><td class="val" data-i18n="pi_status">โสด</td></tr>
+          <tr><td class="lbl" data-i18n="pi_veh_lbl">ใบขับขี่ / พาหนะ</td><td class="val" data-i18n="pi_veh">รถยนต์, รถจักรยานยนต์, รถโฟล์คลิฟท์</td></tr>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════ BUSINESS DEVELOPMENT & SALES SUPPORT ════ -->
+<section class="section" style="background:#f8fafc" id="biz-dev">
+  <div class="container">
+    <div class="section-head">
+      <span class="tag" data-i18n="sec_bd_tag">Business Development & Sales Support</span>
+      <h2 data-i18n="sec_bd_title">ทีม Business Development & การสนับสนุนงานขาย</h2>
+      <p data-i18n="sec_bd_desc">หน้าที่ความรับผิดชอบด้านการพัฒนาธุรกิจ การติดตามงานขาย และการสนับสนุนทีมเซลล์</p>
+    </div>
+    <div class="resp-grid">
+
+      <div class="resp-card animate-on-scroll">
+        <div class="resp-num">01</div>
+        <h4 data-i18n="bd_1_title">การไล่ Pipeline เพื่อสรุปยอด</h4>
+        <p data-i18n="bd_1_desc">ติดตามและอัปเดตข้อมูล Pipeline อย่างต่อเนื่อง ตรวจสอบสถานะของแต่ละดีล เพื่อสรุปยอด Pipeline รายสัปดาห์/รายเดือน เสนอผู้บริหารประกอบการตัดสินใจ</p>
+      </div>
+
+      <div class="resp-card animate-on-scroll">
+        <div class="resp-num">02</div>
+        <h4 data-i18n="bd_2_title">การแบ่งงานลูกค้าให้เซลล์ติดตามงาน</h4>
+        <p data-i18n="bd_2_desc">จัดสรรและมอบหมายรายชื่อลูกค้าให้ทีมเซลล์ตามพื้นที่ ความเชี่ยวชาญ และ Workload เพื่อให้การติดตามงานต่อเนื่องอย่างมีประสิทธิภาพ ไม่ซ้ำซ้อน</p>
+      </div>
+
+      <div class="resp-card animate-on-scroll">
+        <div class="resp-num">03</div>
+        <h4 data-i18n="bd_3_title">ทีม Business Development</h4>
+        <p data-i18n="bd_3_desc">สนับสนุนทีม Business Development ในการวิเคราะห์โอกาสทางธุรกิจ การจัดเตรียมข้อมูลนำเสนอ และการประสานงานกับฝ่ายที่เกี่ยวข้องเพื่อขยายฐานลูกค้าใหม่</p>
+      </div>
+
+      <div class="resp-card animate-on-scroll">
+        <div class="resp-num">04</div>
+        <h4 data-i18n="bd_4_title">สรุปยอด Pipeline Sale วิเคราะห์การทำงาน</h4>
+        <p data-i18n="bd_4_desc">จัดทำรายงานสรุปยอด Pipeline Sale พร้อมวิเคราะห์ผลการดำเนินงานของทีมเซลล์ วัด KPI ติดตามอัตราปิดดีล (Win Rate) และระบุโอกาสในการปรับปรุง</p>
+      </div>
+
+      <div class="resp-card animate-on-scroll">
+        <div class="resp-num">05</div>
+        <h4 data-i18n="bd_5_title">การติดตามงาน Solution / Proposal</h4>
+        <p data-i18n="bd_5_desc">ติดตามสถานะการจัดทำ Solution และ Proposal ของทีม Pre-sales ให้ส่งมอบตรงเวลา ตรวจสอบความถูกต้องและครบถ้วนก่อนส่งให้ลูกค้า</p>
+      </div>
+
+      <div class="resp-card animate-on-scroll">
+        <div class="resp-num">06</div>
+        <h4 data-i18n="bd_6_title">การติดตามงานขายทั้งหมด</h4>
+        <p data-i18n="bd_6_desc">ติดตามงานขายตั้งแต่เริ่มต้นจนถึงปิดดีล ดูแลทุกขั้นตอนตั้งแต่การนัดพบลูกค้า การเสนอราคา การเจรจาต่อรอง จนถึงการลงนามสัญญา</p>
+      </div>
+
+      <div class="resp-card animate-on-scroll">
+        <div class="resp-num">07</div>
+        <h4 data-i18n="bd_7_title">รายงานการปิดราคาของจัดซื้อ</h4>
+        <p data-i18n="bd_7_desc">จัดทำรายงานสรุปการปิดราคาสินค้าจากฝ่ายจัดซื้อ เปรียบเทียบราคาจาก Vendor ต่าง ๆ วิเคราะห์ต้นทุนและ Margin เพื่อรายงานต่อผู้บริหาร</p>
+      </div>
+
+      <div class="resp-card animate-on-scroll">
+        <div class="resp-num">08</div>
+        <h4 data-i18n="bd_8_title">รายงานปัญหาของงานขาย</h4>
+        <p data-i18n="bd_8_desc">รวบรวม จัดหมวดหมู่ และรายงานปัญหาที่เกิดขึ้นในกระบวนการขาย เพื่อหาแนวทางแก้ไข ป้องกันปัญหาซ้ำ และปรับปรุงกระบวนการทำงานให้ดียิ่งขึ้น</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════ TECHNICAL SKILLS MATRIX ════ -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="tag" data-i18n="sec_skills_tag">ทักษะด้านเทคนิค</span>
+      <h2 data-i18n="sec_skills_title">Technical Skills & Operations Matrix</h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-box animate-on-scroll">
+        <h4>Operations & Management</h4>
+        <p>Cash Flow Management, Process Mapping, Action Plan, SOP Development, KPI Tracking</p>
+      </div>
+      <div class="skill-box animate-on-scroll">
+        <h4>Procurement & Sourcing</h4>
+        <p>Supplier Sourcing, BOM Cost Saving Analysis, Vendor Negotiation, Approved Vendor List (AVL)</p>
+      </div>
+      <div class="skill-box animate-on-scroll">
+        <h4>Finance & Tax</h4>
+        <p>Bookkeeping Entry, Vendor Disbursement Setup, P.N.D. 3, 53, P.P. 30 VAT, Invoice Management</p>
+      </div>
+      <div class="skill-box animate-on-scroll">
+        <h4>HR & Contracts</h4>
+        <p>Time Scan Systems, Candidate Interviewing, Employment & Project Contracts, Performance Review</p>
+      </div>
+      <div class="skill-box animate-on-scroll">
+        <h4>Software Development</h4>
+        <p>PHP, Database Design (MySQL), Web Application Development, File Management Systems</p>
+      </div>
+      <div class="skill-box animate-on-scroll">
+        <h4>IT Support & Infrastructure</h4>
+        <p>Hardware/Software Troubleshooting, Network Setup, Office Equipment, System Administration</p>
+      </div>
+      <div class="skill-box animate-on-scroll" style="grid-column:1/-1">
+        <h4>Business Development & Sales Support</h4>
+        <p>Pipeline Management, Sales Tracking, Proposal Coordination, Cross-functional Collaboration, Executive Reporting, Escalation Management</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ WORK EXPERIENCE TIMELINE ════ -->
+<section class="section" style="background:#f8fafc">
+  <div class="container">
+    <div class="section-head">
+      <span class="tag" data-i18n="sec_exp_tag">ประสบการณ์การทำงาน</span>
+      <h2 data-i18n="sec_exp_title">Professional Work Experience</h2>
+    </div>
+
+    <div class="glass-card" style="max-width:960px;margin:0 auto">
+      <div class="timeline">
+
+        <!-- Job 1 -->
+        <div class="timeline-item animate-on-scroll">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date" data-i18n="exp_job1_date">2024 - ปัจจุบัน</div>
+          <div class="timeline-company" data-i18n="exp_job1_company">EOLO Technology Co., Ltd.</div>
+          <div class="timeline-role" data-i18n="exp_job1_role">Assistant Manager Business Operations & Procurement</div>
+          <div class="timeline-badge" data-i18n="exp_job1_badge">Operations & Financial Management Leadership</div>
+          <ul class="timeline-ul">
+            <li data-i18n="exp_job1_task1">บริหารและวางแผนจัดการกระแสเงินสด (Cash Flow) ของบริษัท ควบคุมและประมาณการรายรับ-รายจ่ายประจำเดือน</li>
+            <li data-i18n="exp_job1_task2">จัดทำแผนการปฏิบัติงาน (Action Plan) ของแต่ละฝ่ายในทุกๆ เดือน เพื่อส่งให้ฝ่ายบริหารพร้อมสรุปผลการดำเนินงาน</li>
+            <li data-i18n="exp_job1_task3">จัดทำและสรุปยอดขายประจำเดือน ประเมินผลการดำเนินงานเสนอฝ่ายบริหาร</li>
+            <li data-i18n="exp_job1_task4">ตรวจสอบและดูแลเรื่องเอกสารสัญญาของงานโครงการต่าง ๆ (Project Contracts) ของบริษัท</li>
+            <li data-i18n="exp_job1_task5">บริหารงาน HR: ดูแลระบบ Time Scan ของพนักงาน นัดหมายคัดเลือกสัมภาษณ์พนักงาน และจัดทำเอกสารสัญญาจ้างงาน</li>
+            <li data-i18n="exp_job1_task6">จัดทำและวางโครงสร้าง Process การทำงาน และขั้นตอนการปฏิบัติงาน (SOP / Work Instruction) ของแต่ละฝ่าย</li>
+            <li data-i18n="exp_job1_task7">งานบัญชีและการเงิน: ลงบันทึกบัญชีประจำวัน ตรวจสอบเอกสารการจ่ายและตั้งเบิกของ Vendor เพื่อส่งต่อทางการเงินจัดทำเช็คจ่าย</li>
+            <li data-i18n="exp_job1_task8">บริหารภาษีประจำเดือน: ดูแลและตรวจสอบภาษีซื้อ-ภาษีขายประจำเดือน (ภ.พ.30) และภาษีหัก ณ ที่จ่าย (ภ.ง.ด.3, 53)</li>
+            <li data-i18n="exp_job1_task9">บริหารงานจัดซื้อ (Sourcing): หาราคาเปรียบเทียบจากซัพพลายเออร์ วิเคราะห์ BOM เพื่อหาต้นทุนที่ประหยัดที่สุด (Cost Saving %) เพื่อเพิ่มกำไร</li>
+            <li data-i18n="exp_job1_task10">ประสานงานข้ามฝ่าย (Product, Business, Engineering, Compliance, Finance, Operations) และจัดการ Escalation อย่างมืออาชีพ</li>
+            <li data-i18n="exp_job1_task11"><strong>ไล่ Pipeline เพื่อสรุปยอด:</strong> ติดตามสถานะดีลใน Pipeline อัปเดตรายงานเสนอผู้บริหารประจำสัปดาห์</li>
+            <li data-i18n="exp_job1_task12"><strong>แบ่งงานลูกค้าให้เซลล์:</strong> จัดสรรรายชื่อลูกค้าให้ทีมเซลล์ติดตามงานต่อเนื่อง ไม่ซ้ำซ้อน</li>
+            <li data-i18n="exp_job1_task13"><strong>สรุปยอด Pipeline Sale:</strong> จัดทำรายงาน Pipeline Sale วิเคราะห์ผลการทำงานของทีมเซลล์</li>
+            <li data-i18n="exp_job1_task14"><strong>ติดตามงาน Solution / Proposal:</strong> ดูแลสถานะการจัดทำ Solution และ Proposal ให้ส่งมอบตรงกำหนด</li>
+            <li data-i18n="exp_job1_task15"><strong>ติดตามงานขายทั้งหมด:</strong> ดูแลงานขายตั้งแต่เริ่มต้นจนปิดดีล ครบทุกขั้นตอน</li>
+            <li data-i18n="exp_job1_task16"><strong>รายงานการปิดราคาของจัดซื้อ:</strong> สรุปและเปรียบเทียบราคาจาก Vendor เพื่อวิเคราะห์ต้นทุน Margin</li>
+            <li data-i18n="exp_job1_task17"><strong>รายงานปัญหาของงานขาย:</strong> รวบรวมปัญหาในกระบวนการขายเพื่อหาแนวทางแก้ไขและปรับปรุง</li>
+          </ul>
+        </div>
+
+        <!-- Job 2 -->
+        <div class="timeline-item animate-on-scroll">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date" data-i18n="exp_job2_date">มิถุนายน 2566 - กุมภาพันธ์ 2567</div>
+          <div class="timeline-company" data-i18n="exp_job2_company">CHOHO Industrial (Thailand) Co., Ltd.</div>
+          <div class="timeline-role" data-i18n="exp_job2_role">Warehouse Office Supervisor / Leader</div>
+          <ul class="timeline-ul">
+            <li data-i18n="exp_job2_task1">วางแผนและจัดพื้นที่การทำงาน (Warehouse Layout) ให้เป็นไปตามมาตรฐาน พร้อมจัดทำคู่มือการทำงาน (Work Instruction - WI)</li>
+            <li data-i18n="exp_job2_task2">ติดต่อประสานงานระบบการขนส่งและจัดส่งสินค้า (Logistics & Distribution Coordination)</li>
+            <li data-i18n="exp_job2_task3">ควบคุมการเบิกจ่ายวัตถุดิบร่วมกับฝ่ายผลิต และดูแล Stock สินค้าสำเร็จรูปให้ถูกต้อง</li>
+            <li data-i18n="exp_job2_task4">ประสานงานกับพนักงานคลังสินค้าในการจัดเตรียมสินค้าสำหรับส่งมอบตามออเดอร์ของลูกค้า</li>
+          </ul>
+        </div>
+
+        <!-- Job 3 -->
+        <div class="timeline-item animate-on-scroll">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date" data-i18n="exp_job3_date">เมษายน 2563 - พฤษภาคม 2566</div>
+          <div class="timeline-company" data-i18n="exp_job3_company">Logicom Co., Ltd.</div>
+          <div class="timeline-role" data-i18n="exp_job3_role">IT Support & Systems Developer</div>
+          <ul class="timeline-ul">
+            <li data-i18n="exp_job3_task1">ให้บริการช่วยเหลือและแก้ไขปัญหาทางเทคนิค (Technical Troubleshooting) สำหรับอุปกรณ์ คอมพิวเตอร์ ซอฟต์แวร์ และระบบเครือข่าย</li>
+            <li data-i18n="exp_job3_task2">ออกแบบและพัฒนาโปรแกรมประยุกต์เว็บแอปพลิเคชันภายในองค์กรด้วยภาษา PHP และบริหารจัดการระบบฐานข้อมูล</li>
+            <li data-i18n="exp_job3_task3">จัดสอนและพัฒนาทักษะพนักงานในการใช้เทคโนโลยีใหม่ๆ เพื่อเพิ่มประสิทธิภาพการทำงาน</li>
+            <li data-i18n="exp_job3_task4">พัฒนาระบบ File Manager System และระบบรับสมัครงานออนไลน์ (Jobs & Resume Platform)</li>
+          </ul>
+        </div>
+
+        <!-- Job 4 -->
+        <div class="timeline-item animate-on-scroll">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date" data-i18n="exp_job4_date">เมษายน 2560 - มีนาคม 2563</div>
+          <div class="timeline-company" data-i18n="exp_job4_company">ETK ems Asia Productions Co., Ltd.</div>
+          <div class="timeline-role" data-i18n="exp_job4_role">Logistics & Customer Project Officer</div>
+          <ul class="timeline-ul">
+            <li data-i18n="exp_job4_task1">บริหารจัดการโปรเจกต์งานของลูกค้า ออกเอกสารงานขาย (Commercial Invoice, Packing List) และดูแลสัญญาสินค้า</li>
+            <li data-i18n="exp_job4_task2">ดูแลงานจัดซื้อและรับ-ส่งสินค้า (Procurement & Receive-Delivery Logistics Coordination)</li>
+            <li data-i18n="exp_job4_task3">จัดตารางและจองรถขนส่งสินค้า พร้อมประสานงานกับเจ้าหน้าที่ดูแลคลังสินค้า</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ KEY PROJECTS & ACCOMPLISHMENTS ════ -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="tag" data-i18n="sec_proj_tag">ผลงานสำคัญ</span>
+      <h2 data-i18n="sec_proj_title">Key Projects & Accomplishments</h2>
+    </div>
+
+    <div style="max-width:900px;margin:0 auto">
+      <div class="project-item animate-on-scroll">
+        <h4 data-i18n="proj1_title">Cash Flow & Operational Process Optimization — EOLO Technology</h4>
+        <p data-i18n="proj1_desc">วางระบบการบริหารกระแสเงินสด วิเคราะห์ BOM Cost Saving % จัดทำแผนงาน SOP ทุกฝ่าย และควบคุมภาษีประจำเดือนส่งมอบผู้บริหาร</p>
+      </div>
+
+      <div class="project-item animate-on-scroll">
+        <h4 data-i18n="proj2_title">Pipeline Sales Management & Business Development Support — EOLO Technology</h4>
+        <p data-i18n="proj2_desc">จัดทำระบบติดตาม Pipeline Sale วิเคราะห์ประสิทธิภาพทีมเซลล์ แบ่งงานลูกค้า ติดตาม Solution/Proposal และสรุปรายงานปัญหางานขายเสนอผู้บริหาร</p>
+      </div>
+
+      <div class="project-item animate-on-scroll">
+        <h4 data-i18n="proj3_title">Standard Warehouse Layout & Work Instruction — CHOHO Industrial</h4>
+        <p data-i18n="proj3_desc">ออกแบบ Layout คลังสินค้าใหม่ จัดทำคู่มือปฏิบัติงาน (WI) และวางระบบควบคุมสต็อกเบิกจ่ายวัตถุดิบแบบ Real-time ร่วมกับฝ่ายผลิต</p>
+      </div>
+
+      <div class="project-item animate-on-scroll">
+        <h4 data-i18n="proj4_title">Internal PHP Web Applications & File Manager — Logicom</h4>
+        <p data-i18n="proj4_desc">พัฒนา Web System และ File Manager ช่วยลดการใช้กระดาษ (Paperless Workflow) และเพิ่มความสะดวกในการค้นหาเอกสารองค์กร</p>
+      </div>
+
+      <div class="project-item animate-on-scroll">
+        <h4 data-i18n="proj5_title">Customer Logistics & Project Coordination — ETK ems</h4>
+        <p data-i18n="proj5_desc">วางแผนขนส่ง ควบคุมเอกสารการจัดส่งสินค้า และบริหารการจัดเตรียมสินค้าให้แก่ลูกค้ารายใหญ่ได้ตรงตามกำหนดเวลา 100%</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ FOOTER ════ -->
+<footer>
+  <div class="container">
+    <p>&copy; 2025 Duangduean Promsri &nbsp;&middot;&nbsp; <a href="resume_duangduean_promsri_TH.html" target="_blank" data-i18n="btn_resume_th">Resume TH</a> &nbsp;&middot;&nbsp; <a href="resume_duangduean_promsri_EN.html" target="_blank" data-i18n="btn_resume_en">Resume EN</a> &nbsp;&middot;&nbsp; <a href="resume_duangduean_promsri_TH_print.pdf" download target="_blank" data-i18n="btn_pdf_th">PDF TH</a> &nbsp;&middot;&nbsp; <a href="resume_duangduean_promsri_EN_print.pdf" download target="_blank" data-i18n="btn_pdf_en">PDF EN</a></p>
+  </div>
+</footer>
+
+<script>
+// ═══ 5-LANGUAGE TRANSLATION DICTIONARY ═══
+const langData = {
+  th: {
+    hero_name: "ดวงเดือน พรหมศรี",
+    hero_subtitle: "Assistant Manager Business Operations & Procurement &middot; IT & Operations Specialist",
+    stat_years: "ปีประสบการณ์",
+    stat_companies: "บริษัทที่ร่วมงาน",
+    stat_skills: "ทักษะหลากหลาย",
+    stat_role: "ตำแหน่งปัจจุบัน",
+    sec_summary_text: "ผู้เชี่ยวชาญด้านบริหารจัดการปฏิบัติการและจัดซื้อ (Business Operations & Procurement Specialist) ที่มีความเชี่ยวชาญรอบด้านทั้งการวางแผนกระแสเงินสด (Cash Flow), การจัดทำงบประมาณรายรับ-รายจ่าย, การจัดซื้อ (Sourcing & BOM Cost Saving Analysis), การจัดทำยอดขายและแผนงานประจำเดือน, งานเอกสารสัญญาโครงการ, งานบริหาร HR (Time Scan, สัมภาษณ์งาน, สัญญาจ้าง), งานบัญชีและภาษี (ภ.ง.ด.3, 53, ภ.พ.30) ตลอดจนการวางระบบ Process การทำงาน (SOP) และระบบไอทีสำหรับองค์กร",
+    hero_loc: "อ.ศรีราชา, จ.ชลบุรี",
+    btn_contact: "ติดต่อ",
+    btn_resume_th: "Resume TH",
+    btn_resume_en: "Resume EN",
+    btn_pdf_th: "ดาวน์โหลด PDF (TH)",
+    btn_pdf_en: "ดาวน์โหลด PDF (EN)",
+
+    sec_exec_tag: "ภาพรวมผู้บริหาร",
+    sec_exec_title: "Executive Overview & Management",
+    sec_mgmt_title: "ความชำนาญการบริหาร",
+    mgmt_1: "<strong>Cash Flow & Budget Control:</strong> บริหารจัดการกระแสเงินสด วางแผนประมาณการรายรับ-รายจ่ายของบริษัท",
+    mgmt_2: "<strong>Sourcing & Cost Optimization:</strong> หาแหล่ง Sourcing วิเคราะห์ BOM เพื่อต้นทุนที่ประหยัดที่สุด (Cost Saving %)",
+    mgmt_3: "<strong>Process & SOP Development:</strong> จัดทำ Process การทำงานและคู่มือขั้นตอนการปฏิบัติงาน (SOP) ของแต่ละฝ่าย",
+    mgmt_4: "<strong>HR & Employment Admin:</strong> ดูแลงาน HR บันทึก Time Scan นัดสัมภาษณ์พนักงานใหม่ และจัดทำเอกสารสัญญาจ้างงาน",
+    mgmt_5: "<strong>Accounting & Tax:</strong> ลงบันทึกบัญชีรายวัน ตั้งเบิก/ตั้งจ่าย Vendor ดูแลภาษีซื้อ-ขาย (ภ.พ.30) และ ภ.ง.ด.3, 53",
+
+    sec_edu_title: "ประวัติการศึกษา",
+    edu_school: "วิทยาลัยเทคโนโลยีดาราสมุทรบริหารธุรกิจ",
+    edu_degree: "ปวส. เทคโนโลยีสารสนเทศ (Information Technology)",
+    edu_cert: "Forklift Operator Certified",
+    lang_title: "ภาษา",
+    lang_val: "ไทย (Native), ลาว (Fluent Speaking)",
+    typing_val: "ความเร็วพิมพ์ดีด: ไทย 50 คำ/นาที, อังกฤษ 40 คำ/นาที",
+
+    pi_title: "ข้อมูลส่วนบุคคล",
+    pi_nat_lbl: "สัญชาติ", pi_nat: "ไทย",
+    pi_rel_lbl: "ศาสนา", pi_rel: "พุทธ",
+    pi_gender_lbl: "เพศ", pi_gender: "หญิง",
+    pi_dob_lbl: "วันเกิด", pi_dob: "25 มีนาคม 2537",
+    pi_hw_lbl: "ส่วนสูง / น้ำหนัก", pi_hw: "155 ซม. / 70 กก.",
+    pi_status_lbl: "สถานภาพ", pi_status: "โสด",
+    pi_veh_lbl: "ใบขับขี่ / พาหนะ", pi_veh: "รถยนต์, รถจักรยานยนต์, รถโฟล์คลิฟท์",
+
+    sec_bd_tag: "Business Development & Sales Support",
+    sec_bd_title: "ทีม Business Development & การสนับสนุนงานขาย",
+    sec_bd_desc: "หน้าที่ความรับผิดชอบด้านการพัฒนาธุรกิจ การติดตามงานขาย และการสนับสนุนทีมเซลล์",
+
+    bd_1_title: "การไล่ Pipeline เพื่อสรุปยอด",
+    bd_1_desc: "ติดตามและอัปเดตข้อมูล Pipeline อย่างต่อเนื่อง ตรวจสอบสถานะของแต่ละดีล เพื่อสรุปยอด Pipeline รายสัปดาห์/รายเดือน เสนอผู้บริหารประกอบการตัดสินใจ",
+    bd_2_title: "การแบ่งงานลูกค้าให้เซลล์ติดตามงาน",
+    bd_2_desc: "จัดสรรและมอบหมายรายชื่อลูกค้าให้ทีมเซลล์ตามพื้นที่ ความเชี่ยวชาญ และ Workload เพื่อให้การติดตามงานต่อเนื่องอย่างมีประสิทธิภาพ ไม่ซ้ำซ้อน",
+    bd_3_title: "ทีม Business Development",
+    bd_3_desc: "สนับสนุนทีม Business Development ในการวิเคราะห์โอกาสทางธุรกิจ การจัดเตรียมข้อมูลนำเสนอ และการประสานงานกับฝ่ายที่เกี่ยวข้องเพื่อขยายฐานลูกค้าใหม่",
+    bd_4_title: "สรุปยอด Pipeline Sale วิเคราะห์การทำงาน",
+    bd_4_desc: "จัดทำรายงานสรุปยอด Pipeline Sale พร้อมวิเคราะห์ผลการดำเนินงานของทีมเซลล์ วัด KPI ติดตามอัตราปิดดีล (Win Rate) และระบุโอกาสในการปรับปรุง",
+    bd_5_title: "การติดตามงาน Solution / Proposal",
+    bd_5_desc: "ติดตามสถานะการจัดทำ Solution และ Proposal ของทีม Pre-sales ให้ส่งมอบตรงเวลา ตรวจสอบความถูกต้องและครบถ้วนก่อนส่งให้ลูกค้า",
+    bd_6_title: "การติดตามงานขายทั้งหมด",
+    bd_6_desc: "ติดตามงานขายตั้งแต่เริ่มต้นจนถึงปิดดีล ดูแลทุกขั้นตอนตั้งแต่การนัดพบลูกค้า การเสนอราคา การเจรจาต่อรอง จนถึงการลงนามสัญญา",
+    bd_7_title: "รายงานการปิดราคาของจัดซื้อ",
+    bd_7_desc: "จัดทำรายงานสรุปการปิดราคาสินค้าจากฝ่ายจัดซื้อ เปรียบเทียบราคาจาก Vendor ต่าง ๆ วิเคราะห์ต้นทุนและ Margin เพื่อรายงานต่อผู้บริหาร",
+    bd_8_title: "รายงานปัญหาของงานขาย",
+    bd_8_desc: "รวบรวม จัดหมวดหมู่ และรายงานปัญหาที่เกิดขึ้นในกระบวนการขาย เพื่อหาแนวทางแก้ไข ป้องกันปัญหาซ้ำ และปรับปรุงกระบวนการทำงานให้ดียิ่งขึ้น",
+
+    sec_skills_tag: "ทักษะด้านเทคนิค",
+    sec_skills_title: "Technical Skills & Operations Matrix",
+
+    sec_exp_tag: "ประสบการณ์การทำงาน",
+    sec_exp_title: "Professional Work Experience",
+
+    exp_job1_company: "EOLO Technology Co., Ltd.",
+    exp_job1_role: "Assistant Manager Business Operations & Procurement",
+    exp_job1_date: "2024 - ปัจจุบัน",
+    exp_job1_badge: "Operations & Financial Management Leadership",
+    exp_job1_task1: "บริหารและวางแผนจัดการกระแสเงินสด (Cash Flow) ของบริษัท ควบคุมและประมาณการรายรับ-รายจ่ายประจำเดือน",
+    exp_job1_task2: "จัดทำแผนการปฏิบัติงาน (Action Plan) ของแต่ละฝ่ายในทุกๆ เดือน เพื่อส่งให้ฝ่ายบริหารพร้อมสรุปผลการดำเนินงาน",
+    exp_job1_task3: "จัดทำและสรุปยอดขายประจำเดือน ประเมินผลการดำเนินงานเสนอฝ่ายบริหาร",
+    exp_job1_task4: "ตรวจสอบและดูแลเรื่องเอกสารสัญญาของงานโครงการต่าง ๆ (Project Contracts) ของบริษัท",
+    exp_job1_task5: "บริหารงาน HR: ดูแลระบบ Time Scan ของพนักงาน นัดหมายคัดเลือกสัมภาษณ์พนักงาน และจัดทำเอกสารสัญญาจ้างงาน",
+    exp_job1_task6: "จัดทำและวางโครงสร้าง Process การทำงาน และขั้นตอนการปฏิบัติงาน (SOP / Work Instruction) ของแต่ละฝ่าย",
+    exp_job1_task7: "งานบัญชีและการเงิน: ลงบันทึกบัญชีประจำวัน ตรวจสอบเอกสารการจ่ายและตั้งเบิกของ Vendor เพื่อส่งต่อทางการเงินจัดทำเช็คจ่าย",
+    exp_job1_task8: "บริหารภาษีประจำเดือน: ดูแลและตรวจสอบภาษีซื้อ-ภาษีขายประจำเดือน (ภ.พ.30) และภาษีหัก ณ ที่จ่าย (ภ.ง.ด.3, 53)",
+    exp_job1_task9: "บริหารงานจัดซื้อ (Sourcing): หาราคาเปรียบเทียบจากซัพพลายเออร์ วิเคราะห์ BOM เพื่อหาต้นทุนที่ประหยัดที่สุด (Cost Saving %) เพื่อเพิ่มกำไร",
+    exp_job1_task10: "ประสานงานข้ามฝ่าย (Product, Business, Engineering, Compliance, Finance, Operations) และจัดการ Escalation อย่างมืออาชีพ",
+    exp_job1_task11: "<strong>ไล่ Pipeline เพื่อสรุปยอด:</strong> ติดตามสถานะดีลใน Pipeline อัปเดตรายงานเสนอผู้บริหารประจำสัปดาห์",
+    exp_job1_task12: "<strong>แบ่งงานลูกค้าให้เซลล์:</strong> จัดสรรรายชื่อลูกค้าให้ทีมเซลล์ติดตามงานต่อเนื่อง ไม่ซ้ำซ้อน",
+    exp_job1_task13: "<strong>สรุปยอด Pipeline Sale:</strong> จัดทำรายงาน Pipeline Sale วิเคราะห์ผลการทำงานของทีมเซลล์",
+    exp_job1_task14: "<strong>ติดตามงาน Solution / Proposal:</strong> ดูแลสถานะการจัดทำ Solution และ Proposal ให้ส่งมอบตรงกำหนด",
+    exp_job1_task15: "<strong>ติดตามงานขายทั้งหมด:</strong> ดูแลงานขายตั้งแต่เริ่มต้นจนปิดดีล ครบทุกขั้นตอน",
+    exp_job1_task16: "<strong>รายงานการปิดราคาของจัดซื้อ:</strong> สรุปและเปรียบเทียบราคาจาก Vendor เพื่อวิเคราะห์ต้นทุน Margin",
+    exp_job1_task17: "<strong>รายงานปัญหาของงานขาย:</strong> รวบรวมปัญหาในกระบวนการขายเพื่อหาแนวทางแก้ไขและปรับปรุง",
+
+    exp_job2_company: "CHOHO Industrial (Thailand) Co., Ltd.",
+    exp_job2_role: "Warehouse Office Supervisor / Leader",
+    exp_job2_date: "มิถุนายน 2566 - กุมภาพันธ์ 2567",
+    exp_job2_task1: "วางแผนและจัดพื้นที่การทำงาน (Warehouse Layout) ให้เป็นไปตามมาตรฐาน พร้อมจัดทำคู่มือการทำงาน (Work Instruction - WI)",
+    exp_job2_task2: "ติดต่อประสานงานระบบการขนส่งและจัดส่งสินค้า (Logistics & Distribution Coordination)",
+    exp_job2_task3: "ควบคุมการเบิกจ่ายวัตถุดิบร่วมกับฝ่ายผลิต และดูแล Stock สินค้าสำเร็จรูปให้ถูกต้อง",
+    exp_job2_task4: "ประสานงานกับพนักงานคลังสินค้าในการจัดเตรียมสินค้าสำหรับส่งมอบตามออเดอร์ของลูกค้า",
+
+    exp_job3_company: "Logicom Co., Ltd.",
+    exp_job3_role: "IT Support & Systems Developer",
+    exp_job3_date: "เมษายน 2563 - พฤษภาคม 2566",
+    exp_job3_task1: "ให้บริการช่วยเหลือและแก้ไขปัญหาทางเทคนิค (Technical Troubleshooting) สำหรับอุปกรณ์ คอมพิวเตอร์ ซอฟต์แวร์ และระบบเครือข่าย",
+    exp_job3_task2: "ออกแบบและพัฒนาโปรแกรมประยุกต์เว็บแอปพลิเคชันภายในองค์กรด้วยภาษา PHP และบริหารจัดการระบบฐานข้อมูล",
+    exp_job3_task3: "จัดสอนและพัฒนาทักษะพนักงานในการใช้เทคโนโลยีใหม่ๆ เพื่อเพิ่มประสิทธิภาพการทำงาน",
+    exp_job3_task4: "พัฒนาระบบ File Manager System และระบบรับสมัครงานออนไลน์ (Jobs & Resume Platform)",
+
+    exp_job4_company: "ETK ems Asia Productions Co., Ltd.",
+    exp_job4_role: "Logistics & Customer Project Officer",
+    exp_job4_date: "เมษายน 2560 - มีนาคม 2563",
+    exp_job4_task1: "บริหารจัดการโปรเจกต์งานของลูกค้า ออกเอกสารงานขาย (Commercial Invoice, Packing List) และดูแลสัญญาสินค้า",
+    exp_job4_task2: "ดูแลงานจัดซื้อและรับ-ส่งสินค้า (Procurement & Receive-Delivery Logistics Coordination)",
+    exp_job4_task3: "จัดตารางและจองรถขนส่งสินค้า พร้อมประสานงานกับเจ้าหน้าที่ดูแลคลังสินค้า",
+
+    sec_proj_tag: "ผลงานสำคัญ",
+    sec_proj_title: "Key Projects & Accomplishments",
+    proj1_title: "Cash Flow & Operational Process Optimization — EOLO Technology",
+    proj1_desc: "วางระบบการบริหารกระแสเงินสด วิเคราะห์ BOM Cost Saving % จัดทำแผนงาน SOP ทุกฝ่าย และควบคุมภาษีประจำเดือนส่งมอบผู้บริหาร",
+    proj2_title: "Pipeline Sales Management & Business Development Support — EOLO Technology",
+    proj2_desc: "จัดทำระบบติดตาม Pipeline Sale วิเคราะห์ประสิทธิภาพทีมเซลล์ แบ่งงานลูกค้า ติดตาม Solution/Proposal และสรุปรายงานปัญหางานขายเสนอผู้บริหาร",
+    proj3_title: "Standard Warehouse Layout & Work Instruction — CHOHO Industrial",
+    proj3_desc: "ออกแบบ Layout คลังสินค้าใหม่ จัดทำคู่มือปฏิบัติงาน (WI) และวางระบบควบคุมสต็อกเบิกจ่ายวัตถุดิบแบบ Real-time ร่วมกับฝ่ายผลิต",
+    proj4_title: "Internal PHP Web Applications & File Manager — Logicom",
+    proj4_desc: "พัฒนา Web System และ File Manager ช่วยลดการใช้กระดาษ (Paperless Workflow) และเพิ่มความสะดวกในการค้นหาเอกสารองค์กร",
+    proj5_title: "Customer Logistics & Project Coordination — ETK ems",
+    proj5_desc: "วางแผนขนส่ง ควบคุมเอกสารการจัดส่งสินค้า และบริหารการจัดเตรียมสินค้าให้แก่ลูกค้ารายใหญ่ได้ตรงตามกำหนดเวลา 100%",
+
+    footer_home: "กลับหน้าหลัก"
+  },
+  en: {
+    hero_name: "Duangduean Promsri",
+    hero_subtitle: "Assistant Manager Business Operations & Procurement &middot; IT & Operations Specialist",
+    stat_years: "Years Experience",
+    stat_companies: "Companies Joined",
+    stat_skills: "Multi-Skilled",
+    stat_role: "Current Position",
+    sec_summary_text: "Results-driven Assistant Manager of Business Operations & Procurement with comprehensive expertise in cash flow management, revenue/expense forecasting, strategic sourcing, BOM cost-saving analysis, monthly sales summaries, project contract documentation, HR operations (Time Scan, candidate interviews, employment contracts), accounting & tax management (P.N.D. 3, 53, P.P. 30 VAT), and standard operating procedure (SOP) development.",
+    hero_loc: "Sriracha, Chonburi, Thailand",
+    btn_contact: "Contact",
+    btn_resume_th: "Resume TH",
+    btn_resume_en: "Resume EN",
+    btn_pdf_th: "Download PDF (TH)",
+    btn_pdf_en: "Download PDF (EN)",
+
+    sec_exec_tag: "Executive Overview",
+    sec_exec_title: "Executive Overview & Management",
+    sec_mgmt_title: "Management Expertise",
+    mgmt_1: "<strong>Cash Flow & Budget Control:</strong> Planning and managing corporate cash flow, expense/revenue forecasting, and budget control.",
+    mgmt_2: "<strong>Sourcing & Cost Optimization:</strong> Supplier sourcing, BOM cost-saving analysis, and driving cost savings % to maximize profitability.",
+    mgmt_3: "<strong>Process & SOP Development:</strong> Developing cross-departmental operational workflows and standard operating procedures (SOPs).",
+    mgmt_4: "<strong>HR & Employment Admin:</strong> Overseeing employee Time Scan systems, interviewing candidates, and managing employment contracts.",
+    mgmt_5: "<strong>Accounting & Tax:</strong> Managing daily bookkeeping, vendor disbursement approvals, and monthly tax filings (P.N.D. 3, 53 & P.P. 30 VAT).",
+
+    sec_edu_title: "Education",
+    edu_school: "Darasamut Business Administration Technology College",
+    edu_degree: "Diploma in Information Technology",
+    edu_cert: "Forklift Operator Certified",
+    lang_title: "Languages",
+    lang_val: "Thai (Native), Laotian (Fluent Speaking)",
+    typing_val: "Typing Speed: Thai 50 WPM, English 40 WPM",
+
+    pi_title: "Personal Details",
+    pi_nat_lbl: "Nationality", pi_nat: "Thai",
+    pi_rel_lbl: "Religion", pi_rel: "Buddhism",
+    pi_gender_lbl: "Gender", pi_gender: "Female",
+    pi_dob_lbl: "Date of Birth", pi_dob: "March 25, 1994",
+    pi_hw_lbl: "Height / Weight", pi_hw: "155 cm / 70 kg",
+    pi_status_lbl: "Marital Status", pi_status: "Single",
+    pi_veh_lbl: "License & Vehicles", pi_veh: "Car, Motorcycle, Forklift",
+
+    sec_bd_tag: "Business Development & Sales Support",
+    sec_bd_title: "Business Development Team & Sales Support",
+    sec_bd_desc: "Responsibilities in business development, sales pipeline tracking, and sales team support.",
+
+    bd_1_title: "Pipeline Tracking & Summary",
+    bd_1_desc: "Continuously track and update pipeline data, verifying deal statuses to summarize weekly/monthly pipeline reports for executive decision-making.",
+    bd_2_title: "Customer Assignment to Sales Team",
+    bd_2_desc: "Allocate and assign client leads to sales reps based on territory, expertise, and workload for efficient, non-overlapping follow-ups.",
+    bd_3_title: "Business Development Support",
+    bd_3_desc: "Support the Business Development team in analyzing business opportunities, preparing pitch decks, and coordinating across departments to expand client base.",
+    bd_4_title: "Pipeline Sale Analytics & Reporting",
+    bd_4_desc: "Compile monthly Pipeline Sale summary reports, analyze sales team performance, measure KPIs, track win rates, and identify process improvements.",
+    bd_5_title: "Solution & Proposal Tracking",
+    bd_5_desc: "Monitor the preparation status of Pre-sales Solutions and Proposals to ensure timely delivery and verify technical accuracy before client submission.",
+    bd_6_title: "End-to-End Sales Tracking",
+    bd_6_desc: "Track sales activities from lead initiation through deal closing, overseeing customer meetings, quotations, negotiations, and contract signatures.",
+    bd_7_title: "Procurement Price Closing Reports",
+    bd_7_desc: "Prepare summary reports on vendor price negotiations, compare multi-supplier quotes, and analyze product margins for executive management.",
+    bd_8_title: "Sales Issue Reporting & Resolution",
+    bd_8_desc: "Aggregate, categorize, and report operational sales issues to identify root causes, prevent recurring bottlenecks, and refine sales workflows.",
+
+    sec_skills_tag: "Technical Skills",
+    sec_skills_title: "Technical Skills & Operations Matrix",
+
+    sec_exp_tag: "Work Experience",
+    sec_exp_title: "Professional Work Experience",
+
+    exp_job1_company: "EOLO Technology Co., Ltd.",
+    exp_job1_role: "Assistant Manager Business Operations & Procurement",
+    exp_job1_date: "2024 - Present",
+    exp_job1_badge: "Operations & Financial Management Leadership",
+    exp_job1_task1: "Managed corporate cash flow, financial forecasting, and controlled monthly revenue and expenditure budgets.",
+    exp_job1_task2: "Formulated monthly operational action plans across all departments and submitted summary reports to executive management.",
+    exp_job1_task3: "Compiled monthly sales summaries and performance analytics for executive review.",
+    exp_job1_task4: "Reviewed, verified, and managed project contracts and documentation across various enterprise projects.",
+    exp_job1_task5: "Directed HR functions, including employee Time Scan management, scheduling candidate interviews, and drafting employment contracts.",
+    exp_job1_task6: "Designed and documented departmental operational workflows and Standard Operating Procedures (SOPs / Work Instructions).",
+    exp_job1_task7: "Managed daily bookkeeping entries, processed vendor invoice requisitions, and prepared disbursement documentation for finance payouts.",
+    exp_job1_task8: "Oversaw monthly tax compliance, including Purchase/Sales VAT (P.P. 30) and Withholding Tax filings (P.N.D. 3, P.N.D. 53).",
+    exp_job1_task9: "Conducted strategic sourcing and BOM cost analysis to achieve optimal cost-saving percentages and maximize profitability.",
+    exp_job1_task10: "Facilitated cross-functional collaboration across Product, Engineering, Business, Compliance, Finance, and Operations teams while handling escalation.",
+    exp_job1_task11: "<strong>Pipeline Tracking:</strong> Monitored deal progress across sales pipelines and delivered weekly executive reports.",
+    exp_job1_task12: "<strong>Client Allocation:</strong> Assigned customer accounts to sales representatives to streamline follow-ups without duplication.",
+    exp_job1_task13: "<strong>Sales Analytics:</strong> Generated pipeline sales reports and analyzed team sales performance against KPI targets.",
+    exp_job1_task14: "<strong>Proposal Monitoring:</strong> Tracked solution and proposal deliverables to guarantee on-time submission.",
+    exp_job1_task15: "<strong>Full Sales Cycle Oversight:</strong> Managed client interactions from initial contact through final contract signing.",
+    exp_job1_task16: "<strong>Procurement Cost Auditing:</strong> Evaluated vendor pricing proposals and prepared margin analysis reports.",
+    exp_job1_task17: "<strong>Issue Escalation & Workflow Optimization:</strong> Logged and resolved sales operational issues to optimize sales processes.",
+
+    exp_job2_company: "CHOHO Industrial (Thailand) Co., Ltd.",
+    exp_job2_role: "Warehouse Office Supervisor / Leader",
+    exp_job2_date: "June 2023 - February 2024",
+    exp_job2_task1: "Designed and implemented standard warehouse layouts and authored Work Instructions (WI) for operational procedures.",
+    exp_job2_task2: "Coordinated logistics distribution, freight transport scheduling, and warehouse dispatch activities.",
+    exp_job2_task3: "Supervised raw material production requisitions and finished goods inventory, conducting daily stock audits and reporting.",
+    exp_job2_task4: "Partnered with warehouse staff to ensure precise sales order preparation and timely customer dispatches.",
+
+    exp_job3_company: "Logicom Co., Ltd.",
+    exp_job3_role: "IT Support & Systems Developer",
+    exp_job3_date: "April 2020 - May 2023",
+    exp_job3_task1: "Provided level 1-3 technical troubleshooting and support for computer systems, network infrastructure, software, and office hardware.",
+    exp_job3_task2: "Developed custom internal web applications using PHP and managed relational database design (MySQL).",
+    exp_job3_task3: "Conducted technical training for staff on adopting new technologies and software to elevate workforce productivity.",
+    exp_job3_task4: "Engineered internal tools including File Manager systems, Online Recruitment & Resume platforms, and inventory tracking tools.",
+
+    exp_job4_company: "ETK ems Asia Productions Co., Ltd.",
+    exp_job4_role: "Logistics & Customer Project Officer",
+    exp_job4_date: "April 2017 - March 2020",
+    exp_job4_task1: "Managed client project accounts, issued sales documentation (Commercial Invoices, Packing Lists), and maintained contract compliance.",
+    exp_job4_task2: "Managed procurement requisitions, receiving/delivery schedules, and transport logistics coordination.",
+    exp_job4_task3: "Scheduled freight transport bookings and coordinated with warehouse managers to ensure accurate order dispatches.",
+
+    sec_proj_tag: "Key Projects",
+    sec_proj_title: "Key Projects & Accomplishments",
+    proj1_title: "Cash Flow & Operational Process Optimization — EOLO Technology",
+    proj1_desc: "Established cash flow management systems, analyzed BOM cost savings %, authored departmental SOPs, and managed monthly tax compliance reporting.",
+    proj2_title: "Pipeline Sales Management & Business Development Support — EOLO Technology",
+    proj2_desc: "Implemented pipeline sales tracking systems, analyzed sales rep efficiency, assigned accounts, tracked proposals, and delivered executive issue reports.",
+    proj3_title: "Standard Warehouse Layout & Work Instruction — CHOHO Industrial",
+    proj3_desc: "Re-architected warehouse spatial layout, authored standard Work Instructions (WI), and established real-time raw material stock requisition protocols.",
+    proj4_title: "Internal PHP Web Applications & File Manager — Logicom",
+    proj4_desc: "Developed internal PHP web platforms and document file management tools, transitioning the organization towards a paperless workflow.",
+    proj5_title: "Customer Logistics & Project Coordination — ETK ems",
+    proj5_desc: "Managed transport dispatch schedules, shipping documentation, and delivery logistics for key enterprise client projects with 100% on-time delivery.",
+
+    footer_home: "Back to Main"
+  },
+  cn: {
+    hero_name: "Duangduean Promsri",
+    hero_subtitle: "业务运营与采购副经理 &middot; IT与运营专家",
+    stat_years: "从业年限",
+    stat_companies: "合作企业",
+    stat_skills: "多项专业技能",
+    stat_role: "当前职位",
+    sec_summary_text: "经验丰富的业务运营与采购副经理，精通现金流规划、收支预测、战略采购、BOM成本优化分析、月度销售汇总、项目合同管理、人力资源管理（考勤打卡、招聘面试、劳动合同）、财务与税务合规（P.N.D. 3, 53 及 增值税 P.P. 30），以及企业标准作业程序（SOP）和IT系统搭建。",
+    hero_loc: "泰国春武里府是拉差",
+    btn_contact: "联系方式",
+    btn_resume_th: "简历 (TH)",
+    btn_resume_en: "简历 (EN)",
+    btn_pdf_th: "下载 PDF (TH)",
+    btn_pdf_en: "下载 PDF (EN)",
+
+    sec_exec_tag: "高管概览",
+    sec_exec_title: "Executive Overview & Management",
+    sec_mgmt_title: "管理专长",
+    mgmt_1: "<strong>现金流与预算控制:</strong> 负责公司现金流规划、收支预算预测及资金管控。",
+    mgmt_2: "<strong>采购与成本优化:</strong> 供应商寻源、BOM成本节约分析，提升净利润率。",
+    mgmt_3: "<strong>流程与SOP建设:</strong> 制定跨部门业务操作流程及标准作业程序（SOP）。",
+    mgmt_4: "<strong>HR与人事行政:</strong> 管理员工考勤打卡系统、招聘面试及劳动合同签订。",
+    mgmt_5: "<strong>财务与税务合规:</strong> 日常账务登记、供应商付款审核及月度税务申报（P.N.D. 3, 53 & P.P. 30）。",
+
+    sec_edu_title: "教育背景",
+    edu_school: "Darasamut 工商管理科技学院",
+    edu_degree: "信息技术专业大专文凭",
+    edu_cert: "叉车操作员安全认证",
+    lang_title: "语言能力",
+    lang_val: "泰语 (母语), 寮语 (流利)",
+    typing_val: "打字速度: 泰文 50 字/分, 英文 40 字/分",
+
+    pi_title: "个人信息",
+    pi_nat_lbl: "国籍", pi_nat: "泰国",
+    pi_rel_lbl: "宗教", pi_rel: "佛教",
+    pi_gender_lbl: "性别", pi_gender: "女",
+    pi_dob_lbl: "出生日期", pi_dob: "1994年3月25日",
+    pi_hw_lbl: "身高 / 体重", pi_hw: "155厘米 / 70公斤",
+    pi_status_lbl: "婚姻状况", pi_status: "未婚",
+    pi_veh_lbl: "驾照与车辆", pi_veh: "汽车、摩托车、叉车",
+
+    sec_bd_tag: "业务拓展与销售支持",
+    sec_bd_title: "业务拓展团队与销售支持",
+    sec_bd_desc: "负责业务拓展、销售流程跟踪及销售团队支持职责。",
+
+    bd_1_title: "销售 Pipeline 跟踪与汇总",
+    bd_1_desc: "持续跟踪并更新 Pipeline 数据，审核各项目阶段，编制周/月度 Pipeline 总结报告呈报管理层。",
+    bd_2_title: "客户资源分配与团队跟进",
+    bd_2_desc: "根据区域、专业领域及工作量合理分配客户名单，确保销售团队跟进高效、无重复。",
+    bd_3_title: "业务拓展支持",
+    bd_3_desc: "协助 Business Development 团队分析商业机会，制作演示文件并跨部门协调拓客。",
+    bd_4_title: "Pipeline 销售业绩分析与报告",
+    bd_4_desc: "制作 Pipeline Sale 月度汇总报告，评估销售团队 KPI、赢单率（Win Rate）并提炼改进方案。",
+    bd_5_title: "方案与报价 (Solution/Proposal) 跟踪",
+    bd_5_desc: "跟踪 Pre-sales 团队方案与报价单制作进度，确保按时保质呈交客户。",
+    bd_6_title: "全流程销售跟进",
+    bd_6_desc: "全流程跟进销售事务，涵盖客户约访、报价、商务谈判至合同签署。",
+    bd_7_title: "采购议价与闭价报告",
+    bd_7_desc: "汇总采购部门议价结果，对比供应商报价，分析成本与利润空间供高层决策。",
+    bd_8_title: "销售异常问题汇总与解决",
+    bd_8_desc: "收集、分类并上报销售流程中的阻碍与异常，消除瓶颈并优化业务流程。",
+
+    sec_skills_tag: "技术技能",
+    sec_skills_title: "Technical Skills & Operations Matrix",
+
+    sec_exp_tag: "工作经验",
+    sec_exp_title: "Professional Work Experience",
+
+    exp_job1_company: "EOLO Technology Co., Ltd.",
+    exp_job1_role: "业务运营与采购副经理",
+    exp_job1_date: "2024 - 至今",
+    exp_job1_badge: "运营与财务管理领导力",
+    exp_job1_task1: "管理公司现金流、财务预测并管控月度收支预算。",
+    exp_job1_task2: "制定各部门月度行动计划（Action Plan）并向高层呈交执行总结。",
+    exp_job1_task3: "汇总月度销售数据与业绩分析供管理层审阅。",
+    exp_job1_task4: "审核并管理公司各类项目合同与法律文件。",
+    exp_job1_task5: "主导 HR 事务，包括打卡系统维护、人员面试安排与劳动合同制订。",
+    exp_job1_task6: "搭建并规范各部门标准作业程序（SOP / Work Instruction）。",
+    exp_job1_task7: "负责日常记账、供应商请款审核及财务出纳文件准备。",
+    exp_job1_task8: "监督月度税务合规，包括进销项增值税（P.P. 30）与扣缴税（P.N.D. 3, 53）。",
+    exp_job1_task9: "开展战略采购与 BOM 成本分析，实现目标降本增效（Cost Saving %）。",
+    exp_job1_task10: "协调跨部门（产品、商务、工程、合规、财务、运营）协作与异常问题 upgrade。",
+    exp_job1_task11: "<strong>Pipeline 跟踪:</strong> 实时跟进 Pipeline 交易进度，每周提交高管汇报。",
+    exp_job1_task12: "<strong>客户资源分配:</strong> 合理划分客户线索至销售代表，杜绝重复跟进。",
+    exp_job1_task13: "<strong>销售业绩分析:</strong> 编制 Pipeline 销售报表并对比 KPI 目标评估绩效。",
+    exp_job1_task14: "<strong>技术方案监督:</strong> 督导 Solution 和 Proposal 的按时高质量交付。",
+    exp_job1_task15: "<strong>全周期销售管理:</strong> 全程跟进项目从接洽到合同签订。",
+    exp_job1_task16: "<strong>采购成本核算:</strong> 评估供应商最终报价并出具利润分析报告。",
+    exp_job1_task17: "<strong>销售异常优化:</strong> 梳理销售流程痛点并推动业务流程优化。",
+
+    exp_job2_company: "CHOHO Industrial (Thailand) Co., Ltd.",
+    exp_job2_role: "仓库办公室主管 / 组长",
+    exp_job2_date: "2023年6月 - 2024年2月",
+    exp_job2_task1: "规划标准仓库布局并撰写作业指导书（WI）。",
+    exp_job2_task2: "协调物流配送、货运调度与仓库出货安排。",
+    exp_job2_task3: "监督原材料领料与成品库存，每日开展盘点与日报汇报。",
+    exp_job2_task4: "与仓储人员配合按订单精准备货并及时发货。",
+
+    exp_job3_company: "Logicom Co., Ltd.",
+    exp_job3_role: "IT 支持与系统开发员",
+    exp_job3_date: "2020年4月 - 2023年5月",
+    exp_job3_task1: "提供 1-3 级 IT 技术支持，排查计算机、网络及办公设备故障。",
+    exp_job3_task2: "使用 PHP 开发内部 Web 应用并设计 MySQL 数据库。",
+    exp_job3_task3: "开展新系统培训，提升员工技术应用效率。",
+    exp_job3_task4: "开发内部文件管理器、在线招聘平台及库存跟踪工具。",
+
+    exp_job4_company: "ETK ems Asia Productions Co., Ltd.",
+    exp_job4_role: "物流与客户项目专员",
+    exp_job4_date: "2017年4月 - 2020年3月",
+    exp_job4_task1: "管理客户项目账号，开具商业发票、装箱单及管理合同。",
+    exp_job4_task2: "处理采购请款、收发货日程安排及物流协调。",
+    exp_job4_task3: "安排货运订舱并与仓库经理对接保证按时发货。",
+
+    sec_proj_tag: "关键项目",
+    sec_proj_title: "Key Projects & Accomplishments",
+    proj1_title: "现金流与运营流程优化 — EOLO Technology",
+    proj1_desc: "建立现金流管理体系，开展 BOM 降本分析，撰写全部门 SOP 并管理月度税务申报。",
+    proj2_title: "Pipeline 销售管理与业务拓展支持 — EOLO Technology",
+    proj2_desc: "搭建 Pipeline 跟踪系统，分析销售团队效率，分配客户资源，监督方案交付并上报管理层。",
+    proj3_title: "标准仓库布局与作业指导书 — CHOHO Industrial",
+    proj3_desc: "重新规划仓库空间布局，撰写 WI 标准手册，建立实时原材料领料机制。",
+    proj4_title: "内部 PHP Web 应用与文件管理系统 — Logicom",
+    proj4_desc: "开发内部 PHP 网页平台与文档管理工具，推行无纸化办公流程。",
+    proj5_title: "客户物流与项目协调 — ETK ems",
+    proj5_desc: "管理物流调度、海关发货文件，确保大客户订单 100% 准时交付。",
+
+    footer_home: "返回主页"
+  },
+  jp: {
+    hero_name: "Duangduean Promsri",
+    hero_subtitle: "業務運営・購買アシスタントマネージャー &middot; IT・オペレーションスペシャリスト",
+    stat_years: "実務経験年数",
+    stat_companies: "所属企業数",
+    stat_skills: "多角的なスキル",
+    stat_role: "現在の役職",
+    sec_summary_text: "キャッシュフロー計画、収支予測、戦略的調達、BOMコスト削減分析、月次売上集計、プロジェクト契約管理、人事管理（タイムスキャン、面接、雇用契約）、会計・税務コンプライアンス（P.N.D. 3, 53およびVAT P.P. 30）、SOP構築に精通した業務運営・購買アシスタントマネージャー。",
+    hero_loc: "タイ・チョンブリ県シーラチャー",
+    btn_contact: "お問い合わせ",
+    btn_resume_th: "履歴書 (TH)",
+    btn_resume_en: "履歴書 (EN)",
+    btn_pdf_th: "PDF ダウンロード (TH)",
+    btn_pdf_en: "PDF ダウンロード (EN)",
+
+    sec_exec_tag: "役員概要",
+    sec_exec_title: "Executive Overview & Management",
+    sec_mgmt_title: "管理専門知識",
+    mgmt_1: "<strong>キャッシュフロー＆予算管理:</strong> 企業のキャッシュフロー計画、収支予測、予算統制を管理。",
+    mgmt_2: "<strong>調達＆コスト最適化:</strong> サプライヤー調達、BOMコスト削減分析により利益率を最大化。",
+    mgmt_3: "<strong>プロセス＆SOP構築:</strong> 部署横断的な業務フローおよび標準作業手順書（SOP）を策定。",
+    mgmt_4: "<strong>人事＆雇用管理:</strong> タイムスキャンシステム、採用面接、雇用契約書管理を統括。",
+    mgmt_5: "<strong>会計＆税務管理:</strong> 日常の記帳、ベンダー支払承認、月次税務申告（P.N.D. 3, 53 & P.P. 30）を実施。",
+
+    sec_edu_title: "学歴",
+    edu_school: "ダラサムット経営管理技術大学",
+    edu_degree: "情報技術学科 専門士（Diploma）",
+    edu_cert: "フォークリフト運転修了証",
+    lang_title: "言語能力",
+    lang_val: "タイ語（ネイティブ）, ラオス語（流暢）",
+    typing_val: "タイピング速度: タイ語 50 WPM, 英語 40 WPM",
+
+    pi_title: "個人情報",
+    pi_nat_lbl: "国籍", pi_nat: "タイ",
+    pi_rel_lbl: "宗教", pi_rel: "仏教",
+    pi_gender_lbl: "性別", pi_gender: "女性",
+    pi_dob_lbl: "生年月日", pi_dob: "1994年3月25日",
+    pi_hw_lbl: "身長 / 体重", pi_hw: "155 cm / 70 kg",
+    pi_status_lbl: "配偶者", pi_status: "独身",
+    pi_veh_lbl: "免許・所有車両", pi_veh: "自動車、オートバイ、フォークリフト",
+
+    sec_bd_tag: "業務開発＆営業支援",
+    sec_bd_title: "業務開発チーム＆営業支援",
+    sec_bd_desc: "業務開発、パイプライン追跡、営業チーム支援の責任。",
+
+    bd_1_title: "パイプライン追跡と集計",
+    bd_1_desc: "パイプラインデータを継続的に追跡し、案件進捗を確認して週次・月次の経営報告書を作成。",
+    bd_2_title: "営業への顧客案件割り当て",
+    bd_2_desc: "担当エリアや負荷に応じ、重複なく効率的に追跡できるよう営業担当に顧客を割り当て。",
+    bd_3_title: "業務開発支援",
+    bd_3_desc: "新規顧客開拓のため、事業機会の分析、プレゼン資料作成、他部署との連携をサポート。",
+    bd_4_title: "パイプライン売上分析と報告",
+    bd_4_desc: "月次売上集計レポートを作成し、営業パフォーマンス（成約率・KPI）を分析・改善提案。",
+    bd_5_title: "ソリューション・提案書追跡",
+    bd_5_desc: "プリセールスチームの提案書作成進捗を管理し、納期通り高品質で顧客へ提出。",
+    bd_6_title: "エンドツーエンド営業追跡",
+    bd_6_desc: "アプローチから面談、見積もり、交渉、契約締結まで全体の営業工程を追跡。",
+    bd_7_title: "購買最終価格報告",
+    bd_7_desc: "購買部門の仕入れ価格交渉結果を集計し、利益率を分析して経営陣へ報告。",
+    bd_8_title: "営業課題の報告と改善",
+    bd_8_desc: "営業プロセスの課題を集計・分類し、ボトルネック解消とワークフロー改善を実施。",
+
+    sec_skills_tag: "テクニカルスキル",
+    sec_skills_title: "Technical Skills & Operations Matrix",
+
+    sec_exp_tag: "職務経歴",
+    sec_exp_title: "Professional Work Experience",
+
+    exp_job1_company: "EOLO Technology Co., Ltd.",
+    exp_job1_role: "業務運営・購買アシスタントマネージャー",
+    exp_job1_date: "2024年 - 現在",
+    exp_job1_badge: "オペレーション＆財務管理リーダーシップ",
+    exp_job1_task1: "キャッシュフロー、財務予測、月次予算の管理と統制を担当。",
+    exp_job1_task2: "全部署の月次アクションプランを策定し、経営陣へ進捗結果を報告。",
+    exp_job1_task3: "月次売上集計および業績分析レポートをまとめて役員へ提出。",
+    exp_job1_task4: "各種プロジェクト契約書および法的書類の確認・管理。",
+    exp_job1_task5: "勤怠管理、面接設定、雇用契約書作成など人事業務を統括。",
+    exp_job1_task6: "各部署の標準作業手順書（SOP / 作業手順書）を策定・標準化。",
+    exp_job1_task7: "日常の記帳、支払申請の確認、出金書類の作成を指揮。",
+    exp_job1_task8: "VAT（P.P. 30）や源泉徴収税（P.N.D. 3, 53）の税務コンプライアンス管理。",
+    exp_job1_task9: "戦略的調達とBOMコスト分析を指揮し、コスト削減率（Cost Saving %）を向上。",
+    exp_job1_task10: "製品、技術、営業、コンプライアンス、財務各チーム間の調整とエスカレーション対応。",
+    exp_job1_task11: "<strong>パイプライン管理:</strong> 営業パイプラインをリアルタイム追跡し役員会へ報告。",
+    exp_job1_task12: "<strong>顧客案件分配:</strong> 重複を防止するため営業担当へ効率的に案件を配分。",
+    exp_job1_task13: "<strong>売上パフォーマンス分析:</strong> KPI目標に対する達成度と成約率を分析。",
+    exp_job1_task14: "<strong>提案書納期管理:</strong> ソリューション提案書の納期遵守を徹底。",
+    exp_job1_task15: "<strong>全営業工程統括:</strong> 初回接点から最終契約締結までの進行を管理。",
+    exp_job1_task16: "<strong>仕入コスト監査:</strong> ベンダー最終価格の評価とマージン分析。",
+    exp_job1_task17: "<strong>営業課題最適化:</strong> 営業プロセスの阻害要因を排除し運用を最適化。",
+
+    exp_job2_company: "CHOHO Industrial (Thailand) Co., Ltd.",
+    exp_job2_role: "倉庫オフィススーパーバイザー / リーダー",
+    exp_job2_date: "2023年6月 - 2024年2月",
+    exp_job2_task1: "標準倉庫レイアウトを設計し作業手順書（WI）を作成。",
+    exp_job2_task2: "物流配車手配、貨物スケジュール、出荷業務を調整。",
+    exp_job2_task3: "原材料出庫と製品在庫を監督し、日次実地棚卸を実施。",
+    exp_job2_task4: "受注データに基づき正確な出荷準備をサポート。",
+
+    exp_job3_company: "Logicom Co., Ltd.",
+    exp_job3_role: "ITサポート＆システム開発員",
+    exp_job3_date: "2020年4月 - 2023年5月",
+    exp_job3_task1: "PC、ネットワーク、オフィス機器のレベル1-3技術サポート。",
+    exp_job3_task2: "PHPによる社内Webアプリ開発およびMySQLデータベース設計。",
+    exp_job3_task3: "業務効率化のため新技術・ソフトの社内研修を実施。",
+    exp_job3_task4: "社内ファイルマネージャー、採用ポータル、在庫追跡ツールを構築。",
+
+    exp_job4_company: "ETK ems Asia Productions Co., Ltd.",
+    exp_job4_role: "ロジスティクス＆顧客プロジェクト担当",
+    exp_job4_date: "2017年4月 - 2020年3月",
+    exp_job4_task1: "顧客アカウント、インボイス、パッキングリスト、契約遵守を管理。",
+    exp_job4_task2: "購買手配、受発注スケジュール、物流配送を連携。",
+    exp_job4_task3: "貨物輸送の手配を行い、倉庫側と連携し正確に出荷。",
+
+    sec_proj_tag: "主な実績",
+    sec_proj_title: "Key Projects & Accomplishments",
+    proj1_title: "キャッシュフロー＆オペレーション最適化 — EOLO Technology",
+    proj1_desc: "資金管理体制の確立、BOM原価削減分析、全社SOP策定および月次税務報告を統括。",
+    proj2_title: "パイプライン営業管理＆業務開発支援 — EOLO Technology",
+    proj2_desc: "パイプライン追跡制度を導入し、担当配置・提案書進捗・課題レポートを役員へ報告。",
+    proj3_title: "標準倉庫レイアウト＆作業手順書（WI） — CHOHO Industrial",
+    proj3_desc: "倉庫空間を再設計しWI標準マニュアルを作成、リアルタイム出庫体制を構築。",
+    proj4_title: "社内PHP Webアプリケーション＆ファイル管理 — Logicom",
+    proj4_desc: "社内PHPシステムおよび文書管理ツールを開発しペーパーレス化を推進。",
+    proj5_title: "顧客ロジスティクス＆プロジェクト手配 — ETK ems",
+    proj5_desc: "出荷文書および配送計画を統括し、主要顧客向け納入率100%を達成。",
+
+    footer_home: "ホームに戻る"
+  },
+  in: {
+    hero_name: "दुआंगदुआन प्रोमश्रीम (Duangduean Promsri)",
+    hero_subtitle: "व्यवसाय संचालन एवं खरीद सहायक प्रबंधक &middot; आईटी और संचालन विशेषज्ञ",
+    stat_years: "वर्ष का अनुभव",
+    stat_companies: "सहयोगी कंपनियां",
+    stat_skills: "बहु-कौशल",
+    stat_role: "वर्तमान पद",
+    sec_summary_text: "कैश फ्लो प्रबंधन, राजस्व/व्यय पूर्वानुमान, रणनीतिक सोर्सिंग, बीओएम लागत-बचत विश्लेषण, मासिक बिक्री सारांश, परियोजना अनुबंध प्रलेखन, मानव संसाधन संचालन (टाइम स्कैन, उम्मीदवार साक्षात्कार, रोजगार अनुबंध), लेखा और कर प्रबंधन (P.N.D. 3, 53, P.P. 30 VAT) और मानक संचालन प्रक्रिया (SOP) विकास में व्यापक विशेषज्ञता के साथ व्यवसाय संचालन और खरीद की परिणाम-उन्मुख सहायक प्रबंधक।",
+    hero_loc: "श्रीराचा, चोनबुरी, थाईलैंड",
+    btn_contact: "संपर्क करें",
+    btn_resume_th: "रिज्यूमे (TH)",
+    btn_resume_en: "रिज्यूमे (EN)",
+    btn_pdf_th: "डाउनलोड PDF (TH)",
+    btn_pdf_en: "डाउनलोड PDF (EN)",
+
+    sec_exec_tag: "कार्यकारी सारांश",
+    sec_exec_title: "Executive Overview & Management",
+    sec_mgmt_title: "प्रबंधन विशेषज्ञता",
+    mgmt_1: "<strong>कैश फ्लो और बजट नियंत्रण:</strong> कॉर्पोरेट कैश फ्लो की योजना और प्रबंधन, व्यय/राजस्व पूर्वानुमान और बजट नियंत्रण।",
+    mgmt_2: "<strong>सोर्सिंग और लागत अनुकूलन:</strong> आपूर्तिकर्ता सोर्सिंग, बीओएम लागत-बचत विश्लेषण और लाभप्रदता को अधिकतम करने के लिए लागत बचत % में वृद्धि।",
+    mgmt_3: "<strong>प्रक्रिया और एसओपी विकास:</strong> अंतर-विभागीय परिचालन कार्यप्रवाह और मानक संचालन प्रक्रियाओं (एसओपी) का विकास।",
+    mgmt_4: "<strong>मानव संसाधन एवं रोजगार प्रशासन:</strong> कर्मचारी टाइम स्कैन सिस्टम की देखरेख, उम्मीदवारों का साक्षात्कार और रोजगार अनुबंध प्रबंधन।",
+    mgmt_5: "<strong>लेखांकन एवं कर अनुपालन:</strong> दैनिक बहीखाता प्रविष्टियों का प्रबंधन, विक्रेता संवितरण अनुमोदन और मासिक कर फाइलिंग (P.N.D. 3, 53 और P.P. 30 VAT)।",
+
+    sec_edu_title: "शिक्षा",
+    edu_school: "दारासमुत बिजनेस एडमिनिस्ट्रेशन टेक्नोलॉजी कॉलेज",
+    edu_degree: "सूचना प्रौद्योगिकी में डिप्लोमा (Information Technology)",
+    edu_cert: "फोर्कलिफ्ट ऑपरेटर प्रमाणित",
+    lang_title: "भाषाएं",
+    lang_val: "थाई (मातृभाषा), लाओशियन (धाराप्रवाह)",
+    typing_val: "टाइपिंग गति: थाई 50 शब्द प्रति मिनट, अंग्रेजी 40 शब्द प्रति मिनट",
+
+    pi_title: "व्यक्तिगत विवरण",
+    pi_nat_lbl: "राष्ट्रीयता", pi_nat: "थाई",
+    pi_rel_lbl: "धर्म", pi_rel: "बौद्ध",
+    pi_gender_lbl: "लिंग", pi_gender: "महिला",
+    pi_dob_lbl: "जन्म तिथि", pi_dob: "25 मार्च 1994",
+    pi_hw_lbl: "ऊंचाई / वजन", pi_hw: "155 सेमी / 70 किग्रा",
+    pi_status_lbl: "वैवाहिक स्थिति", pi_status: "अविवाहित",
+    pi_veh_lbl: "लाइसेंस और वाहन", pi_veh: "कार, मोटरसाइकिल, फोर्कलिफ्ट",
+
+    sec_bd_tag: "व्यवसाय विकास और बिक्री सहायता",
+    sec_bd_title: "व्यवसाय विकास टीम और बिक्री सहायता",
+    sec_bd_desc: "व्यवसाय विकास, बिक्री पाइपलाइन ट्रैकिंग और बिक्री टीम सहायता के लिए जिम्मेदारियाँ।",
+
+    bd_1_title: "पाइपलाइन ट्रैकिंग और सारांश",
+    bd_1_desc: "कार्यकारी निर्णय लेने के लिए साप्ताहिक/मासिक पाइपलाइन रिपोर्ट का सारांश देने के लिए लगातार पाइपलाइन डेटा को ट्रैक और अपडेट करना।",
+    bd_2_title: "बिक्री टीम को ग्राहक आवंटन",
+    bd_2_desc: "क्षेत्र, विशेषज्ञता और कार्यभार के आधार पर बिक्री प्रतिनिधियों को कुशल, गैर-ओवरलैपिंग फॉलो-अप के लिए ग्राहक आवंटित करना।",
+    bd_3_title: "व्यवसाय विकास सहायता",
+    bd_3_desc: "ग्राहक आधार का विस्तार करने के लिए व्यावसायिक अवसरों का विश्लेषण करने, पिच डेक तैयार करने और विभागों में समन्वय करने में सहायता करना।",
+    bd_4_title: "पाइपलाइन बिक्री विश्लेषण और रिपोर्टिंग",
+    bd_4_desc: "मासिक पाइपलाइन बिक्री सारांश रिपोर्ट संकलित करना, बिक्री टीम के प्रदर्शन का विश्लेषण करना, KPI मापना और जीत दरें (Win Rate) ट्रैक करना।",
+    bd_5_title: "समाधान और प्रस्ताव (Solution/Proposal) ट्रैकिंग",
+    bd_5_desc: "समय पर डिलीवरी सुनिश्चित करने के लिए प्री-सेल्स समाधानों और प्रस्तावों की तैयारी की स्थिति की निगरानी करना।",
+    bd_6_title: "एंड-टू-एंड बिक्री ट्रैकिंग",
+    bd_6_desc: "ग्राहक बैठकों, कोटेशन, बातचीत और अनुबंध हस्ताक्षरों की देखरेख करते हुए सौदे के बंद होने तक बिक्री गतिविधियों को ट्रैक करना।",
+    bd_7_title: "खरीद मूल्य बंद रिपोर्ट",
+    bd_7_desc: "विक्रेता मूल्य वार्ता पर सारांश रिपोर्ट तैयार करना, बहु-आपूर्तिकर्ता उद्धरणों की तुलना करना और कार्यकारी प्रबंधन के लिए मार्जिन का विश्लेषण करना।",
+    bd_8_title: "बिक्री मुद्दा रिपोर्टिंग और संकल्प",
+    bd_8_desc: "मूल कारणों की पहचान करने और बिक्री कार्यप्रवाह को परिष्कृत करने के लिए परिचालन बिक्री मुद्दों को एकत्रित, वर्गीकृत और रिपोर्ट करना।",
+
+    sec_skills_tag: "तकनीकी कौशल",
+    sec_skills_title: "Technical Skills & Operations Matrix",
+
+    sec_exp_tag: "कार्य अनुभव",
+    sec_exp_title: "Professional Work Experience",
+
+    exp_job1_company: "EOLO Technology Co., Ltd.",
+    exp_job1_role: "व्यवसाय संचालन एवं खरीद सहायक प्रबंधक",
+    exp_job1_date: "2024 - वर्तमान",
+    exp_job1_badge: "संचालन और वित्तीय प्रबंधन नेतृत्व",
+    exp_job1_task1: "कॉर्पोरेट कैश फ्लो, वित्तीय पूर्वानुमान और नियंत्रित मासिक राजस्व और व्यय बजट का प्रबंधन किया।",
+    exp_job1_task2: "सभी विभागों में मासिक परिचालन कार्य योजनाएं तैयार कीं और कार्यकारी प्रबंधन को सारांश रिपोर्ट सौंपी।",
+    exp_job1_task3: "कार्यकारी समीक्षा के लिए मासिक बिक्री सारांश और प्रदर्शन विश्लेषण संकलित किया।",
+    exp_job1_task4: "विभिन्न उद्यम परियोजनाओं में परियोजना अनुबंधों और प्रलेखन की समीक्षा, सत्यापन और प्रबंधन किया।",
+    exp_job1_task5: "कर्मचारी टाइम स्कैन प्रबंधन, उम्मीदवार साक्षात्कार का निर्धारण और रोजगार अनुबंधों का मसौदा तैयार करने सहित एचआर कार्यों का निर्देशन किया।",
+    exp_job1_task6: "विभागीय परिचालन कार्यप्रवाह और मानक संचालन प्रक्रियाओं (एसओपी / कार्य निर्देश) का डिजाइन और दस्तावेजीकरण किया।",
+    exp_job1_task7: "दैनिक बहीखाता प्रविष्टियों का प्रबंधन किया, विक्रेता चालान आवश्यकताओं को संसाधित किया और भुगतान दस्तावेज तैयार किए।",
+    exp_job1_task8: "मासिक कर अनुपालन की देखरेख की, जिसमें खरीद/बिक्री वैट (P.P. 30) और विदहोल्डिंग टैक्स फाइलिंग (P.N.D. 3, P.N.D. 53) शामिल हैं।",
+    exp_job1_task9: "इष्टतम लागत-बचत प्रतिशत प्राप्त करने और लाभप्रदता को अधिकतम करने के लिए रणनीतिक सोर्सिंग और बीओएम लागत विश्लेषण आयोजित किया।",
+    exp_job1_task10: "उत्पाद, इंजीनियरिंग, व्यवसाय, अनुपालन, वित्त और संचालन टीमों में अंतर-कार्यात्मक सहयोग की सुविधा प्रदान की।",
+    exp_job1_task11: "<strong>पाइपलाइन ट्रैकिंग:</strong> बिक्री पाइपलाइनों में प्रगति की निगरानी की और साप्ताहिक कार्यकारी रिपोर्ट दी।",
+    exp_job1_task12: "<strong>ग्राहक आवंटन:</strong> दोहराव के बिना फॉलो-अप को सुव्यवस्थित करने के लिए बिक्री प्रतिनिधियों को ग्राहक खाते आवंटित किए।",
+    exp_job1_task13: "<strong>बिक्री विश्लेषण:</strong> पाइपलाइन बिक्री रिपोर्ट उत्पन्न की और KPI लक्ष्यों के विरुद्ध प्रदर्शन का विश्लेषण किया।",
+    exp_job1_task14: "<strong>प्रस्ताव निगरानी:</strong> समय पर जमा करना सुनिश्चित करने के लिए समाधान और प्रस्ताव डिलीवरी को ट्रैक किया।",
+    exp_job1_task15: "<strong>पूर्ण बिक्री चक्र देखरेख:</strong> अंतिम अनुबंध पर हस्ताक्षर करने के लिए प्रारंभिक संपर्क से ग्राहक बातचीत का प्रबंधन किया।",
+    exp_job1_task16: "<strong>खरीद लागत लेखापरीक्षण:</strong> विक्रेता मूल्य निर्धारण प्रस्तावों का मूल्यांकन किया और मार्जिन विश्लेषण रिपोर्ट तैयार की।",
+    exp_job1_task17: "<strong>मुद्दा निवारण:</strong> बिक्री प्रक्रियाओं को अनुकूलित करने के लिए बिक्री परिचालन मुद्दों को दर्ज और हल किया।",
+
+    exp_job2_company: "CHOHO Industrial (Thailand) Co., Ltd.",
+    exp_job2_role: "गोदाम कार्यालय पर्यवेक्षक / नेता",
+    exp_job2_date: "जून 2023 - फरवरी 2024",
+    exp_job2_task1: "मानक गोदाम लेआउट डिजाइन और लागू किए और कार्य निर्देश (WI) लिखे।",
+    exp_job2_task2: "रसद वितरण, माल परिवहन शेड्यूलिंग और गोदाम प्रेषण गतिविधियों का समन्वय किया।",
+    exp_job2_task3: "दैनिक स्टॉक ऑडिट का संचालन करते हुए कच्चे माल और तैयार माल सूची का पर्यवेक्षण किया।",
+    exp_job2_task4: "सटीक बिक्री आदेश तैयारी और समय पर प्रेषण सुनिश्चित करने के लिए गोदाम कर्मचारियों के साथ साझेदारी की।",
+
+    exp_job3_company: "Logicom Co., Ltd.",
+    exp_job3_role: "आईटी सहायता एवं प्रणाली डेवलपर",
+    exp_job3_date: "अप्रैल 2020 - मई 2023",
+    exp_job3_task1: "कंप्यूटर सिस्टम, नेटवर्क बुनियादी ढांचे और सॉफ्टवेयर के लिए स्तर 1-3 तकनीकी समस्या निवारण प्रदान किया।",
+    exp_job3_task2: "PHP का उपयोग करके कस्टम आंतरिक वेब एप्लिकेशन विकसित किए और MySQL डेटाबेस प्रबंधित किया।",
+    exp_job3_task3: "उत्पादकता बढ़ाने के लिए नई तकनीकों और सॉफ्टवेयर को अपनाने पर कर्मचारियों के लिए तकनीकी प्रशिक्षण आयोजित किया।",
+    exp_job3_task4: "फाइल मैनेजर सिस्टम और ऑनलाइन भर्ती प्लेटफार्मों सहित आंतरिक उपकरण तैयार किए।",
+
+    exp_job4_company: "ETK ems Asia Productions Co., Ltd.",
+    exp_job4_role: "रसद एवं ग्राहक परियोजना अधिकारी",
+    exp_job4_date: "अप्रैल 2017 - मार्च 2020",
+    exp_job4_task1: "क्लाइंट प्रोजेक्ट अकाउंट प्रबंधित किए, बिक्री दस्तावेज (वाणिज्यिक चालान, पैकिंग सूची) जारी किए।",
+    exp_job4_task2: "खरीद आवश्यकताओं, प्राप्त करने/वितरण कार्यक्रम और परिवहन रसद समन्वय का प्रबंधन किया।",
+    exp_job4_task3: "माल परिवहन बुकिंग निर्धारित की और सटीक आदेश प्रेषण सुनिश्चित करने के लिए गोदाम प्रबंधकों के साथ समन्वय किया।",
+
+    sec_proj_tag: "प्रमुख उपलब्धियां",
+    sec_proj_title: "Key Projects & Accomplishments",
+    proj1_title: "कैश फ्लो और परिचालन प्रक्रिया अनुकूलन — EOLO Technology",
+    proj1_desc: "कैश फ्लो प्रबंधन प्रणाली स्थापित की, बीओएम लागत बचत का विश्लेषण किया, एसओपी लिखे और मासिक कर अनुपालन रिपोर्टिंग प्रबंधित की।",
+    proj2_title: "पाइपलाइन बिक्री प्रबंधन और व्यवसाय विकास सहायता — EOLO Technology",
+    proj2_desc: "पाइपलाइन बिक्री ट्रैकिंग सिस्टम लागू किए, बिक्री प्रतिनिधि दक्षता का विश्लेषण किया और कार्यकारी रिपोर्ट दी।",
+    proj3_title: "मानक गोदाम लेआउट और कार्य निर्देश — CHOHO Industrial",
+    proj3_desc: "गोदाम स्थानिक लेआउट को फिर से डिजाइन किया, मानक कार्य निर्देश (WI) लिखे और रीयल-टाइम कच्चे माल के स्टॉक प्रोटोकॉल स्थापित किए।",
+    proj4_title: "आंतरिक PHP वेब एप्लिकेशन और फ़ाइल मैनेजर — Logicom",
+    proj4_desc: "संगठन को पेपरलेस वर्कफ़्लो की ओर स्थानांतरित करते हुए आंतरिक PHP वेब प्लेटफ़ॉर्म और दस्तावेज़ फ़ाइल प्रबंधन उपकरण विकसित किए।",
+    proj5_title: "ग्राहक रसद और परियोजना समन्वय — ETK ems",
+    proj5_desc: "100% समय पर डिलीवरी के साथ प्रमुख उद्यम ग्राहक परियोजनाओं के लिए परिवहन प्रेषण कार्यक्रम और रसद का प्रबंधन किया।",
+
+    footer_home: "मुख्य पृष्ठ पर वापस जाएं"
+  }
+};
+
+let currentLang = 'th';
+
+function applyLanguage(lang) {
+  currentLang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (langData[lang] && langData[lang][key]) {
+      el.innerHTML = langData[lang][key];
+    }
+  });
+}
+
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+    const lang = this.getAttribute('data-lang');
+    applyLanguage(lang);
+  });
+});
+
+// Initial language set to Thai
+applyLanguage('th');
+
+// ═══ SCROLL ANIMATIONS ═══
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+// ═══ SMOOTH SCROLL TO TOP ═══
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
+
+</body>
+</html>
