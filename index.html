@@ -499,11 +499,11 @@ footer a:hover{color:#312e81}
           <div class="lbl" data-i18n="stat_years">ปีประสบการณ์</div>
         </div>
         <div class="stat-pill glass">
-          <div class="num">27+</div>
+          <div class="num">28+</div>
           <div class="lbl" data-i18n="stat_clients">ลูกค้าองค์กร</div>
         </div>
         <div class="stat-pill glass">
-          <div class="num">10+</div>
+          <div class="num">11+</div>
           <div class="lbl" data-i18n="stat_systems">ระบบที่พัฒนา</div>
         </div>
         <div class="stat-pill glass">
@@ -725,6 +725,7 @@ footer a:hover{color:#312e81}
       <h2 style="color:#fff" data-i18n="sec_client_title">ลูกค้าองค์กรที่เคยให้บริการ</h2>
     </div>
     <div class="client-grid">
+      <span class="client-chip" style="background:rgba(255,255,255,0.22);border-color:#a5b4fc;font-weight:600;">MAYTREE PACK (THAILAND)</span>
       <span class="client-chip">Oriental Copper</span>
       <span class="client-chip">TPI POLENE</span>
       <span class="client-chip">OMODA &amp; JAECOO</span>
@@ -774,6 +775,15 @@ footer a:hover{color:#312e81}
 <script>
 // ═══ DATA (BASE) ═══
 const W=[
+  {id:'ac-dingtalk',cat:'enterprise',catLabel:'Enterprise System',
+   title:'Time Attendance & DingTalk Cloud Integration — ระบบดึงและประมวลผลเวลาทำงานเชื่อมต่อ DingTalk (钉钉)',
+   client:'MAYTREE PACK (THAILAND) COMPANY LIMITED',
+   desc:'ระบบ Middleware บริหารจัดการเวลาเข้า-ออกงานอัจฉริยะ เชื่อมต่อเครื่องสแกนใบหน้าและลายนิ้วมือ Hikvision (MinMoe DS-K1T343MWX) และ ZKTeco แบบ Real-time พร้อมยิงข้อมูลเวลาขึ้นระบบคลาวด์ DingTalk OpenAPI (钉钉开放平台) อัตโนมัติ รองรับ 2 ภาษา (ไทย/จีน) และการจัดการสิทธิ์พนักงานข้ามสาขา',
+   tags:['Node.js / Express','SQLite / Real-time','DingTalk OpenAPI (钉钉)','Hikvision ISAPI','ZKTeco Protocol','Bilingual UI (TH/ZH)','Excel Reports'],
+   thumb:'img/ac1.png',
+   images:['img/ac1.png','img/ac2.png','img/ac3.png','img/ac4.png','img/ac5.png','img/ac6.png'],
+   obj:'แก้ปัญหาความเข้ากันไม่ได้ของเครื่องสแกนหน้าโรงงานกับระบบ HR คลาวด์ของบริษัทแม่ในจีน โดยเชื่อมต่อเวลาสแกนหน้าเข้า DingTalk (钉钉) อัตโนมัติแบบเรียลไทม์',
+   feat:['เชื่อมต่อเครื่องสแกนใบหน้า Hikvision DS-K1T343MWX (ISAPI Digest Auth) และ ZKTeco Port 4370','เชื่อมต่อ DingTalk Cloud OpenAPI (topapi/attendance/record/upload) แบบ Background Auto-Sync','ระบบจัดการพนักงาน สิทธิ์ Admin/User และส่งคำสั่งบันทึกลงตัวเครื่องสแกนหน้าทันที (Push to Machine)','ระบบคำนวณรอบกะเวลาเข้างาน (ตัดรอบ 08:30 น.) สรุปมาสาย/ตรงเวลา และ Export Excel Report','หน้าจอรองรับ 2 ภาษา (ไทย 🇹🇭 / จีน 🇨🇳) พร้อมระบบรักษาความปลอดภัย Client-side Security Shield']},
   {id:'crm',cat:'enterprise',catLabel:'Enterprise System',
    title:'EoloSystem — ระบบบริหารงาน Pre-sales & Quotation',
    client:'EOLO Technology Co., Ltd.',
@@ -949,6 +959,7 @@ const I=[
 // ═══ PROJECT TRANSLATIONS ═══
 const projectTrans = {
   en: {
+    'ac-dingtalk': { title: "Time Attendance & DingTalk Cloud Integration", desc: "Enterprise middleware connecting Hikvision MinMoe (DS-K1T343MWX) and ZKTeco biometric terminals to DingTalk (钉钉) Cloud OpenAPI with background auto-sync, bilingual UI, and shift analytics.", obj: "Bridge factory biometric hardware with DingTalk HR cloud for seamless multinational attendance synchronization.", feat: ["Hikvision ISAPI & ZKTeco Protocol integration", "DingTalk Cloud OpenAPI Auto-Sync", "Employee push-to-machine management", "08:30 shift analytics & Excel export", "Bilingual UI (TH/ZH) with enterprise security"] },
     crm: { title: "EoloSystem — Pre-sales & Quotation Management", desc: "Comprehensive sales management system for Pre-sales team, covering requirement intake, Cost Sheet calculation, job assignment, Quotation generation, and approval workflow.", obj: "Eliminate quotation delays and send accurate proposals rapidly.", feat: ["Dashboard showing pending requirements and jobs", "Cost Sheet Calculator", "PDF Quotation Generator", "Multi-level approval workflow"] },
     telesale: { title: "AI Tele-Sales — Smart Automated Calling Platform", desc: "AI call center platform integrating Grok LLM API for natural conversation AI Agents with lead tracking and transcripts.", obj: "Automate outbound sales calls with AI, increasing outreach 5x daily.", feat: ["Real-time voice AI Agent", "Lead Management", "Sales Knowledge Base", "Call Transcript recording"] },
     tms: { title: "TMS — Transport Management & Defects Dashboard", desc: "Delivery planning system and defect report dashboard for TPI POLENE with CSV/Excel import and executive analytics.", obj: "Optimize delivery routes and reduce cargo damage.", feat: ["Daily CSV/Excel import", "Vehicle dispatch queue", "Defect entry recording", "Executive analytics dashboard"] },
@@ -971,6 +982,7 @@ const projectTrans = {
     tpf: { title: "AP, CCTV (51+8 Units) & Fiber Optic", desc: "Installation of 51 new CCTV cameras, 8 relocated cameras, outdoor APs, and fiber cabling.", obj: "Upgrade factory security monitoring.", feat: ["51+8 CCTV installation", "Fiber optic cabling", "Factory Access Point deployment"] }
   },
   cn: {
+    'ac-dingtalk': { title: "门禁考勤数据采集与钉钉云端自动对接系统 (DingTalk OpenAPI)", desc: "专为美树包装（泰国）定制的工业级门禁考勤中间件，无缝集成海康威视 (DS-K1T343MWX) 与中控智慧硬件，毫秒级全自动同步打卡数据至钉钉云端开放平台。", obj: "打通泰国工厂门禁硬件与中国总部钉钉考勤系统壁垒，实现跨国考勤数据毫秒级实时上云。", feat: ["海康威视 ISAPI 与中控协议硬件对接", "钉钉 OpenAPI 考勤流水后台全自动同步", "员工档案下发与硬件设备权限写入", "08:30 班次考勤计算与 Excel 报表导出", "中/泰双语自适应界面与企业级防篡改安全机制"] },
     crm: { title: "EoloSystem — 售前与报价管理系统", desc: "面向售前团队的全流程销售管理系统，涵盖需求接收、成本表计算、工程师任务分配、报价单生成及审批流程。", obj: "解决报价延迟，快速精准出具报价单。", feat: ["待处理需求看板", "成本表计算器", "PDF报价单生成器", "多级审批流"] },
     telesale: { title: "AI Tele-Sales — 智能电话销售系统", desc: "集成Grok LLM API实现自然语音对话的AI呼叫中心平台，具备线索管理及通话记录功能。", obj: "通过AI实现外呼自动化，新客户触达量提高5倍以上。", feat: ["实时语音AI Agent", "线索管理", "销售知识库", "通话记录转写"] },
     tms: { title: "TMS — 运输管理与缺陷数据看板", desc: "TPI POLENE 配送计划与货物损坏报告看板，支持CSV/Excel导入及高管数据统计。", obj: "优化配送路线，降低货物损坏率。", feat: ["每日配送计划导入", "车辆调度排队", "缺陷录入", "高管数据看板"] },
@@ -993,6 +1005,7 @@ const projectTrans = {
     tpf: { title: "AP、CCTV (51+8台) 及光纤工程", desc: "食品工厂51台新摄像机安装、8台迁移、室外AP及光纤布线。", obj: "升级工厂安防监控与无线网络。", feat: ["51+8台CCTV安装", "光纤主干布线", "生产区AP部署"] }
   },
   jp: {
+    'ac-dingtalk': { title: "勤怠データ収集＆DingTalkクラウド自動連携システム", desc: "Hikvision MinMoe (DS-K1T343MWX) および ZKTeco 端末と DingTalk (釘釘) クラウドAPIを統合し、打刻データをバックグラウンドで自動同期するミドルウェア。", obj: "工場のバイオメトリクス端末とDingTalkクラウドを接続し、リアルタイム勤怠管理を実現。", feat: ["Hikvision ISAPI & ZKTeco プロトコル統合", "DingTalk Cloud OpenAPI 自動同期", "従業員端末書き込み管理", "08:30 シフト判定＆Excel出力", "タイ・中国語バイリンガルUI"] },
     crm: { title: "EoloSystem — プリセールス＆見積管理", desc: "要件ヒアリング、コストシート計算、エンジニアへのタスク割り当て、見積書発行、承認ワークフローをカバーする統合営業管理システム。", obj: "見積作成の遅延を解消し、正確な見積を発行。", feat: ["要件・タスクダッシュボード", "コストシート計算機", "PDF見積書ジェネレーター", "多段階承認ワークフロー"] },
     telesale: { title: "AI Tele-Sales — スマート自動発信プラットフォーム", desc: "Grok LLM APIを統合し自然な会話を行うAIエージェント、リード管理、通話録音テキスト化機能を搭載。", obj: "AIによるコール自動化でアプローチ数を5倍以上に増加。", feat: ["リアルタイム音声AI Agent", "リード管理", "営業ナレッジベース", "通話録音テキスト化"] },
     tms: { title: "TMS — 配送管理＆欠陥ダッシュボード", desc: "TPI POLENE向けの配送計画システムおよび損傷レポートダッシュボード。", obj: "配送ルート計画を最適化し貨物損傷を最小化。", feat: ["日次データインポート", "配車 queue 割り当て", "損傷エントリー記録", "役員向けダッシュボード"] },
@@ -1015,6 +1028,7 @@ const projectTrans = {
     tpf: { title: "AP、CCTV (51+8台) ＆光ファイバー工程", desc: "食品工場向けにCCTVカメラ51台新設、8台移设、屋外APおよび光ファイバー配線工事。", obj: "防犯監視および無線ネットワークを強化。", feat: ["51+8台CCTV設置", "光ファイバー幹線配線", "Access Point設置"] }
   },
   in: {
+    'ac-dingtalk': { title: "समय उपस्थिति और डिंगटॉक क्लाउड एकीकरण प्रणाली", desc: "हिकविजन और जेडकेटेको बायोमेट्रिक टर्मिनलों को डिंगटॉक (DingTalk) क्लाउड ओपनएपीआई से जोड़ने वाला एंटरप्राइज मिडलवेयर।", obj: "फैक्ट्री बायोमेट्रिक हार्डवेयर को डिंगटॉक क्लाउड से जोड़ना।", feat: ["हिकविजन और जेडकेटेको हार्डवेयर एकीकरण", "डिंगटॉक क्लाउड ऑटो-सिंक", "कर्मचारी प्रबंधन", "08:30 शिफ्ट विश्लेषण और एक्सेल निर्यात", "द्विभाषी इंटरफ़ेस"] },
     crm: { title: "EoloSystem — प्री-सेल्स और कोटेशन प्रबंधन", desc: "प्री-सेल्स टीम के लिए व्यापक बिक्री प्रबंधन प्रणाली, जिसमें आवश्यकताएं प्राप्त करना, लागत पत्रक की गणना, कार्य सौंपना और कोटेशन अनुमोदन शामिल हैं।", obj: "कोटेशन में देरी को समाप्त करना और सटीक प्रस्ताव जल्दी भेजना।", feat: ["लंबित आवश्यकताओं का डैशबोर्ड", "लागत पत्रक कैलकुलेटर", "पीडीएफ कोटेशन जनरेटर", "बहु-स्तरीय अनुमोदन कार्यप्रवाह"] },
     telesale: { title: "AI Tele-Sales — स्मार्ट स्वचालित कॉलिंग प्लेटफॉर्म", desc: "प्राकृतिक आवाज बातचीत के लिए Grok LLM API को एकीकृत करने वाला AI कॉल सेंटर प्लेटफॉर्म।", obj: "एआई के साथ आउटबाउंड बिक्री कॉल को स्वचालित करना।", feat: ["रीयल-टाइम वॉयस एआई एजेंट", "लीड प्रबंधन", "बिक्री ज्ञान आधार", "कॉल ट्रांसक्रिप्ट रिकॉर्डिंग"] },
     tms: { title: "TMS — परिवहन प्रबंधन और दोष डैशबोर्ड", desc: "TPI POLENE के लिए डिलीवरी योजना प्रणाली और दोष रिपोर्ट डैशबोर्ड।", obj: "डिलीवरी मार्गों को अनुकूलित करना और क्षति को कम करना।", feat: ["दैनिक डेटा आयात", "वाहन प्रेषण कतार", "दोष प्रविष्टि रिकॉर्डिंग", "कार्यकारी विश्लेषण डैशबोर्ड"] },
@@ -1187,6 +1201,7 @@ const langData = {
     pi_mil_lbl: "Military Status:", pi_mil: "Exempted (Completed ROTC)"
   },
   cn: {
+    'ac-dingtalk': { title: "门禁考勤数据采集与钉钉云端自动对接系统 (DingTalk OpenAPI)", desc: "专为美树包装（泰国）定制的工业级门禁考勤中间件，无缝集成海康威视 (DS-K1T343MWX) 与中控智慧硬件，毫秒级全自动同步打卡数据至钉钉云端开放平台。", obj: "打通泰国工厂门禁硬件与中国总部钉钉考勤系统壁垒，实现跨国考勤数据毫秒级实时上云。", feat: ["海康威视 ISAPI 与中控协议硬件对接", "钉钉 OpenAPI 考勤流水后台全自动同步", "员工档案下发与硬件设备权限写入", "08:30 班次考勤计算与 Excel 报表导出", "中/泰双语自适应界面与企业级防篡改安全机制"] },
     hero_name: "Pakpoom Luansiri",
     hero_subtitle: "售前主管 &middot; IT 基础设施主管 &middot; 代理 IT 经理",
     hero_loc: "泰国 春武里",
@@ -1260,6 +1275,7 @@ const langData = {
     pi_mil_lbl: "服役状态：", pi_mil: "免役（已完成预备役军官训练 ROTC）"
   },
   jp: {
+    'ac-dingtalk': { title: "勤怠データ収集＆DingTalkクラウド自動連携システム", desc: "Hikvision MinMoe (DS-K1T343MWX) および ZKTeco 端末と DingTalk (釘釘) クラウドAPIを統合し、打刻データをバックグラウンドで自動同期するミドルウェア。", obj: "工場のバイオメトリクス端末とDingTalkクラウドを接続し、リアルタイム勤怠管理を実現。", feat: ["Hikvision ISAPI & ZKTeco プロトコル統合", "DingTalk Cloud OpenAPI 自動同期", "従業員端末書き込み管理", "08:30 シフト判定＆Excel出力", "タイ・中国語バイリンガルUI"] },
     hero_name: "パックプーム・ルワンシリ",
     hero_subtitle: "プリセールススーパーバイザー &middot; ITインフラリード &middot; ITマネージャー代行",
     hero_loc: "タイ チョンブリー",
@@ -1333,6 +1349,7 @@ const langData = {
     pi_mil_lbl: "兵役:", pi_mil: "免除（ROTC修了）"
   },
   in: {
+    'ac-dingtalk': { title: "समय उपस्थिति और डिंगटॉक क्लाउड एकीकरण प्रणाली", desc: "हिकविजन और जेडकेटेको बायोमेट्रिक टर्मिनलों को डिंगटॉक (DingTalk) क्लाउड ओपनएपीआई से जोड़ने वाला एंटरप्राइज मिडलवेयर।", obj: "फैक्ट्री बायोमेट्रिक हार्डवेयर को डिंगटॉक क्लाउड से जोड़ना।", feat: ["हिकविजन और जेडकेटेको हार्डवेयर एकीकरण", "डिंगटॉक क्लाउड ऑटो-सिंक", "कर्मचारी प्रबंधन", "08:30 शिफ्ट विश्लेषण और एक्सेल निर्यात", "द्विभाषी इंटरफ़ेस"] },
     hero_name: "पाकपूम लुआनसिरी",
     hero_subtitle: "प्री-सेल्स सुपरवाइजर &middot; आईटी इंफ्रास्ट्रक्चर लीड &middot; कार्यवाहक आईटी मैनेजर",
     hero_loc: "चोनबुरी, थाईलैंड",
