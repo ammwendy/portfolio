@@ -570,7 +570,7 @@ footer a:hover{color:#312e81}
           <div class="lbl" data-i18n="stat_clients">ลูกค้าองค์กร</div>
         </div>
         <div class="stat-pill glass">
-          <div class="num">12+</div>
+          <div class="num">11+</div>
           <div class="lbl" data-i18n="stat_systems">ระบบที่พัฒนา</div>
         </div>
         <div class="stat-pill glass">
@@ -814,7 +814,6 @@ footer a:hover{color:#312e81}
       <h2 style="color:#fff" data-i18n="sec_client_title">ลูกค้าองค์กรที่เคยให้บริการ</h2>
     </div>
     <div class="client-grid">
-      <span class="client-chip" style="background:rgba(255,255,255,0.22);border-color:#a5b4fc;font-weight:600;">LION CORPORATION (THAILAND)</span>
       <span class="client-chip" style="background:rgba(255,255,255,0.22);border-color:#a5b4fc;font-weight:600;">MAYTREE PACK (THAILAND)</span>
       <span class="client-chip">Oriental Copper</span>
       <span class="client-chip">TPI POLENE</span>
@@ -984,20 +983,6 @@ const certTrans = {
     'altai-mod-10': { desc: 'Integration of Altai Super WiFi with enterprise switching infrastructure, VLAN trunking, PoE power budgeting, wireless QoS, and core switch topology.' }
   },
   cn: {
-    'mobile-printer': {
-      title: "EOLO Direct Print Suite — 工业级移动打印中间件与硬件绑定授权系统",
-      desc: "专为工业手持终端 (T3_pro / Kiwi Browser) 与 TSC Alpha-3R 蓝牙便携打印机研发的免驱动 Web 打印套件。无需更改客户系统代码，自动拦截与解析客户 LION WMS (prn_pmlabel_Barcode.php) 托盘标签页面 DOM，毫秒级直驱 TSPL 指令打印。内置 100% 离线硬件绑定机制 (SHA-256 HMAC)，强锁定打印机 MAC 地址，有效杜绝第三方硬件替代，附带完整的后台授权打包工作台 (Admin Packager)。",
-      obj: "解决工业手持终端在传统网页上无法直接蓝牙打印的痛点，并通过密码学硬件绑定技术全面保护公司打印机硬件销售权益。",
-      feat: [
-        "免驱动 Web 打印: 基于 Web Serial / Bluetooth SPP，无需安装 Windows 驱动即可直连 TSC 打印机",
-        "客户页面自动嗅探与数据解析: 自动识别 prn_pmlabel_Barcode.php，精准抓取库位、物料号、双条形码及数量",
-        "浏览器打印拦截器: 拦截并屏蔽原生 window.print() 弹窗，无缝转换为蓝牙热敏指令直出",
-        "硬件强绑定授权 (MAC Whitelist): 仅允许经我司授权的 TSC 打印机出纸，全面杜绝外部竞品串货",
-        "100% 纯离线防篡改体系: 基于 SHA-256 HMAC 签名算法，断网环境下依然具备高度防破解能力",
-        "后台授权打包管理工作台: 支持客户建档、批量 MAC 录入、在线沙盒模拟验证与一键导出 license.json",
-        "批量连续打印与 270° 旋转: 完美适配 72x115mm 托盘标签排版与多标签连续输出"
-      ]
-    },
     'ruijie-reyee-eg': { desc: '完成锐捷网络 (Ruijie Networks) Reyee 企业网关实操培训，涵盖多 WAN 口负载均衡、路由冗余、VLAN 划分及云端统一管理运维。' },
     'altai-mod-1': { desc: '奥泰尔 (Altai Super WiFi) 工业级关键任务无线连接概览，涵盖智能天线技术、长距离大范围覆盖及高可用架构。' },
     'altai-mod-2': { desc: 'Altai AP 基础与高级部署配置，包括无线 SSID 规范、网络安全加固、点对点 (PTP) 及点对多点 (PTMP) 链路搭建。' },
@@ -1007,20 +992,6 @@ const certTrans = {
     'altai-mod-10': { desc: 'Altai Super WiFi 结合企业交换机解决方案，涵盖 VLAN 汇聚、PoE 供电管理、QoS 服务质量优化及核心交换对接。' }
   },
   jp: {
-    'mobile-printer': {
-      title: "EOLO Direct Print Suite — モバイルプリンター直結＆ハードウェアバインド認証",
-      desc: "Androidハンディターミナル（T3_pro）上のKiwi BrowserおよびGoogle Chromeから、ドライバ不要でTSC Alpha-3RモバイルプリンターへBluetooth SPP直結印刷を行うエンタープライズ拡張機能。顧客のWMS画面（prn_pmlabel_Barcode.php）を自動検出し、DOM解析およびwindow.print()インターセプトによりTSPLコマンドを瞬時送信。MACアドレスによる100%オフライン暗号ライセンス制御（SHA-256 HMAC）を搭載。",
-      obj: "倉庫内ハンディ端末からWeb画面経由のBluetooth直接印刷を実現し、同時にハードウェアバインド暗号により自社販売プリンターの排他性を保護。",
-      feat: [
-        "ドライバ不要Web印刷: Web Serial / Bluetooth SPP経由でTSCプリンターへ直接TSPL送信",
-        "顧客画面自動検知＆DOMスクレイピング: prn_pmlabel_Barcode.phpから棚番、品番、バーコード2種、数量を自動抽出",
-        "ブラウザ印刷インターセプト: 既定のwindow.print()を乗っ取り、モバイルプリンター直結印刷へリダイレクト",
-        "ハードウェアバインドライセンス: 自社販売プリンターのMACアドレスのみを許可し、他社機器の使用を防止",
-        "100%オフライン暗号完全性: SHA-256 HMAC電子署名により、ネット接続のない工場でも改ざんを防止",
-        "管理者用ライセンスパッケージャー: MACアドレス登録、サンドボックス検証、license.json出力を一元管理",
-        "連続バッチ印刷＆270度回転: 72x115mmパレットラベルおよびロケーションタグの柔軟な印刷に対応"
-      ]
-    },
     'ruijie-reyee-eg': { desc: 'Ruijie Networks Reyee エンタープライズゲートウェイ実機ワークショップ修了。マルチWAN、フェイルオーバー、VLAN、クラウド一元管理を習得。' },
     'altai-mod-1': { desc: 'ミッションクリティカル産業向け Altai Super WiFi 概要。スマートアンテナ技術、長距離無線設計、高信頼性アーキテクチャ。' },
     'altai-mod-2': { desc: 'Altai AP の基本・高度設定および展開。SSID設定、セキュリティ強化、Point-to-Point および Point-to-Multipoint 接続。' },
@@ -1030,20 +1001,6 @@ const certTrans = {
     'altai-mod-10': { desc: 'Altai Super WiFi とスイッチングソリューションの統合。VLAN設計、PoE電力管理、無線 QoS トラフィック制御。' }
   },
   in: {
-    'mobile-printer': {
-      title: "ईओएलओ डायरेक्ट प्रिंट सुइट और हार्डवेयर-बद्ध लाइसेंस प्रबंधन प्रणाली",
-      desc: "टीएससी अल्फा-3आर (TSC Alpha-3R) मोबाइल प्रिंटर के लिए ड्राइवरलेस ब्लूटूथ प्रिंटिंग समाधान। बिना ड्राइवर या ग्राहक कोड बदले वेब पेज (prn_pmlabel_Barcode.php) से सीधे टीएसपीएल (TSPL) लेबल प्रिंटिंग। मैक एड्रेस हार्डवेयर-बाइंडिंग और 100% ऑफ़लाइन क्रिप्टोग्राफ़िक लाइसेंसिंग (SHA-256 HMAC) से सुरक्षित।",
-      obj: "हैंडहेल्ड डिवाइसों से सीधे ब्लूटूथ प्रिंटिंग सक्षम करना और हार्डवेयर बिक्री की सुरक्षा के लिए मैक एड्रेस लॉक प्रदान करना।",
-      feat: [
-        "ड्राइवरलेस वेब प्रिंटिंग: वेब सीरियल और ब्लूटूथ एसपीपी के माध्यम से सीधा प्रिंट",
-        "ग्राहक पेज स्वचालित पहचान और स्क्रैपिंग: पैलेट विवरण और बारकोड डेटा का स्वचालित निष्कर्षण",
-        "ब्राउज़र प्रिंट इंटरसेप्टर: सामान्य window.print() को मोबाइल प्रिंटर पर पुनर्निर्देशित करना",
-        "हार्डवेयर-बद्ध लाइसेंसिंग: अनधिकृत प्रिंटरों को रोकना और केवल अधिकृत मैक एड्रेस की अनुमति",
-        "100% ऑफ़लाइन क्रिप्टोग्राफ़िक सुरक्षा: SHA-256 HMAC डिजिटल हस्ताक्षर के साथ छेड़छाड़-रोधी",
-        "व्यवस्थापक लाइसेंस पैकेजर पोर्टल: लाइसेंस फ़ाइल बनाने और सैंडबॉक्स परीक्षण के लिए व्यवस्थापक टूल",
-        "बैच और निरंतर लेबल प्रिंटिंग: 72x115 मिमी पैलेट लेबल और 270° रोटेशन नियंत्रण"
-      ]
-    },
     'ruijie-reyee-eg': { desc: 'Ruijie Reyee एंटरप्राइज गेटवे (EG) हैंड्स-ऑन कार्यशाला पूर्ण। मल्टी-WAN, फेलओवर, रूटिंग, VLAN और क्लाउड प्रबंधन।' },
     'altai-mod-1': { desc: 'मिशन-क्रिटिकल औद्योगिक कनेक्टिविटी और Altai Super WiFi तकनीक, स्मार्ट एंटीना और लंबी दूरी का वायरलेस नेटवर्क।' },
     'altai-mod-2': { desc: 'Altai AP कॉन्फ़िगरेशन और बुनियादी परिनियोजन, वायरलेस सुरक्षा, पॉइंट-टू-पॉइंट और मल्टीपॉइंट लिंक।' },
@@ -1137,22 +1094,6 @@ function openCertModal(id) {
 
 // ═══ DATA (BASE) ═══
 const W=[
-  {id:'mobile-printer',cat:'enterprise',catLabel:'Enterprise IoT & Mobile Print',
-   title:'EOLO Direct Print Suite & Hardware-Bound License — ระบบสั่งพิมพ์ฉลากพาเลท TSPL ไร้ไดร์เวอร์ผ่าน Bluetooth พร้อมระบบควบคุมสิทธิ์ MAC Address',
-   client:'LION CORPORATION (THAILAND) CO., LTD.',
-   desc:'ระบบสั่งพิมพ์ฉลากบาร์โค้ดและฉลากพาเลทสำหรับเครื่องพิมพ์โมบาย TSC Alpha-3R ผ่าน Chrome Extension บน Handheld / T3_pro (Android Kiwi Browser) โดยไม่ต้องติดตั้งไดร์เวอร์หรือแก้โค้ดระบบเดิมของลูกค้า รองรับการดักตรวจจับหน้าเว็บ LION WMS (prn_pmlabel_Barcode.php) สกัดข้อมูลพาเลท (Bin, DocNo, Barcode 1 & 2, Qty) จาก DOM และสั่งพิมพ์ด้วยภาษา TSPL ทันที พร้อมระบบความปลอดภัย Hardware-Bound Licensing ล็อคสิทธิ์ MAC ID เครื่องพิมพ์แบบ Offline 100% (SHA-256 HMAC) ป้องกันการนำไปใช้กับเครื่องร้านอื่น และหน้าเว็บหลังบ้าน Admin License Packager',
-   tags:['Chrome Extension (Manifest V3)','Web Serial / Bluetooth SPP','TSPL Direct Print Engine','Hardware-Bound License (SHA-256 HMAC)','Offline Tamper-Proof','DOM Scraping & Print Interceptor','TSC Alpha-3R Mobile Printer','Admin License Packager'],
-   thumb:'img/tsc_thumb.png',
-   images:['img/tsc_1.png','img/tsc_2.png','img/tsc_3.png','img/tsc_4.png','img/tsc_5.png'],
-   obj:'แก้ปัญหาข้อจำกัดของเครื่อง Handheld / T3_pro ในคลังสินค้าที่ไม่สามารถสั่งพิมพ์ผ่าน Bluetooth บนหน้าเว็บระบบเดิมของลูกค้าได้ โดยสร้าง Chrome Extension ดักจับหน้าพิมพ์พาเลทและส่งคำสั่ง TSPL ออกเครื่องพิมพ์ TSC Alpha-3R ทันที พร้อมปกป้องยอดขายเครื่องพิมพ์ด้วยระบบล็อค MAC Address แบบออฟไลน์ 100%',
-   feat:['Driverless Web Printing: สั่งพิมพ์ฉลากตรงผ่าน Web Serial และ Bluetooth SPP บน Google Chrome และ Kiwi Browser โดยไม่ต้องลงไดร์เวอร์',
-         'Customer Page Auto-Detect & Scraping: ดักตรวจจับหน้า prn_pmlabel_Barcode.php ของลูกค้า และสกัดข้อมูลพาเลท (Bin, DocNo, Barcode 1 & 2, Qty) จาก DOM อัตโนมัติ',
-         'Browser Print Interceptor: ดักจับและระงับคำสั่ง window.print() เดิมของบราวเซอร์ แล้วเปลี่ยนเป็นการส่งข้อมูล TSPL ตรงเข้าเครื่องพิมพ์โมบายทันที',
-         'Hardware-Bound Licensing (MAC ID Whitelist): ผูกสิทธิ์การพิมพ์กับเลข MAC Address ของเครื่องพิมพ์ TSC ที่ซื้อจากบริษัทเท่านั้น ป้องกันการนำซอฟต์แวร์ไปใช้กับเครื่องร้านอื่น',
-         '100% Offline Cryptographic Integrity: ใช้ลายเซ็นดิจิทัล SHA-256 HMAC ป้องกันการแก้ไขไฟล์ใบอนุญาตเอง รองรับคลังสินค้าที่เป็น Intranet ปิด',
-         'Admin License Packager Portal: หน้าเว็บระบบหลังบ้านสำหรับสร้างไฟล์ license.json กำหนดรายการเครื่องที่อนุญาต พร้อมระบบจำลองทดสอบสิทธิ์ (Sandbox Test)',
-         'Batch & Multi-label Printing: รองรับการสั่งพิมพ์ฉลากพาเลทต่อเนื่องแบบ Batch และป้ายพิกัดตำแหน่งจัดเก็บ (Location Tag) ปรับขนาดและหมุน 270° ได้']},
-
   {id:'ac-dingtalk',cat:'enterprise',catLabel:'Enterprise System',
    title:'Time Attendance & DingTalk Cloud Integration — ระบบดึงเวลาสแกนหน้าและควบคุมสิทธิ์ License เชื่อมต่อ DingTalk (钉钉)',
    client:'MAYTREE PACK (THAILAND) COMPANY LIMITED',
@@ -1337,20 +1278,6 @@ const I=[
 // ═══ PROJECT TRANSLATIONS ═══
 const projectTrans = {
   en: {
-    'mobile-printer': {
-      title: "EOLO Direct Print Suite & Hardware-Bound License Management",
-      desc: "Enterprise mobile printing solution for TSC Alpha-3R printers via Chrome Extension (Kiwi Browser / Android Handheld), communicating via Web Bluetooth / Serial SPP without drivers or backend modifications. Features customer WMS DOM auto-detection (prn_pmlabel_Barcode.php), browser print interception, and 100% offline Hardware-Bound Licensing with SHA-256 HMAC cryptographic tamper-proof validation.",
-      obj: "Empower warehouse handhelds to print TSPL pallet labels directly over Bluetooth while safeguarding hardware sales via cryptographic offline MAC address locking.",
-      feat: [
-        "Driverless Web Printing: Direct TSPL printing via Web Serial / Bluetooth SPP without printer drivers",
-        "Customer Page DOM Scraping: Auto-detects prn_pmlabel_Barcode.php and extracts pallet attributes (Bin, DocNo, Barcode 1 & 2, Qty)",
-        "Browser Print Interceptor: Overrides window.print() and redirects execution to thermal mobile printer",
-        "Hardware-Bound Licensing: Whitelists authorized TSC printer MAC IDs to protect commercial hardware contracts",
-        "100% Offline Cryptographic Integrity: SHA-256 HMAC tamper-proof digital signatures for intranet-only warehouses",
-        "Admin License Packager Portal: Self-service management tool to issue, verify, and sandbox-test offline license packages",
-        "Continuous Batch & Location Tag Printing: Multi-pallet continuous spooling with 270° label rotation control"
-      ]
-    },
     'ac-dingtalk': { title: "Time Attendance & DingTalk Cloud Integration with Triple-Lock License Control", desc: "Enterprise IoT middleware connecting Hikvision MinMoe (DS-K1T343MWX) and ZKTeco biometric terminals to DingTalk (钉钉) Cloud OpenAPI with background auto-sync, Triple-Lock License security, offline cryptographic key generation, bilingual UI, and shift analytics.", obj: "Bridge factory biometric hardware with DingTalk HR cloud for seamless multinational attendance synchronization while protecting intellectual property with hardware-bound Triple-Lock licensing.", feat: ["Pure Real-Data Hikvision ISAPI Digest Auth & ZKTeco Protocol integration", "DingTalk Cloud OpenAPI (attendance record upload) 24/7 background auto-sync", "Triple-Lock License Control: Hardware Motherboard UUID & MAC address locking", "Developer Offline Cryptographic Key Generator Studio (HMAC-SHA256)", "30-day proactive renewal alert & 1-Year Master Emergency Bypass Key (ammwendy)", "Biometric employee push-to-machine & privilege management", "08:30 shift analytics & automated Excel reporting", "Bilingual Thai/Chinese adaptive UI with official installation documentation"] },
     crm: { title: "EoloSystem — Pre-sales & Quotation Management", desc: "Comprehensive sales management system for Pre-sales team, covering requirement intake, Cost Sheet calculation, job assignment, Quotation generation, and approval workflow.", obj: "Eliminate quotation delays and send accurate proposals rapidly.", feat: ["Dashboard showing pending requirements and jobs", "Cost Sheet Calculator", "PDF Quotation Generator", "Multi-level approval workflow"] },
     telesale: { title: "AI Tele-Sales — Smart Automated Calling Platform", desc: "AI call center platform integrating Grok LLM API for natural conversation AI Agents with lead tracking and transcripts.", obj: "Automate outbound sales calls with AI, increasing outreach 5x daily.", feat: ["Real-time voice AI Agent", "Lead Management", "Sales Knowledge Base", "Call Transcript recording"] },
