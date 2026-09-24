@@ -1032,6 +1032,23 @@ const certTrans = {
     'altai-mod-10': { desc: 'Integration of Altai Super WiFi with enterprise switching infrastructure, VLAN trunking, PoE power budgeting, wireless QoS, and core switch topology.' }
   },
   cn: {
+    "mic-traceability": {
+      title: "MIC Industries — 工业手持终端条码比对与全流程追溯系统",
+      client: "MIC INDUSTRIES (THAILAND) CO., LTD. / EOLO Technology",
+      desc: "专为工业级手持移动终端（如 Newland N7 与 KEYENCE BT-A500）开发的全流程质量追溯（Traceability）与防错比对（Matching & Interlock）系统。涵盖物料入库验收、车间生产过程追踪（工单、工序、物料、批次号）、成品出库出货核对，并具备主管密码解锁防错机制与一键式全生命周期正反向追溯功能。",
+      catLabel: "工业手持终端与质量追溯",
+      obj: "依据工业选型手册第32页标准，打造免单机授权费用的集中式手持移动追溯平台，实现工厂收货、生产、出货全流程闭环控制，杜绝错装漏发。",
+      feat: [
+        "收货验收模块：快速扫描录入检验员工号 (PIC)、供应商代码、零件编号及入库数量，带实时日计数器",
+        "生产过程追溯：按工序实时追踪生产指令单、工艺编号、零部件编号及原材料批次号 (Lot No.)",
+        "出货核对模块：出货前核验发票送货单号、客户目的地、产品编号及数量，防止发错物料与客户",
+        "主管安全互锁机制：比对不符 (NG) 时全屏告警锁定并伴有警报音，必须由主管输入专属密码方可解锁",
+        "一键全流程追溯查询：输入或扫描物料号、批号或发票号，即时呈现「入库-生产-出库」完整履历链",
+        "自动化报表导出：一键导出收货、生产、出货与比对日志 CSV/Excel 报表，完美支持多语言编码",
+        "开放式 RESTful 架构：支持在未来平滑对接工厂 ERP (如 SAP)、MES 与企业外部中央服务器"
+      ]
+    },
+
     'ruijie-reyee-eg': { desc: '完成锐捷网络 (Ruijie Networks) Reyee 企业网关实操培训，涵盖多 WAN 口负载均衡、路由冗余、VLAN 划分及云端统一管理运维。' },
     'altai-mod-1': { desc: '奥泰尔 (Altai Super WiFi) 工业级关键任务无线连接概览，涵盖智能天线技术、长距离大范围覆盖及高可用架构。' },
     'altai-mod-2': { desc: 'Altai AP 基础与高级部署配置，包括无线 SSID 规范、网络安全加固、点对点 (PTP) 及点对多点 (PTMP) 链路搭建。' },
@@ -1041,6 +1058,23 @@ const certTrans = {
     'altai-mod-10': { desc: 'Altai Super WiFi 结合企业交换机解决方案，涵盖 VLAN 汇聚、PoE 供电管理、QoS 服务质量优化及核心交换对接。' }
   },
   jp: {
+    "mic-traceability": {
+      title: "MIC Industries — ハンディターミナル向けトレーサビリティ＆照合システム",
+      client: "MIC INDUSTRIES (THAILAND) CO., LTD. / EOLO Technology",
+      desc: "工業用ハンディターミナル（Newland N7 / KEYENCE BT-A500等）に対応した集中管理型全工程トレーサビリティおよびポカヨケ照合システム。部品受入検品（Receiving）、工程内実績収集（Production: 指示番号/工程/ロット番号）、出荷照合（Shipping）をカバーし、照合NG時の責任者暗証番号インターロック機能やワンクリック履歴追跡機能を完備。",
+      catLabel: "産業用ハンディ＆トレーサビリティ",
+      obj: "工場選定ガイド（32ページ）の要求仕様に完全準拠し、端末ごとの追加ライセンス費用を不要にしたWeb型集中管理プラットフォームを構築。出荷ミスのゼロ化と品質管理の高度化を実現。",
+      feat: [
+        "受入検品モジュール：担当者 (PIC)、サプライヤーコード、部品番号、数量の読み取りと当日実績カウンター",
+        "工程進捗・製造実績収集：製造指示番号、工程コード、製品番号、ロット番号を紐付けた確実な履歴管理",
+        "出荷照合モジュール：納品書・送り状番号、出荷先コード、製品番号、数量の出荷前確実照合",
+        "責任者パスワードインターロック：不一致 (NG) 発生時に画面を完全ロックし、警告音とともに責任者解除を要求",
+        "全工程トレーサビリティ検索：製品番号・ロット番号・伝票番号から「受入→製造→出荷」の全履歴を即時表示",
+        "Excel/CSV 自動出力：受入、製造、出荷、照合ログの日次レポートを UTF-8 BOM 形式でワンクリック出力",
+        "将来連携対応 REST API：将来的な上位 ERP（SAP等）や外部工場サーバーとの連携が容易な拡張設計"
+      ]
+    },
+
     'ruijie-reyee-eg': { desc: 'Ruijie Networks Reyee エンタープライズゲートウェイ実機ワークショップ修了。マルチWAN、フェイルオーバー、VLAN、クラウド一元管理を習得。' },
     'altai-mod-1': { desc: 'ミッションクリティカル産業向け Altai Super WiFi 概要。スマートアンテナ技術、長距離無線設計、高信頼性アーキテクチャ。' },
     'altai-mod-2': { desc: 'Altai AP の基本・高度設定および展開。SSID設定、セキュリティ強化、Point-to-Point および Point-to-Multipoint 接続。' },
@@ -1050,6 +1084,23 @@ const certTrans = {
     'altai-mod-10': { desc: 'Altai Super WiFi とスイッチングソリューションの統合。VLAN設計、PoE電力管理、無線 QoS トラフィック制御。' }
   },
   in: {
+    "mic-traceability": {
+      title: "MIC Industries — औद्योगिक हैंडहेल्ड ट्रेसेबिलिटी और बारकोड मिलान प्रणाली",
+      client: "MIC INDUSTRIES (THAILAND) CO., LTD. / EOLO Technology",
+      desc: "औद्योगिक हैंडहेल्ड मोबाइल कंप्यूटर (जैसे Newland N7 और KEYENCE BT-A500) के लिए डिज़ाइन की गई संपूर्ण ट्रेसेबिलिटी और त्रुटि-मुक्त मिलान (Matching & Interlock) प्रणाली। इसमें आपूर्तिकर्ता से माल प्राप्ति (Receiving), उत्पादन ट्रैकिंग (Production: वर्क ऑर्डर, प्रक्रिया, आइटम, लॉट नंबर), और प्रेषण सत्यापन (Shipping) शामिल हैं।",
+      catLabel: "औद्योगिक मोबाइल और ट्रेसेबिलिटी",
+      obj: "फैक्ट्री चयन गाइड (पृष्ठ 32) के विनिर्देशों के अनुसार केंद्रीकृत मोबाइल ट्रेसेबिलिटी समाधान प्रदान करना, जो प्रति-डिवाइस लाइसेंस लागत को समाप्त करता है।",
+      feat: [
+        "प्राप्ति मॉड्यूल: निरीक्षक आईडी (PIC), आपूर्तिकर्ता कोड, पार्ट नंबर और मात्रा को दैनिक स्कैन काउंटर के साथ रिकॉर्ड करता है",
+        "उत्पादन ट्रेसेबिलिटी: वर्क ऑर्डर, प्रक्रिया कोड, आइटम और कच्चे माल के लॉट नंबर को जोड़ते हुए वास्तविक समय में ट्रैकिंग",
+        "शिपिंग सत्यापन: प्रेषण से पहले इनवॉइस, ग्राहक गंतव्य और मात्रा की सटीक जांच करता है",
+        "सुपरवाइज़र इंटरलॉक: मिलान न होने (NG) पर तुरंत स्क्रीन लॉक और अलार्म, जिसे अनलॉक करने के लिए सुपरवाइज़र पिन की आवश्यकता होती है",
+        "एक-क्लिक ट्रेसेबिलिटी जांच: पार्ट नंबर, लॉट नंबर या इनवॉइस द्वारा प्राप्ति -> उत्पादन -> शिपिंग की पूरी यात्रा प्रदर्शित करता है",
+        "एक्सेल/सीएसवी रिपोर्ट: प्राप्ति, उत्पादन, शिपिंग और ऑडिट लॉग के लिए एक-क्लिक डेटा निर्यात",
+        "भविष्य के लिए तैयार RESTful API: कॉर्पोरेट ईआरपी (जैसे SAP) और केंद्रीय सर्वर से आसानी से जुड़ने में सक्षम"
+      ]
+    },
+
     'ruijie-reyee-eg': { desc: 'Ruijie Reyee एंटरप्राइज गेटवे (EG) हैंड्स-ऑन कार्यशाला पूर्ण। मल्टी-WAN, फेलओवर, रूटिंग, VLAN और क्लाउड प्रबंधन।' },
     'altai-mod-1': { desc: 'मिशन-क्रिटिकल औद्योगिक कनेक्टिविटी और Altai Super WiFi तकनीक, स्मार्ट एंटीना और लंबी दूरी का वायरलेस नेटवर्क।' },
     'altai-mod-2': { desc: 'Altai AP कॉन्फ़िगरेशन और बुनियादी परिनियोजन, वायरलेस सुरक्षा, पॉइंट-टू-पॉइंट और मल्टीपॉइंट लिंक।' },
@@ -1143,6 +1194,32 @@ function openCertModal(id) {
 
 // ═══ DATA (BASE) ═══
 const W=[
+  {id:'mic-traceability',cat:'enterprise',catLabel:'Industrial Mobile & Traceability',
+   title:'MIC Industries — ระบบตรวจสอบย้อนกลับและ Matching สินค้าบนเครื่อง Handheld Mobile Computer',
+   client:'MIC INDUSTRIES (THAILAND) CO., LTD. / EOLO Technology',
+   desc:'ระบบบริหารจัดการตรวจสอบย้อนกลับทั้งระบบ (Full Traceability) และตรวจสอบความถูกต้องของสินค้าก่อนส่งออก (Matching & Interlock) บนเครื่องคอมพิวเตอร์พกพาอุตสาหกรรม (Handheld Mobile Computer เช่น Newland N7 และ KEYENCE BT-A500) ครอบคลุมกระบวนการตรวจรับวัตถุดิบ (Receiving), การติดตามสายการผลิต (Production: เริ่มต้น/ประกอบ/ตรวจ), และการตรวจสอบจัดส่ง (Shipping) พร้อมระบบล็อกความผิดพลาดด้วยรหัสผ่านหัวหน้างาน (Supervisor PIN), ระบบสืบค้นประวัติย้อนกลับทั้งระบบในคลิกเดียว (Traceability Chain Inquiry) และส่งออกรายงาน Excel/CSV อัตโนมัติ',
+   tags:['Industrial Handheld','Android 10/11','PHP 8.1','SQLite / REST API','Barcode & 2D QR','Traceability','Keyence BT-A500','Newland N7'],
+   thumb:'img/mic24926/ภาพจากการเปิดด้วยแฮนเฮลจริงๆ1.jpg',
+   images:[
+     'img/mic24926/ภาพจากการเปิดด้วยแฮนเฮลจริงๆ1.jpg',
+     'img/mic24926/ภาพจากการเปิดด้วยแฮนเฮลจริงๆ2.jpg',
+     'img/mic24926/1การรับ.png',
+     'img/mic24926/2การผลิต.png',
+     'img/mic24926/3จัดส่ง.png',
+     'img/mic24926/4สืบค้น.png',
+     'img/mic24926/รายการ.png'
+   ],
+   liveUrl:'',
+   obj:'พัฒนาระบบตรวจสอบย้อนกลับ (Traceability) และระบบป้องกันข้อผิดพลาดในการส่งมอบสินค้า (Poka-Yoke Matching) ตามข้อกำหนด Selection Guide หน้า 32 ของโรงงาน เพื่อทำงานบนเครื่อง Handheld แบบรวมศูนย์ ขจัดค่าลิขสิทธิ์ซอฟต์แวร์รายเครื่อง (Unlimited Device Licenses) และยกระดับการควบคุมคุณภาพการผลิตสู่มาตรฐานสากล',
+   feat:['Receiving Module (การตรวจรับ): สแกนรหัสผู้ตรวจรับ (PIC), รหัสซัพพลายเออร์ (Supp), รหัสชิ้นส่วน (Item), และจำนวนรับเข้า (Qty) พร้อมตัวนับรอบการตรวจรับประจำวัน (Daily Counter)',
+         'Production Traceability Module (การผลิต): ติดตามกระบวนการผลิตรายขั้นตอน (Work Order, Process ID, Item Code, Lot No.) สร้างห่วงโซ่ประวัติการผลิตย้อนกลับอย่างแม่นยำ',
+         'Shipping Module (การจัดส่ง): ตรวจสอบความถูกต้องของสินค้าก่อนส่งมอบ (Inv#, Destination Customer, Item, Qty) ป้องกันการส่งสินค้าผิดกล่องหรือผิดลูกค้า 100%',
+         'Supervisor Interlock System (ระบบล็อกความผิดพลาด): หากตรวจสอบแล้วพบความผิดพลาด (NG) หน้าจอจะแจ้งเตือนพร้อมสัญญาณเสียงและล็อกการทำงานทันที ต้องได้รับรหัสผ่านจากหัวหน้างาน (Supervisor PIN) ในการปลดล็อก',
+         'End-to-End Traceability Inquiry: ระบบค้นหาประวัติย้อนกลับในคลิกเดียว เพียงสแกนรหัสสินค้า, Lot No. หรือ Inv# ระบบจะแสดงเส้นทางตั้งแต่ รับเข้า > ผลิต > จัดส่ง อย่างสมบูรณ์',
+         'Automated Excel/CSV Reports: ส่งออกรายงานการรับเข้า, การผลิต, การจัดส่ง และบันทึกประวัติการตรวจสอบเป็นไฟล์ Excel (.csv) ที่มี UTF-8 BOM รองรับภาษาไทยสมบูรณ์',
+         'Future-Ready RESTful API: สถาปัตยกรรม Decoupled รองรับการเชื่อมต่อกับระบบ ERP (เช่น SAP) และฐานข้อมูลภายนอกของโรงงานในอนาคตได้อย่างไร้รอยต่อ']
+  },
+
   {id:'nativecipher',cat:'enterprise',catLabel:'Engineering SaaS Suite',
    title:'NativeCipher — แพลตฟอร์มเครื่องมือออกแบบงานช่างและวิศวกรรม 11 ระบบ',
    client:'NativeCipher (Founder & Lead Architect)',
@@ -1375,6 +1452,22 @@ const I=[
 // ═══ PROJECT TRANSLATIONS ═══
 const projectTrans = {
   en: {
+    "mic-traceability": {
+      title: "MIC Industries — Industrial Handheld Traceability & Barcode Matching System",
+      client: "MIC INDUSTRIES (THAILAND) CO., LTD. / EOLO Technology",
+      desc: "Full-lifecycle Industrial Traceability and Error-Proofing (Matching & Interlock) mobile web platform designed for rugged Android Handheld Computers (such as Newland N7 and KEYENCE BT-A500). Covers Supplier Receiving, Multi-stage Production tracking (Work Order, Process, Item, Lot No.), Outbound Shipping verification, Supervisor PIN Security Interlock, One-click Traceability Chain Inquiry, and automated Excel/CSV export.",
+      catLabel: "Industrial Mobile & Traceability",
+      obj: "Deliver an industrial-grade, zero-maintenance centralized mobile traceability and matching solution adhering to factory Selection Guide specifications (Page 32), eliminating per-device license costs while ensuring 100% shipping accuracy.",
+      feat: [
+        "Inbound Receiving Module: Scans Inspector PIC, Supplier Code, Part Number, and Quantity with real-time daily scan counter",
+        "Production Traceability Module: Real-time step-by-step manufacturing tracking linking Work Orders, Process IDs, Items, and Raw Material Lot Numbers",
+        "Outbound Shipping Verification: Validates Delivery Orders, Invoices, Customer Destinations, and Quantities before dispatch",
+        "Supervisor Security Interlock: Immediate screen freeze and audible alert on mismatch (NG), requiring Supervisor PIN authentication to unlock",
+        "One-Click Traceability Chain Inquiry: Visualizes full product journey across Receiving -> Production -> Shipping by Item Code, Lot No., or Invoice #",
+        "Daily Excel/CSV Reports: One-click export for Inbound, Production, Shipping, and Verification Audit Logs with UTF-8 BOM Thai encoding",
+        "Future-Ready RESTful Architecture: Seamlessly extensible to enterprise ERPs (SAP) and central corporate database servers"
+      ]
+    },
     nativecipher: {
       title: "NativeCipher — 11-in-1 Engineering Design & Simulation SaaS Platform",
       client: "NativeCipher (Founder & Lead Architect)",
