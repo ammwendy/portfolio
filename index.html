@@ -432,6 +432,7 @@ body{
 }
 .cert-badge-ruijie{background:rgba(217,119,6,.92)}
 .cert-badge-altai{background:rgba(2,132,199,.92)}
+.cert-badge-ai{background:linear-gradient(135deg,#4f46e5,#7c3aed);box-shadow:0 2px 10px rgba(99,102,241,0.5)}
 .cert-body{padding:22px;display:flex;flex-direction:column;flex-grow:1}
 .cert-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-size:12.5px;color:#64748b}
 .cert-meta .issuer{font-weight:600;color:#4338ca}
@@ -724,7 +725,7 @@ footer a:hover{color:#312e81}
       </div>
       <div class="skill-box" style="grid-column:1/-1">
         <h4>Development &amp; ERP Integration</h4>
-        <p>PHP (Laravel/Native), JavaScript (ES6+), HTML5/CSS3, MySQL, SAP API Integration, RESTful API</p>
+        <p>PHP (Laravel/Native), JavaScript (ES6+), Industrial Mobile/Handheld Systems (Barcode/2D QR Wedge), SQLite/MySQL, RESTful API, SAP ERP Integration, Poka-Yoke & Traceability Solutions</p>
       </div>
     </div>
   </div>
@@ -915,6 +916,22 @@ footer a:hover{color:#312e81}
 // ═══ CERTIFICATIONS DATA ═══
 const CERTS = [
   {
+    id: 'th-ai-passport',
+    issuer: 'สำนักงานคณะกรรมการดิจิทัลเพื่อเศรษฐกิจและสังคมแห่งชาติ (สดช.)',
+    badgeClass: 'cert-badge-ai',
+    badgeText: 'TH AI PASSPORT',
+    title: 'พื้นฐาน AI: เปิดโลก AI สู่โอกาสใหม่ในชีวิตและงาน',
+    certId: 'TH-AI-PASSPORT-2026',
+    date: '21/09/2026',
+    desc: 'ผ่านการอบรมระบบการเรียนออนไลน์หลักสูตร "พื้นฐาน AI: เปิดโลก AI สู่โอกาสใหม่ในชีวิตและงาน" โดยสำนักงานคณะกรรมการดิจิทัลเพื่อเศรษฐกิจและสังคมแห่งชาติ (สดช.) กระทรวงดิจิทัลเพื่อเศรษฐกิจและสังคม ครอบคลุมพื้นฐานปัญญาประดิษฐ์ (AI), Generative AI, และการประยุกต์ใช้ AI เพื่อเพิ่มประสิทธิภาพการทำงานและชีวิตประจำวัน',
+    img: 'certs/AIcertificate.jpeg',
+    fullImg: 'certs/AIcertificate.jpeg',
+    file: 'certs/AIcertificate.jpeg',
+    fileType: 'JPEG',
+    tags: ['Artificial Intelligence', 'Generative AI', 'TH AI PASSPORT', 'Digital Economy', 'ONDE']
+  },
+
+  {
     id: 'ruijie-reyee-eg',
     issuer: 'Ruijie Networks Co., Ltd.',
     badgeClass: 'cert-badge-ruijie',
@@ -1023,6 +1040,10 @@ const CERTS = [
 
 const certTrans = {
   en: {
+    'th-ai-passport': {
+      title: 'AI Fundamentals: Unlocking Opportunities in Life and Work',
+      desc: 'Certified by the National Board of Digital Economy and Society Office (ONDE), Ministry of Digital Economy and Society, under the TH AI PASSPORT initiative. Covers fundamental Artificial Intelligence, Generative AI principles, prompt applications, and practical AI tools for workplace productivity.'
+    },
     'ruijie-reyee-eg': { desc: 'Completed hands-on workshop for Ruijie Reyee Enterprise Gateway (EG), covering Multi-WAN, Failover, Routing, VLAN, Security Policies, and Cloud Network Management.' },
     'altai-mod-1': { desc: 'Altai Super WiFi certification for mission-critical industrial connectivity, covering long-range architecture, Smart Antenna technology, and enterprise-grade resilience.' },
     'altai-mod-2': { desc: 'Fundamental and advanced AP configuration, wireless SSID setup, security hardening, Point-to-Point, and Point-to-Multipoint long-distance links.' },
@@ -1032,23 +1053,10 @@ const certTrans = {
     'altai-mod-10': { desc: 'Integration of Altai Super WiFi with enterprise switching infrastructure, VLAN trunking, PoE power budgeting, wireless QoS, and core switch topology.' }
   },
   cn: {
-    "mic-traceability": {
-      title: "MIC Industries — 工业手持终端条码比对与全流程追溯系统",
-      client: "MIC INDUSTRIES (THAILAND) CO., LTD. / EOLO Technology",
-      desc: "专为工业级手持移动终端（如 Newland N7 与 KEYENCE BT-A500）开发的全流程质量追溯（Traceability）与防错比对（Matching & Interlock）系统。涵盖物料入库验收、车间生产过程追踪（工单、工序、物料、批次号）、成品出库出货核对，并具备主管密码解锁防错机制与一键式全生命周期正反向追溯功能。",
-      catLabel: "工业手持终端与质量追溯",
-      obj: "依据工业选型手册第32页标准，打造免单机授权费用的集中式手持移动追溯平台，实现工厂收货、生产、出货全流程闭环控制，杜绝错装漏发。",
-      feat: [
-        "收货验收模块：快速扫描录入检验员工号 (PIC)、供应商代码、零件编号及入库数量，带实时日计数器",
-        "生产过程追溯：按工序实时追踪生产指令单、工艺编号、零部件编号及原材料批次号 (Lot No.)",
-        "出货核对模块：出货前核验发票送货单号、客户目的地、产品编号及数量，防止发错物料与客户",
-        "主管安全互锁机制：比对不符 (NG) 时全屏告警锁定并伴有警报音，必须由主管输入专属密码方可解锁",
-        "一键全流程追溯查询：输入或扫描物料号、批号或发票号，即时呈现「入库-生产-出库」完整履历链",
-        "自动化报表导出：一键导出收货、生产、出货与比对日志 CSV/Excel 报表，完美支持多语言编码",
-        "开放式 RESTful 架构：支持在未来平滑对接工厂 ERP (如 SAP)、MES 与企业外部中央服务器"
-      ]
+    'th-ai-passport': {
+      title: '人工智能基础：开启生活与工作的新机遇',
+      desc: '荣获泰国数字经济与社会部国家数字经济与社会委员会办公室 (ONDE) 及 TH AI PASSPORT 官方认证。课程涵盖人工智能核心基础概念、生成式 AI (Generative AI) 工具应用、数据素养及利用 AI 全面提升职场工作效能。'
     },
-
     'ruijie-reyee-eg': { desc: '完成锐捷网络 (Ruijie Networks) Reyee 企业网关实操培训，涵盖多 WAN 口负载均衡、路由冗余、VLAN 划分及云端统一管理运维。' },
     'altai-mod-1': { desc: '奥泰尔 (Altai Super WiFi) 工业级关键任务无线连接概览，涵盖智能天线技术、长距离大范围覆盖及高可用架构。' },
     'altai-mod-2': { desc: 'Altai AP 基础与高级部署配置，包括无线 SSID 规范、网络安全加固、点对点 (PTP) 及点对多点 (PTMP) 链路搭建。' },
@@ -1058,23 +1066,10 @@ const certTrans = {
     'altai-mod-10': { desc: 'Altai Super WiFi 结合企业交换机解决方案，涵盖 VLAN 汇聚、PoE 供电管理、QoS 服务质量优化及核心交换对接。' }
   },
   jp: {
-    "mic-traceability": {
-      title: "MIC Industries — ハンディターミナル向けトレーサビリティ＆照合システム",
-      client: "MIC INDUSTRIES (THAILAND) CO., LTD. / EOLO Technology",
-      desc: "工業用ハンディターミナル（Newland N7 / KEYENCE BT-A500等）に対応した集中管理型全工程トレーサビリティおよびポカヨケ照合システム。部品受入検品（Receiving）、工程内実績収集（Production: 指示番号/工程/ロット番号）、出荷照合（Shipping）をカバーし、照合NG時の責任者暗証番号インターロック機能やワンクリック履歴追跡機能を完備。",
-      catLabel: "産業用ハンディ＆トレーサビリティ",
-      obj: "工場選定ガイド（32ページ）の要求仕様に完全準拠し、端末ごとの追加ライセンス費用を不要にしたWeb型集中管理プラットフォームを構築。出荷ミスのゼロ化と品質管理の高度化を実現。",
-      feat: [
-        "受入検品モジュール：担当者 (PIC)、サプライヤーコード、部品番号、数量の読み取りと当日実績カウンター",
-        "工程進捗・製造実績収集：製造指示番号、工程コード、製品番号、ロット番号を紐付けた確実な履歴管理",
-        "出荷照合モジュール：納品書・送り状番号、出荷先コード、製品番号、数量の出荷前確実照合",
-        "責任者パスワードインターロック：不一致 (NG) 発生時に画面を完全ロックし、警告音とともに責任者解除を要求",
-        "全工程トレーサビリティ検索：製品番号・ロット番号・伝票番号から「受入→製造→出荷」の全履歴を即時表示",
-        "Excel/CSV 自動出力：受入、製造、出荷、照合ログの日次レポートを UTF-8 BOM 形式でワンクリック出力",
-        "将来連携対応 REST API：将来的な上位 ERP（SAP等）や外部工場サーバーとの連携が容易な拡張設計"
-      ]
+    'th-ai-passport': {
+      title: 'AIの基礎：生活と仕事に新たな機会を切り開く',
+      desc: 'タイ国家デジタル経済社会委員会事務局 (ONDE) および TH AI PASSPORT による公式修了認定。人工知能 (AI) の基礎理論、生成AI (Generative AI) の実務活用手法、プロンプト活用術、および業務生産性向上の実践スキルを習得。'
     },
-
     'ruijie-reyee-eg': { desc: 'Ruijie Networks Reyee エンタープライズゲートウェイ実機ワークショップ修了。マルチWAN、フェイルオーバー、VLAN、クラウド一元管理を習得。' },
     'altai-mod-1': { desc: 'ミッションクリティカル産業向け Altai Super WiFi 概要。スマートアンテナ技術、長距離無線設計、高信頼性アーキテクチャ。' },
     'altai-mod-2': { desc: 'Altai AP の基本・高度設定および展開。SSID設定、セキュリティ強化、Point-to-Point および Point-to-Multipoint 接続。' },
@@ -1084,23 +1079,10 @@ const certTrans = {
     'altai-mod-10': { desc: 'Altai Super WiFi とスイッチングソリューションの統合。VLAN設計、PoE電力管理、無線 QoS トラフィック制御。' }
   },
   in: {
-    "mic-traceability": {
-      title: "MIC Industries — औद्योगिक हैंडहेल्ड ट्रेसेबिलिटी और बारकोड मिलान प्रणाली",
-      client: "MIC INDUSTRIES (THAILAND) CO., LTD. / EOLO Technology",
-      desc: "औद्योगिक हैंडहेल्ड मोबाइल कंप्यूटर (जैसे Newland N7 और KEYENCE BT-A500) के लिए डिज़ाइन की गई संपूर्ण ट्रेसेबिलिटी और त्रुटि-मुक्त मिलान (Matching & Interlock) प्रणाली। इसमें आपूर्तिकर्ता से माल प्राप्ति (Receiving), उत्पादन ट्रैकिंग (Production: वर्क ऑर्डर, प्रक्रिया, आइटम, लॉट नंबर), और प्रेषण सत्यापन (Shipping) शामिल हैं।",
-      catLabel: "औद्योगिक मोबाइल और ट्रेसेबिलिटी",
-      obj: "फैक्ट्री चयन गाइड (पृष्ठ 32) के विनिर्देशों के अनुसार केंद्रीकृत मोबाइल ट्रेसेबिलिटी समाधान प्रदान करना, जो प्रति-डिवाइस लाइसेंस लागत को समाप्त करता है।",
-      feat: [
-        "प्राप्ति मॉड्यूल: निरीक्षक आईडी (PIC), आपूर्तिकर्ता कोड, पार्ट नंबर और मात्रा को दैनिक स्कैन काउंटर के साथ रिकॉर्ड करता है",
-        "उत्पादन ट्रेसेबिलिटी: वर्क ऑर्डर, प्रक्रिया कोड, आइटम और कच्चे माल के लॉट नंबर को जोड़ते हुए वास्तविक समय में ट्रैकिंग",
-        "शिपिंग सत्यापन: प्रेषण से पहले इनवॉइस, ग्राहक गंतव्य और मात्रा की सटीक जांच करता है",
-        "सुपरवाइज़र इंटरलॉक: मिलान न होने (NG) पर तुरंत स्क्रीन लॉक और अलार्म, जिसे अनलॉक करने के लिए सुपरवाइज़र पिन की आवश्यकता होती है",
-        "एक-क्लिक ट्रेसेबिलिटी जांच: पार्ट नंबर, लॉट नंबर या इनवॉइस द्वारा प्राप्ति -> उत्पादन -> शिपिंग की पूरी यात्रा प्रदर्शित करता है",
-        "एक्सेल/सीएसवी रिपोर्ट: प्राप्ति, उत्पादन, शिपिंग और ऑडिट लॉग के लिए एक-क्लिक डेटा निर्यात",
-        "भविष्य के लिए तैयार RESTful API: कॉर्पोरेट ईआरपी (जैसे SAP) और केंद्रीय सर्वर से आसानी से जुड़ने में सक्षम"
-      ]
+    'th-ai-passport': {
+      title: 'एआई की बुनियादी बातें: जीवन और कार्य में नए अवसरों को अनलॉक करना',
+      desc: 'डिजिटल अर्थव्यवस्था और समाज मंत्रालय, राष्ट्रीय डिजिटल अर्थव्यवस्था और समाज बोर्ड कार्यालय (ONDE) और TH AI PASSPORT द्वारा प्रमाणित। कृत्रिम बुद्धिमत्ता (AI) के मूल सिद्धांत, जनरेटिव एआई का उपयोग और कार्यस्थल उत्पादकता बढ़ाने के व्यावहारिक कौशल।'
     },
-
     'ruijie-reyee-eg': { desc: 'Ruijie Reyee एंटरप्राइज गेटवे (EG) हैंड्स-ऑन कार्यशाला पूर्ण। मल्टी-WAN, फेलओवर, रूटिंग, VLAN और क्लाउड प्रबंधन।' },
     'altai-mod-1': { desc: 'मिशन-क्रिटिकल औद्योगिक कनेक्टिविटी और Altai Super WiFi तकनीक, स्मार्ट एंटीना और लंबी दूरी का वायरलेस नेटवर्क।' },
     'altai-mod-2': { desc: 'Altai AP कॉन्फ़िगरेशन और बुनियादी परिनियोजन, वायरलेस सुरक्षा, पॉइंट-टू-पॉइंट और मल्टीपॉइंट लिंक।' },
@@ -1195,10 +1177,10 @@ function openCertModal(id) {
 // ═══ DATA (BASE) ═══
 const W=[
   {id:'mic-traceability',cat:'enterprise',catLabel:'Industrial Mobile & Traceability',
-   title:'MIC Industries — ระบบตรวจสอบย้อนกลับและ Matching สินค้าบนเครื่อง Handheld Mobile Computer',
+   title:'MIC Industries — ระบบตรวจสอบย้อนกลับและ Matching สินค้าบนเครื่อง Handheld Mobile Computer & PC Live Dashboard',
    client:'MIC INDUSTRIES (THAILAND) CO., LTD. / EOLO Technology',
-   desc:'ระบบบริหารจัดการตรวจสอบย้อนกลับทั้งระบบ (Full Traceability) และตรวจสอบความถูกต้องของสินค้าก่อนส่งออก (Matching & Interlock) บนเครื่องคอมพิวเตอร์พกพาอุตสาหกรรม (Handheld Mobile Computer เช่น Newland N7 และ KEYENCE BT-A500) ครอบคลุมกระบวนการตรวจรับวัตถุดิบ (Receiving), การติดตามสายการผลิต (Production: เริ่มต้น/ประกอบ/ตรวจ), และการตรวจสอบจัดส่ง (Shipping) พร้อมระบบล็อกความผิดพลาดด้วยรหัสผ่านหัวหน้างาน (Supervisor PIN), ระบบสืบค้นประวัติย้อนกลับทั้งระบบในคลิกเดียว (Traceability Chain Inquiry) และส่งออกรายงาน Excel/CSV อัตโนมัติ',
-   tags:['Industrial Handheld','Android 10/11','PHP 8.1','SQLite / REST API','Barcode & 2D QR','Traceability','Keyence BT-A500','Newland N7'],
+   desc:'ระบบบริหารจัดการตรวจสอบย้อนกลับทั้งระบบ (Full Traceability) และตรวจสอบความถูกต้องของสินค้าก่อนส่งออก (Matching & Interlock) บนเครื่องคอมพิวเตอร์พกพาอุตสาหกรรม (Handheld เช่น Newland N7 / KEYENCE BT-A500) เชื่อมต่อผ่าน Wi-Fi ภายในโรงงานแบบ On-Premise Local Server พร้อมหน้าจอ PC Live Supervisor Dashboard ติดตามยอดสแกนสด แจ้งเตือนข้อผิดพลาด Poka-Yoke NG ทันที, ระบบล็อกความผิดพลาดด้วยรหัสผ่านหัวหน้างาน (Supervisor PIN), ระบบสืบค้นประวัติย้อนกลับทั้งระบบในคลิกเดียว (Traceability Chain Inquiry) และส่งออกรายงาน Excel/CSV อัตโนมัติ โดยรองรับการเพิ่มจำนวนเครื่องในอนาคตได้ไม่จำกัด (Unlimited Devices License)',
+   tags:['Industrial Handheld','PC Live Dashboard','On-Premise Localhost','Android 10/11','PHP 8.1','SQLite / REST API','Barcode & 2D QR','Traceability & Poka-Yoke','Unlimited Terminals','Newland N7 / Keyence'],
    thumb:'img/mic24926/ภาพจากการเปิดด้วยแฮนเฮลจริงๆ1.jpg',
    images:[
      'img/mic24926/ภาพจากการเปิดด้วยแฮนเฮลจริงๆ1.jpg',
@@ -1210,13 +1192,14 @@ const W=[
      'img/mic24926/รายการ.png'
    ],
    liveUrl:'',
-   obj:'พัฒนาระบบตรวจสอบย้อนกลับ (Traceability) และระบบป้องกันข้อผิดพลาดในการส่งมอบสินค้า (Poka-Yoke Matching) ตามข้อกำหนด Selection Guide หน้า 32 ของโรงงาน เพื่อทำงานบนเครื่อง Handheld แบบรวมศูนย์ ขจัดค่าลิขสิทธิ์ซอฟต์แวร์รายเครื่อง (Unlimited Device Licenses) และยกระดับการควบคุมคุณภาพการผลิตสู่มาตรฐานสากล',
-   feat:['Receiving Module (การตรวจรับ): สแกนรหัสผู้ตรวจรับ (PIC), รหัสซัพพลายเออร์ (Supp), รหัสชิ้นส่วน (Item), และจำนวนรับเข้า (Qty) พร้อมตัวนับรอบการตรวจรับประจำวัน (Daily Counter)',
+   obj:'พัฒนาระบบตรวจสอบย้อนกลับ (Traceability) และระบบป้องกันข้อผิดพลาดในการส่งมอบสินค้า (Poka-Yoke Matching) ตามข้อกำหนด Selection Guide หน้า 32 ของโรงงาน ด้วยสถาปัตยกรรม On-Premise Local Server + Real-time Mobile Handheld Client ผ่าน Wi-Fi ช่วยให้หัวหน้างานดูภาพรวมสดบน PC และพนักงานสแกนหน้างานได้สะดวกรวดเร็ว ขจัดค่าลิขสิทธิ์ซอฟต์แวร์รายเครื่อง (Zero Per-terminal License) พร้อมรับประกันฟรีปีแรกและวางแผนการดูแลรักษาระยะยาว',
+   feat:['Receiving Module (การตรวจรับ): สแกนรหัสผู้ตรวจรับ (PIC), รหัสซัพพลายเออร์ (Supp), รหัสชิ้นส่วน (Item), และจำนวนรับเข้า (Qty) พร้อมตัวนับรอบการตรวจรับประจำวัน (Daily Counter) อัปเดตยอดสู่ PC สดทันที',
          'Production Traceability Module (การผลิต): ติดตามกระบวนการผลิตรายขั้นตอน (Work Order, Process ID, Item Code, Lot No.) สร้างห่วงโซ่ประวัติการผลิตย้อนกลับอย่างแม่นยำ',
          'Shipping Module (การจัดส่ง): ตรวจสอบความถูกต้องของสินค้าก่อนส่งมอบ (Inv#, Destination Customer, Item, Qty) ป้องกันการส่งสินค้าผิดกล่องหรือผิดลูกค้า 100%',
-         'Supervisor Interlock System (ระบบล็อกความผิดพลาด): หากตรวจสอบแล้วพบความผิดพลาด (NG) หน้าจอจะแจ้งเตือนพร้อมสัญญาณเสียงและล็อกการทำงานทันที ต้องได้รับรหัสผ่านจากหัวหน้างาน (Supervisor PIN) ในการปลดล็อก',
+         'Supervisor Interlock System (ระบบล็อกความผิดพลาด): หากตรวจสอบแล้วพบความผิดพลาด (NG) หน้าจอแฮนเฮลด์จะแจ้งเตือนพร้อมสัญญาณเสียงและล็อกการทำงานทันที ต้องได้รับรหัสผ่านจากหัวหน้างาน (Supervisor PIN) ในการปลดล็อก',
+         'Central PC Live Dashboard & Reporting: หน้าจอคอมพิวเตอร์แม่ข่าย PC แสดงผล Real-time Monitoring สรุปยอดการตรวจรับ ยอดผลิต ยอดจัดส่ง แจ้งเตือนสถานะ NG สด พร้อมปุ่มส่งออกรายงาน Excel/CSV (.csv UTF-8 BOM) ได้ในคลิกเดียว',
          'End-to-End Traceability Inquiry: ระบบค้นหาประวัติย้อนกลับในคลิกเดียว เพียงสแกนรหัสสินค้า, Lot No. หรือ Inv# ระบบจะแสดงเส้นทางตั้งแต่ รับเข้า > ผลิต > จัดส่ง อย่างสมบูรณ์',
-         'Automated Excel/CSV Reports: ส่งออกรายงานการรับเข้า, การผลิต, การจัดส่ง และบันทึกประวัติการตรวจสอบเป็นไฟล์ Excel (.csv) ที่มี UTF-8 BOM รองรับภาษาไทยสมบูรณ์',
+         'On-Premise & Unlimited Scalability: ทำงานบนเครือข่าย Wi-Fi ท้องถิ่นของโรงงาน ไม่พึ่งพาอินเทอร์เน็ตภายนอก ข้อมูลปลอดภัย 100% รองรับการเพิ่มจำนวนเครื่องแฮนเฮลด์ใหม่ได้ทันทีโดยไม่ต้องลงโปรแกรมใหม่ที่ตัวเครื่อง',
          'Future-Ready RESTful API: สถาปัตยกรรม Decoupled รองรับการเชื่อมต่อกับระบบ ERP (เช่น SAP) และฐานข้อมูลภายนอกของโรงงานในอนาคตได้อย่างไร้รอยต่อ']
   },
 
@@ -1363,6 +1346,76 @@ const W=[
 ];
 
 const I=[
+  {id:'cctv-recording-upgrade',cat:'infra',catLabel:'CCTV & Storage Redundancy',
+   title:'CCTV Central Recording Upgrade & RAID 5 Redundancy — โซลูชันปรับปรุงระบบบันทึกภาพกล้องวงจรปิดส่วนกลาง',
+   client:'โรงงานอุตสาหกรรมเหล็กชั้นนำ (นิคมฯ อีสเทิร์นซีบอร์ด ระยอง) / EOLO Technology',
+   desc:'ออกแบบสถาปัตยกรรมและจัดทำข้อเสนอโครงการเชิงเทคนิค (Technical Proposal) ปรับปรุงระบบบันทึกภาพกล้องวงจรปิดส่วนกลางสำหรับโรงงานอุตสาหกรรมหนัก โดยรวบรวมสายสัญญาณกล้อง Analog เดิม 29 กล้องจาก DVR เดิม 3 เครื่องเข้าสู่เครื่องบันทึกภาพกลาง 32 ช่องสัญญาณเครื่องเดียว นำเสนอ 2 ทางเลือก: Solution 1 (Dahua XVR5232AN-5M-I3/T, 2 SATA, 32TB Raw, บันทึกต่อเนื่อง 30 วัน) และ Solution 2 สำหรับระบบความปลอดภัยสูง (Dahua DHI-XVR5832S-I3/T, 8 SATA, 4x10TB HDD ทำ RAID 5 Array ป้องกันข้อมูลสูญหายแม้มีฮาร์ดดิสก์เสียหาย 1 ลูก) พร้อมคำนวณ Storage Capacity (H.265 Smart Codec), ตารางวิเคราะห์เปรียบเทียบ ROI และแผนผังระบบ Architecture Diagram ครบถ้วน',
+   tags:['CCTV Architecture','Dahua 32-Ch XVR','Hardware RAID 5','Data Redundancy','Surveillance Storage','H.265 Codec','Technical Proposal','Eastern Seaboard'],
+   thumb:'img/cctv_upgrade/proposal_page_1.png',
+   images:[
+     'img/cctv_upgrade/proposal_page_1.png',
+     'img/cctv_upgrade/xvr_migration_arch.png',
+     'img/cctv_upgrade/xvr_redundancy_concept.png',
+     'img/cctv_upgrade/proposal_page_4.png',
+     'img/cctv_upgrade/proposal_page_5.png',
+     'img/cctv_upgrade/proposal_page_7.png'
+   ],
+   obj:'ยกระดับระบบกล้องวงจรปิดเดิม 29 กล้องสู่ระบบบันทึกส่วนกลางที่เสถียร จัดเก็บภาพย้อนหลังได้ไม่น้อยกว่า 30 วันตลอด 24 ชั่วโมง และขจัดจุดเสี่ยงข้อมูลภาพสูญหายด้วยเทคโนโลยี RAID 5 Redundancy ในงบประมาณที่คุ้มค่าสูงสุด',
+   feat:['การรวมศูนย์ระบบบันทึกภาพ (Centralized XVR Migration): รวมสายสัญญาณ Coaxial/BNC 29 ช่องจาก DVR เดิม 3 เครื่องเข้าสู่ XVR 32 ช่องเครื่องเดียว บริหารจัดการง่ายจากศูนย์กลาง',
+         'Solution 1 (Standard Cost-Effective): Dahua XVR5232AN-5M-I3/T ติดตั้ง Surveillance HDD 16TB x 2 ลูก (32TB Raw) รองรับการบันทึกภาพ 1080p 24/7 ไม่น้อยกว่า 30 วัน',
+         'Solution 2 (High Reliability & Data Redundancy): Dahua DHI-XVR5832S-I3/T 8-SATA ติดตั้ง HDD 10TB x 4 ลูก กำหนดค่า RAID 5 Array (ความจุสุทธิ 30TB) ข้อมูลภาพไม่สูญหายแม้ HDD เสีย 1 ลูก',
+         'การคำนวณขนาดความจุฮาร์ดดิสก์อย่างแม่นยำ (Storage Engineering): ใช้สูตร Bitrate Budgeting ด้วย Smart H.265+ Codec (1080p@15fps) คำนวณความต้องการพื้นที่จัดเก็บภาพย้อนหลัง 30 วันเต็ม',
+         'แผนภาพสถาปัตยกรรมระบบ (Comprehensive Architecture Diagrams): แสดงผังการเชื่อมต่อกล้อง, Network Switch, Client PC Monitoring (SmartPSS / DMSS) และหน้าจอควบคุมในห้องคอนโทรล',
+         'การวิเคราะห์เปรียบเทียบเชิงวิศวกรรมและการเงิน (Comparative Matrix & ROI): ตารางเปรียบเทียบสเปก, ความต่อเนื่องของธุรกิจ (BCP), และความคุ้มค่าระหว่าง Solution 1 และ Solution 2 เพื่อการตัดสินใจของผู้บริหาร']
+  },
+
+  {id:'cctv-subcontractor-sow',cat:'infra',catLabel:'Subcontractor SOW & RFQ',
+   title:'CCTV Migration & DVR Recovery — เอกสารขอบเขตงานและขอเสนอราคาผู้รับเหมา (SOW & RFQ)',
+   client:'โรงงานอุตสาหกรรม (นิคมฯ อีสเทิร์นซีบอร์ด ระยอง) / EOLO Technology',
+   desc:'จัดทำชุดเอกสารขอบเขตงานสำหรับผู้รับเหมาภายนอก (Subcontractor SOW & RFQ) ฉบับสมบูรณ์สำหรับ 2 โครงการ ได้แก่ 1) โครงการย้ายสายสัญญาณและติดตั้ง XVR ส่วนกลาง (Migration Analog CCTV to Central XVR) แบ่งขอบเขตความรับผิดชอบชัดเจน (EOLO จัดหา XVR+HDD ส่วนผู้รับเหมาดูแลค่าแรง ช่าง และอุปกรณ์เบ็ดเตล็ด), กำหนดขั้นตอนงาน 5 สเต็ป, แผนภาพสถาปัตยกรรมระบบ, แบบฟอร์มถอดราคา (BOQ RFQ 11 รายการ) และ 2) โครงการตรวจสอบ Reset ซ่อมแซม และฟื้นฟูระบบ DVR เดิม 3 เครื่อง (Diagnostic Recovery) แบ่งเฟสการทำงานชัดเจน (Phase 1 ตรวจสเปก, Factory Reset รหัสแอดมินที่สูญหาย, วินิจฉัย Network/Storage พร้อมตารางส่งมอบผล 14 รายการ; Phase 2 ซ่อมแซมเปลี่ยนอะไหล่, จัดระเบียบสายและติด Tag มาตรฐาน DVR-xx/CH-xx, Final Testing & Commissioning) พร้อมกล่องเตือนข้อห้ามเด็ดขาดและกฎความปลอดภัยโรงงานอุตสาหกรรม (PPE / Work Permit / 5ส.) โดยปกปิดชื่อลูกค้าตามมาตรฐาน NDA 100%',
+   tags:['Subcontractor SOW','RFQ & BOQ Breakdown','Vendor Management','CCTV Migration','DVR Diagnostic & Reset','Cable Tagging Standard','Factory Safety PPE','NDA Compliant'],
+   thumb:'img/cctv_upgrade/sow_upgrade_page_1.png',
+   images:[
+     'img/cctv_upgrade/sow_upgrade_page_1.png',
+     'img/cctv_upgrade/sow_upgrade_page_3.png',
+     'img/cctv_upgrade/sow_upgrade_page_5.png',
+     'img/cctv_upgrade/sow_recovery_page_1.png',
+     'img/cctv_upgrade/sow_recovery_page_2.png',
+     'img/cctv_upgrade/sow_recovery_page_3.png',
+     'img/cctv_upgrade/sow_recovery_page_4.png'
+   ],
+   obj:'กำหนดขอบเขตหน้าที่ความรับผิดชอบ ข้อกำหนดทางเทคนิค มาตรฐานการทดสอบ และแบบฟอร์มถอดราคากลาง เพื่อให้ผู้รับเหมาประเมินราคาได้อย่างโปร่งใส แม่นยำ ปราศจากข้อพิพาท และปฏิบัติงานตามมาตรฐานความปลอดภัยโรงงานอุตสาหกรรม',
+   feat:['การแบ่งขอบเขตความรับผิดชอบที่โปร่งใส (Scope Boundary): ระบุชัดเจนว่า EOLO เป็นผู้จัดหาอุปกรณ์หลัก (XVR และ HDD) ส่วนผู้รับเหมาดูแลค่าแรงติดตั้ง เครื่องมือ และวัสดุสิ้นเปลือง',
+         'ขั้นตอนการปฏิบัติงานอย่างเป็นระบบ (5-Step Migration Workflow): กำหนดสเต็ป Pre-check, การติดตั้ง Hardware, การย้ายสาย BNC 29 เส้น, การตั้งค่า RAID 5, และการทดสอบ Commissioning',
+         'กรอบการวินิจฉัยและกู้คืนระบบแบบ 2 เฟส (2-Phase Diagnostic Framework): Phase 1 ตรวจสเปก/Reset แอดมิน/Diagnostic แยกเครื่อง; Phase 2 อนุมัติเปลี่ยนอะไหล่ตามจริงและจัดระเบียบสาย',
+         'ตารางส่งมอบผลการตรวจสอบทางเทคนิค (Phase 1 Deliverable Matrix): ตารางเปรียบเทียบมาตรฐาน 14 หัวข้อสำหรับ DVR ทั้ง 3 เครื่อง พร้อมภาพถ่าย Model, S/N และจุดบกพร่อง',
+         'มาตรฐานการจัดระเบียบและติดแท็กสายสัญญาณ (Cable Tagging Standard): มาตรฐานการมาร์กสาย BNC และ LAN ตามฟอร์แมต DVR-01/CH-01 พร้อม Channel Mapping ครบ 29 กล้อง',
+         'แบบฟอร์มถอดราคาและมาตรการความปลอดภัย (BOQ Breakdown & Factory Safety): ตารางถอดราคาแยกหมวด A/B/C/D, กฎ PPE ครบชุด, การขอ Work Permit, และการรับประกันงานติดตั้ง 1 ปี']
+  },
+
+  {id:'mic-proposal',catLabel:'System & Technical Proposal',
+   title:'MIC Industries — ข้อเสนอโครงการและข้อกำหนดทางเทคนิคระบบ Traceability & Poka-Yoke',
+   client:'MIC INDUSTRIES (THAILAND) CO., LTD. / EOLO Technology',
+   desc:'เอกสารข้อเสนอโครงการและรายละเอียดระบบซอฟต์แวร์ฉบับสมบูรณ์ (Project Proposal & Technical Specification) ออกแบบสถาปัตยกรรม On-Premise Local Server + Central PC Live Dashboard, กำหนดข้อจำกัดและข้อกำหนดหน้างานอย่างชัดเจน (Dedicated Host PC, Wi-Fi Coverage, Fixed IP, UPS), กำหนดคุณสมบัติ Handheld Mobile Computer (Newland N7 / Keyence BT-A500) และวางแผน SLA รับประกันฟรีปีแรกและสัญญาดูแลรักษาระยะยาว',
+   tags:['Project Proposal','Technical Spec','System Architecture','Operational Constraints','SLA & Warranty','On-Premise Localhost','Industrial Wi-Fi','Newland N7'],
+   thumb:'img/mic24926/ภาพจากการเปิดด้วยแฮนเฮลจริงๆ2.jpg',
+   images:[
+     'img/mic24926/ภาพจากการเปิดด้วยแฮนเฮลจริงๆ2.jpg',
+     'img/mic24926/ภาพจากการเปิดด้วยแฮนเฮลจริงๆ1.jpg',
+     'img/mic24926/1การรับ.png',
+     'img/mic24926/2การผลิต.png',
+     'img/mic24926/3จัดส่ง.png',
+     'img/mic24926/4สืบค้น.png',
+     'img/mic24926/รายการ.png'
+   ],
+   obj:'จัดทำข้อเสนอโครงการเชิงเทคนิคระดับมืออาชีพเพื่อนำเสนอต่อฝ่ายจัดซื้อและผู้บริหารโรงงาน ชี้แจงสถาปัตยกรรมระบบ ข้อกำหนดหน้างาน ข้อจำกัดด้านโครงสร้างพื้นฐาน และความคุ้มค่าด้านลิขสิทธิ์แบบไม่จำกัดจำนวนเครื่อง (Unlimited Terminals)',
+   feat:['การออกแบบสถาปัตยกรรม On-Premise Localhost PC + Real-time Mobile Handheld Client ผ่าน Wi-Fi',
+         'การระบุข้อจำกัดและข้อกำหนดหน้างานอย่างละเอียด (Dedicated Host PC, สัญญาณ Wi-Fi, Fixed IP, Firewall, UPS)',
+         'ข้อกำหนดคุณสมบัติอุปกรณ์ Handheld Mobile Computer อุตสาหกรรม (Android 10+, 2D Barcode/QR Wedge)',
+         'แผนการดำเนินงาน 5 ขั้นตอน (Site Survey, Server Deployment, Handheld Setup, UAT, Training & Handover)',
+         'กรอบสัญญาการบริการระดับมืออาชีพ (SLA) รับประกันฟรีปีแรก พร้อมโมเดล Software Maintenance Partnership ในปีถัดไป']
+  },
+
   {id:'ai-cctv',catLabel:'AI Surveillance',
    title:'AI CCTV Surveillance Solution',
    client:'Oriental Copper Co., Ltd.',
@@ -1452,20 +1505,65 @@ const I=[
 // ═══ PROJECT TRANSLATIONS ═══
 const projectTrans = {
   en: {
-    "mic-traceability": {
-      title: "MIC Industries — Industrial Handheld Traceability & Barcode Matching System",
-      client: "MIC INDUSTRIES (THAILAND) CO., LTD. / EOLO Technology",
-      desc: "Full-lifecycle Industrial Traceability and Error-Proofing (Matching & Interlock) mobile web platform designed for rugged Android Handheld Computers (such as Newland N7 and KEYENCE BT-A500). Covers Supplier Receiving, Multi-stage Production tracking (Work Order, Process, Item, Lot No.), Outbound Shipping verification, Supervisor PIN Security Interlock, One-click Traceability Chain Inquiry, and automated Excel/CSV export.",
-      catLabel: "Industrial Mobile & Traceability",
-      obj: "Deliver an industrial-grade, zero-maintenance centralized mobile traceability and matching solution adhering to factory Selection Guide specifications (Page 32), eliminating per-device license costs while ensuring 100% shipping accuracy.",
+    "cctv-recording-upgrade": {
+      title: "CCTV Central Recording Upgrade & RAID 5 Redundancy Solution",
+      client: "Leading Steel Manufacturer (Eastern Seaboard Industrial Estate, Rayong) / EOLO Technology",
+      desc: "Presales engineering and executive technical proposal designed to modernize industrial CCTV recording infrastructure at a major steel manufacturing facility. Migrates 29 legacy analog cameras across 3 fragmented DVRs into a unified 32-channel central XVR platform. Features two tailored architectures: Solution 1 (Dahua XVR5232AN-5M-I3/T with dual 16TB Surveillance HDDs for 30-day 24/7 continuous retention) and Solution 2 (Dahua DHI-XVR5832S-I3/T 8-SATA enterprise chassis with 4x10TB HDDs configured in Hardware RAID 5, ensuring zero video loss upon single-disk failure). Includes precise Smart H.265+ storage capacity engineering, complete network topology diagrams, and strategic CAPEX/ROI evaluation.",
+      catLabel: "CCTV & Storage Redundancy",
+      obj: "Consolidate legacy fragmented DVRs into an enterprise-grade central recording ecosystem, guaranteeing 30-day continuous retention (24/7) and introducing RAID 5 fault tolerance to safeguard mission-critical industrial video records.",
       feat: [
-        "Inbound Receiving Module: Scans Inspector PIC, Supplier Code, Part Number, and Quantity with real-time daily scan counter",
+        "Centralized XVR Architecture: Consolidates 29 legacy Coaxial/BNC feeds into a single 32-channel XVR, eliminating multi-device monitoring blind spots",
+        "Solution 1 (Standard Cost-Effective): Dahua XVR5232AN-5M-I3/T with 2x16TB Surveillance HDDs (32TB Raw) optimized for 1080p 30-day continuous recording",
+        "Solution 2 (Enterprise RAID 5 Redundancy): Dahua DHI-XVR5832S-I3/T 8-SATA chassis with 4x10TB HDDs in Hardware RAID 5 (30TB Usable) providing continuous uptime during disk outages",
+        "Rigorous Storage Engineering: Accurate bandwidth and capacity formulas leveraging Smart H.265+ video encoding (1080p@15fps) for uninterrupted 30-day archive targets",
+        "Full-Stack Architecture Diagrams: Visual topology outlining coaxial inputs, network switch trunking, control room HDMI/VGA output, and remote client PC surveillance (SmartPSS/DMSS)",
+        "Technical & Commercial Comparison: Multi-dimensional decision matrix analyzing hardware specs, reliability levels, business continuity impact, and cost-benefit ratios"
+      ]
+    },
+    "cctv-subcontractor-sow": {
+      title: "Industrial CCTV Migration & DVR Recovery — Subcontractor SOW & RFQ Framework",
+      client: "Industrial Plant (Eastern Seaboard Industrial Estate, Rayong) / EOLO Technology",
+      desc: "End-to-end Subcontractor Scope of Work (SOW) and Request for Quotation (RFQ) documentation engineered for two critical industrial surveillance initiatives: 1) Central XVR Migration SOW establishing clear scope boundaries (EOLO supplies XVR & HDDs; Subcontractor supplies labor and consumables), a 5-step engineering execution workflow, architecture diagrams, and a structured 11-item BOQ quotation breakdown; and 2) Legacy DVR Diagnostic & Recovery SOW structured across a 2-phase lifecycle (Phase 1: Physical inspection, manufacturer factory reset for lost credentials, network/storage diagnostic, and a 14-point Deliverable Matrix; Phase 2: Parts replacement approval, standardized BNC/LAN cable tagging 'DVR-xx / CH-xx', rack grooming, and commissioning). Fully NDA-compliant with anonymized plant location and strict factory safety protocols (PPE, Work Permits, 5S).",
+      catLabel: "Subcontractor SOW & RFQ",
+      obj: "Establish definitive scope boundaries, technical testing standards, and a transparent pricing schedule to eliminate vendor disputes, ensure competitive bidding, and enforce rigorous plant safety compliance.",
+      feat: [
+        "Precise Scope Boundary Matrix: Clearly demarcates EOLO-supplied equipment (XVR & Surveillance HDDs) from subcontractor labor, tools, and consumables",
+        "5-Stage Migration Workflow: Standardizes Pre-migration checks, hardware rack mounting, 29-camera BNC cable migration, RAID 5 array configuration, and final commissioning",
+        "2-Phase Diagnostic & Recovery Protocol: Phase 1 hardware inspection & default reset; Phase 2 approved corrective maintenance and component replacement",
+        "14-Point Deliverable Matrix: Standardized technical inspection scorecard for 3 DVRs accompanied by photographic proof of labels, serial numbers, and failure points",
+        "Standardized Cable Tagging System: Structured labeling rules for Coaxial and LAN cables (e.g., DVR-01 / CH-01) with full 29-camera channel mapping",
+        "Structured BOQ & Safety Governance: Itemized quotation schedule (Groups A, B, C, D), mandatory industrial PPE enforcement, Work Permit compliance, and 1-year workmanship warranty"
+      ]
+    },
+    "mic-traceability": {
+      title: "MIC Industries — Industrial Handheld Traceability & PC Live Dashboard System",
+      client: "MIC INDUSTRIES (THAILAND) CO., LTD. / EOLO Technology",
+      desc: "Full-lifecycle Industrial Traceability and Error-Proofing (Matching & Interlock) platform featuring an On-Premise Localhost Server architecture paired with a Real-time Central PC Live Dashboard and rugged Android Handheld Computers (such as Newland N7 and KEYENCE BT-A500) over local factory Wi-Fi. Covers Supplier Receiving, Multi-stage Production tracking, Outbound Shipping verification, Supervisor PIN Security Interlock, One-click Traceability Chain Inquiry, and automated Excel/CSV export with zero per-terminal license fees.",
+      catLabel: "Industrial Mobile & Traceability",
+      obj: "Deliver an industrial-grade, zero-maintenance centralized mobile traceability and matching solution adhering to factory Selection Guide specifications (Page 32). Features an On-Premise Local Server and Live PC Dashboard, eliminating per-device license costs while ensuring 100% shipping accuracy.",
+      feat: [
+        "Inbound Receiving Module: Scans Inspector PIC, Supplier Code, Part Number, and Quantity with real-time daily scan counter updating PC live",
         "Production Traceability Module: Real-time step-by-step manufacturing tracking linking Work Orders, Process IDs, Items, and Raw Material Lot Numbers",
         "Outbound Shipping Verification: Validates Delivery Orders, Invoices, Customer Destinations, and Quantities before dispatch",
         "Supervisor Security Interlock: Immediate screen freeze and audible alert on mismatch (NG), requiring Supervisor PIN authentication to unlock",
+        "Central PC Live Dashboard & Reporting: Dedicated supervisor station displaying live scan counts, instant OK/NG alerts, and one-click UTF-8 BOM CSV/Excel reports",
         "One-Click Traceability Chain Inquiry: Visualizes full product journey across Receiving -> Production -> Shipping by Item Code, Lot No., or Invoice #",
-        "Daily Excel/CSV Reports: One-click export for Inbound, Production, Shipping, and Verification Audit Logs with UTF-8 BOM Thai encoding",
+        "On-Premise & Unlimited Scalability: Operates 100% locally on factory Wi-Fi with no external internet reliance; supports unlimited handheld additions without per-terminal fees",
         "Future-Ready RESTful Architecture: Seamlessly extensible to enterprise ERPs (SAP) and central corporate database servers"
+      ]
+    },
+    "mic-proposal": {
+      title: "MIC Industries — Project Proposal & Technical Specification for Traceability & Poka-Yoke",
+      client: "MIC INDUSTRIES (THAILAND) CO., LTD. / EOLO Technology",
+      desc: "Comprehensive Project Proposal & Technical Specification document formulated for factory procurement and engineering leadership. Covers On-Premise Localhost architecture, operational site prerequisites & constraints (Dedicated Host PC, Wi-Fi Coverage, Static IP, UPS), industrial handheld terminal specifications (Newland N7 / Keyence BT-A500), and a structured SLA model featuring 1st-year full warranty and long-term software maintenance partnership.",
+      catLabel: "System & Technical Proposal",
+      obj: "Provide a formal, executive-grade engineering proposal outlining system architecture, technical constraints, deployment roadmap, and ROI justification with an unlimited device licensing model.",
+      feat: [
+        "Architectural blueprint of On-Premise Localhost Server + Real-time Mobile Handheld Clients over local Wi-Fi",
+        "Exhaustive technical constraints analysis (Dedicated Host PC, Wi-Fi coverage, Fixed IP, Firewall permissions, and UPS power backup)",
+        "Industrial Handheld Mobile Computer hardware specifications (Android 10+, 2D Barcode/QR Wedge)",
+        "5-phase turnkey deployment roadmap (Site Survey, Server Deployment, Handheld Setup, UAT, Training & Handover)",
+        "Professional SLA framework including Year 1 complimentary warranty and Year 2+ Software Maintenance Partnership"
       ]
     },
     nativecipher: {
@@ -1538,6 +1636,67 @@ const projectTrans = {
     tpf: { title: "AP, CCTV (51+8 Units) & Fiber Optic", desc: "Installation of 51 new CCTV cameras, 8 relocated cameras, outdoor APs, and fiber cabling.", obj: "Upgrade factory security monitoring.", feat: ["51+8 CCTV installation", "Fiber optic cabling", "Factory Access Point deployment"] }
   },
   cn: {
+    "cctv-recording-upgrade": {
+      title: "工业集中式监控录像升级与 RAID 5 冗余架构解决方案",
+      client: "东部海岸工业区大型钢铁制造企业（罗勇府）/ EOLO Technology",
+      desc: "面向大型钢铁制造工厂量身定制的工业级安防监控集中化升级与高可用容灾技术方案。将分散在3台旧款DVR上的29路模拟摄像机集中接入单台32路核心XVR主机，提供两大工程选型：方案一（大华 XVR5232AN-5M-I3/T 配备双16TB监控级硬盘，实现30天全天候24小时不间断录像）与方案二高可用冗余架构（大华 DHI-XVR5832S-I3/T 8盘位企业级主机，配备4块10TB硬盘组建硬件 RAID 5 磁盘阵列，单盘故障录像零丢失）。方案涵盖Smart H.265+存储容量严谨测算、网络拓扑图及投资回报率（ROI）决策矩阵。",
+      catLabel: "监控系统与存储冗余",
+      obj: "整合淘汰分散老旧DVR设备，打造高稳定性集中式录像平台，确保29路全高清画面实现30天不间断留存，并通过硬件 RAID 5 容灾架构彻底消除工业录像丢失风险。",
+      feat: [
+        "集中式 XVR 架构迁移：将分散的29路同轴BNC视频信号汇聚至单台32路核心XVR主机，实现统一控制与集中回放",
+        "方案一（经济高效型）：大华 XVR5232AN-5M-I3/T 搭载2块16TB监控硬盘（32TB原始容量），满足1080p画质30天全天候录像需求",
+        "方案二（高可靠 RAID 5 冗余）：大华 DHI-XVR5832S-I3/T 8盘位主机搭载4块10TB硬盘组建 RAID 5（可用容量30TB），单硬盘损毁数据安全无虞",
+        "精细化存储容量测算：基于 Smart H.265+ 智能编码与码率预算模型，精确计算29路全天候连续录像30天所需的存储空间",
+        "完整系统架构拓扑图：详尽绘制前端摄像机、同轴线缆、网络交换机、中控室监视器及客户端电脑（SmartPSS/DMSS）的系统互联拓扑",
+        "工程与财务决策矩阵：从硬件规格、业务连续性、系统扩展性与采购成本等维度进行全方位ROI对比分析，赋能管理层决策"
+      ]
+    },
+    "cctv-subcontractor-sow": {
+      title: "工业监控迁移与旧机恢复 — 分包商施工范围与报价规范（SOW & RFQ）",
+      client: "东部海岸工业区制造工厂（罗勇府）/ EOLO Technology",
+      desc: "专为工业监控工程定制的分包商工作范围界定书（SOW）与工程量报价清单（RFQ）规范套件，涵盖两大核心实施方案：1）集中式XVR系统迁移工程：明确界面划分（EOLO提供XVR主机及硬盘，分包商负责人工与辅材）、标准化五步施工工序、系统架构图及11项分类BOQ报价表；2）老旧DVR诊断与系统复原工程：采取两阶段推进策略（第一阶段设备检视、丢失管理员密码恢复、网络与硬盘故障诊断及14项交付成果矩阵；第二阶段获批后配件更换、标准线缆标签打标 DVR-xx/CH-xx、机柜理线与系统验收）。严格遵守NDA保密要求隐去客户信息，并制定严格的工厂施工安全管理规范（PPE劳保、作业许可及5S管理）。",
+      catLabel: "分包商工作范围与报价规范",
+      obj: "确立清晰的责任边界、技术检验标准与统一工程量清单，消除分包施工争议，保障项目报价透明公允，并全面满足重工业园区安全施工规范。",
+      feat: [
+        "明确的责任界面划分表：清晰界定 EOLO 供应核心设备（XVR 与硬盘），分包商负责施工人工、安装工具及辅料耗材",
+        "五步标准化迁移施工流程：规范施工前检查、机架硬件安装、29路BNC视频线迁移、RAID 5阵列配置及联动调试验收",
+        "两阶段诊断与系统复原流程：第一阶段全面检测与原厂重置；第二阶段依评估报告审核更换配件并优化线缆",
+        "14项技术交付成果矩阵表：建立3台DVR标准检测表格，涵盖型号、序列号、盘位及拍照存证要求",
+        "标准化线缆理线与标签打标规范：制定同轴与网线规范标签编码（如 DVR-01 / CH-01）及完整的29路通道对应映射表",
+        "分项 BOQ 报价单与安全规范：分项细化报价表格（A/B/C/D类）、全套安全防护装备（PPE）强制规范、动火入厂许可及1年施工质保"
+      ]
+    },
+    "mic-traceability": {
+      title: "MIC Industries — 工业手持终端条码比对、追溯系统与 PC 实时中控看板",
+      client: "MIC INDUSTRIES (THAILAND) CO., LTD. / EOLO Technology",
+      desc: "专为工业级手持移动终端（如 Newland N7 与 KEYENCE BT-A500）与工厂 PC 本地服务器打造的全流程质量追溯（Traceability）与防错比对（Matching & Interlock）系统。采用本地 On-Premise 架构与厂区 Wi-Fi，PC 端提供主管实时监控看板，涵盖物料入库验收、车间生产过程追踪、成品出库出货核对，并具备主管密码解锁防错机制与无限制终端扩展授权。",
+      catLabel: "工业手持终端与质量追溯",
+      obj: "依据工业选型手册第32页标准，打造免单机授权费用的集中式手持移动追溯平台与 PC 实时中控看板，实现工厂收货、生产、出货全流程闭环控制，杜绝错装漏发。",
+      feat: [
+        "收货验收模块：快速扫描录入检验员工号 (PIC)、供应商代码、零件编号及入库数量，带实时日计数器即时同步至 PC",
+        "生产过程追溯：按工序实时追踪生产指令单、工艺编号、零部件编号及原材料批次号 (Lot No.)",
+        "出货核对模块：出货前核验发票送货单号、客户目的地、产品编号及数量，防止发错物料与客户",
+        "主管安全互锁机制：比对不符 (NG) 时全屏告警锁定并伴有警报音，必须由主管输入专属密码方可解锁",
+        "PC 实时中控看板与报表：电脑端实时呈现当日收发产数据、NG 报警监控，并提供一键式 UTF-8 BOM CSV/Excel 导出",
+        "一键全流程追溯查询：输入或扫描物料号、批号或发票号，即时呈现「入库-生产-出库」完整履历链",
+        "本地化高可用与无限制扩容：100% 运行于厂区本地局域网，不依赖外网，后期增加手持终端无需额外授权或逐台安装软件",
+        "开放式 RESTful 架构：支持在未来平滑对接工厂 ERP (如 SAP)、MES 与企业外部中央服务器"
+      ]
+    },
+    "mic-proposal": {
+      title: "MIC Industries — 制造追溯与防错比对系统项目建议书与技术规格书",
+      client: "MIC INDUSTRIES (THAILAND) CO., LTD. / EOLO Technology",
+      desc: "针对工厂采购部与管理层量身制定的完整技术提案与系统规格书 (Project Proposal & Technical Specification)。详述 On-Premise 本地服务器架构、现场技术限制与前提条件（专用主机、Wi-Fi 覆盖、固定 IP、UPS 应急电源）、工业级手持机选型（Newland N7 / Keyence BT-A500）及首年全免费质保与长期维保合作协议。",
+      catLabel: "系统与技术方案建议书",
+      obj: "提供专业、严谨的技术建议方案，全面阐明系统架构、现场硬件约束、部署实施步骤及无限终端授权的高性价比优势。",
+      feat: [
+        "On-Premise 本地主机 + 厂区 Wi-Fi 实时手持机客户端架构方案设计",
+        "详尽分析现场技术限制与实施前提（专用主机 PC、Wi-Fi 信号覆盖、固定 IP、防火墙放行、UPS 备用电源）",
+        "工业手持移动数据终端 (Handheld) 选型规格与条码扫描配置",
+        "五阶段交钥匙实施路径（现场调研、服务器部署、终端配置、UAT 验收、培训与交付）",
+        "专业 SLA 维保服务体系（首年免费保修保障 + 第二年起长期软件维护伙伴计划）"
+      ]
+    },
     nativecipher: {
       title: "NativeCipher — 11合1 工程设计与仿真 SaaS 平台",
       client: "NativeCipher (创始人 & 首席架构师)",
@@ -1605,6 +1764,67 @@ const projectTrans = {
     tpf: { title: "AP、CCTV (51+8台) 及光纤工程", desc: "食品工厂51台新摄像机安装、8台迁移、室外AP及光纤布线。", obj: "升级工厂安防监控与无线网络。", feat: ["51+8台CCTV安装", "光纤主干布线", "生产区AP部署"] }
   },
   jp: {
+    "cctv-recording-upgrade": {
+      title: "産業用CCTV集中録画システム更新＆RAID 5冗余化ソリューション",
+      client: "イースタンシーボード工業団地・大手製鉄工場（ラヨーン県）/ EOLO Technology",
+      desc: "大手製鉄プラント向けに策定された、CCTV集中録画およびデータ冗余化ソリューション提案書。既存3台のDVRに分散していた29台のアナログカメラ配線を、単一の32ch統合XVRへと集約。ソリューション1（Dahua XVR5232AN-5M-I3/T、16TB監視用HDD×2台、30日間24時間連続録画）および高信頼性ソリューション2（Dahua DHI-XVR5832S-I3/T 8-SATA筐体、10TB HDD×4台のハードウェアRAID 5構成による1台障害時データ無損失設計）を提案。Smart H.265+による精密なストレージ容量計算書、ネットワーク構成図、および投資対効果（ROI）比較分析を完備。",
+      catLabel: "監視カメラ＆ストレージ冗余化",
+      obj: "分散・老朽化した既存DVRを集約し、29台のカメラ映像を30日以上安定保存するとともに、RAID 5冗余化技術によって重要工場の映像データ損失リスクをゼロ化。",
+      feat: [
+        "集中録画アーキテクチャ移行：既存3台のDVRから同軸BNCケーブル29系統を単一の32ch XVRへ集約し、一括集中監視を実現",
+        "ソリューション1（標準・高コストパフォーマンス）：Dahua XVR5232AN-5M-I3/T＋16TB HDD×2基（32TB Raw）による1080p連続30日保存",
+        "ソリューション2（高信頼性 RAID 5 冗余）：Dahua DHI-XVR5832S-I3/T 8-SATA＋10TB HDD×4基（実効30TB）による障害耐性ストレージ",
+        "精密なストレージエンジニアリング：Smart H.265+高効率コーデックに基づくビットレート・容量計算モデルにより30日分アーカイブを保証",
+        "完全なシステムアーキテクチャ図：カメラ入力、ネットワークスイッチ、制御室モニター、遠隔PCクライアント（SmartPSS/DMSS）の接続系統を網羅",
+        "技術仕様＆ROI比較評価：ハードウェア仕様、事業継続性（BCP）、拡張性、およびトータル導入コストを多角的に比較分析"
+      ]
+    },
+    "cctv-subcontractor-sow": {
+      title: "産業用CCTV移行＆DVR復旧 — 工事業者向け作業範囲書・見積依頼（SOW & RFQ）",
+      client: "イースタンシーボード工業団地・製造プラント（ラヨーン県）/ EOLO Technology",
+      desc: "産業プラント向け監視カメラ工事のために策定された、工事業者向け作業範囲書（SOW）および相見積仕様書（RFQ）一式。2大プロジェクトに対応：1）集中XVR統合移行SOW：責任分界点の明確化（EOLOがXVRおよびHDDを供給、施工業者が工数・工具・消耗品を担当）、5段階の施工手順、システム構成図、11項目の詳細BOQ見積フォーム；2）既存DVR診断・復旧SOW：2フェーズ制を採用（フェーズ1でハード調査、紛失管理者PWリセット、ネットワーク/HDD診断および14項目の点検マトリクス作成；フェーズ2で承認後パーツ交換、DVR-xx/CH-xx形式のケーブルタグ付け、ラック整線、コミッショニング）。NDA順守により顧客名を完全秘匿し、工場安全基準（PPE、作業許可証、5S）を義務付け。",
+      catLabel: "工事業者向け作業範囲・見積仕様",
+      obj: "責任分界点、技術試験基準、および標準見積フォームを策定し、業者とのトラブル防止、適正価格での発注、および重工業プラント基準での安全施工を徹底。",
+      feat: [
+        "責任分界点マトリクス（Scope Boundary）：EOLO供給機器（XVR・HDD）と業者担当範囲（人工・消耗品・工具）を明確に区分",
+        "5段階の標準施工ワークフロー：事前検査、ハードウェア設置、29系統BNCケーブル移設、RAID 5設定、および総合受入試験を標準化",
+        "2フェーズ制診断・復旧プロトコル：フェーズ1で機器調査＆工場出荷リセットを実施し、フェーズ2で承認された部品交換および配線整理を実施",
+        "14項目の技術点検成果物マトリクス：3台のDVRに対する型番・シリアル・故障原因の標準点検表および写真証跡義務付け",
+        "標準ケーブルタギング仕様：同軸およびLANケーブルに対して明確なナンバリング（例：DVR-01 / CH-01）と29chチャンネル対応表を適用",
+        "詳細BOQ見積フォーム＆安全管理規定：A/B/C/D分類見積書、安全保護具（PPE）着用義務、入構許可証対応、および1年間の施工保証"
+      ]
+    },
+    "mic-traceability": {
+      title: "MIC Industries — ハンディターミナル向けトレーサビリティ・照合＆ PC リアルタイムダッシュボード",
+      client: "MIC INDUSTRIES (THAILAND) CO., LTD. / EOLO Technology",
+      desc: "工業用ハンディターミナル（Newland N7 / KEYENCE BT-A500等）とホスト PC を連携させた集中管理型全工程トレーサビリティおよびポカヨケ照合システム。工場内 Wi-Fi とオンプレミスローカルサーバーにより外部回線断でも稼働を継続。PC 上の責任者リアルタイム監視ダッシュボード、部品受入検品、工程内実績収集、出荷照合、照合NG時インターロック、ワンクリック履歴追跡、端末無制限ライセンスを完備。",
+      catLabel: "産業用ハンディ＆トレーサビリティ",
+      obj: "工場選定ガイド（32ページ）の要求仕様に完全準拠し、オンプレミス型ローカルサーバーと PC ダッシュボードを融合。端末追加時のライセンス費用をゼロ化し、出荷ミスゼロと徹底した品質管理を実現。",
+      feat: [
+        "受入検品モジュール：担当者 (PIC)、サプライヤーコード、部品番号、数量の読み取りと PC 連動のリアルタイム実績カウンター",
+        "工程進捗・製造実績収集：製造指示番号、工程コード、製品番号、ロット番号を紐付けた確実な履歴管理",
+        "出荷照合モジュール：納品書・送り状番号、出荷先コード、製品番号、数量の出荷前確実照合",
+        "責任者パスワードインターロック：不一致 (NG) 発生時に画面を完全ロックし、警告音とともに責任者解除を要求",
+        "PC リアルタイム中枢ダッシュボード：日次進捗、リアルタイム NG 警告監視、ワンクリック Excel/CSV 帳票出力",
+        "全工程トレーサビリティ検索：製品番号・ロット番号・伝票番号から「受入→製造→出荷」の全履歴を即時表示",
+        "オンプレミス＆端末無制限拡張：工場内 LAN/Wi-Fi で 100% 完結。将来のハンディ増設時も追加ライセンス不要",
+        "将来連携対応 REST API：将来的な上位 ERP（SAP等）や外部工場サーバーとの連携が容易な拡張設計"
+      ]
+    },
+    "mic-proposal": {
+      title: "MIC Industries — トレーサビリティ＆照合システム プロジェクト提案書・技術仕様書",
+      client: "MIC INDUSTRIES (THAILAND) CO., LTD. / EOLO Technology",
+      desc: "工場調達部および経営層向けに策定された包括的システム提案書および技術仕様書 (Project Proposal & Technical Specification)。オンプレミス型ローカルサーバー設計、現場前提条件・制約事項（常時稼働ホストPC、Wi-Fi電波網、固定IP、UPS無停電電源）、ハンディターミナル選定仕様、1年目無償保証SLAおよび長期保守パートナーシップを明記。",
+      catLabel: "システム・技術提案書",
+      obj: "システムの技術仕様、現場インフラ要件、導入ステップ、端末台数無制限ライセンスによる投資対効果を明瞭に提示する公式技術提案書。",
+      feat: [
+        "オンプレミスホスト PC ＋ 工場内 Wi-Fi リアルタイム端末連携の全体アーキテクチャ設計",
+        "現場の前提条件と制約事項の明確化（常時稼働 PC、Wi-Fi 網、固定 IP、Firewall 開放、UPS 導入推奨）",
+        "産業用ハンディターミナル推奨ハードウェア仕様（Android 10+、2D Barcode/QR Wedge）",
+        "5段階の導入ロードマップ（現場調査、サーバー構築、端末設定、UAT 結合テスト、講習＆引渡し）",
+        "プロフェッショナルな保守体制（初年度無償保証 SLA ＋ 2年目以降の柔軟なソフトウェア保守パートナーシップ）"
+      ]
+    },
     nativecipher: {
       title: "NativeCipher — 11-in-1 エンジニアリング設計＆シミュレーション SaaS プラットフォーム",
       client: "NativeCipher (創業者 ＆ 開発責任者)",
@@ -1672,6 +1892,67 @@ const projectTrans = {
     tpf: { title: "AP、CCTV (51+8台) ＆光ファイバー工程", desc: "食品工場向けにCCTVカメラ51台新設、8台移设、屋外APおよび光ファイバー配線工事。", obj: "防犯監視および無線ネットワークを強化。", feat: ["51+8台CCTV設置", "光ファイバー幹線配線", "Access Point設置"] }
   },
   in: {
+    "cctv-recording-upgrade": {
+      title: "औद्योगिक सीसीटीवी केंद्रीय रिकॉर्डिंग अपग्रेड और RAID 5 डेटा अतिरेक समाधान",
+      client: "प्रमुख इस्पात निर्माता (ईस्टर्न सीबोर्ड इंडस्ट्रियल एस्टेट, रेयोंग) / EOLO Technology",
+      desc: "एक प्रमुख इस्पात विनिर्माण संयंत्र के लिए तैयार किया गया सीसीटीवी केंद्रीय रिकॉर्डिंग आधुनिकीकरण और तकनीकी प्रस्ताव। 3 पुराने डीवीआर में फैली 29 एनालॉग कैमरों की लाइनों को एकल 32-चैनल एक्सवीआर सिस्टम में समेकित करता है। दो समाधान प्रस्तुत किए गए: समाधान 1 (Dahua XVR5232AN-5M-I3/T, 2x16TB सर्विलांस एचडीडी, 30 दिन 24/7 निरंतर रिकॉर्डिंग) और समाधान 2 उच्च विश्वसनीयता हेतु (Dahua DHI-XVR5832S-I3/T 8-SATA, 4x10TB एचडीडी हार्डवेयर RAID 5 सरणी के साथ, जिससे एक डिस्क खराब होने पर भी डेटा हानि शून्य रहती है)। इसमें सटीक स्टोरेज गणना, नेटवर्क आर्किटेक्चर आरेख और लागत तुलना शामिल है।",
+      catLabel: "सीसीटीवी और स्टोरेज अतिरेक",
+      obj: "पुराने बिखरे हुए डीवीआर को एक उद्यम-स्तरीय केंद्रीय प्रणाली में एकीकृत करना, 30 दिनों का बैकअप सुनिश्चित करना और महत्वपूर्ण रिकॉर्डिंग सुरक्षा के लिए RAID 5 तकनीक लागू करना।",
+      feat: [
+        "केंद्रीकृत एक्सवीआर माइग्रेशन: 3 पुराने डीवीआर से 29 कोएक्सियल केबलों को एक 32-चैनल एक्सवीआर में समेकित करना",
+        "समाधान 1 (लागत प्रभावी): Dahua XVR5232AN-5M-I3/T 2x16TB एचडीडी के साथ 30-दिवसीय निर्बाध 1080p रिकॉर्डिंग हेतु",
+        "समाधान 2 (उद्यम RAID 5 अतिरेक): Dahua DHI-XVR5832S-I3/T 4x10TB एचडीडी RAID 5 (30TB प्रयोग करने योग्य) के साथ शून्य डेटा हानि सुरक्षा",
+        "सटीक स्टोरेज इंजीनियरिंग: 30 दिनों के वीडियो डेटा बैकअप की गारंटी के लिए Smart H.265+ कोडेक पर आधारित बैंडविड्थ गणना",
+        "सिस्टम आर्किटेक्चर आरेख: कैमरा इनपुट, नेटवर्क स्विच, नियंत्रण कक्ष मॉनिटर और क्लाइंट पीसी व्यूइंग का संपूर्ण विज़ुअल मैप",
+        "तकनीकी और वाणिज्यिक विश्लेषण: समाधान 1 और 2 के बीच विश्वसनीयता, व्यापार निरंतरता (BCP) और लागत का तुलनात्मक विवरण"
+      ]
+    },
+    "cctv-subcontractor-sow": {
+      title: "सीसीटीवी माइग्रेशन और डीवीआर रिकवरी — उपठेकेदार कार्य क्षेत्र और कोटेशन ढांचा (SOW & RFQ)",
+      client: "औद्योगिक संयंत्र (ईस्टर्न सीबोर्ड इंडस्ट्रियल एस्टेट, रेयोंग) / EOLO Technology",
+      desc: "दो महत्वपूर्ण औद्योगिक निगरानी परियोजनाओं के लिए तैयार किया गया उपठेकेदार कार्य विवरण (SOW) और कोटेशन अनुरोध (RFQ) दस्तावेज़: 1) केंद्रीय एक्सवीआर माइग्रेशन SOW कार्य सीमाओं को स्पष्ट करता है (EOLO एक्सवीआर और एचडीडी की आपूर्ति करता है; उपठेकेदार श्रम और सहायक सामग्री प्रदान करता है), 5-चरणीय इंजीनियरिंग निष्पादन, आर्किटेक्चर आरेख और 11-आइटम BOQ कोटेशन फॉर्म; और 2) मौजूदा डीवीआर डायग्नोस्टिक और रिकवरी SOW 2-चरणीय प्रक्रिया पर आधारित है (चरण 1: भौतिक निरीक्षण, खोए हुए पासवर्ड का फ़ैक्टरी रीसेट, नेटवर्क/स्टोरेज डायग्नोस्टिक और 14-बिंदु निरीक्षण मैट्रिक्स; चरण 2: अनुमोदित स्पेयर पार्ट्स प्रतिस्थापन, मानकीकृत केबल टैगिंग 'DVR-xx / CH-xx', रैक प्रबंधन और परीक्षण)। एनडीए अनुपालन के साथ ग्राहक की गोपनीयता और सख्त सुरक्षा नियमों (PPE / वर्क परमिट / 5S) का पूर्ण पालन।",
+      catLabel: "उपठेकेदार कार्य क्षेत्र और कोटेशन",
+      obj: "विवादों को समाप्त करने, पारदर्शी कोटेशन सुनिश्चित करने और औद्योगिक संयंत्र सुरक्षा मानकों का पालन कराने के लिए स्पष्ट जिम्मेदारियां, परीक्षण मानक और मूल्य निर्धारण प्रपत्र स्थापित करना।",
+      feat: [
+        "स्पष्ट कार्य सीमा मैट्रिक्स: EOLO द्वारा आपूर्ति किए जाने वाले मुख्य उपकरणों (XVR और HDD) और ठेकेदार के श्रम/सामग्री के बीच स्पष्ट विभाजन",
+        "5-चरणीय माइग्रेशन कार्यप्रवाह: पूर्व-जांच, हार्डवेयर स्थापना, 29-कैमरा बीएनसी माइग्रेशन, RAID 5 कॉन्फ़िगरेशन और कमीशनिंग",
+        "2-चरणीय डायग्नोस्टिक और रिकवरी प्रोटोकॉल: चरण 1 उपकरण निरीक्षण और फ़ैक्टरी रीसेट; चरण 2 अनुमोदित स्पेयर पार्ट्स प्रतिस्थापन",
+        "14-बिंदु तकनीकी डिलीवरी मैट्रिक्स: 3 डीवीआर के लिए मानकीकृत तकनीकी स्कोरकार्ड तथा फोटो साक्ष्य की आवश्यकता",
+        "मानकीकृत केबल टैगिंग प्रणाली: कोएक्सियल और लैन केबलों के लिए संरचित लेबलिंग प्रारूप (उदा. DVR-01 / CH-01) और 29-कैमरा मैपिंग",
+        "आइटमाइज्ड BOQ और सुरक्षा अनुपालन: 4-समूह (A, B, C, D) मूल्य निर्धारण तालिका, अनिवार्य सुरक्षा उपकरण (PPE), वर्क परमिट और 1-वर्ष की वारंटी"
+      ]
+    },
+    "mic-traceability": {
+      title: "MIC Industries — औद्योगिक हैंडहेल्ड ट्रेसेबिलिटी, मिलान प्रणाली और PC लाइव डैशबोर्ड",
+      client: "MIC INDUSTRIES (THAILAND) CO., LTD. / EOLO Technology",
+      desc: "औद्योगिक हैंडहेल्ड मोबाइल कंप्यूटर (जैसे Newland N7 और KEYENCE BT-A500) और ऑन-प्रेमिस लोकल सर्वर के लिए डिज़ाइन की गई संपूर्ण ट्रेसेबिलिटी और त्रुटि-मुक्त मिलान (Matching & Interlock) प्रणाली। इसमें फैक्ट्री वाई-फाई, सुपरवाइज़र के लिए केंद्रीय PC लाइव डैशबोर्ड, माल प्राप्ति (Receiving), उत्पादन ट्रैकिंग (Production), प्रेषण सत्यापन (Shipping), सुपरवाइज़र पिन लॉक और असीमित डिवाइस लाइसेंस शामिल हैं।",
+      catLabel: "औद्योगिक मोबाइल और ट्रेसेबिलिटी",
+      obj: "फैक्ट्री चयन गाइड (पृष्ठ 32) के विनिर्देशों के अनुसार ऑन-प्रेमिस लोकल सर्वर और PC लाइव डैशबोर्ड युक्त केंद्रीकृत समाधान, जो प्रति-डिवाइस लाइसेंस लागत को समाप्त करता है।",
+      feat: [
+        "प्राप्ति मॉड्यूल: निरीक्षक आईडी (PIC), आपूर्तिकर्ता कोड, पार्ट नंबर और मात्रा को दैनिक स्कैन काउंटर के साथ रिकॉर्ड करता है",
+        "उत्पादन ट्रेसेबिलिटी: वर्क ऑर्डर, प्रक्रिया कोड, आइटम और कच्चे माल के लॉट नंबर को जोड़ते हुए वास्तविक समय में ट्रैकिंग",
+        "शिपिंग सत्यापन: प्रेषण से पहले इनवॉइस, ग्राहक गंतव्य और मात्रा की सटीक जांच करता है",
+        "सुपरवाइज़र इंटरलॉक: मिलान न होने (NG) पर तुरंत स्क्रीन लॉक और अलार्म, जिसे अनलॉक करने के लिए सुपरवाइज़र पिन आवश्यक है",
+        "केंद्रीय PC लाइव डैशबोर्ड: वास्तविक समय में उत्पादन व शिपिंग की निगरानी और एक-क्लिक Excel/CSV रिपोर्ट निर्यात",
+        "एक-क्लिक ट्रेसेबिलिटी जांच: पार्ट नंबर, लॉट नंबर या इनवॉइस द्वारा प्राप्ति -> उत्पादन -> शिपिंग की पूरी यात्रा प्रदर्शित करता है",
+        "ऑन-प्रेमिस और असीमित विस्तार: फैक्ट्री वाई-फाई पर 100% स्थानीय रूप से काम करता है; भविष्य में बिना अतिरिक्त लाइसेंस शुल्क के नए हैंडहेल्ड जोड़ें",
+        "भविष्य के लिए तैयार RESTful API: कॉर्पोरेट ईआरपी (जैसे SAP) और केंद्रीय सर्वर से आसानी से जुड़ने में सक्षम"
+      ]
+    },
+    "mic-proposal": {
+      title: "MIC Industries — ट्रेसेबिलिटी और पोका-योके प्रणाली के लिए परियोजना प्रस्ताव और तकनीकी विनिर्देश",
+      client: "MIC INDUSTRIES (THAILAND) CO., LTD. / EOLO Technology",
+      desc: "फैक्ट्री खरीद और प्रबंधन के लिए तैयार किया गया व्यापक परियोजना प्रस्ताव और तकनीकी विनिर्देश दस्तावेज़। इसमें ऑन-प्रेमिस लोकल सर्वर आर्किटेक्चर, परिचालन साइट की पूर्वापेक्षाएं और सीमाएं (समर्पित होस्ट पीसी, वाई-फाई कवरेज, फिक्स्ड आईपी, यूपीएस), हैंडहेल्ड टर्मिनल विनिर्देश और पहले वर्ष की मुफ्त वारंटी के साथ दीर्घकालिक एसएलए मॉडल शामिल हैं।",
+      catLabel: "प्रणाली और तकनीकी प्रस्ताव",
+      obj: "प्रणाली वास्तुकला, तकनीकी बाधाओं, रोलआउट चरणों और असीमित डिवाइस लाइसेंसिंग के साथ स्पष्ट औपचारिक इंजीनियरिंग प्रस्ताव प्रदान करना।",
+      feat: [
+        "स्थानीय वाई-फाई पर ऑन-प्रेमिस होस्ट पीसी + वास्तविक समय मोबाइल हैंडहेल्ड क्लाइंट का आर्किटेक्चर डिज़ाइन",
+        "साइट की तकनीकी सीमाओं का विस्तृत विश्लेषण (समर्पित होस्ट पीसी, वाई-फाई कवरेज, फिक्स्ड आईपी, फ़ायरवॉल और यूपीएस)",
+        "औद्योगिक हैंडहेल्ड कंप्यूटर हार्डवेयर विनिर्देश (Android 10+, 2D Barcode/QR Wedge)",
+        "5-चरणीय परिनियोजन रोडमैप (साइट सर्वेक्षण, सर्वर स्थापना, हैंडहेल्ड सेटअप, यूएटी, प्रशिक्षण व हैंडओवर)",
+        "पेशेवर SLA ढांचा जिसमें वर्ष 1 की मानार्थ वारंटी और वर्ष 2+ सॉफ्टवेयर रखरखाव साझेदारी शामिल है"
+      ]
+    },
     nativecipher: {
       title: "NativeCipher — 11-in-1 इंजीनियरिंग डिजाइन और सिमुलेशन सास प्लेटफॉर्म",
       client: "NativeCipher (संस्थापक और मुख्य आर्किटेक्ट)",
